@@ -1,0 +1,5 @@
+C:\Users\Adrien\Documents\CIR 3\Projet_MISN\Project_code\PongMe\GameBasicClasses\bin\Debug\GameBasicClasses.dll
+C:\Users\Adrien\Documents\CIR 3\Projet_MISN\Project_code\PongMe\GameBasicClasses\bin\Debug\GameBasicClasses.pdb
+C:\Users\Adrien\Documents\CIR 3\Projet_MISN\Project_code\PongMe\GameBasicClasses\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Adrien\Documents\CIR 3\Projet_MISN\Project_code\PongMe\GameBasicClasses\obj\Debug\GameBasicClasses.dll
+C:\Users\Adrien\Documents\CIR 3\Projet_MISN\Project_code\PongMe\GameBasicClasses\obj\Debug\GameBasicClasses.pdb
