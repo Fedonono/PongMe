@@ -8,39 +8,46 @@ namespace GameBasicClasses.BasicClasses
     public class Ball
     {
         private float speed;
-        private readonly static float MAX_SPEED = 100;
-
         public float Speed
         {
-            get { return speed; }
+            get { return this.speed; }
             set
             {
-                if (Speed > 0 && Speed < MAX_SPEED)
+                if (value > 0 && value < MAX_SPEED)
                 {
-                    speed = value;
+                    this.speed = value;
                 }
             }
         }
+        private readonly static float MAX_SPEED = 100;
 
         private float diameter;
-        private readonly static float MAX_DIAMETER = 50;
-
         public float Diameter
         {
-            get { return diameter; }
+            get { return this.diameter; }
             set
             {
-                if (Diameter > 0 && Diameter < MAX_DIAMETER)
+                if (value > 0 && value < MAX_DIAMETER)
                 {
-                    diameter = value;
+                    this.diameter = value;
                 }
             }
         }
+        private readonly static float MAX_DIAMETER = 50;
 
-        public Ball(float speed, float diameter)
+        public Point Position { get; private set; }
+
+        public Ball(float speed, float diameter, int startX, int startY)
         {
             this.Speed = speed;
             this.Diameter = diameter;
+            this.setPosition(startX, startY);
+        }
+
+        private void setPosition(int x, int y)
+        {
+            this.Position.X = x;
+            this.Position.Y = y;
         }
     }
 }

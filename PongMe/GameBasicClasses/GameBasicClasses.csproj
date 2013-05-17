@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicClasses\Ball.cs" />
+    <Compile Include="BasicClasses\Point.cs" />
     <Compile Include="MVC\Controller.cs" />
     <Compile Include="MVC\Event.cs" />
     <Compile Include="MVC\IView.cs" />
