@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GameBasicClasses.BasicClasses
 {
-    class Point
+    public class Point
     {
         public int X { get; set; }
         public int Y { get; set; }

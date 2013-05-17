@@ -46,6 +46,10 @@ namespace GameBasicClasses.BasicClasses
 
         private void setPosition(int x, int y)
         {
+            if (this.Position == null)
+            {
+                this.Position = new Point();
+            }
             this.Position.X = x;
             this.Position.Y = y;
         }
