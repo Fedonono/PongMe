@@ -203,22 +203,31 @@ namespace GameView
 
         }
 
+        Ball ball = new Ball(3, 50, 50, 50, 1000, 600);
+        PictureBox picBoxBall = new PictureBox();
+        Racket racket = new Racket(0, 0, 20, 200, 3, 1000, 600);
+        PictureBox picBoxRacket = new PictureBox();
+
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = this.CreateGraphics();
-            SolidBrush sb = new SolidBrush(Color.Red);
-            Racket racket = new Racket(0,0,10,100,3);
-            Ball ball = new Ball(1, 50, 100, 100);
-            bool b = racket.contains(ball);
-            g.FillRectangle(sb, racket.RacketRepresentation);
-            g.FillEllipse(sb, ball.BallRepresentation);
-            racket.Position = new Point(0, 100);
-            sb.Color = Color.PaleVioletRed;
-            g.FillRectangle(sb, racket.RacketRepresentation);
+            ball.ClientWidth = this.Width;
+            ball.ClientHeight = this.Height;
+            picBoxBall.Size = ball.BallRepresentation.Size;
+            picBoxBall.Location = ball.Position;
+            picBoxBall.BackColor = Color.Green;
+            this.Controls.Add(picBoxBall);
+
+            racket.ClientWidth = this.Width;
+            racket.ClientHeight = this.Height;
+            picBoxRacket.Size = racket.RacketRepresentation.Size;
+            picBoxRacket.Location = racket.Position;
+            picBoxRacket.BackColor = Color.Red;
+            this.Controls.Add(picBoxRacket);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            ball.nextPosition();
             this.Refresh();
         }
 

@@ -7,7 +7,7 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles
 {
-    public class Wall : IObstacle
+    public class Wall : Obstacle
     {
         private int health;
         public int Health
@@ -25,7 +25,12 @@ namespace GameBasicClasses.Obstacles
             }
         }
 
-        public bool contains(Ball b)
+        public Wall(int health, int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
+        {
+            this.Health = health;
+        }
+
+        public override bool contains(Ball b)
         {
             throw new NotImplementedException();
         }

@@ -7,9 +7,14 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles
 {
-    public class Bonus : IObstacle
+    public class Bonus : Obstacle
     {
-        public bool contains(Ball b)
+        public Bonus(int clientWidth, int clientHeight) : base(clientWidth, clientHeight)
+        {
+
+        }
+
+        public override bool contains(Ball b)
         {
             throw new NotImplementedException();
         }

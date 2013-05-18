@@ -8,7 +8,7 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles
 {
-    public class Racket : IObstacle
+    public class Racket : Obstacle
     {
         private Rectangle racketRepresentation;
         public Rectangle RacketRepresentation
@@ -40,17 +40,17 @@ namespace GameBasicClasses.Obstacles
         }
         private readonly static int MAX_SPEED = 100;
 
-        public Racket() : this(0, 0, 50, 200, 3)
+        public Racket() : this(0, 0, 50, 200, 3, 1000, 600)
         {
         }
 
-        public Racket(int x, int y, int width, int height, int speed)
+        public Racket(int x, int y, int width, int height, int speed, int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
         {
             this.racketRepresentation = new Rectangle(x, y, width, height);
             this.Speed = speed;
         }
 
-        public bool contains(Ball b)
+        public override bool contains(Ball b)
         {
             List<Point> bounds = b.getBounds();
             foreach (Point p in bounds)

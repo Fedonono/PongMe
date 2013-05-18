@@ -46,7 +46,7 @@
     <Compile Include="BasicClasses\GameEngine.cs" />
     <Compile Include="BasicClasses\GameModel.cs" />
     <Compile Include="Obstacles\Bonus.cs" />
-    <Compile Include="Obstacles\IObstacle.cs" />
+    <Compile Include="Obstacles\Obstacle.cs" />
     <Compile Include="Obstacles\Racket.cs" />
     <Compile Include="MVC\Controller.cs" />
     <Compile Include="MVC\Event.cs" />

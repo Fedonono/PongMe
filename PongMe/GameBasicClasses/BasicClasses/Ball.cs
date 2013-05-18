@@ -51,11 +51,52 @@ namespace GameBasicClasses.BasicClasses
         {
             get { return ballRepresentation; }
         }
+
+        private int clientWidth;
+        public int ClientWidth
+        {
+            get
+            {
+                return this.clientWidth;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    this.clientWidth = value;
+                }
+                else
+                {
+                    this.clientWidth = 1000;
+                }
+            }
+        }
+        private int clientHeight;
+        public int ClientHeight
+        {
+            get
+            {
+                return this.clientHeight;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    this.clientHeight = value;
+                }
+                else
+                {
+                    this.clientHeight = 600;
+                }
+            }
+        }
         
-        public Ball(int speed, int diameter, int startX, int startY)
+        public Ball(int speed, int diameter, int startX, int startY, int clientWidth, int clientHeight)
         {
             this.Speed = speed;
             this.Diameter = diameter;
+            this.ClientWidth = clientWidth;
+            this.ClientHeight = clientHeight;
             this.ballRepresentation = new Rectangle(startX, startY, this.diameter, this.diameter);
             this.backX = this.backY = false;
         }
@@ -77,6 +118,22 @@ namespace GameBasicClasses.BasicClasses
             else
             {
                 this.ballRepresentation.Y += this.speed;
+            }
+            if (this.clientWidth <= this.ballRepresentation.X + this.diameter + this.speed)
+            {
+                this.backX = true;
+            }
+            if (this.clientHeight <= this.ballRepresentation.Y + this.diameter + this.speed)
+            {
+                this.backY = true;
+            }
+            if (this.ballRepresentation.X <= this.speed)
+            {
+                this.backX = false;
+            }
+            if (this.ballRepresentation.Y <= this.speed)
+            {
+                this.backY = false;
             }
         }
 
