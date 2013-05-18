@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace GameBasicClasses.BasicClasses
 {
     public class Ball
     {
-        private float speed;
-        public float Speed
+        private int speed;
+        public int Speed
         {
             get { return this.speed; }
             set
@@ -17,12 +18,16 @@ namespace GameBasicClasses.BasicClasses
                 {
                     this.speed = value;
                 }
+                else
+                {
+                    this.speed = MAX_SPEED;
+                }
             }
         }
-        private readonly static float MAX_SPEED = 100;
+        private readonly static int MAX_SPEED = 100;
 
-        private float diameter;
-        public float Diameter
+        private int diameter;
+        public int Diameter
         {
             get { return this.diameter; }
             set
@@ -31,27 +36,70 @@ namespace GameBasicClasses.BasicClasses
                 {
                     this.diameter = value;
                 }
+                else
+                {
+                    this.diameter = MAX_DIAMETER;
+                }
             }
         }
-        private readonly static float MAX_DIAMETER = 50;
+        private readonly static int MAX_DIAMETER = 100;
 
-        public Point Position { get; private set; }
+        private bool backX, backY;
 
-        public Ball(float speed, float diameter, int startX, int startY)
+        private Rectangle ballRepresentation;
+        public Rectangle BallRepresentation
+        {
+            get { return ballRepresentation; }
+        }
+        
+        public Ball(int speed, int diameter, int startX, int startY)
         {
             this.Speed = speed;
             this.Diameter = diameter;
-            this.setPosition(startX, startY);
+            this.ballRepresentation = new Rectangle(startX, startY, this.diameter, this.diameter);
+            this.backX = this.backY = false;
         }
 
-        private void setPosition(int x, int y)
+        public void nextPosition()//très incomplet
         {
-            if (this.Position == null)
+            if (this.backX)
             {
-                this.Position = new Point();
+                this.ballRepresentation.X -= this.speed;
             }
-            this.Position.X = x;
-            this.Position.Y = y;
+            else
+            {
+                this.ballRepresentation.X += this.speed;
+            }
+            if (this.backY)
+            {
+                this.ballRepresentation.Y -= this.speed;
+            }
+            else
+            {
+                this.ballRepresentation.Y += this.speed;
+            }
+        }
+
+        public Point Position
+        {
+            get { return new Point(this.ballRepresentation.X, this.ballRepresentation.Y); }
+        }
+
+        public List<Point> getBounds()
+        {
+            List<Point> bounds = new List<Point>();
+            int nbOfPoints = 100;
+            double teta = (2 * Math.PI) / nbOfPoints;
+            double x,y,tempTeta;
+            tempTeta = 0;
+            for (int i = 0; i < nbOfPoints; i++)
+            {
+                x = (this.diameter+1) * Math.Cos(tempTeta) + this.Position.X;
+                y = (this.diameter+1) * Math.Sin(tempTeta) + this.Position.Y;
+                bounds.Add(new Point((int)x, (int)y));
+                tempTeta += teta;
+            }
+            return bounds;
         }
     }
 }

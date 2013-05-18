@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicClasses\Ball.cs" />
-    <Compile Include="BasicClasses\Point.cs" />
+    <Compile Include="BasicClasses\CurrentGame.cs" />
+    <Compile Include="BasicClasses\GameEngine.cs" />
+    <Compile Include="BasicClasses\GameModel.cs" />
+    <Compile Include="Obstacles\Bonus.cs" />
+    <Compile Include="Obstacles\IObstacle.cs" />
+    <Compile Include="Obstacles\Racket.cs" />
     <Compile Include="MVC\Controller.cs" />
     <Compile Include="MVC\Event.cs" />
     <Compile Include="MVC\IView.cs" />
     <Compile Include="MVC\Model.cs" />
+    <Compile Include="Obstacles\Wall.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GameWPFView.Properties
+namespace GameView.Properties
 {
 
 
