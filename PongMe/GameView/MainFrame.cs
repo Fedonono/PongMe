@@ -27,12 +27,6 @@ namespace GameView
         private ToolStripMenuItem joueursToolStripMenuItem2;
         private Timer timer = new Timer();
 
-        [STAThread]
-        static void Main()
-        {
-            Application.Run(new MainForm());
-        }
-
         public MainForm()
         {
             InitializeComponent();
@@ -121,7 +115,7 @@ namespace GameView
             this.joueurToolStripMenuItem.CheckOnClick = true;
             this.joueurToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.joueurToolStripMenuItem.Name = "joueurToolStripMenuItem";
-            this.joueurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.joueurToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.joueurToolStripMenuItem.Text = "1 joueur";
             this.joueurToolStripMenuItem.Click += new System.EventHandler(this.joueurToolStripMenuItem_Click);
             // 
@@ -131,7 +125,7 @@ namespace GameView
             this.joueursToolStripMenuItem.CheckOnClick = true;
             this.joueursToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
-            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.joueursToolStripMenuItem.Text = "2 joueurs";
             this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
             // 
@@ -141,7 +135,7 @@ namespace GameView
             this.joueursToolStripMenuItem1.CheckOnClick = true;
             this.joueursToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.joueursToolStripMenuItem1.Name = "joueursToolStripMenuItem1";
-            this.joueursToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.joueursToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.joueursToolStripMenuItem1.Text = "3 joueurs";
             this.joueursToolStripMenuItem1.Click += new System.EventHandler(this.joueursToolStripMenuItem1_Click);
             // 
@@ -151,7 +145,7 @@ namespace GameView
             this.joueursToolStripMenuItem2.CheckOnClick = true;
             this.joueursToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.joueursToolStripMenuItem2.Name = "joueursToolStripMenuItem2";
-            this.joueursToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.joueursToolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
             this.joueursToolStripMenuItem2.Text = "4 joueurs";
             this.joueursToolStripMenuItem2.Click += new System.EventHandler(this.joueursToolStripMenuItem2_Click);
             // 
@@ -174,14 +168,14 @@ namespace GameView
             // aideToolStripMenuItem
             // 
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aideToolStripMenuItem.Text = "Aide";
             this.aideToolStripMenuItem.Click += new System.EventHandler(this.aideToolStripMenuItem_Click);
             // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
             this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
             // 
@@ -195,7 +189,7 @@ namespace GameView
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -205,8 +199,8 @@ namespace GameView
 
         Ball ball = new Ball(3, 50, 50, 50, 1000, 600);
         PictureBox picBoxBall = new PictureBox();
-        Racket racket = new Racket(0, 0, 20, 200, 3, 1000, 600);
-        PictureBox picBoxRacket = new PictureBox();
+        Paddle paddle = CurrentGame.getInstance().GameModel.getGamer(0).Paddle;
+        PictureBox picBoxPaddle = new PictureBox();
 
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
@@ -217,23 +211,18 @@ namespace GameView
             picBoxBall.BackColor = Color.Green;
             this.Controls.Add(picBoxBall);
 
-            racket.ClientWidth = this.Width;
-            racket.ClientHeight = this.Height;
-            picBoxRacket.Size = racket.RacketRepresentation.Size;
-            picBoxRacket.Location = racket.Position;
-            picBoxRacket.BackColor = Color.Red;
-            this.Controls.Add(picBoxRacket);
+            paddle.ClientWidth = this.Width;
+            paddle.ClientHeight = this.Height;
+            picBoxPaddle.Size = paddle.PaddleRepresentation.Size;
+            picBoxPaddle.Location = paddle.Position;
+            picBoxPaddle.BackColor = Color.Red;
+            this.Controls.Add(picBoxPaddle);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             ball.nextPosition();
             this.Refresh();
-        }
-
-        private void MainForm_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
         }
 
         private void nouvellePartieToolStripMenuItem_Click(object sender, EventArgs e)
@@ -279,6 +268,11 @@ namespace GameView
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            CurrentGame.getInstance().keyEvent(sender,e);
         }
 
 

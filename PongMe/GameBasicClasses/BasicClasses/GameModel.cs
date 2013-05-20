@@ -4,22 +4,66 @@ using System.Linq;
 using System.Text;
 using GameBasicClasses.MVC;
 using GameBasicClasses.Obstacles;
+using System.Windows.Forms;
 
 namespace GameBasicClasses.BasicClasses
 {
     public class GameModel : Model
     {
-        private LinkedList<Ball> listeBall;
-        private LinkedList<Racket> listeRacket;
-        private LinkedList<Bonus> listeBonus;
-        private LinkedList<Wall> listeWall;
+        private List<Ball> listeBall;
+        private List<Bonus> listeBonus;
+        private List<Wall> listeWall;
+        private List<Gamer> listeGamer;
 
         public GameModel()
         {
-            this.listeBall = new LinkedList<Ball>();
-            this.listeRacket = new LinkedList<Racket>();
-            this.listeBonus = new LinkedList<Bonus>();
-            this.listeWall = new LinkedList<Wall>();
+            this.listeBall = new List<Ball>();
+            this.listeBonus = new List<Bonus>();
+            this.listeWall = new List<Wall>();
+            this.listeGamer = new List<Gamer>();
+        }
+
+        public void addBall(Ball b)
+        {
+            this.listeBall.Add(b);
+        }
+
+        public void addBonus(Bonus b)
+        {
+            this.listeBonus.Add(b);
+        }
+
+        public void addWall(Wall w)
+        {
+            this.listeWall.Add(w);
+        }
+
+        public void addGamer(Gamer g)
+        {
+            if (this.listeGamer.Count < 4)
+            {
+                this.listeGamer.Add(g);
+            }
+        }
+
+        public void keyEvent(object sender, KeyEventArgs e)
+        {
+            foreach (Gamer g in this.listeGamer)
+            {
+                if (g is Human)
+                {
+                    g.run(sender, e);
+                }
+            }
+        }
+
+        public Gamer getGamer(int i)
+        {
+            if (this.listeGamer.Count - 1 > i)
+            {
+                return this.listeGamer.ElementAt(i);
+            }
+            return null;
         }
     }
 }

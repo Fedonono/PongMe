@@ -34,5 +34,10 @@ namespace GameBasicClasses.Obstacles
         {
             throw new NotImplementedException();
         }
+
+        public void touched()
+        {
+            this.health--;
+        }
     }
 }
