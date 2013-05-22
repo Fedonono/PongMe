@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBasicClasses", "GameBas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameView", "GameView\GameView.csproj", "{5A0AEEEA-279D-47C6-AA32-2939DC1B2E8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNAView", "XNAView\XNAView\XNAView.csproj", "{2876E485-8D1A-4712-BA55-C7634E05BAB6}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "XNAViewContent", "XNAView\XNAViewContent\XNAViewContent.contentproj", "{A9321C51-B899-4450-A7EA-048FE53B95F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,22 @@ Global
 		{5A0AEEEA-279D-47C6-AA32-2939DC1B2E8E}.Release|Mixed Platforms.Build.0 = Release|x86
 		{5A0AEEEA-279D-47C6-AA32-2939DC1B2E8E}.Release|x86.ActiveCfg = Release|x86
 		{5A0AEEEA-279D-47C6-AA32-2939DC1B2E8E}.Release|x86.Build.0 = Release|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Debug|x86.ActiveCfg = Debug|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Debug|x86.Build.0 = Debug|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Release|Any CPU.ActiveCfg = Release|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Release|x86.ActiveCfg = Release|x86
+		{2876E485-8D1A-4712-BA55-C7634E05BAB6}.Release|x86.Build.0 = Release|x86
+		{A9321C51-B899-4450-A7EA-048FE53B95F2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A9321C51-B899-4450-A7EA-048FE53B95F2}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A9321C51-B899-4450-A7EA-048FE53B95F2}.Debug|x86.ActiveCfg = Debug|x86
+		{A9321C51-B899-4450-A7EA-048FE53B95F2}.Release|Any CPU.ActiveCfg = Release|x86
+		{A9321C51-B899-4450-A7EA-048FE53B95F2}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A9321C51-B899-4450-A7EA-048FE53B95F2}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
