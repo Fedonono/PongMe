@@ -14,6 +14,11 @@ namespace GameBasicClasses.BasicClasses
 
         }
 
+        public AI()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public override void run(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             throw new NotImplementedException();

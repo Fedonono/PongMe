@@ -14,6 +14,11 @@ namespace GameBasicClasses.BasicClasses
 
         }
 
+        public Human()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public override void run(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == this.up)

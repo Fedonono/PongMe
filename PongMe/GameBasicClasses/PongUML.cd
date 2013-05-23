@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameBasicClasses.Obstacles.Obstacle" Collapsed="true">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAABABAAAAAAAAAAAAAAABAAAAAAAAEA=</HashCode>
+      <FileName>Obstacles\Obstacle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.Obstacles.Brick" Collapsed="true">
+    <Position X="1" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Obstacles\Bonus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.Obstacles.Paddle" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAACAAAgAAAAAEABAAQAAQAAAAAQAgAAAAA=</HashCode>
+      <FileName>Obstacles\Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.Obstacles.Wall" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Obstacles\Wall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.BasicClasses.Gamer" Collapsed="true">
+    <Position X="13.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAAACgAAABAAAAAAAAgAAAAACAAAAAgAAAAA=</HashCode>
+      <FileName>BasicClasses\Gamer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.BasicClasses.Human" Collapsed="true">
+    <Position X="12.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BasicClasses\Human.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.BasicClasses.AI" Collapsed="true">
+    <Position X="15" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BasicClasses\AI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.BonusBrick" Collapsed="true">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BonusBrick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.Bonus" Collapsed="true">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bonus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.WidthBonus" Collapsed="true">
+    <Position X="4.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WidthBonus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.SpeedBonus" Collapsed="true">
+    <Position X="2.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SpeedBonus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.ReverseCommandsBonus" Collapsed="true">
+    <Position X="6" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReverseCommandsBonus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.BallTrajectoryBonus" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BallTrajectoryBonus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.PaddleController" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PaddleController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -45,6 +45,11 @@ namespace GameBasicClasses.BasicClasses
             this.points = 0;
         }
 
+        public Gamer()
+        {
+            throw new System.NotImplementedException();
+        }
+
         /// <summary>
         /// Contient le code faisant bouger la raquette.
         /// Un évnement est envoyé depuis la MainFrame

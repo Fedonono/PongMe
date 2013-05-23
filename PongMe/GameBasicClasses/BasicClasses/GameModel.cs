@@ -11,14 +11,14 @@ namespace GameBasicClasses.BasicClasses
     public class GameModel : Model
     {
         private List<Ball> listeBall;
-        private List<Bonus> listeBonus;
+        private List<Brick> listeBonus;
         private List<Wall> listeWall;
         private List<Gamer> listeGamer;
 
         public GameModel()
         {
             this.listeBall = new List<Ball>();
-            this.listeBonus = new List<Bonus>();
+            this.listeBonus = new List<Brick>();
             this.listeWall = new List<Wall>();
             this.listeGamer = new List<Gamer>();
         }
@@ -28,7 +28,7 @@ namespace GameBasicClasses.BasicClasses
             this.listeBall.Add(b);
         }
 
-        public void addBonus(Bonus b)
+        public void addBonus(Brick b)
         {
             this.listeBonus.Add(b);
         }

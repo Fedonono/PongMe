@@ -56,6 +56,11 @@ namespace GameBasicClasses.Obstacles
             this.ClientHeight = clientHeight;
         }
 
+        public Obstacle()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public abstract bool contains(Ball b);
     }
 }

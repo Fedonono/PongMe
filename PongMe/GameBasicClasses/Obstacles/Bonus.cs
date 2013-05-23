@@ -7,11 +7,16 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles
 {
-    public class Bonus : Obstacle
+    public class Brick : Obstacle
     {
-        public Bonus(int clientWidth, int clientHeight) : base(clientWidth, clientHeight)
+        public Brick(int clientWidth, int clientHeight) : base(clientWidth, clientHeight)
         {
 
+        }
+
+        public Brick()
+        {
+            throw new System.NotImplementedException();
         }
 
         public override bool contains(Ball b)
