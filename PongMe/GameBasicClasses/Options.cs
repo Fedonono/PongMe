@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-
 using GameBasicClasses.MVC;
 
-namespace GameBasicClasses.BasicClasses
+namespace GameBasicClasses
 {
-    public class PaddleController : Controller
+    public class Options:Model
     {
-
-        public PaddleController()
+        public Options()
         {
             throw new System.NotImplementedException();
         }

@@ -54,6 +54,9 @@
     <Compile Include="Bonus.cs" />
     <Compile Include="BonusBrick.cs" />
     <Compile Include="Brick.cs" />
+    <Compile Include="GameBoard.cs" />
+    <Compile Include="GameBoardController.cs" />
+    <Compile Include="GameModelConfig.cs" />
     <Compile Include="Obstacles\Bonus.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />
     <Compile Include="Obstacles\Paddle.cs" />
@@ -62,6 +65,9 @@
     <Compile Include="MVC\IView.cs" />
     <Compile Include="MVC\Model.cs" />
     <Compile Include="Obstacles\Wall.cs" />
+    <Compile Include="OptionController.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="PaddleConfig.cs" />
     <Compile Include="PaddleController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseCommandsBonus.cs" />

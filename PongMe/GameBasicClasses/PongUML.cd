@@ -1,63 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GameBasicClasses.Obstacles.Obstacle" Collapsed="true">
-    <Position X="3.75" Y="1.25" Width="1.5" />
+    <Position X="3.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAABABAAAAAAAAAAAAAAABAAAAAAAAEA=</HashCode>
       <FileName>Obstacles\Obstacle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.Obstacles.Brick" Collapsed="true">
-    <Position X="1" Y="2.5" Width="1.5" />
+    <Position X="1.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Obstacles\Bonus.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.Obstacles.Paddle" Collapsed="true">
-    <Position X="4.5" Y="2.5" Width="2.25" />
+    <Position X="5.25" Y="2.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAACAAAgAAAAAEABAAQAAQAAAAAQAgAAAAA=</HashCode>
       <FileName>Obstacles\Paddle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.Obstacles.Wall" Collapsed="true">
-    <Position X="2.75" Y="2.5" Width="1.5" />
+    <Position X="3.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAACAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Obstacles\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.BasicClasses.Gamer" Collapsed="true">
-    <Position X="13.5" Y="3.25" Width="1.5" />
+    <Position X="10" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgCAAAACgAAABAAAAAAAAgAAAAACAAAAAgAAAAA=</HashCode>
       <FileName>BasicClasses\Gamer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.BasicClasses.Human" Collapsed="true">
-    <Position X="12.25" Y="5" Width="1.5" />
+    <Position X="8.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BasicClasses\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.BasicClasses.AI" Collapsed="true">
-    <Position X="15" Y="5" Width="1.5" />
+    <Position X="11" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BasicClasses\AI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.BonusBrick" Collapsed="true">
-    <Position X="1" Y="3.5" Width="1.5" />
+    <Position X="1.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BonusBrick.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.Bonus" Collapsed="true">
-    <Position X="3.5" Y="3.75" Width="1.5" />
+    <Position X="3.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Bonus.cs</FileName>
@@ -91,11 +91,63 @@
       <FileName>BallTrajectoryBonus.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.PaddleController" Collapsed="true">
-    <Position X="7.25" Y="2.5" Width="1.5" />
+  <Class Name="GameBasicClasses.BasicClasses.PaddleController" Collapsed="true">
+    <Position X="12" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PaddleController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBasicClasses.Options" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Options.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.BasicClasses.OptionController" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OptionController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBasicClasses.BasicClasses.GameModel" Collapsed="true">
+    <Position X="10" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAQAAAABAAAAAAAgAAAAEAAAAAAAAQAABAAAIAIAA=</HashCode>
+      <FileName>BasicClasses\GameModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.BasicClasses.GameEngine" Collapsed="true">
+    <Position X="12" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAACAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>BasicClasses\GameEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameBasicClasses.PaddleConfig" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PaddleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.GameModelConfig" Collapsed="true">
+    <Position X="14" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameModelConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameBasicClasses.BasicClasses.GameFactory" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>BasicClasses\GameFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
