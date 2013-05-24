@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using GameBasicClasses.Obstacles;
 using System.Windows.Forms;
+using GameBasicClasses.Obstacles.Paddle;
+using GameBasicClasses.Gamer;
 
 namespace GameBasicClasses.BasicClasses
 {

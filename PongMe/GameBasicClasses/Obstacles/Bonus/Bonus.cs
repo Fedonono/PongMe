@@ -5,16 +5,16 @@ using System.Text;
 using GameBasicClasses.MVC;
 using GameBasicClasses.BasicClasses;
 
-namespace GameBasicClasses.Obstacles
+namespace GameBasicClasses.Obstacles.Bonus
 {
-    public class Brick : Obstacle
+    public class Bonus : Obstacle
     {
-        public Brick(int clientWidth, int clientHeight) : base(clientWidth, clientHeight)
+        public Bonus(int clientWidth, int clientHeight) : base(clientWidth, clientHeight)
         {
 
         }
 
-        public Brick()
+        public Bonus()
         {
             throw new System.NotImplementedException();
         }

@@ -7,18 +7,18 @@
       <FileName>Obstacles\Obstacle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.Obstacles.Brick" Collapsed="true">
+  <Class Name="GameBasicClasses.Obstacles.Bonus.Bonus" Collapsed="true">
     <Position X="1.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Obstacles\Bonus.cs</FileName>
+      <FileName>Obstacles\Bonus\Bonus.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.Obstacles.Paddle" Collapsed="true">
+  <Class Name="GameBasicClasses.Obstacles.Paddle.Paddle" Collapsed="true">
     <Position X="5.25" Y="2.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAACAAAgAAAAAEABAAQAAQAAAAAQAgAAAAA=</HashCode>
-      <FileName>Obstacles\Paddle.cs</FileName>
+      <FileName>Obstacles\Paddle\Paddle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.Obstacles.Wall" Collapsed="true">
@@ -28,74 +28,67 @@
       <FileName>Obstacles\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.BasicClasses.Gamer" Collapsed="true">
+  <Class Name="GameBasicClasses.Gamer.Gamer" Collapsed="true">
     <Position X="10" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgCAAAACgAAABAAAAAAAAgAAAAACAAAAAgAAAAA=</HashCode>
-      <FileName>BasicClasses\Gamer.cs</FileName>
+      <FileName>Gamer\Gamer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.BasicClasses.Human" Collapsed="true">
+  <Class Name="GameBasicClasses.Gamer.Human" Collapsed="true">
     <Position X="8.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BasicClasses\Human.cs</FileName>
+      <FileName>Gamer\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.BasicClasses.AI" Collapsed="true">
+  <Class Name="GameBasicClasses.Gamer.AI" Collapsed="true">
     <Position X="11" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BasicClasses\AI.cs</FileName>
+      <FileName>Gamer\AI.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.BonusBrick" Collapsed="true">
-    <Position X="1.25" Y="3.75" Width="1.5" />
+  <Class Name="GameBasicClasses.Obstacles.Bonus.BonusBrick" Collapsed="true">
+    <Position X="2.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BonusBrick.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Obstacles\Bonus\BonusBrick.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.Bonus" Collapsed="true">
-    <Position X="3.25" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bonus.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="GameBasicClasses.WidthBonus" Collapsed="true">
+  <Class Name="GameBasicClasses.Obstacles.Bonus.WidthBonus" Collapsed="true">
     <Position X="4.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>WidthBonus.cs</FileName>
+      <FileName>Obstacles\Bonus\WidthBonus.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.SpeedBonus" Collapsed="true">
+  <Class Name="GameBasicClasses.Obstacles.Bonus.SpeedBonus" Collapsed="true">
     <Position X="2.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SpeedBonus.cs</FileName>
+      <FileName>Obstacles\Bonus\SpeedBonus.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.ReverseCommandsBonus" Collapsed="true">
+  <Class Name="GameBasicClasses.Obstacles.Bonus.ReverseCommandsBonus" Collapsed="true">
     <Position X="6" Y="5.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ReverseCommandsBonus.cs</FileName>
+      <FileName>Obstacles\Bonus\ReverseCommandsBonus.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.BallTrajectoryBonus" Collapsed="true">
+  <Class Name="GameBasicClasses.Obstacles.Bonus.BallTrajectoryBonus" Collapsed="true">
     <Position X="0.5" Y="5.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BallTrajectoryBonus.cs</FileName>
+      <FileName>Obstacles\Bonus\BallTrajectoryBonus.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.BasicClasses.PaddleController" Collapsed="true">
+  <Class Name="GameBasicClasses.Obstacles.Paddle.PaddleController" Collapsed="true">
     <Position X="12" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PaddleController.cs</FileName>
+      <FileName>Obstacles\Paddle\PaddleController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -129,11 +122,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="GameBasicClasses.PaddleConfig" Collapsed="true">
+  <Class Name="GameBasicClasses.Obstacles.Paddle.PaddleConfig" Collapsed="true">
     <Position X="5.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PaddleConfig.cs</FileName>
+      <FileName>Obstacles\Paddle\PaddleConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.GameModelConfig" Collapsed="true">

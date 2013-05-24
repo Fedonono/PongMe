@@ -6,7 +6,7 @@ using System.Drawing;
 using GameBasicClasses.MVC;
 using GameBasicClasses.BasicClasses;
 
-namespace GameBasicClasses.Obstacles
+namespace GameBasicClasses.Obstacles.Paddle
 {
     public class Paddle : Obstacle
     {

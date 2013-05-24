@@ -7,4 +7,7 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses
 {
+    public class GameBoard
+    {
+    }
 }
