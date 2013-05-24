@@ -58,6 +58,8 @@
     <Compile Include="GameModelConfig.cs" />
     <Compile Include="Obstacles\Bonus\Bonus.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />
+    <Compile Include="Obstacles\ObstacleView.cs" />
+    <Compile Include="Obstacles\Paddle\RectanglePaddle.cs" />
     <Compile Include="Obstacles\Paddle\Paddle.cs" />
     <Compile Include="MVC\Controller.cs" />
     <Compile Include="MVC\Event.cs" />

@@ -215,9 +215,29 @@ namespace GameView
 
         Ball ball = new Ball(5, 50, 1000, 600);
         PictureBox picBoxBall = new PictureBox();
-        Paddle paddle = CurrentGame.getInstance().GameModel.getGamer(0).Paddle;
+        Paddle paddle = CurrentGame.getInstance().GameModel.getGamer(1).Paddle;
         PictureBox picBoxPaddle = new PictureBox();
 
+<<<<<<< HEAD
+=======
+        private void MainForm_Paint(object sender, PaintEventArgs e)
+        {
+            ball.ClientWidth = this.Width;
+            ball.ClientHeight = this.Height;
+            picBoxBall.Size = ball.BallRepresentation.Size;
+            picBoxBall.Location = ball.Position;
+            picBoxBall.BackColor = Color.Green;
+            this.Controls.Add(picBoxBall);
+
+            paddle.ClientWidth = this.Width;
+            paddle.ClientHeight = this.Height;
+            picBoxPaddle.Size = paddle.Dimensions;
+            picBoxPaddle.Location = paddle.Position;
+            picBoxPaddle.BackColor = Color.Red;
+            this.Controls.Add(picBoxPaddle);
+        }
+
+>>>>>>> 1a9c128dd231e9c2d8f1caf5a16b3c65e91aaf03
         private void Timer_Tick(object sender, EventArgs e)
         {
             ball.nextPosition();
@@ -283,7 +303,7 @@ namespace GameView
             this.gameBoard.Controls.Add(picBoxBall);
 
             paddle.ClientSize = this.gameBoard.Size;
-            picBoxPaddle.Size = paddle.Dimensions;
+            picBoxPaddle.Size = paddle.PaddleRepresentation.Size;
             picBoxPaddle.Location = paddle.Position;
             picBoxPaddle.BackColor = Color.Red;
             this.gameBoard.Controls.Add(picBoxPaddle);
