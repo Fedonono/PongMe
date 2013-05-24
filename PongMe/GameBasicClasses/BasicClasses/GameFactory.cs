@@ -14,11 +14,11 @@ namespace GameBasicClasses.BasicClasses
         public static GameModel defaultGame()
         {
             GameModel gm = new GameModel();
-            gm.addBall(new Ball(3, 10, 500, 300, 1000, 600));
-            Paddle p = new Paddle(0, 0, 20, 100, 30, 1000, 600);
-            Paddle p2 = new Paddle(880, 0, 20, 100, 30, 1000, 600);
+            gm.addBall(new Ball(5, 50, 1000, 600));
+            Paddle p = new Paddle(true, 20, 100, 30, 1000, 600);
+            Paddle p2 = new Paddle(false, 20, 100, 30, 1000, 600);
             gm.addGamer(new Human(Keys.Up, Keys.Down, p));
-            gm.addGamer(new AI(Keys.Z, Keys.S, p2));
+            gm.addGamer(new Human(Keys.Z, Keys.S, p2));
             return gm;
         }
     }

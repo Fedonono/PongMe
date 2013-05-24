@@ -61,7 +61,7 @@ namespace GameBasicClasses.BasicClasses
 
         public GameBasicClasses.Gamer.Gamer getGamer(int i)
         {
-            if (this.listeGamer.Count - 1 > i)
+            if (this.listeGamer.Count - 1 >= i)
             {
                 return this.listeGamer.ElementAt(i);
             }

@@ -22,6 +22,24 @@ namespace GameBasicClasses.Obstacles.Paddle
             set { this.paddleRepresentation.Location = value; }
         }
 
+        public Color Color { get; set; }
+
+        public override Size ClientSize
+        {
+	          get 
+	        { 
+		         return base.ClientSize;
+	        }
+	          set 
+	        { 
+		        base.ClientSize = value;
+                if (this.Position.X != 0)
+                {
+                    this.Position = new Point(this.ClientWidth - this.PaddleRepresentation.Width, 0);
+                }
+	        }
+        }
+
         private int speed;
         public int Speed
         {
@@ -40,13 +58,30 @@ namespace GameBasicClasses.Obstacles.Paddle
         }
         private readonly static int MAX_SPEED = 100;
 
-        public Paddle() : this(0, 0, 50, 200, 3, 1000, 600)
+        public Paddle() : this(true, 50, 200, 3, 1000, 600)
         {
         }
 
-        public Paddle(int x, int y, int width, int height, int speed, int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
+        public Paddle(bool left, int width, int height, int speed, int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
         {
-            this.paddleRepresentation = new Rectangle(x, y, width, height);
+            if (width <= 0 || width >= this.ClientWidth)
+            {
+                width = 50;
+            }
+            if (height <= 0 || height >= this.ClientHeight)
+            {
+                height = 200;
+            }
+            Point paddlePosition;
+            if (left)
+            {
+                paddlePosition = new Point(0, 0);
+            }
+            else
+            {
+                paddlePosition = new Point(this.ClientWidth - width);
+            }
+            this.paddleRepresentation = new Rectangle(paddlePosition.X, paddlePosition.Y, width, height);
             this.Speed = speed;
         }
 

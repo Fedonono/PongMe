@@ -9,15 +9,23 @@ namespace GameBasicClasses.BasicClasses
     public class CurrentGame
     {
         private static CurrentGame instance = null;
+
         private GameModel gameModel;
-        public GameModel GameModel { get { return this.gameModel; } set { this.gameModel = value; } }
+        public GameModel GameModel { 
+            get { return this.gameModel; } 
+            set 
+            { 
+                this.gameModel = value;
+                this.GameEngine = new GameEngine();
+            }
+        }
+
         private GameEngine gameEngine;
         public GameEngine GameEngine { get { return this.gameEngine; } set { this.gameEngine = value;} }
 
         private CurrentGame()
         {
             this.gameModel = GameFactory.defaultGame();
-            this.gameEngine = new GameEngine();
         }
 
         public static CurrentGame getInstance()

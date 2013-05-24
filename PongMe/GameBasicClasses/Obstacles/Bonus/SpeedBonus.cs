@@ -7,7 +7,8 @@ namespace GameBasicClasses.Obstacles.Bonus
 {
     public class SpeedBonus : Bonus
     {
-        public SpeedBonus()
+        public SpeedBonus(int clientWidth, int clientHeight, int timeout)
+            : base(clientWidth, clientHeight, timeout)
         {
             throw new System.NotImplementedException();
         }

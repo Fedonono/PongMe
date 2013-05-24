@@ -7,27 +7,14 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles
 {
+    /// <summary>
+    /// Bord haut et bas de la zone de jeu.
+    /// </summary>
     public class Wall : Obstacle
     {
-        private int health;
-        public int Health
+        public Wall(int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
         {
-            get { return health; }
-            set {
-                if (value > 0)
-                {
-                    health = value;
-                }
-                else
-                {
-                    health = 1;
-                }
-            }
-        }
-
-        public Wall(int health, int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
-        {
-            this.Health = health;
+            
         }
 
         public override bool contains(Ball b)
@@ -35,9 +22,5 @@ namespace GameBasicClasses.Obstacles
             throw new NotImplementedException();
         }
 
-        public void touched()
-        {
-            this.health--;
-        }
     }
 }

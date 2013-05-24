@@ -71,6 +71,7 @@ namespace GameBasicClasses.BasicClasses
                 }
             }
         }
+
         private int clientHeight;
         public int ClientHeight
         {
@@ -90,19 +91,51 @@ namespace GameBasicClasses.BasicClasses
                 }
             }
         }
+
+        private Size clientSize;
+        public Size ClientSize
+        {
+            get
+            {
+                return this.clientSize;
+            }
+            set
+            {
+                this.clientSize = value;
+                this.ClientWidth = this.clientSize.Width;
+                this.ClientHeight = this.clientSize.Height;
+            }
+        }
         
-        public Ball(int speed, int diameter, int startX, int startY, int clientWidth, int clientHeight)
+        public Ball(int speed, int diameter, int clientWidth, int clientHeight)
         {
             this.Speed = speed;
             this.Diameter = diameter;
             this.ClientWidth = clientWidth;
             this.ClientHeight = clientHeight;
-            this.ballRepresentation = new Rectangle(startX, startY, this.diameter, this.diameter);
+            this.ballRepresentation = new Rectangle(this.ClientWidth/2, this.ClientHeight/2, this.diameter, this.diameter);
             this.backX = this.backY = false;
         }
 
         public void nextPosition()//très incomplet
         {
+            if (this.clientWidth <= this.ballRepresentation.X + this.diameter)
+            {
+                this.backX = true;
+            }
+            if (this.clientHeight <= this.ballRepresentation.Y + this.diameter)
+            {
+                this.backY = true;
+            }
+            if (this.ballRepresentation.X <= 0)
+            {
+                this.backX = false;
+            }
+            if (this.ballRepresentation.Y <= 0)
+            {
+                this.backY = false;
+            }
+
             if (this.backX)
             {
                 this.ballRepresentation.X -= this.speed;
@@ -118,22 +151,6 @@ namespace GameBasicClasses.BasicClasses
             else
             {
                 this.ballRepresentation.Y += this.speed;
-            }
-            if (this.clientWidth <= this.ballRepresentation.X + this.diameter + this.speed)
-            {
-                this.backX = true;
-            }
-            if (this.clientHeight <= this.ballRepresentation.Y + this.diameter + this.speed)
-            {
-                this.backY = true;
-            }
-            if (this.ballRepresentation.X <= this.speed)
-            {
-                this.backX = false;
-            }
-            if (this.ballRepresentation.Y <= this.speed)
-            {
-                this.backY = false;
             }
         }
 

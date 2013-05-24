@@ -198,22 +198,20 @@ namespace GameView
 
         }
 
-        Ball ball = new Ball(3, 50, 50, 50, 1000, 600);
+        Ball ball = new Ball(5, 50, 1000, 600);
         PictureBox picBoxBall = new PictureBox();
-        Paddle paddle = CurrentGame.getInstance().GameModel.getGamer(0).Paddle;
+        Paddle paddle = CurrentGame.getInstance().GameModel.getGamer(1).Paddle;
         PictureBox picBoxPaddle = new PictureBox();
 
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
-            ball.ClientWidth = this.Width;
-            ball.ClientHeight = this.Height;
+            ball.ClientSize = this.Size;
             picBoxBall.Size = ball.BallRepresentation.Size;
             picBoxBall.Location = ball.Position;
             picBoxBall.BackColor = Color.Green;
             this.Controls.Add(picBoxBall);
 
-            paddle.ClientWidth = this.Width;
-            paddle.ClientHeight = this.Height;
+            paddle.ClientSize = this.Size;
             picBoxPaddle.Size = paddle.PaddleRepresentation.Size;
             picBoxPaddle.Location = paddle.Position;
             picBoxPaddle.BackColor = Color.Red;

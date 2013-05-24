@@ -30,6 +30,7 @@ namespace GameBasicClasses.Obstacles
                 }
             }
         }
+
         private int clientHeight;
         public int ClientHeight
         {
@@ -47,6 +48,21 @@ namespace GameBasicClasses.Obstacles
                 {
                     this.clientHeight = 600;
                 }
+            }
+        }
+
+        private Size clientSize;
+        public virtual Size ClientSize
+        {
+            get
+            {
+                return this.clientSize;
+            }
+            set
+            {
+                this.clientSize = value;
+                this.ClientWidth = this.clientSize.Width;
+                this.ClientHeight = this.clientSize.Height;
             }
         }
 
