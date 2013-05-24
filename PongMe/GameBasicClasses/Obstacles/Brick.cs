@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GameBasicClasses
+namespace GameBasicClasses.Obstacles
 {
-    public class Brick
+    public class Brick : Obstacle
     {
     }
 }
