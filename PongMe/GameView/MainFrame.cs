@@ -26,6 +26,7 @@ namespace GameView
         private ToolStripMenuItem joueursToolStripMenuItem;
         private ToolStripMenuItem joueursToolStripMenuItem1;
         private ToolStripMenuItem joueursToolStripMenuItem2;
+        private Panel gameBoard;
         private Timer timer = new Timer();
 
         public MainForm()
@@ -53,6 +54,7 @@ namespace GameView
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameBoard = new System.Windows.Forms.Panel();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,16 +182,29 @@ namespace GameView
             this.aProposToolStripMenuItem.Text = "A propos";
             this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
             // 
+            // gameBoard
+            // 
+            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gameBoard.Location = new System.Drawing.Point(12, 39);
+            this.gameBoard.Name = "gameBoard";
+            this.gameBoard.Size = new System.Drawing.Size(960, 513);
+            this.gameBoard.TabIndex = 1;
+            this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(984, 564);
+            this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
             this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
@@ -203,25 +218,10 @@ namespace GameView
         Paddle paddle = CurrentGame.getInstance().GameModel.getGamer(1).Paddle;
         PictureBox picBoxPaddle = new PictureBox();
 
-        private void MainForm_Paint(object sender, PaintEventArgs e)
-        {
-            ball.ClientSize = this.Size;
-            picBoxBall.Size = ball.BallRepresentation.Size;
-            picBoxBall.Location = ball.Position;
-            picBoxBall.BackColor = Color.Green;
-            this.Controls.Add(picBoxBall);
-
-            paddle.ClientSize = this.Size;
-            picBoxPaddle.Size = paddle.PaddleRepresentation.Size;
-            picBoxPaddle.Location = paddle.Position;
-            picBoxPaddle.BackColor = Color.Red;
-            this.Controls.Add(picBoxPaddle);
-        }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             ball.nextPosition();
-            this.Refresh();
+            this.gameBoard.Refresh();
         }
 
         private void nouvellePartieToolStripMenuItem_Click(object sender, EventArgs e)
@@ -272,6 +272,21 @@ namespace GameView
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
             CurrentGame.getInstance().keyEvent(sender,e);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            ball.ClientSize = this.gameBoard.Size;
+            picBoxBall.Size = ball.BallRepresentation.Size;
+            picBoxBall.Location = ball.Position;
+            picBoxBall.BackColor = Color.Green;
+            this.gameBoard.Controls.Add(picBoxBall);
+
+            paddle.ClientSize = this.gameBoard.Size;
+            picBoxPaddle.Size = paddle.PaddleRepresentation.Size;
+            picBoxPaddle.Location = paddle.Position;
+            picBoxPaddle.BackColor = Color.Red;
+            this.gameBoard.Controls.Add(picBoxPaddle);
         }
 
 
