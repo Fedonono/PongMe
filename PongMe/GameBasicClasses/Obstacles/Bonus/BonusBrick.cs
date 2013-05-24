@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GameBasicClasses.Obstacles;
 
-namespace GameBasicClasses
+namespace GameBasicClasses.Obstacles
 {
-    public class BonusBrick : GameBasicClasses.Obstacles.Brick
+    public class BonusBrick : Brick
     {
         public BonusBrick()
         {

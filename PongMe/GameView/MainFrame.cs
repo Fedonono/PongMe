@@ -213,7 +213,7 @@ namespace GameView
 
             paddle.ClientWidth = this.Width;
             paddle.ClientHeight = this.Height;
-            picBoxPaddle.Size = paddle.PaddleRepresentation.Size;
+            picBoxPaddle.Size = paddle.Dimensions;
             picBoxPaddle.Location = paddle.Position;
             picBoxPaddle.BackColor = Color.Red;
             this.Controls.Add(picBoxPaddle);

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GameBasicClasses.MVC;
@@ -32,7 +31,7 @@ namespace GameBasicClasses.Obstacles
 
         public override bool contains(Ball b)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public void touched()

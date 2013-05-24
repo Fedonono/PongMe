@@ -10,17 +10,10 @@ namespace GameBasicClasses.Obstacles
 {
     public class Paddle : Obstacle
     {
-        private Rectangle paddleRepresentation;
-        public Rectangle PaddleRepresentation
-        {
-            get { return paddleRepresentation; }
-        }
+        private ObstacleView view;
 
-        public Point Position
-        {
-            get { return this.paddleRepresentation.Location; }
-            set { this.paddleRepresentation.Location = value; }
-        }
+        public Point Position { get {return this.view.Position;} }
+        public Size Dimensions { get {return this.view.Dimensions; } } 
 
         private int speed;
         public int Speed
@@ -46,7 +39,7 @@ namespace GameBasicClasses.Obstacles
 
         public Paddle(int x, int y, int width, int height, int speed, int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
         {
-            this.paddleRepresentation = new Rectangle(x, y, width, height);
+            this.view = new RectanglePaddle(x, y, width, height);
             this.Speed = speed;
         }
 
@@ -55,7 +48,7 @@ namespace GameBasicClasses.Obstacles
             List<Point> bounds = b.getBounds();
             foreach (Point p in bounds)
             {
-                if (this.paddleRepresentation.Contains(p))
+                if (this.view.Contains(p))
                 {
                     return true;
                 }
@@ -65,17 +58,17 @@ namespace GameBasicClasses.Obstacles
 
         public void down()
         {
-            if (this.Position.Y + this.PaddleRepresentation.Height + this.speed <= this.ClientHeight)
+            if (this.view.Position.Y + this.view.Dimensions.Height + this.speed <= this.ClientHeight)
             {
-                this.Position = new Point(this.Position.X, this.Position.Y + this.speed);
+                this.view.Position = new Point(this.view.Position.X, this.view.Position.Y + this.speed);
             }
         }
 
         public void up()
         {
-            if (this.Position.Y - this.speed >= 0)
+            if (this.view.Position.Y - this.speed >= 0)
             {
-                this.Position = new Point(this.Position.X, this.Position.Y - this.speed);
+                this.view.Position = new Point(this.view.Position.X, this.view.Position.Y - this.speed);
             }
         }
     }
