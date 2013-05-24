@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using GameBasicClasses.Obstacles;
 using GameBasicClasses.BasicClasses;
+using GameBasicClasses.Obstacles.Paddle;
 
 namespace GameView
 {

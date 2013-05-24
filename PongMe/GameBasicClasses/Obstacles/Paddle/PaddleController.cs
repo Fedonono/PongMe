@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-
 using GameBasicClasses.MVC;
 
-namespace GameBasicClasses.BasicClasses
+namespace GameBasicClasses.Obstacles.Paddle
 {
     public class PaddleController : Controller
     {

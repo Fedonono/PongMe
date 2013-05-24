@@ -3,8 +3,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GameBasicClasses.Obstacles;
+using GameBasicClasses.Obstacles.Paddle;
 
-namespace GameBasicClasses.BasicClasses
+namespace GameBasicClasses.Gamer
 {
     public abstract class Gamer
     {

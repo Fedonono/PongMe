@@ -6,7 +6,7 @@ using GameBasicClasses.MVC;
 
 namespace GameBasicClasses
 {
-    public class Options:Model
+    public class Options : Model
     {
         public Options()
         {

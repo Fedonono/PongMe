@@ -2,7 +2,8 @@
 using System.Linq;
 using System.Text;
 
-namespace GameBasicClasses.Obstacles
+
+namespace GameBasicClasses.Obstacles.Bonus
 {
     public class ReverseCommandsBonus : Bonus
     {
@@ -10,7 +11,5 @@ namespace GameBasicClasses.Obstacles
         {
             throw new System.NotImplementedException();
         }
-
-       
     }
 }

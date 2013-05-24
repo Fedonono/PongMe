@@ -4,7 +4,7 @@ using System.Text;
 using GameBasicClasses.MVC;
 using GameBasicClasses.BasicClasses;
 
-namespace GameBasicClasses.Obstacles
+namespace GameBasicClasses.Obstacles.Bonus
 {
     public class Bonus : Obstacle
     {

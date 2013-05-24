@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace GameBasicClasses
+namespace GameBasicClasses.Obstacles.Paddle
 {
     public class PaddleConfig
     {

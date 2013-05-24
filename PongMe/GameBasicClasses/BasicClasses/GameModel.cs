@@ -5,22 +5,24 @@ using System.Text;
 using GameBasicClasses.MVC;
 using GameBasicClasses.Obstacles;
 using System.Windows.Forms;
+using GameBasicClasses.Gamer;
+using GameBasicClasses.Obstacles.Bonus;
 
 namespace GameBasicClasses.BasicClasses
 {
     public class GameModel : Model
     {
         private List<Ball> listeBall;
-        private List<Brick> listeBonus;
+        private List<Bonus> listeBonus;
         private List<Wall> listeWall;
-        private List<Gamer> listeGamer;
+        private List<GameBasicClasses.Gamer.Gamer> listeGamer;
 
         public GameModel()
         {
             this.listeBall = new List<Ball>();
-            this.listeBonus = new List<Brick>();
+            this.listeBonus = new List<Bonus>();
             this.listeWall = new List<Wall>();
-            this.listeGamer = new List<Gamer>();
+            this.listeGamer = new List<GameBasicClasses.Gamer.Gamer>();
         }
 
         public void addBall(Ball b)
@@ -28,7 +30,7 @@ namespace GameBasicClasses.BasicClasses
             this.listeBall.Add(b);
         }
 
-        public void addBonus(Brick b)
+        public void addBonus(Bonus b)
         {
             this.listeBonus.Add(b);
         }
@@ -38,7 +40,7 @@ namespace GameBasicClasses.BasicClasses
             this.listeWall.Add(w);
         }
 
-        public void addGamer(Gamer g)
+        public void addGamer(GameBasicClasses.Gamer.Gamer g)
         {
             if (this.listeGamer.Count < 4)
             {
@@ -48,7 +50,7 @@ namespace GameBasicClasses.BasicClasses
 
         public void keyEvent(object sender, KeyEventArgs e)
         {
-            foreach (Gamer g in this.listeGamer)
+            foreach (GameBasicClasses.Gamer.Gamer g in this.listeGamer)
             {
                 if (g is Human)
                 {
@@ -57,7 +59,7 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public Gamer getGamer(int i)
+        public GameBasicClasses.Gamer.Gamer getGamer(int i)
         {
             if (this.listeGamer.Count - 1 > i)
             {
