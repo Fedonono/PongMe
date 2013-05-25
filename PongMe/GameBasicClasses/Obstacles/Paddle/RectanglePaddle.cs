@@ -31,6 +31,7 @@ namespace GameBasicClasses.Obstacles
         */
         public Size Dimensions {
             get { return this.view.Size;}
+            set { this.view.Size = value; }
         }
     }
 }

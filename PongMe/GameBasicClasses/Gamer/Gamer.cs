@@ -37,10 +37,17 @@ namespace GameBasicClasses.Gamer
         protected Paddle paddle;
         public Paddle Paddle { get { return this.paddle; } }
 
-        public Gamer(Keys up, Keys down, Paddle paddle)
+        public bool Left { get; set; }
+
+        public Gamer(bool left, Keys up, Keys down, Paddle paddle)
         {
+            this.Left = left;
             this.up = up;
             this.down = down;
+            if (paddle.Left != left)
+            {
+                paddle.Left = left;
+            }
             this.paddle = paddle;
             this.points = 0;
         }

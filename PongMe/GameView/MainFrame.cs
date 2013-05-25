@@ -7,6 +7,7 @@ using System.Drawing;
 using GameBasicClasses.Obstacles;
 using GameBasicClasses.BasicClasses;
 using GameBasicClasses.Obstacles.Paddle;
+using GameBasicClasses.Gamer;
 
 namespace GameView
 {
@@ -28,6 +29,9 @@ namespace GameView
         private ToolStripMenuItem joueursToolStripMenuItem2;
         private Panel gameBoard;
         private Timer timer = new Timer();
+        private Label leftPointsLabel;
+        private Label rightPointsLabel;
+        private CurrentGame currentGame = CurrentGame.getInstance();
 
         public MainForm()
         {
@@ -55,7 +59,10 @@ namespace GameView
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameBoard = new System.Windows.Forms.Panel();
+            this.leftPointsLabel = new System.Windows.Forms.Label();
+            this.rightPointsLabel = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
+            this.gameBoard.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -184,16 +191,38 @@ namespace GameView
             // 
             // gameBoard
             // 
-            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gameBoard.Controls.Add(this.rightPointsLabel);
+            this.gameBoard.Controls.Add(this.leftPointsLabel);
             this.gameBoard.Location = new System.Drawing.Point(12, 39);
             this.gameBoard.Name = "gameBoard";
             this.gameBoard.Size = new System.Drawing.Size(960, 513);
             this.gameBoard.TabIndex = 1;
             this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // leftPointsLabel
+            // 
+            this.leftPointsLabel.AutoSize = true;
+            this.leftPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leftPointsLabel.Location = new System.Drawing.Point(141, 57);
+            this.leftPointsLabel.Name = "leftPointsLabel";
+            this.leftPointsLabel.Size = new System.Drawing.Size(30, 31);
+            this.leftPointsLabel.TabIndex = 0;
+            this.leftPointsLabel.Text = "0";
+            // 
+            // rightPointsLabel
+            // 
+            this.rightPointsLabel.AutoSize = true;
+            this.rightPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rightPointsLabel.Location = new System.Drawing.Point(725, 57);
+            this.rightPointsLabel.Name = "rightPointsLabel";
+            this.rightPointsLabel.Size = new System.Drawing.Size(30, 31);
+            this.rightPointsLabel.TabIndex = 1;
+            this.rightPointsLabel.Text = "0";
             // 
             // MainForm
             // 
@@ -208,19 +237,34 @@ namespace GameView
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
+            this.gameBoard.ResumeLayout(false);
+            this.gameBoard.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        Ball ball = new Ball(5, 50, 1000, 600);
-        PictureBox picBoxBall = new PictureBox();
-        Paddle paddle = CurrentGame.getInstance().GameModel.getGamer(0).Paddle;
-        PictureBox picBoxPaddle = new PictureBox();
-
         private void Timer_Tick(object sender, EventArgs e)
         {
-            ball.nextPosition();
+            foreach (Ball ball in this.currentGame.GameModel.ListeBall)
+            {
+                ball.nextPosition();
+                if (ball.isOutRight && ball.isMoving)
+                {
+                    ball.isMoving = false;
+                    this.currentGame.addPoint(false);
+                }
+                else if(ball.isOutLeft && ball.isMoving)
+                {
+                    ball.isMoving = false;
+                    this.currentGame.addPoint(true);
+                }
+            }
+            
+            if (this.currentGame.isGameOver())
+            {
+                this.currentGame.stopGame();
+            }
             this.gameBoard.Refresh();
         }
 
@@ -271,24 +315,26 @@ namespace GameView
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            CurrentGame.getInstance().keyEvent(sender,e);
+            this.currentGame.keyEvent(sender,e);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            ball.ClientSize = this.gameBoard.Size;
-            picBoxBall.Size = ball.BallRepresentation.Size;
-            picBoxBall.Location = ball.Position;
-            picBoxBall.BackColor = Color.Green;
-            this.gameBoard.Controls.Add(picBoxBall);
-
-            paddle.ClientSize = this.gameBoard.Size;
-            picBoxPaddle.Size = paddle.Dimensions;
-            picBoxPaddle.Location = paddle.Position;
-            picBoxPaddle.BackColor = Color.Red;
-            this.gameBoard.Controls.Add(picBoxPaddle);
+            List<Ball> listeBall = this.currentGame.GameModel.ListeBall;
+            foreach (Ball ball in listeBall)
+            {
+                ball.ClientSize = this.gameBoard.Size;
+                this.gameBoard.Controls.Add(ball.BallBox);
+            }
+            List<Gamer> listeGamer = this.currentGame.GameModel.ListeGamer;
+            foreach (Gamer gamer in listeGamer)
+            {
+                gamer.Paddle.ClientSize = this.gameBoard.Size;
+                this.gameBoard.Controls.Add(gamer.Paddle.PaddleBox);
+            }
+            this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
+            this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();
         }
-
 
     }
 }

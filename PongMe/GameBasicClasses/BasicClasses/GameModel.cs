@@ -13,15 +13,22 @@ namespace GameBasicClasses.BasicClasses
     public class GameModel : Model
     {
         private List<Ball> listeBall;
+        public List<Ball> ListeBall { get { return this.listeBall; } }
         private List<Bonus> listeBonus;
+        public List<Bonus> ListeBonus { get { return this.listeBonus; } }
         private List<Wall> listeWall;
+        public List<Wall> ListeWall { get { return this.listeWall; } }
+        private List<Brick> listeBrick;
+        public List<Brick> ListeBrick { get { return this.listeBrick; } }
         private List<GameBasicClasses.Gamer.Gamer> listeGamer;
+        public List<GameBasicClasses.Gamer.Gamer> ListeGamer { get { return this.listeGamer; } }
 
         public GameModel()
         {
             this.listeBall = new List<Ball>();
             this.listeBonus = new List<Bonus>();
             this.listeWall = new List<Wall>();
+            this.listeBrick = new List<Brick>();
             this.listeGamer = new List<GameBasicClasses.Gamer.Gamer>();
         }
 
@@ -40,6 +47,11 @@ namespace GameBasicClasses.BasicClasses
             this.listeWall.Add(w);
         }
 
+        public void addBrick(Brick b)
+        {
+            this.listeBrick.Add(b);
+        }
+
         public void addGamer(GameBasicClasses.Gamer.Gamer g)
         {
             if (this.listeGamer.Count < 4)
@@ -48,8 +60,22 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public void keyEvent(object sender, KeyEventArgs e)
+        public void keyEvent(object sender, KeyEventArgs e, bool stop)
         {
+            if (e.KeyCode == Keys.Space)
+            {
+                foreach (Ball ball in this.ListeBall)
+                {
+                    if (stop)
+                    {
+                        ball.isMoving = false;
+                    }
+                    else
+                    {
+                        ball.isMoving = true;
+                    }
+                }
+            }
             foreach (GameBasicClasses.Gamer.Gamer g in this.listeGamer)
             {
                 if (g is Human)
@@ -57,15 +83,7 @@ namespace GameBasicClasses.BasicClasses
                     g.run(sender, e);
                 }
             }
-        }
-
-        public GameBasicClasses.Gamer.Gamer getGamer(int i)
-        {
-            if (this.listeGamer.Count - 1 >= i)
-            {
-                return this.listeGamer.ElementAt(i);
-            }
-            return null;
+            
         }
     }
 }

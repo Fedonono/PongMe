@@ -9,6 +9,6 @@ namespace GameBasicClasses.Obstacles
     {
         bool Contains(Point p);
         Point Position { get; set; }
-        Size Dimensions { get; } //set visible utile ?
+        Size Dimensions { get; set; }
     }
 }
