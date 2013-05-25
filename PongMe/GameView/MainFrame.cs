@@ -59,8 +59,8 @@ namespace GameView
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameBoard = new System.Windows.Forms.Panel();
-            this.leftPointsLabel = new System.Windows.Forms.Label();
             this.rightPointsLabel = new System.Windows.Forms.Label();
+            this.leftPointsLabel = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
             this.SuspendLayout();
@@ -204,25 +204,26 @@ namespace GameView
             this.gameBoard.TabIndex = 1;
             this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // leftPointsLabel
-            // 
-            this.leftPointsLabel.AutoSize = true;
-            this.leftPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.leftPointsLabel.Location = new System.Drawing.Point(141, 57);
-            this.leftPointsLabel.Name = "leftPointsLabel";
-            this.leftPointsLabel.Size = new System.Drawing.Size(30, 31);
-            this.leftPointsLabel.TabIndex = 0;
-            this.leftPointsLabel.Text = "0";
-            // 
             // rightPointsLabel
             // 
+            this.rightPointsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rightPointsLabel.AutoSize = true;
             this.rightPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rightPointsLabel.Location = new System.Drawing.Point(725, 57);
+            this.rightPointsLabel.Location = new System.Drawing.Point(790, 57);
             this.rightPointsLabel.Name = "rightPointsLabel";
             this.rightPointsLabel.Size = new System.Drawing.Size(30, 31);
             this.rightPointsLabel.TabIndex = 1;
             this.rightPointsLabel.Text = "0";
+            // 
+            // leftPointsLabel
+            // 
+            this.leftPointsLabel.AutoSize = true;
+            this.leftPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leftPointsLabel.Location = new System.Drawing.Point(140, 57);
+            this.leftPointsLabel.Name = "leftPointsLabel";
+            this.leftPointsLabel.Size = new System.Drawing.Size(30, 31);
+            this.leftPointsLabel.TabIndex = 0;
+            this.leftPointsLabel.Text = "0";
             // 
             // MainForm
             // 
@@ -242,30 +243,6 @@ namespace GameView
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            foreach (Ball ball in this.currentGame.GameModel.ListeBall)
-            {
-                ball.nextPosition();
-                if (ball.isOutRight && ball.isMoving)
-                {
-                    ball.isMoving = false;
-                    this.currentGame.addPoint(false);
-                }
-                else if(ball.isOutLeft && ball.isMoving)
-                {
-                    ball.isMoving = false;
-                    this.currentGame.addPoint(true);
-                }
-            }
-            
-            if (this.currentGame.isGameOver())
-            {
-                this.currentGame.stopGame();
-            }
-            this.gameBoard.Refresh();
         }
 
         private void nouvellePartieToolStripMenuItem_Click(object sender, EventArgs e)
@@ -336,5 +313,29 @@ namespace GameView
             this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();
         }
 
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            foreach (Ball ball in this.currentGame.GameModel.ListeBall)
+            {
+                ball.nextPosition();
+                if (ball.isOutRight && ball.isMoving)
+                {
+                    ball.isMoving = false;
+                    this.currentGame.addPoint(false);
+                }
+                else if (ball.isOutLeft && ball.isMoving)
+                {
+                    ball.isMoving = false;
+                    this.currentGame.addPoint(true);
+                }
+            }
+
+            if (this.currentGame.isGameOver())
+            {
+                this.currentGame.stopGame();
+            }
+            this.gameBoard.Refresh();
+        }
     }
 }

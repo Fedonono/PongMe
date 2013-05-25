@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using GameBasicClasses.Obstacles.Paddle;
+using System.Windows;
 
 namespace GameBasicClasses.BasicClasses
 {
@@ -149,11 +151,19 @@ namespace GameBasicClasses.BasicClasses
         public void nextPosition()//très incomplet
         {
             if (!this.isMoving) { return; }
+            this.checkBoardCollision();
+            CurrentGame cg = CurrentGame.getInstance();
+            this.checkObstaclesCollision(cg.GameModel.listePaddle());
+            this.move();
+        }
+
+        private void checkBoardCollision()
+        {
             if (this.clientWidth < this.ballRepresentation.X)
             {
                 this.isOutRight = true;
             }
-            if (this.clientHeight <= this.ballRepresentation.Y + this.diameter)
+            else if (this.clientHeight <= this.ballRepresentation.Y + this.diameter)
             {
                 this.backY = true;
             }
@@ -161,11 +171,26 @@ namespace GameBasicClasses.BasicClasses
             {
                 this.isOutLeft = true;
             }
-            if (this.ballRepresentation.Y <= 0)
+             else if (this.ballRepresentation.Y <= 0)
             {
                 this.backY = false;
             }
+        }
 
+        private void checkObstaclesCollision(List<Paddle> ob)
+        {
+            foreach (Paddle obstacle in ob)
+            {
+                if (obstacle.contains(this))
+                {
+                    if (this.backX) { this.backX = false; } else { this.backX = true; }
+                    //if (this.backY) { this.backY = false; } else { this.backY = true; }
+                }
+            }
+        }
+
+        private void move()
+        {
             if (this.backX)
             {
                 this.ballRepresentation.X -= this.speed;
@@ -201,8 +226,8 @@ namespace GameBasicClasses.BasicClasses
             tempTeta = 0;
             for (int i = 0; i < nbOfPoints; i++)
             {
-                x = (this.diameter+1) * Math.Cos(tempTeta) + this.Position.X;
-                y = (this.diameter+1) * Math.Sin(tempTeta) + this.Position.Y;
+                x = (this.Diameter/2) * Math.Cos(tempTeta) + this.Position.X + this.Diameter/2;
+                y = (this.Diameter/2) * Math.Sin(tempTeta) + this.Position.Y + this.Diameter/2;
                 bounds.Add(new Point((int)x, (int)y));
                 tempTeta += teta;
             }

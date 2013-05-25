@@ -7,6 +7,7 @@ using GameBasicClasses.Obstacles;
 using System.Windows.Forms;
 using GameBasicClasses.Gamer;
 using GameBasicClasses.Obstacles.Bonus;
+using GameBasicClasses.Obstacles.Paddle;
 
 namespace GameBasicClasses.BasicClasses
 {
@@ -83,7 +84,16 @@ namespace GameBasicClasses.BasicClasses
                     g.run(sender, e);
                 }
             }
-            
+        }
+
+        public List<Paddle> listePaddle()
+        {
+            List<Paddle> liste = new List<Paddle>();
+            foreach (GameBasicClasses.Gamer.Gamer g in this.ListeGamer)
+            {
+                liste.Add(g.Paddle);
+            }
+            return liste;
         }
     }
 }
