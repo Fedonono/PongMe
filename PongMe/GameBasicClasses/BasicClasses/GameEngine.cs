@@ -23,7 +23,7 @@ namespace GameBasicClasses.BasicClasses
         {
             foreach (Ball ball in this.Model.ListeBall)
             {
-                ball.resetPosition();
+                ball.Initialize();
             }
         }
 
@@ -31,7 +31,7 @@ namespace GameBasicClasses.BasicClasses
         {
             foreach (Ball ball in this.Model.ListeBall)
             {
-                ball.resetPosition();
+                ball.Initialize();
             }
         }
 

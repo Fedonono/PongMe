@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicClasses\Vector.cs" />
     <Compile Include="Obstacles\Bonus\BallTrajectoryBonus.cs" />
     <Compile Include="Gamer\AI.cs" />
     <Compile Include="BasicClasses\Ball.cs" />

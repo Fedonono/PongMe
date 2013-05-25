@@ -11,8 +11,9 @@ namespace GameBasicClasses.BasicClasses
 {
     public class Ball
     {
-        private int speed;
-        public int Speed
+        private float speed;
+        private float initialSpeed;
+        public float Speed
         {
             get { return this.speed; }
             set
@@ -27,9 +28,10 @@ namespace GameBasicClasses.BasicClasses
                 }
             }
         }
-        private readonly static int MAX_SPEED = 100;
+        private readonly static int MAX_SPEED = 10;
 
         private int diameter;
+        private int initialDiameter;
         public int Diameter
         {
             get { return this.diameter; }
@@ -47,25 +49,25 @@ namespace GameBasicClasses.BasicClasses
         }
         private readonly static int MAX_DIAMETER = 100;
 
-        private bool backX, backY;
-
         private Rectangle ballRepresentation;
         public Rectangle BallRepresentation
         {
             get { return ballRepresentation; }
         }
 
-        public Point Position
+        public Vector Position
         {
-            get { return new Point(this.ballRepresentation.X, this.ballRepresentation.Y); }
+            get { return new Vector(this.ballRepresentation.X, this.ballRepresentation.Y); }
+            private set { this.ballRepresentation.X = (int) value.X; this.ballRepresentation.Y = (int) value.Y; }
         }
+        public Vector Direction { get; set; }
 
         private PictureBox ballBox = new PictureBox();
         public PictureBox BallBox
         {
             get {
                 ballBox.Size = this.BallRepresentation.Size;
-                ballBox.Location = this.Position;
+                ballBox.Location = new Point((int) this.Position.X, (int) this.Position.Y);
                 ballBox.BackColor = this.Color;
                 return ballBox; 
             }
@@ -73,6 +75,7 @@ namespace GameBasicClasses.BasicClasses
         }
 
         public Color Color { get; set; }
+        private Color initialColor;
 
         private int clientWidth;
         public int ClientWidth
@@ -134,15 +137,27 @@ namespace GameBasicClasses.BasicClasses
         public bool isOutLeft { get; set; }
         public bool isOutRight { get; set; }
         
-        public Ball(int speed, int diameter, Color color, int clientWidth, int clientHeight)
+        public Ball(float speed, int diameter, Color color, int clientWidth, int clientHeight)
         {
             this.Speed = speed;
+            this.initialSpeed = this.Speed;
             this.Diameter = diameter;
+            this.initialDiameter = this.Diameter;
             this.Color = color;
+            this.initialColor = this.Color;
             this.ClientWidth = clientWidth;
             this.ClientHeight = clientHeight;
-            this.ballRepresentation = new Rectangle(this.ClientWidth/2 - this.Diameter/2, this.ClientHeight/2 - this.Diameter/2, this.diameter, this.diameter);
-            this.backX = this.backY = false;
+            this.Initialize();
+        }
+
+        public void Initialize()
+        {
+            this.Speed = this.initialSpeed;
+            this.Diameter = this.initialDiameter;
+            this.Color = this.initialColor;
+            this.Direction = new Vector(10, 10);
+            this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
+            this.ballRepresentation = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
             this.isMoving = false;
             this.isOutLeft = false;
             this.isOutRight = false;
@@ -152,28 +167,29 @@ namespace GameBasicClasses.BasicClasses
         {
             if (!this.isMoving) { return; }
             this.checkBoardCollision();
+            this.checkOut();
             CurrentGame cg = CurrentGame.getInstance();
             this.checkObstaclesCollision(cg.GameModel.listePaddle());
             this.move();
         }
 
-        private void checkBoardCollision()
+        private void checkOut()
         {
-            if (this.clientWidth < this.ballRepresentation.X)
+            if (this.clientWidth < this.Position.X)
             {
                 this.isOutRight = true;
-            }
-            else if (this.clientHeight <= this.ballRepresentation.Y + this.diameter)
-            {
-                this.backY = true;
-            }
-            if (this.ballRepresentation.X + this.Diameter < 0)
+            } else if (this.Position.X + this.Diameter < 0)
             {
                 this.isOutLeft = true;
             }
-             else if (this.ballRepresentation.Y <= 0)
+        }
+
+        private void checkBoardCollision()
+        {
+            if ((this.Position.Y <= 0 && this.Direction.Y < 0)
+                || (this.Position.Y >= this.ClientHeight - this.Diameter && this.Direction.Y > 0))
             {
-                this.backY = false;
+                Direction = new Vector(Direction.X, -Direction.Y);
             }
         }
 
@@ -183,38 +199,16 @@ namespace GameBasicClasses.BasicClasses
             {
                 if (obstacle.contains(this))
                 {
-                    if (this.backX) { this.backX = false; } else { this.backX = true; }
-                    //if (this.backY) { this.backY = false; } else { this.backY = true; }
+                    this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
+                    this.Speed += 0.05f;
+                    this.Direction.Y++;
                 }
             }
         }
 
         private void move()
         {
-            if (this.backX)
-            {
-                this.ballRepresentation.X -= this.speed;
-            }
-            else
-            {
-                this.ballRepresentation.X += this.speed;
-            }
-            if (this.backY)
-            {
-                this.ballRepresentation.Y -= this.speed;
-            }
-            else
-            {
-                this.ballRepresentation.Y += this.speed;
-            }
-        }
-
-        public void resetPosition()
-        {
-            this.ballRepresentation.Location = new Point(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter/2);
-            this.isOutLeft = false;
-            this.isOutRight = false;
-            this.isMoving = false;
+            this.Position += this.Direction * this.Speed;
         }
 
         public List<Point> getBounds()

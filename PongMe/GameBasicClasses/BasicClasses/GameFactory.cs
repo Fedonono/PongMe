@@ -15,8 +15,8 @@ namespace GameBasicClasses.BasicClasses
         public static GameModel defaultGame()
         {
             GameModel gm = new GameModel();
-            gm.addBall(new Ball(5, 50, Color.Green, 1000, 600));
-            gm.addBall(new Ball(10, 50, Color.Red, 1000, 600));
+            gm.addBall(new Ball(0.5f, 50, Color.Green, 1000, 600));
+            gm.addBall(new Ball(0.2f, 50, Color.Red, 1000, 600));
             Paddle p = new Paddle(true, Color.Gold, 20, 100, 30, 1000, 600);
             Paddle p2 = new Paddle(false, Color.Red, 20, 100, 30, 1000, 600);
             gm.addGamer(new Human(true, Keys.Up, Keys.Down, p));
