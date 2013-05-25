@@ -42,10 +42,14 @@ namespace GameBasicClasses.Obstacles.Paddle
         
         public Color Color { get; set; }
 
+        public Image Image { get; set; }
+        private Image initialImage;
         private PictureBox paddleBox = new PictureBox();
         public PictureBox PaddleBox
         {
             get {
+                paddleBox.Image = this.Image;
+                paddleBox.SizeMode = PictureBoxSizeMode.Zoom;
                 paddleBox.Size = this.Dimensions;
                 paddleBox.Location = this.Position;
                 paddleBox.BackColor = this.Color;
@@ -74,11 +78,12 @@ namespace GameBasicClasses.Obstacles.Paddle
         }
         private readonly static int MAX_SPEED = 100;
 
-        public Paddle() : this(true, Color.Red, 50, 200, 3, 1000, 600)
+        public Paddle() : this(true, Color.Red, GameBasicClasses.Properties.Resources.Raquette, 50, 200, 3, 1000, 600)
         {
         }
 
-        public Paddle(bool left, Color color, int width, int height, int speed, int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
+        public Paddle(bool left, Color color, Image image, int width, int height, int speed, int clientWidth, int clientHeight)
+            : base(clientWidth, clientHeight)
         {
             if (width <= 0 || width >= this.ClientWidth)
             {
@@ -100,6 +105,8 @@ namespace GameBasicClasses.Obstacles.Paddle
             this.view = new RectanglePaddle(paddlePosition.X, paddlePosition.Y, width, height);
             this.Speed = speed;
             this.Color = color;
+            this.Image = image;
+            this.initialImage = this.Image;
             this.Left = left;
         }
 

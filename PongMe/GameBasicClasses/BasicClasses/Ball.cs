@@ -62,10 +62,14 @@ namespace GameBasicClasses.BasicClasses
         }
         public Vector Direction { get; set; }
 
+        public Image Image { get; set; }
+        private Image initialImage;
         private PictureBox ballBox = new PictureBox();
         public PictureBox BallBox
         {
             get {
+                ballBox.Image = this.Image;
+                ballBox.SizeMode = PictureBoxSizeMode.Zoom;
                 ballBox.Size = this.BallRepresentation.Size;
                 ballBox.Location = new Point((int) this.Position.X, (int) this.Position.Y);
                 ballBox.BackColor = this.Color;
@@ -137,7 +141,7 @@ namespace GameBasicClasses.BasicClasses
         public bool isOutLeft { get; set; }
         public bool isOutRight { get; set; }
         
-        public Ball(float speed, int diameter, Color color, int clientWidth, int clientHeight)
+        public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
             this.Speed = speed;
             this.initialSpeed = this.Speed;
@@ -145,6 +149,8 @@ namespace GameBasicClasses.BasicClasses
             this.initialDiameter = this.Diameter;
             this.Color = color;
             this.initialColor = this.Color;
+            this.Image = image;
+            this.initialImage = this.Image;
             this.ClientWidth = clientWidth;
             this.ClientHeight = clientHeight;
             this.Initialize();
@@ -155,6 +161,7 @@ namespace GameBasicClasses.BasicClasses
             this.Speed = this.initialSpeed;
             this.Diameter = this.initialDiameter;
             this.Color = this.initialColor;
+            this.Image = this.initialImage;
             this.Direction = new Vector(10, 10);
             this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
             this.ballRepresentation = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
