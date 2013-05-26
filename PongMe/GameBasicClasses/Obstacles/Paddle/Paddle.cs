@@ -18,6 +18,7 @@ namespace GameBasicClasses.Obstacles.Paddle
             get { return this.view.Position; }
             set { this.view.Position = value; }
         }
+
         public Size Dimensions 
         { 
             get { return this.view.Dimensions; }

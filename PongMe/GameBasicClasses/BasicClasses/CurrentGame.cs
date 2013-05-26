@@ -99,14 +99,13 @@ namespace GameBasicClasses.BasicClasses
             return false;
         }
 
-        public void keyEvent(object sender, KeyEventArgs e)
+        public void keyEvent(Keys e)
         {
-            if (this.stopped && e.KeyCode == Keys.Space)
+            if (this.stopped && e == Keys.Space)
             {
                 this.stopped = false;
             }
-            this.gameModel.keyEvent(sender, e, this.stopped);
+            this.gameModel.keyEvent(e, this.stopped);
         }
-
     }
 }

@@ -32,6 +32,7 @@ namespace GameView
         private Label leftPointsLabel;
         private Label rightPointsLabel;
         private CurrentGame currentGame = CurrentGame.getInstance();
+        private List<Keys> keysPressed = new List<Keys>();
 
         public MainForm()
         {
@@ -191,9 +192,9 @@ namespace GameView
             // 
             // gameBoard
             // 
-            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gameBoard.Controls.Add(this.rightPointsLabel);
@@ -236,6 +237,7 @@ namespace GameView
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.gameBoard.ResumeLayout(false);
@@ -292,7 +294,11 @@ namespace GameView
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            this.currentGame.keyEvent(sender,e);
+            if (keysPressed.Contains(e.KeyCode))
+            {
+                keysPressed.Remove(e.KeyCode);
+            }
+            keysPressed.Add(e.KeyCode);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -316,6 +322,11 @@ namespace GameView
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            foreach (Keys key in keysPressed)
+            {
+                this.currentGame.keyEvent(key);
+            }
+            
             foreach (Ball ball in this.currentGame.GameModel.ListeBall)
             {
                 ball.nextPosition();
@@ -336,6 +347,14 @@ namespace GameView
                 this.currentGame.stopGame();
             }
             this.gameBoard.Refresh();
+        }
+
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (keysPressed.Contains(e.KeyCode))
+            {
+                keysPressed.Remove(e.KeyCode);
+            }
         }
     }
 }

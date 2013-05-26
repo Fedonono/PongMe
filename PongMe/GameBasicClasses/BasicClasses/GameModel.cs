@@ -61,9 +61,9 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public void keyEvent(object sender, KeyEventArgs e, bool stop)
+        public void keyEvent(Keys e, bool stop)
         {
-            if (e.KeyCode == Keys.Space)
+            if (e == Keys.Space)
             {
                 foreach (Ball ball in this.ListeBall)
                 {
@@ -81,7 +81,7 @@ namespace GameBasicClasses.BasicClasses
             {
                 if (g is Human)
                 {
-                    g.run(sender, e);
+                    g.run(e);
                 }
             }
         }

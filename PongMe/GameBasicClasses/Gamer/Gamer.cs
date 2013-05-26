@@ -56,6 +56,6 @@ namespace GameBasicClasses.Gamer
         /// Contient le code faisant bouger la raquette.
         /// Un évnement est envoyé depuis la MainFrame
         /// </summary>
-        public abstract void run(object sender, KeyEventArgs e);
+        public abstract void run(Keys e);
     }
 }

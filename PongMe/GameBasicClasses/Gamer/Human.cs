@@ -16,17 +16,17 @@ namespace GameBasicClasses.Gamer
 
         }
 
-        public override void run(object sender, KeyEventArgs e)
+        public override void run(Keys e)
         {
-            if (e.KeyCode == this.up)
+            if (e == this.up)
             {
                 this.paddle.up();
             }
-            else if (e.KeyCode == this.down)
+            else if (e == this.down)
             {
                 this.paddle.down();
             }
-            else if (e.KeyCode == Keys.Escape)
+            else if (e == Keys.Escape)
             {
                 CurrentGame.getInstance().stopGame();
             }

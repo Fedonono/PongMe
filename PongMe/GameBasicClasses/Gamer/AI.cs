@@ -15,7 +15,7 @@ namespace GameBasicClasses.Gamer
 
         }
 
-        public override void run(object sender, System.Windows.Forms.KeyEventArgs e)
+        public override void run(Keys e)
         {
             throw new NotImplementedException();
         }
