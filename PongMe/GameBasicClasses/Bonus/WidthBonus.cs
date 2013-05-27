@@ -7,8 +7,8 @@ namespace GameBasicClasses.Obstacles.Bonus
 {
     public class WidthBonus : Bonus
     {
-        public WidthBonus(int clientWidth, int clientHeight, int timeout)
-            : base(clientWidth, clientHeight, timeout)
+        public WidthBonus(int timeout)
+            : base(timeout)
         {
             throw new System.NotImplementedException();
         }

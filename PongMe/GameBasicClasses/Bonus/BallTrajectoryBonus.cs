@@ -7,8 +7,8 @@ namespace GameBasicClasses.Obstacles.Bonus
 {
     public class BallTrajectoryBonus : Bonus
     {
-        public BallTrajectoryBonus(int clientWidth, int clientHeight, int timeout)
-            : base(clientWidth, clientHeight, timeout)
+        public BallTrajectoryBonus(int timeout)
+            : base(timeout)
         {
             throw new System.NotImplementedException();
         }
