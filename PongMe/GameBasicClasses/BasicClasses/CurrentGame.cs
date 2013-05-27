@@ -21,7 +21,7 @@ namespace GameBasicClasses.BasicClasses
         }
 
         private GameEngine gameEngine;
-        public GameEngine GameEngine { get { return this.gameEngine; } set { this.gameEngine = value;} }
+        public GameEngine GameEngine { get; set; }
 
         public bool stopped { get; set; }
 

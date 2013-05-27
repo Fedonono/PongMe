@@ -46,6 +46,7 @@ namespace GameBasicClasses.Obstacles.Paddle
         public Image Image { get; set; }
         private Image initialImage;
         private PictureBox paddleBox = new PictureBox();
+
         public PictureBox PaddleBox
         {
             get {

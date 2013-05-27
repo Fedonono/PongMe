@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using GameBasicClasses.Obstacles;
 using GameBasicClasses.Obstacles.Paddle;
+using GameBasicClasses.Options;
 
 namespace GameBasicClasses.Gamer
 {
@@ -13,10 +14,7 @@ namespace GameBasicClasses.Gamer
         /// Points du joueur durant une partie
         /// </summary>
         private int points;
-        public int Points
-        {
-            get { return points; }
-        }
+        public int Points { get; }
 
         public void resetPoints()
         {
@@ -28,11 +26,12 @@ namespace GameBasicClasses.Gamer
             this.points++;
         }
 
+
+        private GamerOptions options;
+
         /// <summary>
         /// Touches utilisées par le joueur
         /// </summary>
-        protected Keys up;
-        protected Keys down;
 
         protected Paddle paddle;
         public Paddle Paddle { get { return this.paddle; } }
@@ -42,8 +41,7 @@ namespace GameBasicClasses.Gamer
         public Gamer(bool left, Keys up, Keys down, Paddle paddle)
         {
             this.Left = left;
-            this.up = up;
-            this.down = down;
+            this.options = new GamerOptions(up, down);
             if (paddle.Left != left)
             {
                 paddle.Left = left;
