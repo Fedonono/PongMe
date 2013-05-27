@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicClasses\Vector.cs" />
-    <Compile Include="Obstacles\Bonus\BallTrajectoryBonus.cs" />
+    <Compile Include="Bonus\BallTrajectoryBonus.cs" />
     <Compile Include="Gamer\AI.cs" />
     <Compile Include="BasicClasses\Ball.cs" />
     <Compile Include="BasicClasses\CurrentGame.cs" />
@@ -52,10 +52,10 @@
     <Compile Include="BasicClasses\GameModel.cs" />
     <Compile Include="Gamer\Gamer.cs" />
     <Compile Include="Gamer\Human.cs" />
-    <Compile Include="Obstacles\Bonus\BonusBrick.cs" />
+    <Compile Include="Bonus\BonusBrick.cs" />
     <Compile Include="Obstacles\Brick.cs" />
     <Compile Include="BasicClasses\GameModelConfig.cs" />
-    <Compile Include="Obstacles\Bonus\Bonus.cs" />
+    <Compile Include="Bonus\Bonus.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />
     <Compile Include="Obstacles\ObstacleView.cs" />
     <Compile Include="Obstacles\Paddle\RectanglePaddle.cs" />
@@ -67,11 +67,10 @@
     <Compile Include="Obstacles\Wall.cs" />
     <Compile Include="Options\OptionController.cs" />
     <Compile Include="Options\Options.cs" />
-    <Compile Include="Gamer\HumanConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Obstacles\Bonus\ReverseCommandsBonus.cs" />
-    <Compile Include="Obstacles\Bonus\SpeedBonus.cs" />
-    <Compile Include="Obstacles\Bonus\WidthBonus.cs" />
+    <Compile Include="Bonus\ReverseCommandsBonus.cs" />
+    <Compile Include="Bonus\SpeedBonus.cs" />
+    <Compile Include="Bonus\WidthBonus.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
