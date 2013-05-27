@@ -17,8 +17,6 @@ namespace GameBasicClasses.BasicClasses
         public List<Ball> ListeBall { get { return this.listeBall; } }
         private List<Bonus> listeBonus;
         public List<Bonus> ListeBonus { get { return this.listeBonus; } }
-        private List<Wall> listeWall;
-        public List<Wall> ListeWall { get { return this.listeWall; } }
         private List<Brick> listeBrick;
         public List<Brick> ListeBrick { get { return this.listeBrick; } }
         private List<GameBasicClasses.Gamer.Gamer> listeGamer;
@@ -28,7 +26,6 @@ namespace GameBasicClasses.BasicClasses
         {
             this.listeBall = new List<Ball>();
             this.listeBonus = new List<Bonus>();
-            this.listeWall = new List<Wall>();
             this.listeBrick = new List<Brick>();
             this.listeGamer = new List<GameBasicClasses.Gamer.Gamer>();
         }
@@ -41,11 +38,6 @@ namespace GameBasicClasses.BasicClasses
         public void addBonus(Bonus b)
         {
             this.listeBonus.Add(b);
-        }
-
-        public void addWall(Wall w)
-        {
-            this.listeWall.Add(w);
         }
 
         public void addBrick(Brick b)

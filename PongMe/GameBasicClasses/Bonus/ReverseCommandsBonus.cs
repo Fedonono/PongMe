@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GameBasicClasses.MVC;
 
-namespace GameBasicClasses.Obstacles.Paddle
+
+namespace GameBasicClasses.Obstacles.Bonus
 {
-    public class PaddleController : Controller
+    public class ReverseCommandsBonus : Bonus
     {
-
-        public PaddleController()
+        public ReverseCommandsBonus(int timeout)
+            : base(timeout)
         {
             throw new System.NotImplementedException();
         }

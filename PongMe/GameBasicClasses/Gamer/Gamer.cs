@@ -4,10 +4,11 @@ using System.Text;
 using System.Windows.Forms;
 using GameBasicClasses.Obstacles;
 using GameBasicClasses.Obstacles.Paddle;
+using GameBasicClasses.MVC;
 
 namespace GameBasicClasses.Gamer
 {
-    public abstract class Gamer
+    public abstract class Gamer:Controller
     {
         /// <summary>
         /// Points du joueur durant une partie

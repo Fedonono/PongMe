@@ -27,5 +27,12 @@ namespace GameBasicClasses.BasicClasses
             }
         }
         private readonly static int MAX_SPEED = 10;
+
+        public Movable()
+        {
+            this.Direction = new Vector(1, 1);
+            this.Speed = 0.2f;
+            this.initialSpeed = this.Speed;
+        }
     }
 }

@@ -75,16 +75,22 @@ namespace GameBasicClasses.BasicClasses
         public Image Image { get; set; }
         protected Image initialImage;
 
-        private PictureBox box = new PictureBox();
+        private PictureBox box;
         public PictureBox Box
         {
             get
             {
-                box.Image = this.Image;
-                box.SizeMode = PictureBoxSizeMode.StretchImage;
+                if (this.Image != null)
+                {
+                    box.Image = this.Image;
+                    box.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    box.BackColor = this.Color;
+                }
                 box.Size = this.bounds.Size;
                 box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
-                box.BackColor = this.Color;
                 return box;
             }
             set { box = value; }
@@ -92,5 +98,17 @@ namespace GameBasicClasses.BasicClasses
 
         public Color Color { get; set; }
         protected Color initialColor;
+
+        public Drawable()
+        {
+            this.ClientSize = new Size(1000, 600);
+            this.bounds = new Rectangle();
+            this.Position = Vector.Zero();
+            this.Image = null;
+            this.initialImage = this.Image;
+            this.Box = new PictureBox();
+            this.Color = Color.Blue;
+            this.initialColor = this.Color;
+        }
     }
 }

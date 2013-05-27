@@ -23,8 +23,6 @@ namespace GameBasicClasses.Obstacles.Bonus
 
         public Bonus(int clientWidth, int clientHeight, int timeout)
         {
-            this.ClientHeight = clientHeight;
-            this.ClientWidth = clientWidth;
             this.Timeout = timeout;
         }
 

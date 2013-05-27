@@ -13,6 +13,9 @@ namespace GameBasicClasses.Obstacles.Paddle
     {
         public bool Left { get; set; }
 
+        /// <summary>
+        /// Lorsque la taille de la fenetre change, il faut déplacer la raquette de droite
+        /// </summary>
         public override Size ClientSize
         {
             get
