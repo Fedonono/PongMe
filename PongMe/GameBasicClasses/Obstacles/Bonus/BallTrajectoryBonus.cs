@@ -5,10 +5,10 @@ using System.Text;
 
 namespace GameBasicClasses.Obstacles.Bonus
 {
-    public class WidthBonus : Bonus
+    public class BallTrajectoryBonus : Bonus
     {
-        public WidthBonus(int timeout)
-            : base(timeout)
+        public BallTrajectoryBonus(int clientWidth, int clientHeight, int timeout)
+            : base(clientWidth, clientHeight, timeout)
         {
             throw new System.NotImplementedException();
         }

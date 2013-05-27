@@ -21,7 +21,7 @@ namespace GameBasicClasses.BasicClasses
         }
 
         private GameEngine gameEngine;
-        public GameEngine GameEngine { get { return this.gameEngine; } set { this.gameEngine = value;} }
+        public GameEngine GameEngine { get; set; }
 
         public bool stopped { get; set; }
 
@@ -63,7 +63,7 @@ namespace GameBasicClasses.BasicClasses
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.GameModel.ListeGamer)
             {
-                if (g.Left == left)
+                if (g.Paddle.Left == left)
                 {
                     g.incPoints();
                 }
@@ -74,7 +74,7 @@ namespace GameBasicClasses.BasicClasses
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.GameModel.ListeGamer)
             {
-                if (g.Left == left)
+                if (g.Paddle.Left == left)
                 {
                     return g.Points;
                 }

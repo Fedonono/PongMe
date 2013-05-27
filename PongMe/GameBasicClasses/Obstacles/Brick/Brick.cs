@@ -28,14 +28,11 @@ namespace GameBasicClasses.Obstacles
             }
         }
 
-        public Brick(int clientWidth, int clientHeight, int health) : base(clientWidth, clientHeight)
+        public Brick(int clientWidth, int clientHeight, int health)
         {
+            this.ClientHeight = clientHeight;
+            this.ClientWidth = clientWidth;
             this.Health = health;
-        }
-
-        public override bool contains(BasicClasses.Ball b)
-        {
-            throw new NotImplementedException();
         }
 
         public void touched()
