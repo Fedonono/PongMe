@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GameBasicClasses.MVC;
 
 namespace GameBasicClasses.Obstacles.Paddle
 {
-    public class PaddleController : Controller
+    public class HumanConfig
     {
-
-        public PaddleController()
+        public HumanConfig()
         {
             throw new System.NotImplementedException();
         }
