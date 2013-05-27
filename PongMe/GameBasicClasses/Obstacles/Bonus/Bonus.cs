@@ -6,7 +6,7 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles.Bonus
 {
-    public class Bonus : Obstacle
+    public class Bonus
     {
         private int timeout;
         public int Timeout
@@ -26,9 +26,5 @@ namespace GameBasicClasses.Obstacles.Bonus
             this.Timeout = timeout;
         }
 
-        public override bool contains(Ball b)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
