@@ -6,7 +6,7 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles.Bonus
 {
-    public class Bonus : Obstacle
+    public class Bonus
     {
         private int timeout;
         public int Timeout
@@ -21,10 +21,12 @@ namespace GameBasicClasses.Obstacles.Bonus
             }
         }
 
+<<<<<<< HEAD:PongMe/GameBasicClasses/Obstacles/Bonus/Bonus.cs
         public Bonus(int clientWidth, int clientHeight, int timeout)
+=======
+        public Bonus(int timeout)
+>>>>>>> 2055ac99529825fbadbf7a3f59aa54bd9484592a:PongMe/GameBasicClasses/Bonus/Bonus.cs
         {
-            this.ClientHeight = clientHeight;
-            this.ClientWidth = clientWidth;
             this.Timeout = timeout;
         }
 

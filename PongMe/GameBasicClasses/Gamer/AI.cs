@@ -10,7 +10,7 @@ namespace GameBasicClasses.Gamer
 {
     public class AI : Gamer
     {
-        public AI(bool left, Keys up, Keys down, Paddle paddle) : base(left, up, down, paddle)
+        public AI(Keys up, Keys down, Paddle paddle) : base(up, down, paddle)
         {
 
         }

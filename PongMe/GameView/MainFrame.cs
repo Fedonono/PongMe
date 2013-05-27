@@ -307,13 +307,13 @@ namespace GameView
             foreach (Ball ball in listeBall)
             {
                 ball.ClientSize = this.gameBoard.Size;
-                this.gameBoard.Controls.Add(ball.BallBox);
+                this.gameBoard.Controls.Add(ball.Box);
             }
             List<Gamer> listeGamer = this.currentGame.GameModel.ListeGamer;
             foreach (Gamer gamer in listeGamer)
             {
                 gamer.Paddle.ClientSize = this.gameBoard.Size;
-                this.gameBoard.Controls.Add(gamer.Paddle.PaddleBox);
+                this.gameBoard.Controls.Add(gamer.Paddle.Box);
             }
             this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
             this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();

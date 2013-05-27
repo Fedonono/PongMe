@@ -10,27 +10,8 @@ using System.Windows;
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class Ball
+    public class Ball : Movable
     {
-        private float speed;
-        private float initialSpeed;
-        public float Speed
-        {
-            get { return this.speed; }
-            set
-            {
-                if (value > 0 && value < MAX_SPEED)
-                {
-                    this.speed = value;
-                }
-                else
-                {
-                    this.speed = MAX_SPEED;
-                }
-            }
-        }
-        private readonly static int MAX_SPEED = 10;
-
         private int diameter;
         private int initialDiameter;
         public int Diameter
@@ -46,10 +27,13 @@ namespace GameBasicClasses.BasicClasses
                 {
                     this.diameter = MAX_DIAMETER;
                 }
+                this.bounds.Width = this.diameter;
+                this.bounds.Height = this.diameter;
             }
         }
         private readonly static int MAX_DIAMETER = 100;
 
+<<<<<<< HEAD
         private Rectangle ballRepresentation;
         public Rectangle BallRepresentation
         {
@@ -85,6 +69,8 @@ namespace GameBasicClasses.BasicClasses
         private Size clientSize;
         public Size ClientSize { get; set; }
 
+=======
+>>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
         public bool isMoving { get; set; }
 
         public bool isOutLeft { get; set; }
@@ -111,8 +97,13 @@ namespace GameBasicClasses.BasicClasses
             this.Color = this.initialColor;
             this.Image = this.initialImage;
             this.Direction = new Vector(10, 10);
+<<<<<<< HEAD
             this.Position = new Vector(this.ClientSize.Width / 2 - this.Diameter / 2, this.ClientSize.Height / 2 - this.Diameter / 2);
             this.ballRepresentation = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
+=======
+            this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
+            this.bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
+>>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
             this.isMoving = false;
             this.isOutLeft = false;
             this.isOutRight = false;
@@ -130,7 +121,11 @@ namespace GameBasicClasses.BasicClasses
 
         private void checkOut()
         {
+<<<<<<< HEAD
             if (this.ClientSize.Width < this.Position.X)
+=======
+            if (this.ClientWidth < this.Position.X)
+>>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
             {
                 this.isOutRight = true;
             } else if (this.Position.X + this.Diameter < 0)
@@ -144,7 +139,7 @@ namespace GameBasicClasses.BasicClasses
             if ((this.Position.Y <= 0 && this.Direction.Y < 0)
                 || (this.Position.Y >= this.ClientSize.Height - this.Diameter && this.Direction.Y > 0))
             {
-                Direction = new Vector(Direction.X, -Direction.Y);
+                this.Direction = new Vector(Direction.X, -Direction.Y);
             }
         }
 
@@ -154,9 +149,20 @@ namespace GameBasicClasses.BasicClasses
             {
                 if (obstacle.contains(this))
                 {
-                    this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
-                    this.Speed += 0.05f;
-                    this.Direction.Y++;
+                    if(obstacle.containsLeftOrRight(this))
+                    {
+                        this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
+                        this.move();
+                        this.Speed += 0.05f;
+                        return;
+                    }
+                    else if(obstacle.containsUpOrDown(this))
+                    {
+                        this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
+                        this.move();
+                        this.Speed += 0.05f;
+                        return;
+                    }
                 }
             }
         }

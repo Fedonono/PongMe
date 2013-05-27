@@ -67,6 +67,27 @@ namespace GameBasicClasses.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap balle {
+            get {
+                object obj = ResourceManager.GetObject("balle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap barre {
+            get {
+                object obj = ResourceManager.GetObject("barre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bat {
+            get {
+                object obj = ResourceManager.GetObject("bat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Raquette {
             get {
                 object obj = ResourceManager.GetObject("Raquette", resourceCulture);

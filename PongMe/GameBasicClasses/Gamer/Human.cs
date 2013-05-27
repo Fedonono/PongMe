@@ -12,8 +12,15 @@ namespace GameBasicClasses.Gamer
 {
     public class Human : Gamer
     {
+<<<<<<< HEAD
         public Human(bool left, Keys up, Keys down, Paddle paddle) : base(left, up,down,paddle)
         {}
+=======
+        public Human(Keys up, Keys down, Paddle paddle) : base(up,down,paddle)
+        {
+
+        }
+>>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
 
         public override void run(Keys e) //pourquoi pas la définir dans Gamer?
         {
