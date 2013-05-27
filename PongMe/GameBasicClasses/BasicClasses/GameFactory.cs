@@ -15,12 +15,12 @@ namespace GameBasicClasses.BasicClasses
         public static GameModel defaultGame()
         {
             GameModel gm = new GameModel();
-            gm.addBall(new Ball(0.5f, 35, Color.Empty, GameBasicClasses.Properties.Resources.Ball, 1000, 600));
-            gm.addBall(new Ball(0.2f, 35, Color.Empty, GameBasicClasses.Properties.Resources.Ball, 1000, 600));
-            Paddle p = new Paddle(true, Color.Empty, GameBasicClasses.Properties.Resources.Raquette, 20, 50, 10, 1000, 600);
-            Paddle p2 = new Paddle(false, Color.Empty, GameBasicClasses.Properties.Resources.Raquette, 20, 50, 10, 1000, 600);
-            gm.addGamer(new Human(true, Keys.Up, Keys.Down, p));
-            gm.addGamer(new Human(false, Keys.Z, Keys.S, p2));
+            gm.addBall(new Ball(0.5f, 20, Color.Empty, GameBasicClasses.Properties.Resources.balle, 1000, 600));
+            gm.addBall(new Ball(0.2f, 20, Color.Empty, GameBasicClasses.Properties.Resources.balle, 1000, 600));
+            Paddle p = new Paddle(true, Color.Empty, GameBasicClasses.Properties.Resources.bat, 14, 60, 10, 1000, 600);
+            Paddle p2 = new Paddle(false, Color.Empty, GameBasicClasses.Properties.Resources.bat, 14, 60, 10, 1000, 600);
+            gm.addGamer(new Human(Keys.Up, Keys.Down, p2));
+            gm.addGamer(new Human(Keys.Z, Keys.S, p));
             return gm;
         }
     }

@@ -11,15 +11,5 @@ namespace GameBasicClasses.Obstacles
     /// </summary>
     public class Wall : Obstacle
     {
-        public Wall(int clientWidth, int clientHeight) : base(clientWidth,clientHeight)
-        {
-            
-        }
-
-        public override bool contains(Ball b)
-        {
-            throw new System.NotImplementedException();
-        }
-
     }
 }

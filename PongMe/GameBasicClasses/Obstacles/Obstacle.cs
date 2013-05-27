@@ -8,69 +8,49 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles
 {
-    public abstract class Obstacle
+    public abstract class Obstacle : Movable
     {
-        private int clientWidth;
-        public int ClientWidth
+        public bool contains(Ball b)
         {
-            get
+            List<Point> bounds = b.getBounds();
+            foreach (Point p in bounds)
             {
-                return this.clientWidth;
-            }
-            set
-            {
-                if (value > 0)
+                if (this.bounds.Contains(p))
                 {
-                    this.clientWidth = value;
-                }
-                else
-                {
-                    this.clientWidth = 1000;
+                    return true;
                 }
             }
+            return false;
         }
 
-        private int clientHeight;
-        public int ClientHeight
+        public bool containsLeftOrRight(Ball b)
         {
-            get
+            Rectangle left = new Rectangle((int)this.Position.X, (int)this.Position.Y, 1, this.bounds.Height);
+            Rectangle right = new Rectangle((int)this.Position.X + this.bounds.Width-1, (int)this.Position.Y, 1, this.bounds.Height);
+            List<Point> bounds = b.getBounds();
+            foreach (Point p in bounds)
             {
-                return this.clientHeight;
-            }
-            set
-            {
-                if (value > 0)
+                if (left.Contains(p) || right.Contains(p))
                 {
-                    this.clientHeight = value;
-                }
-                else
-                {
-                    this.clientHeight = 600;
+                    return true;
                 }
             }
+            return false;
         }
 
-        private Size clientSize;
-        public virtual Size ClientSize
+        public bool containsUpOrDown(Ball b)
         {
-            get
+            Rectangle up = new Rectangle((int)this.Position.X+1, (int)this.Position.Y, this.bounds.Width-2, 1);
+            Rectangle down = new Rectangle((int)this.Position.X+1, (int)this.Position.Y + this.bounds.Height-1, this.bounds.Width-2, 1);
+            List<Point> bounds = b.getBounds();
+            foreach (Point p in bounds)
             {
-                return this.clientSize;
+                if (up.Contains(p) || down.Contains(p))
+                {
+                    return true;
+                }
             }
-            set
-            {
-                this.clientSize = value;
-                this.ClientWidth = this.clientSize.Width;
-                this.ClientHeight = this.clientSize.Height;
-            }
+            return false;
         }
-
-        public Obstacle(int clientWidth, int clientHeight)
-        {
-            this.ClientWidth = clientWidth;
-            this.ClientHeight = clientHeight;
-        }
-
-        public abstract bool contains(Ball b);
     }
 }

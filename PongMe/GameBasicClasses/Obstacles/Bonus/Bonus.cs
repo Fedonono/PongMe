@@ -21,14 +21,10 @@ namespace GameBasicClasses.Obstacles.Bonus
             }
         }
 
-        public Bonus(int clientWidth, int clientHeight, int timeout) : base(clientWidth, clientHeight)
+        public Bonus(int clientWidth, int clientHeight, int timeout)
         {
             this.Timeout = timeout;
         }
 
-        public override bool contains(Ball b)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

@@ -11,7 +11,7 @@ namespace GameBasicClasses.Gamer
 {
     public class Human : Gamer
     {
-        public Human(bool left, Keys up, Keys down, Paddle paddle) : base(left, up,down,paddle)
+        public Human(Keys up, Keys down, Paddle paddle) : base(up,down,paddle)
         {
 
         }

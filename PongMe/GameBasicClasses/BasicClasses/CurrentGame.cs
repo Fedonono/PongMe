@@ -63,7 +63,7 @@ namespace GameBasicClasses.BasicClasses
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.GameModel.ListeGamer)
             {
-                if (g.Left == left)
+                if (g.Paddle.Left == left)
                 {
                     g.incPoints();
                 }
@@ -74,7 +74,7 @@ namespace GameBasicClasses.BasicClasses
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.GameModel.ListeGamer)
             {
-                if (g.Left == left)
+                if (g.Paddle.Left == left)
                 {
                     return g.Points;
                 }

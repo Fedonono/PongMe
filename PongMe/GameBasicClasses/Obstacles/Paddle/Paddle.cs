@@ -11,19 +11,7 @@ namespace GameBasicClasses.Obstacles.Paddle
 {
     public class Paddle : Obstacle
     {
-        private ObstacleView view;
-
-        public Point Position 
-        { 
-            get { return this.view.Position; }
-            set { this.view.Position = value; }
-        }
-
-        public Size Dimensions 
-        { 
-            get { return this.view.Dimensions; }
-            set { this.view.Dimensions = value; }
-        }
+        public bool Left { get; set; }
 
         public override Size ClientSize
         {
@@ -36,74 +24,36 @@ namespace GameBasicClasses.Obstacles.Paddle
                 base.ClientSize = value;
                 if (!this.Left)
                 {
-                    this.Position = new Point(this.ClientWidth - this.Dimensions.Width,this.Position.Y);
+                    this.Position = new Vector(this.ClientWidth - this.bounds.Width - 7, this.Position.Y);
                 }
             }
-        }
-        
-        public Color Color { get; set; }
-
-        public Image Image { get; set; }
-        private Image initialImage;
-        private PictureBox paddleBox = new PictureBox();
-        public PictureBox PaddleBox
-        {
-            get {
-                paddleBox.Image = this.Image;
-                paddleBox.SizeMode = PictureBoxSizeMode.Zoom;
-                paddleBox.Size = this.Dimensions;
-                paddleBox.Location = this.Position;
-                paddleBox.BackColor = this.Color;
-                return paddleBox; 
-            }
-            set { paddleBox = value; }
-        }
-
-        public bool Left { get; set; }
-
-        private int speed;
-        public int Speed
-        {
-            get { return this.speed; }
-            set
-            {
-                if (value > 0 && value < MAX_SPEED)
-                {
-                    this.speed = value;
-                }
-                else
-                {
-                    this.speed = MAX_SPEED;
-                }
-            }
-        }
-        private readonly static int MAX_SPEED = 100;
-
-        public Paddle() : this(true, Color.Red, GameBasicClasses.Properties.Resources.Raquette, 50, 200, 3, 1000, 600)
-        {
         }
 
         public Paddle(bool left, Color color, Image image, int width, int height, int speed, int clientWidth, int clientHeight)
-            : base(clientWidth, clientHeight)
         {
+            this.ClientWidth = clientWidth;
+            this.ClientHeight = clientHeight;
             if (width <= 0 || width >= this.ClientWidth)
             {
-                width = 50;
+                width = 14;
             }
             if (height <= 0 || height >= this.ClientHeight)
             {
-                height = 200;
+                height = 60;
             }
-            Point paddlePosition;
+            
+            Vector paddlePosition;
             if (left)
             {
-                paddlePosition = new Point(0, 0);
+                paddlePosition = new Vector(2, 0);
             }
             else
             {
-                paddlePosition = new Point(this.ClientWidth - width);
+                paddlePosition = new Vector(this.ClientWidth - width - 7, 0);
             }
-            this.view = new RectanglePaddle(paddlePosition.X, paddlePosition.Y, width, height);
+            this.Direction = new Vector(0, 10);
+            this.Position = paddlePosition;
+            this.bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, width, height);
             this.Speed = speed;
             this.Color = color;
             this.Image = image;
@@ -111,40 +61,27 @@ namespace GameBasicClasses.Obstacles.Paddle
             this.Left = left;
         }
 
-        public override bool contains(Ball b)
-        {
-            List<Point> bounds = b.getBounds();
-            foreach (Point p in bounds)
-            {
-                if (this.view.Contains(p))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         public void down()
         {
-            if (this.view.Position.Y + this.view.Dimensions.Height + this.speed <= this.ClientHeight)
+            if (this.Position.Y + this.bounds.Height + this.Speed <= this.ClientHeight)
             {
-                this.view.Position = new Point(this.view.Position.X, this.view.Position.Y + this.speed);
+                this.Position = new Vector(this.Position.X, this.Position.Y + this.Speed);
             }
             else
             {
-                this.view.Position = new Point(this.view.Position.X, this.ClientHeight - this.view.Dimensions.Height);
+                this.Position = new Vector(this.Position.X, this.ClientHeight - this.bounds.Height);
             }
         }
 
         public void up()
         {
-            if (this.Position.Y - this.speed >= 0)
+            if (this.Position.Y - this.Speed >= 0)
             {
-                this.view.Position = new Point(this.view.Position.X, this.view.Position.Y - this.speed);
+                this.Position = new Vector(this.Position.X, this.Position.Y - this.Speed);
             }
             else
             {
-                this.view.Position = new Point(this.view.Position.X, 0);
+                this.Position = new Vector(this.Position.X, 0);
             }
         }
     }

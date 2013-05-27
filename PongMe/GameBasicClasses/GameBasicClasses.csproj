@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicClasses\Drawable.cs" />
+    <Compile Include="BasicClasses\Movable.cs" />
     <Compile Include="BasicClasses\Vector.cs" />
     <Compile Include="Obstacles\Bonus\BallTrajectoryBonus.cs" />
     <Compile Include="Gamer\AI.cs" />
@@ -95,6 +97,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Raquette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
