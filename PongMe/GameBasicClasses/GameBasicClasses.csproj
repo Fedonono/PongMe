@@ -54,9 +54,7 @@
     <Compile Include="Gamer\Human.cs" />
     <Compile Include="Obstacles\Bonus\BonusBrick.cs" />
     <Compile Include="Obstacles\Brick.cs" />
-    <Compile Include="GameBoard.cs" />
-    <Compile Include="GameBoardController.cs" />
-    <Compile Include="GameModelConfig.cs" />
+    <Compile Include="BasicClasses\GameModelConfig.cs" />
     <Compile Include="Obstacles\Bonus\Bonus.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />
     <Compile Include="Obstacles\ObstacleView.cs" />
@@ -67,8 +65,8 @@
     <Compile Include="MVC\IView.cs" />
     <Compile Include="MVC\Model.cs" />
     <Compile Include="Obstacles\Wall.cs" />
-    <Compile Include="OptionController.cs" />
-    <Compile Include="Options.cs" />
+    <Compile Include="BasicClasses\OptionController.cs" />
+    <Compile Include="BasicClasses\Options.cs" />
     <Compile Include="Obstacles\Paddle\PaddleConfig.cs" />
     <Compile Include="Obstacles\Paddle\PaddleController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
