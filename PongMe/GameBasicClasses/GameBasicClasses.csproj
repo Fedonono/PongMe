@@ -52,8 +52,8 @@
     <Compile Include="BasicClasses\GameModel.cs" />
     <Compile Include="Gamer\Gamer.cs" />
     <Compile Include="Gamer\Human.cs" />
-    <Compile Include="Bonus\BonusBrick.cs" />
-    <Compile Include="Obstacles\Brick.cs" />
+    <Compile Include="Obstacles\Brick\BonusBrick.cs" />
+    <Compile Include="Obstacles\Brick\Brick.cs" />
     <Compile Include="BasicClasses\GameModelConfig.cs" />
     <Compile Include="Bonus\Bonus.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />

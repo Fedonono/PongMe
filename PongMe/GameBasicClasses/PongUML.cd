@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.Obstacles.Wall" Collapsed="true">
-    <Position X="1" Y="2.75" Width="1.5" />
+    <Position X="2" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Obstacles\Wall.cs</FileName>
@@ -54,7 +54,7 @@
     <Position X="4.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bonus\BonusBrick.cs</FileName>
+      <FileName>Obstacles\Brick\BonusBrick.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameBasicClasses.Obstacles.Bonus.WidthBonus" Collapsed="true">
@@ -133,7 +133,7 @@
     <Position X="4.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAACAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAg=</HashCode>
-      <FileName>Obstacles\Brick.cs</FileName>
+      <FileName>Obstacles\Brick\Brick.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
