@@ -124,11 +124,20 @@
   <data name="balle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\balle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pokeball" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pokeball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="barre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="batred" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red-bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="batblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue-bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Raquette" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raquette.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
