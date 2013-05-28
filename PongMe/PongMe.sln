@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBasicClasses", "GameBasicClasses\GameBasicClasses.csproj", "{146C56FE-0307-4047-88FC-98E96AEC0D0C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameView", "GameView\GameView.csproj", "{5A0AEEEA-279D-47C6-AA32-2939DC1B2E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBasicClasses", "GameBasicClasses\GameBasicClasses.csproj", "{146C56FE-0307-4047-88FC-98E96AEC0D0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
