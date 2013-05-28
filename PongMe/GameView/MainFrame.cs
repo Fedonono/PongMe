@@ -322,18 +322,6 @@ namespace GameView
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (keysPressed.Count > 0)
-            {
-                foreach (Keys key in keysPressed)
-                {
-                    this.currentGame.keyEvent(key);
-                }
-            }
-            else
-            {
-                this.currentGame.keyEvent(Keys.A);//AI
-            }
-            
             foreach (Ball ball in this.currentGame.GameModel.ListeBall)
             {
                 ball.nextPosition();
@@ -348,6 +336,20 @@ namespace GameView
                     this.currentGame.addPoint(true);
                 }
             }
+
+            if (keysPressed.Count > 0)
+            {
+                foreach (Keys key in keysPressed)
+                {
+                    this.currentGame.keyEvent(key);
+                }
+            }
+            else
+            {
+                this.currentGame.keyEvent(Keys.A);//AI
+            }
+            
+            
 
             if (this.currentGame.isGameOver())
             {

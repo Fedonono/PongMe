@@ -60,6 +60,7 @@ namespace GameBasicClasses.BasicClasses
             this.Image = this.initialImage;
             this.Direction = new Vector(10, 10);
             this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
+            this.PreviousPosition = this.Position;
             this.bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
             this.isMoving = false;
             this.isOutLeft = false;
@@ -122,6 +123,7 @@ namespace GameBasicClasses.BasicClasses
 
         private void move()
         {
+            this.PreviousPosition = this.Position;
             this.Position += this.Direction * this.Speed;
         }
 
