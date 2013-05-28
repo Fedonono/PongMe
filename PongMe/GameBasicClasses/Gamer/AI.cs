@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using GameBasicClasses.Obstacles;
 using GameBasicClasses.Obstacles.Paddle;
+using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Gamer
 {
@@ -17,7 +18,15 @@ namespace GameBasicClasses.Gamer
 
         public override void run(Keys e)
         {
-            throw new NotImplementedException();
+            CurrentGame cg = CurrentGame.getInstance();
+            foreach (Ball b in cg.GameModel.ListeBall)
+            {
+                if (b.isMoving && !b.isOutLeft && !b.isOutRight)
+                {
+                    this.Paddle.Position = new Vector(this.Paddle.Position.X, b.Position.Y);
+                    return;
+                }
+            }
         }
     }
 }

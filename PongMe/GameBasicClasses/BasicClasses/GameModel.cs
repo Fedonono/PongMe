@@ -71,10 +71,7 @@ namespace GameBasicClasses.BasicClasses
             }
             foreach (GameBasicClasses.Gamer.Gamer g in this.listeGamer)
             {
-                if (g is Human)
-                {
-                    g.run(e);
-                }
+                g.run(e);
             }
         }
 

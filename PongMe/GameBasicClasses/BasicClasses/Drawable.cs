@@ -69,7 +69,7 @@ namespace GameBasicClasses.BasicClasses
         public Vector Position
         {
             get { return new Vector(this.bounds.X, this.bounds.Y); }
-            protected set { this.bounds.X = (int)value.X; this.bounds.Y = (int)value.Y; }
+            set { this.bounds.X = (int)value.X; this.bounds.Y = (int)value.Y; }
         }
 
         public Image Image { get; set; }

@@ -322,9 +322,16 @@ namespace GameView
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            foreach (Keys key in keysPressed)
+            if (keysPressed.Count > 0)
             {
-                this.currentGame.keyEvent(key);
+                foreach (Keys key in keysPressed)
+                {
+                    this.currentGame.keyEvent(key);
+                }
+            }
+            else
+            {
+                this.currentGame.keyEvent(Keys.A);//AI
             }
             
             foreach (Ball ball in this.currentGame.GameModel.ListeBall)
