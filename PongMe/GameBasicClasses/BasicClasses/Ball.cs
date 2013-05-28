@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using GameBasicClasses.Obstacles.Paddle;
 using System.Windows;
 
-
 namespace GameBasicClasses.BasicClasses
 {
     public class Ball : Movable
@@ -33,50 +32,12 @@ namespace GameBasicClasses.BasicClasses
         }
         private readonly static int MAX_DIAMETER = 100;
 
-<<<<<<< HEAD
-        private Rectangle ballRepresentation;
-        public Rectangle BallRepresentation
-        {
-            get { return ballRepresentation; }
-        }
-
-        public Vector Position
-        {
-            get { return new Vector(this.ballRepresentation.X, this.ballRepresentation.Y); }
-            private set { this.ballRepresentation.X = (int) value.X; this.ballRepresentation.Y = (int) value.Y; }
-        }
-        public Vector Direction { get; set; }
-
-        public Image Image { get; set; }
-        private Image initialImage;
-        private PictureBox ballBox = new PictureBox();
-        public PictureBox BallBox
-        {
-            get {
-                ballBox.Image = this.Image;
-                ballBox.SizeMode = PictureBoxSizeMode.Zoom;
-                ballBox.Size = this.BallRepresentation.Size;
-                ballBox.Location = new Point((int) this.Position.X, (int) this.Position.Y);
-                ballBox.BackColor = this.Color;
-                return ballBox; 
-            }
-            set { ballBox = value; }
-        }
-
-        public Color Color { get; set; }
-        private Color initialColor;
-
-        private Size clientSize;
-        public Size ClientSize { get; set; }
-
-=======
->>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
         public bool isMoving { get; set; }
 
         public bool isOutLeft { get; set; }
         public bool isOutRight { get; set; }
         
-        public Ball(float speed, int diameter, Color color, Image image, Size cSize)
+        public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
             this.Speed = speed;
             this.initialSpeed = this.Speed;
@@ -86,7 +47,8 @@ namespace GameBasicClasses.BasicClasses
             this.initialColor = this.Color;
             this.Image = image;
             this.initialImage = this.Image;
-            this.ClientSize = cSize;
+            this.ClientWidth = clientWidth;
+            this.ClientHeight = clientHeight;
             this.Initialize();
         }
 
@@ -97,13 +59,8 @@ namespace GameBasicClasses.BasicClasses
             this.Color = this.initialColor;
             this.Image = this.initialImage;
             this.Direction = new Vector(10, 10);
-<<<<<<< HEAD
-            this.Position = new Vector(this.ClientSize.Width / 2 - this.Diameter / 2, this.ClientSize.Height / 2 - this.Diameter / 2);
-            this.ballRepresentation = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
-=======
             this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
             this.bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
->>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
             this.isMoving = false;
             this.isOutLeft = false;
             this.isOutRight = false;
@@ -121,11 +78,7 @@ namespace GameBasicClasses.BasicClasses
 
         private void checkOut()
         {
-<<<<<<< HEAD
-            if (this.ClientSize.Width < this.Position.X)
-=======
             if (this.ClientWidth < this.Position.X)
->>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
             {
                 this.isOutRight = true;
             } else if (this.Position.X + this.Diameter < 0)
@@ -137,7 +90,7 @@ namespace GameBasicClasses.BasicClasses
         private void checkBoardCollision()
         {
             if ((this.Position.Y <= 0 && this.Direction.Y < 0)
-                || (this.Position.Y >= this.ClientSize.Height - this.Diameter && this.Direction.Y > 0))
+                || (this.Position.Y >= this.ClientHeight - this.Diameter && this.Direction.Y > 0))
             {
                 this.Direction = new Vector(Direction.X, -Direction.Y);
             }

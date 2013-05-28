@@ -92,11 +92,11 @@
       <FileName>Options\Options.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameBasicClasses.BasicClasses.OptionsController" Collapsed="true">
+  <Class Name="GameBasicClasses.BasicClasses.OptionController" Collapsed="true">
     <Position X="12" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Options\OptionsController.cs</FileName>
+      <FileName>Options\OptionController.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

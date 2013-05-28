@@ -64,7 +64,7 @@
     <Compile Include="MVC\Event.cs" />
     <Compile Include="MVC\IView.cs" />
     <Compile Include="MVC\Model.cs" />
-    <Compile Include="Options\OptionsController.cs" />
+    <Compile Include="Options\OptionController.cs" />
     <Compile Include="Options\Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Obstacles\Bonus\ReverseCommandsBonus.cs" />
@@ -101,8 +101,11 @@
     <None Include="Resources\balle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target>
+  -->
 </Project>

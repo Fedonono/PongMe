@@ -6,7 +6,7 @@ using GameBasicClasses.MVC;
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class OptionsController : Controller
+    public class OptionController : Controller
     {
     }
 }

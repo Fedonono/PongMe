@@ -28,8 +28,10 @@ namespace GameBasicClasses.Obstacles
             }
         }
 
-        public Brick(int health)
+        public Brick(int clientWidth, int clientHeight, int health)
         {
+            this.ClientHeight = clientHeight;
+            this.ClientWidth = clientWidth;
             this.Health = health;
         }
 
