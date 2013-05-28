@@ -67,6 +67,11 @@ namespace GameBasicClasses.BasicClasses
             this.isOutRight = false;
         }
 
+        public void ToogleMovement(bool movement)
+        {
+            this.isMoving = movement;
+        }
+
         public void nextPosition()//très incomplet
         {
             if (!this.isMoving) { return; }

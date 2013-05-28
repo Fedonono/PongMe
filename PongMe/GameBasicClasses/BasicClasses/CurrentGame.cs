@@ -61,10 +61,10 @@ namespace GameBasicClasses.BasicClasses
 
         public void ToggleGame()
         {
-            //play/pause
             if (this.gameEngine != null)
             {
                 this.stopped = !this.stopped;
+                this.gameEngine.ToogleGame(!this.stopped);
             }
         }
 

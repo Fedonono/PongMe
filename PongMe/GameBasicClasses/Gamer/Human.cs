@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using GameBasicClasses.Obstacles;
 using GameBasicClasses.Obstacles.Paddle;
 using GameBasicClasses.BasicClasses;
+using GameBasicClasses.Options;
 
 namespace GameBasicClasses.Gamer
 {
@@ -26,11 +27,11 @@ namespace GameBasicClasses.Gamer
             {
                 this.paddle.Down();
             }
-            else if (e == this.commands.Stop)
+            else if (e == GamerOptions.Stop)
             {
                 CurrentGame.GetInstance().StopGame();
             }
-            else if (e == this.commands.Pause)
+            else if (e == GamerOptions.Pause)
             {
                 CurrentGame.GetInstance().ToggleGame();
             }

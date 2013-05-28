@@ -11,8 +11,9 @@ namespace GameBasicClasses.Options
         private Keys up;
         private Keys down;
 
-        private static Keys stop;
-        private static Keys pause;
+        private static Keys stop = Keys.Escape;
+        private static Keys pause = Keys.P;
+        private static Keys launch = Keys.Space;
 
         private static LinkedList<Keys> taken = new LinkedList<Keys>();
 
@@ -20,8 +21,6 @@ namespace GameBasicClasses.Options
         {
             this.Up = up;
             this.Down = down;
-            this.Stop = Keys.Escape;
-            this.Pause = Keys.P;
         }
 
         public Keys Up
@@ -58,7 +57,7 @@ namespace GameBasicClasses.Options
             }
         }
 
-        public Keys Stop {
+        public static Keys Stop {
             set
             {
                 if (taken.Find(value) == null)
@@ -74,7 +73,7 @@ namespace GameBasicClasses.Options
             }
         }
 
-        public Keys Pause
+        public static Keys Pause
         {
             set
             {
@@ -91,10 +90,27 @@ namespace GameBasicClasses.Options
             }
         }
 
+        public static Keys Launch
+        {
+            set
+            {
+                if (taken.Find(value) == null)
+                {
+                    pause = value;
+                    taken.AddLast(value);
+                }
+            }
+
+            get
+            {
+                return launch;
+            }
+        }
+
         public override String ToString()
         {
             return String.Format("{0} to go up - {1} to go down - {2} to stop the game - {3} to pause the game", 
-                this.Up, this.Down, this.Stop, this.Pause);
+                this.Up, this.Down, Stop, Pause);
         }
     }
 }
