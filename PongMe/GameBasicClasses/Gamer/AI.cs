@@ -23,7 +23,7 @@ namespace GameBasicClasses.Gamer
             {
                 if (b.isMoving && !b.isOutLeft && !b.isOutRight)
                 {
-                    this.Paddle.Position = new Vector(this.Paddle.Position.X, b.Position.Y);
+                    this.Paddle.Position = new Vector(this.Paddle.Position.X, b.Position.Y + b.Diameter/2 - this.Paddle.bounds.Height/2);
                     return;
                 }
             }

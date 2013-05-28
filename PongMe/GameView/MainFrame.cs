@@ -11,7 +11,7 @@ using GameBasicClasses.Gamer;
 
 namespace GameView
 {
-    class MainForm : Form
+    public partial class MainForm : Form
     {
         private MenuStrip MainMenu;
         private ToolStripMenuItem jeuToolStripMenuItem;
@@ -28,23 +28,24 @@ namespace GameView
         private ToolStripMenuItem joueursToolStripMenuItem1;
         private ToolStripMenuItem joueursToolStripMenuItem2;
         private Panel gameBoard;
-        private Timer timer = new Timer();
         private Label leftPointsLabel;
         private Label rightPointsLabel;
         private CurrentGame currentGame = CurrentGame.GetInstance();
+        private Timer gameTimer;
+        private System.ComponentModel.IContainer components;
+        private Timer animationTimer;
+        private Timer bonusTimer;
+        private Timer brickTimer;
         private List<Keys> keysPressed = new List<Keys>();
 
         public MainForm()
         {
             InitializeComponent();
-            timer.Tick += new EventHandler(this.Timer_Tick);
-            timer.Interval = 1;
-            timer.Enabled = true;
-            timer.Start();
         }
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nouvellePartieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +63,10 @@ namespace GameView
             this.gameBoard = new System.Windows.Forms.Panel();
             this.rightPointsLabel = new System.Windows.Forms.Label();
             this.leftPointsLabel = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
+            this.bonusTimer = new System.Windows.Forms.Timer(this.components);
+            this.brickTimer = new System.Windows.Forms.Timer(this.components);
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
             this.SuspendLayout();
@@ -192,16 +197,16 @@ namespace GameView
             // 
             // gameBoard
             // 
-            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gameBoard.Controls.Add(this.rightPointsLabel);
             this.gameBoard.Controls.Add(this.leftPointsLabel);
             this.gameBoard.Location = new System.Drawing.Point(12, 39);
             this.gameBoard.Name = "gameBoard";
-            this.gameBoard.Size = new System.Drawing.Size(960, 513);
+            this.gameBoard.Size = new System.Drawing.Size(960, 511);
             this.gameBoard.TabIndex = 1;
             this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -226,9 +231,32 @@ namespace GameView
             this.leftPointsLabel.TabIndex = 0;
             this.leftPointsLabel.Text = "0";
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 1;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
+            // animationTimer
+            // 
+            this.animationTimer.Enabled = true;
+            this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
+            // 
+            // bonusTimer
+            // 
+            this.bonusTimer.Enabled = true;
+            this.bonusTimer.Interval = 1000;
+            this.bonusTimer.Tick += new System.EventHandler(this.bonusTimer_Tick);
+            // 
+            // brickTimer
+            // 
+            this.brickTimer.Enabled = true;
+            this.brickTimer.Interval = 1000;
+            this.brickTimer.Tick += new System.EventHandler(this.brickTimer_Tick);
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(984, 564);
+            this.ClientSize = new System.Drawing.Size(984, 562);
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
@@ -292,78 +320,6 @@ namespace GameView
 
         }
 
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (keysPressed.Contains(e.KeyCode))
-            {
-                keysPressed.Remove(e.KeyCode);
-            }
-            keysPressed.Add(e.KeyCode);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            List<Ball> listeBall = this.currentGame.GameModel.ListeBall;
-            foreach (Ball ball in listeBall)
-            {
-                ball.ClientSize = this.gameBoard.Size;
-                this.gameBoard.Controls.Add(ball.Box);
-            }
-            List<Gamer> listeGamer = this.currentGame.GameModel.ListeGamer;
-            foreach (Gamer gamer in listeGamer)
-            {
-                gamer.Paddle.ClientSize = this.gameBoard.Size;
-                this.gameBoard.Controls.Add(gamer.Paddle.Box);
-            }
-            this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
-            this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();
-        }
-
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            foreach (Ball ball in this.currentGame.GameModel.ListeBall)
-            {
-                ball.nextPosition();
-                if (ball.isOutRight && ball.isMoving)
-                {
-                    ball.isMoving = false;
-                    this.currentGame.addPoint(false);
-                }
-                else if (ball.isOutLeft && ball.isMoving)
-                {
-                    ball.isMoving = false;
-                    this.currentGame.addPoint(true);
-                }
-            }
-
-            if (keysPressed.Count > 0)
-            {
-                foreach (Keys key in keysPressed)
-                {
-                    this.currentGame.keyEvent(key);
-                }
-            }
-            else
-            {
-                this.currentGame.keyEvent(Keys.A);//AI
-            }
-            
-            
-
-            if (this.currentGame.isGameOver())
-            {
-                this.currentGame.StopGame();
-            }
-            this.gameBoard.Refresh();
-        }
-
-        private void MainForm_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (keysPressed.Contains(e.KeyCode))
-            {
-                keysPressed.Remove(e.KeyCode);
-            }
-        }
+        
     }
 }
