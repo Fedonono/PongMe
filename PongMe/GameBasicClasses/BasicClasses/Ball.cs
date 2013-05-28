@@ -3,30 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
+using GameBasicClasses.Obstacles.Paddle;
+using System.Windows;
+
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class Ball
+    public class Ball : Movable
     {
-        private int speed;
-        public int Speed
-        {
-            get { return this.speed; }
-            set
-            {
-                if (value > 0 && value < MAX_SPEED)
-                {
-                    this.speed = value;
-                }
-                else
-                {
-                    this.speed = MAX_SPEED;
-                }
-            }
-        }
-        private readonly static int MAX_SPEED = 100;
-
         private int diameter;
+        private int initialDiameter;
         public int Diameter
         {
             get { return this.diameter; }
@@ -40,106 +27,149 @@ namespace GameBasicClasses.BasicClasses
                 {
                     this.diameter = MAX_DIAMETER;
                 }
+                this.bounds.Width = this.diameter;
+                this.bounds.Height = this.diameter;
             }
         }
         private readonly static int MAX_DIAMETER = 100;
 
-        private bool backX, backY;
-
+<<<<<<< HEAD
         private Rectangle ballRepresentation;
         public Rectangle BallRepresentation
         {
             get { return ballRepresentation; }
         }
 
-        private int clientWidth;
-        public int ClientWidth
+        public Vector Position
         {
-            get
-            {
-                return this.clientWidth;
-            }
-            set
-            {
-                if (value > 0)
-                {
-                    this.clientWidth = value;
-                }
-                else
-                {
-                    this.clientWidth = 1000;
-                }
-            }
+            get { return new Vector(this.ballRepresentation.X, this.ballRepresentation.Y); }
+            private set { this.ballRepresentation.X = (int) value.X; this.ballRepresentation.Y = (int) value.Y; }
         }
-        private int clientHeight;
-        public int ClientHeight
+        public Vector Direction { get; set; }
+
+        public Image Image { get; set; }
+        private Image initialImage;
+        private PictureBox ballBox = new PictureBox();
+        public PictureBox BallBox
         {
-            get
-            {
-                return this.clientHeight;
+            get {
+                ballBox.Image = this.Image;
+                ballBox.SizeMode = PictureBoxSizeMode.Zoom;
+                ballBox.Size = this.BallRepresentation.Size;
+                ballBox.Location = new Point((int) this.Position.X, (int) this.Position.Y);
+                ballBox.BackColor = this.Color;
+                return ballBox; 
             }
-            set
-            {
-                if (value > 0)
-                {
-                    this.clientHeight = value;
-                }
-                else
-                {
-                    this.clientHeight = 600;
-                }
-            }
+            set { ballBox = value; }
         }
+
+        public Color Color { get; set; }
+        private Color initialColor;
+
+        private Size clientSize;
+        public Size ClientSize { get; set; }
+
+=======
+>>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
+        public bool isMoving { get; set; }
+
+        public bool isOutLeft { get; set; }
+        public bool isOutRight { get; set; }
         
-        public Ball(int speed, int diameter, int startX, int startY, int clientWidth, int clientHeight)
+        public Ball(float speed, int diameter, Color color, Image image, Size cSize)
         {
             this.Speed = speed;
+            this.initialSpeed = this.Speed;
             this.Diameter = diameter;
-            this.ClientWidth = clientWidth;
-            this.ClientHeight = clientHeight;
-            this.ballRepresentation = new Rectangle(startX, startY, this.diameter, this.diameter);
-            this.backX = this.backY = false;
+            this.initialDiameter = this.Diameter;
+            this.Color = color;
+            this.initialColor = this.Color;
+            this.Image = image;
+            this.initialImage = this.Image;
+            this.ClientSize = cSize;
+            this.Initialize();
+        }
+
+        public void Initialize()
+        {
+            this.Speed = this.initialSpeed;
+            this.Diameter = this.initialDiameter;
+            this.Color = this.initialColor;
+            this.Image = this.initialImage;
+            this.Direction = new Vector(10, 10);
+<<<<<<< HEAD
+            this.Position = new Vector(this.ClientSize.Width / 2 - this.Diameter / 2, this.ClientSize.Height / 2 - this.Diameter / 2);
+            this.ballRepresentation = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
+=======
+            this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
+            this.bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
+>>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
+            this.isMoving = false;
+            this.isOutLeft = false;
+            this.isOutRight = false;
         }
 
         public void nextPosition()//très incomplet
         {
-            if (this.backX)
+            if (!this.isMoving) { return; }
+            this.checkBoardCollision();
+            this.checkOut();
+            CurrentGame cg = CurrentGame.getInstance();
+            this.checkObstaclesCollision(cg.GameModel.listePaddle());
+            this.move();
+        }
+
+        private void checkOut()
+        {
+<<<<<<< HEAD
+            if (this.ClientSize.Width < this.Position.X)
+=======
+            if (this.ClientWidth < this.Position.X)
+>>>>>>> 5dc767122a80e3da5bd96d8957cc00c59c4df4f2
             {
-                this.ballRepresentation.X -= this.speed;
-            }
-            else
+                this.isOutRight = true;
+            } else if (this.Position.X + this.Diameter < 0)
             {
-                this.ballRepresentation.X += this.speed;
-            }
-            if (this.backY)
-            {
-                this.ballRepresentation.Y -= this.speed;
-            }
-            else
-            {
-                this.ballRepresentation.Y += this.speed;
-            }
-            if (this.clientWidth <= this.ballRepresentation.X + this.diameter + this.speed)
-            {
-                this.backX = true;
-            }
-            if (this.clientHeight <= this.ballRepresentation.Y + this.diameter + this.speed)
-            {
-                this.backY = true;
-            }
-            if (this.ballRepresentation.X <= this.speed)
-            {
-                this.backX = false;
-            }
-            if (this.ballRepresentation.Y <= this.speed)
-            {
-                this.backY = false;
+                this.isOutLeft = true;
             }
         }
 
-        public Point Position
+        private void checkBoardCollision()
         {
-            get { return new Point(this.ballRepresentation.X, this.ballRepresentation.Y); }
+            if ((this.Position.Y <= 0 && this.Direction.Y < 0)
+                || (this.Position.Y >= this.ClientSize.Height - this.Diameter && this.Direction.Y > 0))
+            {
+                this.Direction = new Vector(Direction.X, -Direction.Y);
+            }
+        }
+
+        private void checkObstaclesCollision(List<Paddle> ob)
+        {
+            foreach (Paddle obstacle in ob)
+            {
+                if (obstacle.contains(this))
+                {
+                    if(obstacle.containsLeftOrRight(this))
+                    {
+                        this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
+                        this.move();
+                        this.Speed += 0.05f;
+                        return;
+                    }
+                    else if(obstacle.containsUpOrDown(this))
+                    {
+                        this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
+                        this.move();
+                        this.Speed += 0.05f;
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void move()
+        {
+            this.Position += this.Direction * this.Speed;
         }
 
         public List<Point> getBounds()
@@ -151,8 +181,8 @@ namespace GameBasicClasses.BasicClasses
             tempTeta = 0;
             for (int i = 0; i < nbOfPoints; i++)
             {
-                x = (this.diameter+1) * Math.Cos(tempTeta) + this.Position.X;
-                y = (this.diameter+1) * Math.Sin(tempTeta) + this.Position.Y;
+                x = (this.Diameter/2) * Math.Cos(tempTeta) + this.Position.X + this.Diameter/2;
+                y = (this.Diameter/2) * Math.Sin(tempTeta) + this.Position.Y + this.Diameter/2;
                 bounds.Add(new Point((int)x, (int)y));
                 tempTeta += teta;
             }

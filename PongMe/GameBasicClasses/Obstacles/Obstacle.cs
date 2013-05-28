@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing.Drawing2D;
@@ -9,53 +8,49 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles
 {
-    public abstract class Obstacle
+    public abstract class Obstacle : Movable
     {
-        private int clientWidth;
-        public int ClientWidth
+        public bool contains(Ball b)
         {
-            get
+            List<Point> bounds = b.getBounds();
+            foreach (Point p in bounds)
             {
-                return this.clientWidth;
-            }
-            set
-            {
-                if (value > 0)
+                if (this.bounds.Contains(p))
                 {
-                    this.clientWidth = value;
-                }
-                else
-                {
-                    this.clientWidth = 1000;
+                    return true;
                 }
             }
-        }
-        private int clientHeight;
-        public int ClientHeight
-        {
-            get
-            {
-                return this.clientHeight;
-            }
-            set
-            {
-                if (value > 0)
-                {
-                    this.clientHeight = value;
-                }
-                else
-                {
-                    this.clientHeight = 600;
-                }
-            }
+            return false;
         }
 
-        public Obstacle(int clientWidth, int clientHeight)
+        public bool containsLeftOrRight(Ball b)
         {
-            this.ClientWidth = clientWidth;
-            this.ClientHeight = clientHeight;
+            Rectangle left = new Rectangle((int)this.Position.X, (int)this.Position.Y, 1, this.bounds.Height);
+            Rectangle right = new Rectangle((int)this.Position.X + this.bounds.Width-1, (int)this.Position.Y, 1, this.bounds.Height);
+            List<Point> bounds = b.getBounds();
+            foreach (Point p in bounds)
+            {
+                if (left.Contains(p) || right.Contains(p))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
-        public abstract bool contains(Ball b);
+        public bool containsUpOrDown(Ball b)
+        {
+            Rectangle up = new Rectangle((int)this.Position.X+1, (int)this.Position.Y, this.bounds.Width-2, 1);
+            Rectangle down = new Rectangle((int)this.Position.X+1, (int)this.Position.Y + this.bounds.Height-1, this.bounds.Width-2, 1);
+            List<Point> bounds = b.getBounds();
+            foreach (Point p in bounds)
+            {
+                if (up.Contains(p) || down.Contains(p))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

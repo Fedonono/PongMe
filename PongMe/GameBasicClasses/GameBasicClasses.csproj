@@ -42,30 +42,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicClasses\AI.cs" />
+    <Compile Include="BasicClasses\Drawable.cs" />
+    <Compile Include="BasicClasses\Movable.cs" />
+    <Compile Include="BasicClasses\Vector.cs" />
+    <Compile Include="Obstacles\Bonus\BallTrajectoryBonus.cs" />
+    <Compile Include="Gamer\AI.cs" />
     <Compile Include="BasicClasses\Ball.cs" />
     <Compile Include="BasicClasses\CurrentGame.cs" />
     <Compile Include="BasicClasses\GameEngine.cs" />
     <Compile Include="BasicClasses\GameFactory.cs" />
     <Compile Include="BasicClasses\GameModel.cs" />
-    <Compile Include="BasicClasses\Gamer.cs" />
-    <Compile Include="BasicClasses\Human.cs" />
-    <Compile Include="Obstacles\Bonus.cs" />
+    <Compile Include="Gamer\Gamer.cs" />
+    <Compile Include="Gamer\Human.cs" />
+    <Compile Include="Obstacles\Brick\BonusBrick.cs" />
+    <Compile Include="Obstacles\Brick\Brick.cs" />
+    <Compile Include="BasicClasses\GameModelConfig.cs" />
+    <Compile Include="Obstacles\Bonus\Bonus.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />
     <Compile Include="Obstacles\Paddle.cs" />
     <Compile Include="MVC\Controller.cs" />
     <Compile Include="MVC\Event.cs" />
     <Compile Include="MVC\IView.cs" />
     <Compile Include="MVC\Model.cs" />
-    <Compile Include="Obstacles\Wall.cs" />
+    <Compile Include="Options\OptionsController.cs" />
+    <Compile Include="Options\Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Obstacles\Bonus\ReverseCommandsBonus.cs" />
+    <Compile Include="Obstacles\Bonus\SpeedBonus.cs" />
+    <Compile Include="Obstacles\Bonus\WidthBonus.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PongUML.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Raquette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target>
-  -->
 </Project>
