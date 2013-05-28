@@ -63,7 +63,7 @@ namespace GameBasicClasses.Options
             {
                 if (taken.Find(value) == null)
                 {
-                    this.Pause = value;
+                    stop = value;
                     taken.AddLast(value);
                 }
             }
@@ -80,7 +80,7 @@ namespace GameBasicClasses.Options
             {
                 if (taken.Find(value) == null)
                 {
-                    this.Pause = value;
+                    pause = value;
                     taken.AddLast(value);
                 }
             }
