@@ -58,8 +58,8 @@ namespace GameBasicClasses.Obstacles.Paddle
                 paddlePosition = new Vector(this.ClientWidth - width - 7, 0);
             }
             this.Direction = new Vector(0, 10);
-            this.InitialDirection = this.Direction;
             this.Position = paddlePosition;
+            this.InitialDirection = this.Direction;
             this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, width, height);
             this.InitialBounds = this.Bounds;
             this.Speed = speed;

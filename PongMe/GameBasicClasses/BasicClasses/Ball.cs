@@ -36,7 +36,8 @@ namespace GameBasicClasses.BasicClasses
 
         public bool isOutLeft { get; set; }
         public bool isOutRight { get; set; }
-        
+        private float MAX_SPEED { get; set; }
+
         public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
             this.MAX_SPEED = 1.5f;

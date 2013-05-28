@@ -8,15 +8,17 @@ namespace GameBasicClasses.BasicClasses
 {
     public class Movable : Drawable
     {
+
         public Vector Direction { get; set; }
+        public Vector InitialDirection { get; set; }
 
         public Vector PreviousPosition { get; set; }
 
-        private int NbWayPoints{ get; set; }
-        private Point[] Path{ get; set; }
-
+        private int NbWayPoints { get; set; }
+        private Point[] Path { get; set; }
+        public float InitialSpeed { get; set; }
         private float speed;
-        protected float initialSpeed;
+
         public float Speed
         {
             get { return this.speed; }
@@ -38,7 +40,7 @@ namespace GameBasicClasses.BasicClasses
         {
             this.Direction = new Vector(1, 1);
             this.Speed = 0.2f;
-            this.initialSpeed = this.Speed;
+            this.InitialSpeed = this.Speed;
             this.PreviousPosition = this.Position;
 
             this.NbWayPoints = 300;
@@ -47,14 +49,14 @@ namespace GameBasicClasses.BasicClasses
 
         public Point[] GetPath()
         {
-            Point Initial = new Point((int)(this.PreviousPosition.X + this.bounds.Width / 2), (int)(this.PreviousPosition.Y + this.bounds.Height / 2));
-            Point Final = new Point((int)(this.Position.X + this.bounds.Width / 2), (int)(this.Position.Y + this.bounds.Height / 2));
-            int HorizontalStep = (int)(Final.X - Initial.X)/this.NbWayPoints;  
-            int VerticalStep = (int)(Final.Y - Initial.Y)/this.NbWayPoints;  
+            Point Initial = new Point((int)(this.PreviousPosition.X + this.Bounds.Width / 2), (int)(this.PreviousPosition.Y + this.Bounds.Height / 2));
+            Point Final = new Point((int)(this.Position.X + this.Bounds.Width / 2), (int)(this.Position.Y + this.Bounds.Height / 2));
+            int HorizontalStep = (int)(Final.X - Initial.X) / this.NbWayPoints;
+            int VerticalStep = (int)(Final.Y - Initial.Y) / this.NbWayPoints;
 
             this.Path[0] = Initial;
             this.Path[this.NbWayPoints - 1] = Final;
-            for (int i = 1; i < this.NbWayPoints-1; i++)
+            for (int i = 1; i < this.NbWayPoints - 1; i++)
             {
                 this.Path[i] = new Point(this.Path[i - 1].X + HorizontalStep, this.Path[i - 1].Y + VerticalStep);
             }
