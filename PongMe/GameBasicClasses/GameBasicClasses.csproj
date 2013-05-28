@@ -64,6 +64,7 @@
     <Compile Include="MVC\Event.cs" />
     <Compile Include="MVC\IView.cs" />
     <Compile Include="MVC\Model.cs" />
+    <Compile Include="Options\GamerOptions.cs" />
     <Compile Include="Options\OptionController.cs" />
     <Compile Include="Options\Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
