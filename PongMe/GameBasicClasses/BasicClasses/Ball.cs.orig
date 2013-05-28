@@ -36,8 +36,7 @@ namespace GameBasicClasses.BasicClasses
 
         public bool isOutLeft { get; set; }
         public bool isOutRight { get; set; }
-        private float MAX_SPEED { get; set; }
-
+        
         public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
             this.MAX_SPEED = 1.5f;
@@ -119,10 +118,16 @@ namespace GameBasicClasses.BasicClasses
                 {
                     if (!(obstacle is Bonus))
                     {
+<<<<<<< HEAD
+                        this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
+                        this.PreviousPosition = Position;
+                        this.move();
+                        this.Speed += 0.05f;
+                        return;
+=======
                         if (obstacle.containsLeftOrRight(this))
                         {
                             this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
-                        this.PreviousPosition = Position;
                             this.move();
                             this.Speed += 0.05f;
                             return;
@@ -130,19 +135,27 @@ namespace GameBasicClasses.BasicClasses
                         else if (obstacle.containsUpOrDown(this))
                         {
                             this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
-                        this.PreviousPosition = Position;
                             this.move();
                             this.Speed += 0.05f;
                             return;
                         }
+>>>>>>> b1c1c873a333cfe2ea6b27c78b56f1c8c7b59c96
                     }
                     else
                     {
+<<<<<<< HEAD
+                        this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
+                        this.PreviousPosition = Position;
+                        this.move();
+                        this.Speed += 0.05f;
+                        return;
+=======
                         Bonus b = obstacle as Bonus;
                         if (!b.Active)
                         {
                             b.startTimeOut(this);
                         }
+>>>>>>> b1c1c873a333cfe2ea6b27c78b56f1c8c7b59c96
                     }
                 }
             }
