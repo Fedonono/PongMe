@@ -31,6 +31,10 @@ namespace GameBasicClasses.Gamer
         }
 
         protected GamerOptions commands;
+        public GamerOptions Commands
+        {
+            get { return this.commands; }
+        }
 
         protected Paddle paddle;
         public Paddle Paddle { get { return this.paddle; } }

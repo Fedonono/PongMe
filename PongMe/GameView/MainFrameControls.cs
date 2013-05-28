@@ -97,22 +97,11 @@ namespace GameView
 
         private void animationTimer_Tick(object sender, EventArgs e)
         {
-
+            //this.gameBoard.Refresh();
         }
 
         private void bonusTimer_Tick(object sender, EventArgs e)
         {
-            if(this.currentGame.GameModel.ListeBonus.Count == 0)
-            {
-                 this.currentGame.GameModel.addBonus(new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height,5,new Vector(500,100)));//juste pour tester
-                //il faudra ensuite ajouter périodiquement et aléatoirement les bonus
-            }
-            if (this.currentGame.GameModel.ListeBonus.Count == 1)
-            {
-                this.currentGame.GameModel.addBonus(new SpeedBonus(this.gameBoard.Width, this.gameBoard.Height, 3, new Vector(500, 400)));//juste pour tester
-                //il faudra ensuite ajouter périodiquement et aléatoirement les bonus
-            }
-
             List<Bonus> overBonuses = new List<Bonus>();
             foreach (Bonus b in this.currentGame.GameModel.ListeBonus)
             {
@@ -122,7 +111,37 @@ namespace GameView
                 }
             }
             this.removeOverBonuses(overBonuses);
-            
+
+            List<Bonus> newBonuses = new List<Bonus>();
+            while(newBonuses.Count <= 4-this.currentGame.GameModel.ListeBonus.Count)
+            {
+                Bonus b = this.getRandomBonus();
+                newBonuses.Add(b);//juste pour tester
+                //il faudra ensuite ajouter périodiquement et aléatoirement les bonus
+            }
+            this.currentGame.GameModel.addBonus(newBonuses);//en pas à pas la liste est bonne mais en lançant vraiment le programme ça ne fonctionne pas !
+            this.gameBoard.Refresh();
+        }
+
+        private Bonus getRandomBonus()
+        {
+            Random r = new Random();
+            Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height-50));
+            int i = r.Next(1,5);
+            switch (i)
+            {
+                case 1:
+                    return new HeightBonus(this.gameBoard.Width, this.gameBoard.Height, 10, v);
+                case 2:
+                    return new BallTrajectoryMalus(this.gameBoard.Width, this.gameBoard.Height, 3, v);
+                case 3:
+                    return new ReverseCommandsMalus(this.gameBoard.Width, this.gameBoard.Height, 20, v);
+                case 4:
+                    return new SpeedBonus(this.gameBoard.Width, this.gameBoard.Height, 3, v);
+                case 5:
+                    return new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
+            }
+            return new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
         }
 
         private void removeOverBonuses(List<Bonus> overBonuses)
@@ -135,7 +154,7 @@ namespace GameView
 
         private void brickTimer_Tick(object sender, EventArgs e)
         {
-
+            //this.gameBoard.Refresh();
         }
     }
 }

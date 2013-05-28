@@ -45,7 +45,7 @@
     <Compile Include="BasicClasses\Drawable.cs" />
     <Compile Include="BasicClasses\Movable.cs" />
     <Compile Include="BasicClasses\Vector.cs" />
-    <Compile Include="Obstacles\Bonus\BallTrajectoryBonus.cs" />
+    <Compile Include="Obstacles\Bonus\BallTrajectoryMalus.cs" />
     <Compile Include="Gamer\AI.cs" />
     <Compile Include="BasicClasses\Ball.cs" />
     <Compile Include="BasicClasses\CurrentGame.cs" />
@@ -69,9 +69,9 @@
     <Compile Include="Options\OptionController.cs" />
     <Compile Include="Options\Option.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Obstacles\Bonus\ReverseCommandsBonus.cs" />
+    <Compile Include="Obstacles\Bonus\ReverseCommandsMalus.cs" />
     <Compile Include="Obstacles\Bonus\SpeedBonus.cs" />
-    <Compile Include="Obstacles\Bonus\WidthBonus.cs" />
+    <Compile Include="Obstacles\Bonus\HeightBonus.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
