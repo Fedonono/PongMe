@@ -6,12 +6,12 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles.Bonus
 {
-    public class SpeedBonus : Bonus
+    public class SpeedMalus : Bonus
     {
-        public SpeedBonus(int clientWidth, int clientHeight, int timeout, Vector position)
+        public SpeedMalus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            this.Image = Properties.Resources.spaceship1;
+            this.Image = Properties.Resources.star1;
             this.InitialImage = this.Image;
             this.Color = System.Drawing.Color.Transparent;
             this.InitialColor = this.Color;
@@ -24,7 +24,7 @@ namespace GameBasicClasses.Obstacles.Bonus
 
         protected override void runBonus()
         {
-            this.ball.Speed /= 2;
+            this.ball.Speed *= 2;
         }
     }
 }

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GameBasicClasses.MVC;
 
-namespace GameBasicClasses.Obstacles.Bonus
+namespace GameBasicClasses.Options
 {
-    public class BallTrajectoryBonus : Bonus
+    public class Option : Model
     {
-        public BallTrajectoryBonus()
+        public Option()
         {
             throw new System.NotImplementedException();
         }

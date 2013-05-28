@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using GameBasicClasses.Obstacles;
 using GameBasicClasses.Obstacles.Paddle;
 using GameBasicClasses.MVC;
+using GameBasicClasses.Options;
 
 namespace GameBasicClasses.Gamer
 {
@@ -29,19 +30,14 @@ namespace GameBasicClasses.Gamer
             this.points++;
         }
 
-        /// <summary>
-        /// Touches utilisées par le joueur
-        /// </summary>
-        protected Keys up;
-        protected Keys down;
+        protected GamerOptions commands;
 
         protected Paddle paddle;
         public Paddle Paddle { get { return this.paddle; } }
 
         public Gamer(Keys up, Keys down, Paddle paddle)
         {
-            this.up = up;
-            this.down = down;
+            commands = new GamerOptions(up, down);
             this.paddle = paddle;
             this.points = 0;
         }

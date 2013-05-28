@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using GameBasicClasses.Obstacles;
 using GameBasicClasses.Obstacles.Paddle;
 using GameBasicClasses.BasicClasses;
+using GameBasicClasses.Options;
 
 namespace GameBasicClasses.Gamer
 {
@@ -18,17 +19,21 @@ namespace GameBasicClasses.Gamer
 
         public override void run(Keys e)
         {
-            if (e == this.up)
+            if (e == this.commands.Up)
             {
-                this.paddle.up();
+                this.paddle.Up();
             }
-            else if (e == this.down)
+            else if (e == this.commands.Down)
             {
-                this.paddle.down();
+                this.paddle.Down();
             }
-            else if (e == Keys.Escape)
+            else if (e == GamerOptions.Stop)
             {
-                CurrentGame.getInstance().stopGame();
+                CurrentGame.GetInstance().StopGame();
+            }
+            else if (e == GamerOptions.Pause)
+            {
+                CurrentGame.GetInstance().ToggleGame();
             }
         }
     }

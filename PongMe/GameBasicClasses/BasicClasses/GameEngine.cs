@@ -27,6 +27,14 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
+        public void ToogleGame(bool movement)
+        {
+            foreach (Ball ball in this.Model.ListeBall)
+            {
+                ball.ToogleMovement(movement);
+            }
+        }
+
         public void stopGame()
         {
             foreach (Ball ball in this.Model.ListeBall)

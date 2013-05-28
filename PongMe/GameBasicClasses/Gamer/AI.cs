@@ -18,12 +18,12 @@ namespace GameBasicClasses.Gamer
 
         public override void run(Keys e)
         {
-            CurrentGame cg = CurrentGame.getInstance();
+            CurrentGame cg = CurrentGame.GetInstance();
             foreach (Ball b in cg.GameModel.ListeBall)
             {
                 if (b.isMoving && !b.isOutLeft && !b.isOutRight)
                 {
-                    this.Paddle.Position = new Vector(this.Paddle.Position.X, b.Position.Y);
+                    this.Paddle.Position = new Vector(this.Paddle.Position.X, b.Position.Y + b.Diameter/2 - this.Paddle.Bounds.Height/2);
                     return;
                 }
             }

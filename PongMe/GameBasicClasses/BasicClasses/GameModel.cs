@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using GameBasicClasses.Gamer;
 using GameBasicClasses.Obstacles.Bonus;
 using GameBasicClasses.Obstacles.Paddle;
+using GameBasicClasses.Options;
 
 namespace GameBasicClasses.BasicClasses
 {
@@ -55,18 +56,11 @@ namespace GameBasicClasses.BasicClasses
 
         public void keyEvent(Keys e, bool stop)
         {
-            if (e == Keys.Space)
+            if (e == GamerOptions.Launch)
             {
                 foreach (Ball ball in this.ListeBall)
                 {
-                    if (stop)
-                    {
-                        ball.isMoving = false;
-                    }
-                    else
-                    {
-                        ball.isMoving = true;
-                    }
+                    ball.isMoving = !stop;
                 }
             }
             foreach (GameBasicClasses.Gamer.Gamer g in this.listeGamer)

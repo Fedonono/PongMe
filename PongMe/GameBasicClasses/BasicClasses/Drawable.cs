@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class Drawable
+    public abstract class Drawable
     {
         private int clientWidth;
         public int ClientWidth
@@ -64,7 +64,17 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public Rectangle bounds;
+        private Rectangle bounds;
+        public Rectangle Bounds
+        {
+            get { return this.bounds; }
+            set
+            {
+                this.bounds = value;
+                this.box.Size = this.Bounds.Size;
+            }
+        }
+        public Rectangle InitialBounds { get; protected set; }
 
         public Vector Position
         {
@@ -73,7 +83,7 @@ namespace GameBasicClasses.BasicClasses
         }
 
         public Image Image { get; set; }
-        protected Image initialImage;
+        public Image InitialImage { get; protected set; }
 
         private PictureBox box;
         public PictureBox Box
@@ -82,33 +92,39 @@ namespace GameBasicClasses.BasicClasses
             {
                 if (this.Image != null)
                 {
-                    box.Image = this.Image;
-                    box.SizeMode = PictureBoxSizeMode.StretchImage;
+                    this.box.Image = this.Image;
+                    this.box.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 else
                 {
-                    box.BackColor = this.Color;
+                    this.box.BackColor = this.Color;
                 }
-                box.Size = this.bounds.Size;
-                box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
-                return box;
+                this.box.Size = this.bounds.Size;
+                this.box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
+                return this.box;
             }
-            set { box = value; }
+            set
+            {
+                this.box = value;
+            }
         }
+        public PictureBox InitialBox { get; protected set; }
 
         public Color Color { get; set; }
-        protected Color initialColor;
+        public Color InitialColor { get; protected set; }
 
         public Drawable()
         {
             this.ClientSize = new Size(1000, 600);
-            this.bounds = new Rectangle();
+            this.Box = new PictureBox();
+            this.Bounds = new Rectangle();
+            this.InitialBounds = this.Bounds;
             this.Position = Vector.Zero();
             this.Image = null;
-            this.initialImage = this.Image;
-            this.Box = new PictureBox();
+            this.InitialImage = this.Image;
+            this.InitialBox = this.Box;
             this.Color = Color.Blue;
-            this.initialColor = this.Color;
+            this.InitialColor = this.Color;
         }
     }
 }
