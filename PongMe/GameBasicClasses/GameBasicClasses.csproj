@@ -92,6 +92,9 @@
     <None Include="Resources\Ball.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pokeball.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Raquette.png" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +102,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red-bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-bat.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\balle.png" />
