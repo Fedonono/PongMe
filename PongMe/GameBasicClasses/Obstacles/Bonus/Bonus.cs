@@ -15,7 +15,7 @@ namespace GameBasicClasses.Obstacles.Bonus
             set {
                 if (value <= 0)
                 {
-                    value = 1;
+                    value = 5;
                 }
                 timeout = value;
             }
