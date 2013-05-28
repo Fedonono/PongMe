@@ -50,6 +50,10 @@ namespace GameView
                     bonus.ClientSize = this.gameBoard.Size;
                     this.gameBoard.Controls.Add(bonus.Box);
                 }
+                else
+                {
+                    this.gameBoard.Controls.Remove(bonus.Box);
+                }
             }
             this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
             this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();
@@ -100,7 +104,13 @@ namespace GameView
         {
             if(this.currentGame.GameModel.ListeBonus.Count == 0)
             {
-                this.currentGame.GameModel.addBonus(new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height,5,new Vector(50,50)));
+                 this.currentGame.GameModel.addBonus(new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height,5,new Vector(500,100)));//juste pour tester
+                //il faudra ensuite ajouter périodiquement et aléatoirement les bonus
+            }
+            if (this.currentGame.GameModel.ListeBonus.Count == 1)
+            {
+                this.currentGame.GameModel.addBonus(new SpeedBonus(this.gameBoard.Width, this.gameBoard.Height, 3, new Vector(500, 400)));//juste pour tester
+                //il faudra ensuite ajouter périodiquement et aléatoirement les bonus
             }
 
             List<Bonus> overBonuses = new List<Bonus>();

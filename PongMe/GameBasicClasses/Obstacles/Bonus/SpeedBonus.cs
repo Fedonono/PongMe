@@ -11,17 +11,20 @@ namespace GameBasicClasses.Obstacles.Bonus
         public SpeedBonus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            throw new System.NotImplementedException();
+            this.Image = Properties.Resources.spaceship1;
+            this.InitialImage = this.Image;
+            this.Color = System.Drawing.Color.Transparent;
+            this.InitialColor = this.Color;
         }
 
         protected override void stopBonus()
         {
-            throw new NotImplementedException();
+            this.ball.Speed = this.ball.InitialSpeed;
         }
 
         protected override void runBonus()
         {
-            throw new NotImplementedException();
+            this.ball.Speed /= 2;
         }
     }
 }
