@@ -8,7 +8,7 @@ using GameBasicClasses.Gamer;
 
 namespace GameView
 {
-    public partial class MainForm : Form
+    public partial class MainForm
     {
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {

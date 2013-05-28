@@ -27,7 +27,7 @@ namespace GameBasicClasses.Obstacles.Paddle
                 base.ClientSize = value;
                 if (!this.Left)
                 {
-                    this.Position = new Vector(this.ClientWidth - this.bounds.Width - 7, this.Position.Y);
+                    this.Position = new Vector(this.ClientWidth - this.Bounds.Width - 7, this.Position.Y);
                 }
             }
         }
@@ -55,10 +55,14 @@ namespace GameBasicClasses.Obstacles.Paddle
                 paddlePosition = new Vector(this.ClientWidth - width - 7, 0);
             }
             this.Direction = new Vector(0, 10);
+            this.initialDirection = this.Direction;
             this.Position = paddlePosition;
-            this.bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, width, height);
+            this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, width, height);
+            this.initialBounds = this.Bounds;
             this.Speed = speed;
+            this.initialSpeed = this.Speed;
             this.Color = color;
+            this.initialColor = this.Color;
             this.Image = image;
             this.initialImage = this.Image;
             this.Left = left;
@@ -66,13 +70,13 @@ namespace GameBasicClasses.Obstacles.Paddle
 
         public void Down()
         {
-            if (this.Position.Y + this.bounds.Height + this.Speed <= this.ClientHeight)
+            if (this.Position.Y + this.Bounds.Height + this.Speed <= this.ClientHeight)
             {
                 this.Position = new Vector(this.Position.X, this.Position.Y + this.Speed);
             }
             else
             {
-                this.Position = new Vector(this.Position.X, this.ClientHeight - this.bounds.Height);
+                this.Position = new Vector(this.Position.X, this.ClientHeight - this.Bounds.Height);
             }
         }
 
