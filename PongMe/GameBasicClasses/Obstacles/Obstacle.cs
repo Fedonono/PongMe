@@ -25,8 +25,8 @@ namespace GameBasicClasses.Obstacles
 
         public bool containsLeftOrRight(Ball b)
         {
-            Rectangle left = new Rectangle((int)this.Position.X-b.Diameter*2, (int)this.Position.Y, b.Diameter*2, this.bounds.Height);
-            Rectangle right = new Rectangle((int)this.Position.X + this.bounds.Width, (int)this.Position.Y, b.Diameter*2, this.bounds.Height);
+            Rectangle left = new Rectangle((int)this.Position.X - b.Diameter * 2, (int)this.Position.Y, b.Diameter * 2, this.bounds.Height);
+            Rectangle right = new Rectangle((int)this.Position.X + this.bounds.Width, (int)this.Position.Y, b.Diameter * 2, this.bounds.Height);
             Point[] bounds = b.GetPath();
             foreach (Point p in bounds)
             {
@@ -40,8 +40,9 @@ namespace GameBasicClasses.Obstacles
 
         public bool containsUpOrDown(Ball b)
         {
-            Rectangle up = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.bounds.Width, b.Diameter*2);
-            Rectangle down = new Rectangle((int)this.Position.X, (int)this.Position.Y + this.bounds.Height-b.Diameter*2, this.bounds.Width, b.Diameter*2);
+            Rectangle up = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.bounds.Width,  /*b.Diameter*2*/(int)(this.bounds.Height / 2));
+            Rectangle down = new Rectangle((int)this.Position.X + this.bounds.Height / 2, (int)this.Position.Y /*+ this.bounds.Height - b.Diameter * 2*/, this.bounds.Width, /*b.Diameter*2*/(int)(this.bounds.Height / 2));
+
             Point[] bounds = b.GetPath();
             foreach (Point p in bounds)
             {

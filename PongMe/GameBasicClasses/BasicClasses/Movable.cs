@@ -41,7 +41,7 @@ namespace GameBasicClasses.BasicClasses
             this.initialSpeed = this.Speed;
             this.PreviousPosition = this.Position;
 
-            this.NbWayPoints = 100;
+            this.NbWayPoints = 300;
             this.Path = new Point[this.NbWayPoints];
         }
 

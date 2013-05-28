@@ -94,6 +94,7 @@ namespace GameBasicClasses.BasicClasses
                 || (this.Position.Y >= this.ClientHeight - this.Diameter && this.Direction.Y > 0))
             {
                 this.Direction = new Vector(Direction.X, -Direction.Y);
+                this.PreviousPosition = Position;
             }
         }
 
@@ -106,6 +107,7 @@ namespace GameBasicClasses.BasicClasses
                     if(obstacle.containsLeftOrRight(this))
                     {
                         this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
+                        this.PreviousPosition = Position;
                         this.move();
                         this.Speed += 0.05f;
                         return;
@@ -113,6 +115,7 @@ namespace GameBasicClasses.BasicClasses
                     else if(obstacle.containsUpOrDown(this))
                     {
                         this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
+                        this.PreviousPosition = Position;
                         this.move();
                         this.Speed += 0.05f;
                         return;
@@ -123,7 +126,6 @@ namespace GameBasicClasses.BasicClasses
 
         private void move()
         {
-            this.PreviousPosition = this.Position;
             this.Position += this.Direction * this.Speed;
         }
 

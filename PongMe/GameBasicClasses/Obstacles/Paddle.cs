@@ -13,6 +13,7 @@ namespace GameBasicClasses.Obstacles.Paddle
     {
         public bool Left { get; set; }
 
+
         /// <summary>
         /// Lorsque la taille de la fenetre change, il faut déplacer la raquette de droite
         /// </summary>
@@ -31,6 +32,8 @@ namespace GameBasicClasses.Obstacles.Paddle
                 }
             }
         }
+
+ 
 
         public Paddle(bool left, Color color, Image image, int width, int height, int speed, int clientWidth, int clientHeight)
         {
@@ -87,5 +90,7 @@ namespace GameBasicClasses.Obstacles.Paddle
                 this.Position = new Vector(this.Position.X, 0);
             }
         }
+
+        
     }
 }
