@@ -18,7 +18,7 @@ namespace GameBasicClasses.Gamer
 
         public override void run(Keys e)
         {
-            CurrentGame cg = CurrentGame.getInstance();
+            CurrentGame cg = CurrentGame.GetInstance();
             foreach (Ball b in cg.GameModel.ListeBall)
             {
                 if (b.isMoving && !b.isOutLeft && !b.isOutRight)

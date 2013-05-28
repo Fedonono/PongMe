@@ -35,7 +35,10 @@ namespace GameBasicClasses.Options
                 }
             }
 
-            get;
+            get
+            {
+                return this.up;
+            }
         }
 
         public Keys Down
@@ -49,10 +52,13 @@ namespace GameBasicClasses.Options
                 }
             }
 
-            get;
+            get
+            {
+                return this.down;
+            }
         }
 
-        public Keys Stop { get;
+        public Keys Stop {
             set
             {
                 if (taken.Find(value) == null)
@@ -61,11 +67,15 @@ namespace GameBasicClasses.Options
                     taken.AddLast(value);
                 }
             }
+
+            get
+            {
+                return stop;
+            }
         }
 
         public Keys Pause
         {
-            get;
             set
             {
                 if (taken.Find(value) == null)
@@ -73,6 +83,11 @@ namespace GameBasicClasses.Options
                     this.Pause = value;
                     taken.AddLast(value);
                 }
+            }
+
+            get
+            {
+                return pause;
             }
         }
 

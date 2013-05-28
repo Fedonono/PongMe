@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using GameBasicClasses.MVC;
 
-namespace GameBasicClasses
+namespace GameBasicClasses.Options
 {
-    public class Options : Model
+    public class Option : Model
     {
-        public Options()
+        public Option()
         {
             throw new System.NotImplementedException();
         }

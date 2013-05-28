@@ -32,7 +32,7 @@ namespace GameBasicClasses.BasicClasses
             this.GameEngine = new GameEngine(this.GameModel);
         }
 
-        public static CurrentGame getInstance()
+        public static CurrentGame GetInstance()
         {
             if (instance == null)
             {
@@ -41,7 +41,7 @@ namespace GameBasicClasses.BasicClasses
             return instance;
         }
 
-        public void startGame()
+        public void StartGame()
         {
             if (this.gameEngine != null)
             {
@@ -50,12 +50,21 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public void stopGame()
+        public void StopGame()
         {
             if (this.gameEngine != null)
             {
                 this.stopped = true;
                 this.gameEngine.stopGame();
+            }
+        }
+
+        public void ToggleGame()
+        {
+            //play/pause
+            if (this.gameEngine != null)
+            {
+                this.stopped = !this.stopped;
             }
         }
 

@@ -31,7 +31,7 @@ namespace GameView
         private Timer timer = new Timer();
         private Label leftPointsLabel;
         private Label rightPointsLabel;
-        private CurrentGame currentGame = CurrentGame.getInstance();
+        private CurrentGame currentGame = CurrentGame.GetInstance();
         private List<Keys> keysPressed = new List<Keys>();
 
         public MainForm()
@@ -353,7 +353,7 @@ namespace GameView
 
             if (this.currentGame.isGameOver())
             {
-                this.currentGame.stopGame();
+                this.currentGame.StopGame();
             }
             this.gameBoard.Refresh();
         }

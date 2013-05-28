@@ -72,7 +72,7 @@ namespace GameBasicClasses.BasicClasses
             if (!this.isMoving) { return; }
             this.checkBoardCollision();
             this.checkOut();
-            CurrentGame cg = CurrentGame.getInstance();
+            CurrentGame cg = CurrentGame.GetInstance();
             this.checkObstaclesCollision(cg.GameModel.listePaddle());
             this.move();
         }

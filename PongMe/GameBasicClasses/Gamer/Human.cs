@@ -20,15 +20,19 @@ namespace GameBasicClasses.Gamer
         {
             if (e == this.commands.Up)
             {
-                this.paddle.up();
+                this.paddle.Up();
             }
             else if (e == this.commands.Down)
             {
-                this.paddle.down();
+                this.paddle.Down();
             }
             else if (e == this.commands.Stop)
             {
-                CurrentGame.getInstance().stopGame();
+                CurrentGame.GetInstance().StopGame();
+            }
+            else if (e == this.commands.Pause)
+            {
+                CurrentGame.GetInstance().ToggleGame();
             }
         }
     }

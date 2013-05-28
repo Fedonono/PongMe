@@ -64,7 +64,7 @@ namespace GameBasicClasses.Obstacles.Paddle
             this.Left = left;
         }
 
-        public void down()
+        public void Down()
         {
             if (this.Position.Y + this.bounds.Height + this.Speed <= this.ClientHeight)
             {
@@ -76,7 +76,7 @@ namespace GameBasicClasses.Obstacles.Paddle
             }
         }
 
-        public void up()
+        public void Up()
         {
             if (this.Position.Y - this.Speed >= 0)
             {
