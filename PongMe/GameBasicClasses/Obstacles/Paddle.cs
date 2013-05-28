@@ -55,16 +55,16 @@ namespace GameBasicClasses.Obstacles.Paddle
                 paddlePosition = new Vector(this.ClientWidth - width - 7, 0);
             }
             this.Direction = new Vector(0, 10);
-            this.initialDirection = this.Direction;
+            this.InitialDirection = this.Direction;
             this.Position = paddlePosition;
             this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, width, height);
-            this.initialBounds = this.Bounds;
+            this.InitialBounds = this.Bounds;
             this.Speed = speed;
-            this.initialSpeed = this.Speed;
+            this.InitialSpeed = this.Speed;
             this.Color = color;
-            this.initialColor = this.Color;
+            this.InitialColor = this.Color;
             this.Image = image;
-            this.initialImage = this.Image;
+            this.InitialImage = this.Image;
             this.Left = left;
         }
 

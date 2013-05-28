@@ -6,10 +6,10 @@ using System.Drawing;
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class Movable : Drawable
+    public abstract class Movable : Drawable
     {
         public Vector Direction { get; set; }
-        protected Vector initialDirection;
+        public Vector InitialDirection { get; protected set; }
 
         public Vector PreviousPosition { get; set; }
 
@@ -17,7 +17,7 @@ namespace GameBasicClasses.BasicClasses
         private Point[] Path{ get; set; }
 
         private float speed;
-        protected float initialSpeed;
+        public float InitialSpeed { get; protected set; }
         public float Speed
         {
             get { return this.speed; }
@@ -33,14 +33,14 @@ namespace GameBasicClasses.BasicClasses
                 }
             }
         }
-        private readonly static int MAX_SPEED = 10;
+        protected float MAX_SPEED = 10;
 
         public Movable()
         {
             this.Direction = new Vector(1, 1);
-            this.initialDirection = this.Direction;
+            this.InitialDirection = this.Direction;
             this.Speed = 0.2f;
-            this.initialSpeed = this.Speed;
+            this.InitialSpeed = this.Speed;
             this.PreviousPosition = this.Position;
 
             this.nbWayPoints = 100;

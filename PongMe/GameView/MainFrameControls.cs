@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using GameBasicClasses.BasicClasses;
 using GameBasicClasses.Gamer;
+using GameBasicClasses.Obstacles.Bonus;
 
 namespace GameView
 {
@@ -40,6 +41,15 @@ namespace GameView
             {
                 gamer.Paddle.ClientSize = this.gameBoard.Size;
                 this.gameBoard.Controls.Add(gamer.Paddle.Box);
+            }
+            List<Bonus> listeBonus = this.currentGame.GameModel.ListeBonus;
+            foreach (Bonus bonus in listeBonus)
+            {
+                if (!bonus.Active)
+                {
+                    bonus.ClientSize = this.gameBoard.Size;
+                    this.gameBoard.Controls.Add(bonus.Box);
+                }
             }
             this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
             this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();
@@ -88,7 +98,29 @@ namespace GameView
 
         private void bonusTimer_Tick(object sender, EventArgs e)
         {
+            if(this.currentGame.GameModel.ListeBonus.Count == 0)
+            {
+                this.currentGame.GameModel.addBonus(new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height,5,new Vector(50,50)));
+            }
 
+            List<Bonus> overBonuses = new List<Bonus>();
+            foreach (Bonus b in this.currentGame.GameModel.ListeBonus)
+            {
+                if (b.Active && b.checkTimeOut())
+                {
+                    overBonuses.Add(b);
+                }
+            }
+            this.removeOverBonuses(overBonuses);
+            
+        }
+
+        private void removeOverBonuses(List<Bonus> overBonuses)
+        {
+            foreach (Bonus b in overBonuses)
+            {
+                this.currentGame.GameModel.ListeBonus.Remove(b);
+            }
         }
 
         private void brickTimer_Tick(object sender, EventArgs e)

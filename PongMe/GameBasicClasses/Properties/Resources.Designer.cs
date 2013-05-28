@@ -60,13 +60,6 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Ball {
-            get {
-                object obj = ResourceManager.GetObject("Ball", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap balle {
             get {
                 object obj = ResourceManager.GetObject("balle", resourceCulture);
@@ -102,6 +95,62 @@ namespace GameBasicClasses.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap bug1 {
+            get {
+                object obj = ResourceManager.GetObject("bug1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bug2 {
+            get {
+                object obj = ResourceManager.GetObject("bug2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bug3 {
+            get {
+                object obj = ResourceManager.GetObject("bug3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bug4 {
+            get {
+                object obj = ResourceManager.GetObject("bug4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap flyingsaucer1 {
+            get {
+                object obj = ResourceManager.GetObject("flyingsaucer1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap flyingsaucer2 {
+            get {
+                object obj = ResourceManager.GetObject("flyingsaucer2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap flyingsaucer3 {
+            get {
+                object obj = ResourceManager.GetObject("flyingsaucer3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap flyingsaucer4 {
+            get {
+                object obj = ResourceManager.GetObject("flyingsaucer4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap pokeball {
             get {
                 object obj = ResourceManager.GetObject("pokeball", resourceCulture);
@@ -109,9 +158,114 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Raquette {
+        internal static System.Drawing.Bitmap satellite1 {
             get {
-                object obj = ResourceManager.GetObject("Raquette", resourceCulture);
+                object obj = ResourceManager.GetObject("satellite1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap satellite2 {
+            get {
+                object obj = ResourceManager.GetObject("satellite2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap satellite3 {
+            get {
+                object obj = ResourceManager.GetObject("satellite3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap satellite4 {
+            get {
+                object obj = ResourceManager.GetObject("satellite4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap spaceship1 {
+            get {
+                object obj = ResourceManager.GetObject("spaceship1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap spaceship2 {
+            get {
+                object obj = ResourceManager.GetObject("spaceship2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap spaceship3 {
+            get {
+                object obj = ResourceManager.GetObject("spaceship3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap spaceship4 {
+            get {
+                object obj = ResourceManager.GetObject("spaceship4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap star1 {
+            get {
+                object obj = ResourceManager.GetObject("star1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap star2 {
+            get {
+                object obj = ResourceManager.GetObject("star2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap star3 {
+            get {
+                object obj = ResourceManager.GetObject("star3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap star4 {
+            get {
+                object obj = ResourceManager.GetObject("star4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap watchit1 {
+            get {
+                object obj = ResourceManager.GetObject("watchit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap watchit2 {
+            get {
+                object obj = ResourceManager.GetObject("watchit2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap watchit3 {
+            get {
+                object obj = ResourceManager.GetObject("watchit3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap watchit4 {
+            get {
+                object obj = ResourceManager.GetObject("watchit4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

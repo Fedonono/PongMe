@@ -3,11 +3,14 @@ using System.Linq;
 using System.Text;
 using GameBasicClasses.MVC;
 using GameBasicClasses.BasicClasses;
+using System.Drawing;
 
 namespace GameBasicClasses.Obstacles.Bonus
 {
-    public class Bonus : Obstacle
+    public abstract class Bonus : Obstacle
     {
+        public bool Active { get; protected set; }
+
         private int timeout;
         public int Timeout
         {
@@ -21,12 +24,50 @@ namespace GameBasicClasses.Obstacles.Bonus
             }
         }
 
-        public Bonus(int clientWidth, int clientHeight, int timeout)
+        protected Ball ball;
+        protected List<GameBasicClasses.Gamer.Gamer> gamers;
+
+        public Bonus(int clientWidth, int clientHeight, int timeout, Vector position)
         {
             this.ClientHeight = clientHeight;
             this.ClientWidth = clientWidth;
             this.Timeout = timeout;
+            this.Image = null;
+            this.InitialImage = this.Image;
+            this.Color = System.Drawing.Color.Blue;
+            this.InitialColor = this.Color;
+            this.Position = position;
+            this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, 50, 50);
+            this.InitialBounds = this.Bounds;
         }
 
+        /// <summary>
+        /// Decremente le timeout, lance la fin du bonus s'il est à 0.
+        /// Retourne true si le bonus est terminé.
+        /// </summary>
+        /// <returns></returns>
+        public bool checkTimeOut()
+        {
+            this.timeout--;
+            if (this.timeout == 0)
+            {
+                this.Active = false;
+                this.stopBonus();
+                return true;
+            }
+            return false;
+        }
+
+        public void startTimeOut(Ball ball)
+        {
+            this.ball = ball;
+            this.gamers = CurrentGame.GetInstance().GameModel.ListeGamer;
+            this.Active = true;
+            this.runBonus();
+        }
+
+        protected abstract void stopBonus();
+
+        protected abstract void runBonus();
     }
 }
