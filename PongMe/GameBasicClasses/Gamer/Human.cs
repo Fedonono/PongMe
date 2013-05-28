@@ -18,15 +18,15 @@ namespace GameBasicClasses.Gamer
 
         public override void run(Keys e)
         {
-            if (e == this.up)
+            if (e == this.commands.Up)
             {
                 this.paddle.up();
             }
-            else if (e == this.down)
+            else if (e == this.commands.Down)
             {
                 this.paddle.down();
             }
-            else if (e == Keys.Escape)
+            else if (e == this.commands.Stop)
             {
                 CurrentGame.getInstance().stopGame();
             }
