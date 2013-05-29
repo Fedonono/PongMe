@@ -8,10 +8,11 @@ using GameBasicClasses.Obstacles;
 using GameBasicClasses.BasicClasses;
 using GameBasicClasses.Obstacles.Paddle;
 using GameBasicClasses.Gamer;
+using System.Media;
 
 namespace GameView
 {
-    class MainForm : Form
+    public partial class MainForm : Form
     {
         private MenuStrip MainMenu;
         private ToolStripMenuItem jeuToolStripMenuItem1;
@@ -25,23 +26,24 @@ namespace GameView
         private ToolStripMenuItem joueursToolStripMenuItem1;
         private ToolStripMenuItem joueursToolStripMenuItem2;
         private Panel gameBoard;
-        private Timer timer = new Timer();
         private Label leftPointsLabel;
         private Label rightPointsLabel;
         private CurrentGame currentGame = CurrentGame.GetInstance();
+        private Timer gameTimer;
+        private System.ComponentModel.IContainer components;
+        private Timer animationTimer;
+        private Timer bonusTimer;
+        private Timer brickTimer;
         private List<Keys> keysPressed = new List<Keys>();
 
         public MainForm()
         {
             InitializeComponent();
-            timer.Tick += new EventHandler(this.Timer_Tick);
-            timer.Interval = 1;
-            timer.Enabled = true;
-            timer.Start();
         }
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.jeuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nombreDeJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +58,10 @@ namespace GameView
             this.gameBoard = new System.Windows.Forms.Panel();
             this.rightPointsLabel = new System.Windows.Forms.Label();
             this.leftPointsLabel = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
+            this.bonusTimer = new System.Windows.Forms.Timer(this.components);
+            this.brickTimer = new System.Windows.Forms.Timer(this.components);
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
             this.SuspendLayout();
@@ -171,7 +177,7 @@ namespace GameView
             this.gameBoard.Controls.Add(this.leftPointsLabel);
             this.gameBoard.Location = new System.Drawing.Point(12, 39);
             this.gameBoard.Name = "gameBoard";
-            this.gameBoard.Size = new System.Drawing.Size(960, 513);
+            this.gameBoard.Size = new System.Drawing.Size(960, 511);
             this.gameBoard.TabIndex = 1;
             this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -196,9 +202,38 @@ namespace GameView
             this.leftPointsLabel.TabIndex = 0;
             this.leftPointsLabel.Text = "0";
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 1;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
+            // animationTimer
+            // 
+            this.animationTimer.Enabled = true;
+            this.animationTimer.Interval = 4000;
+            this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
+            // 
+            // bonusTimer
+            // 
+            this.bonusTimer.Enabled = true;
+            this.bonusTimer.Interval = 1000;
+            this.bonusTimer.Tick += new System.EventHandler(this.bonusTimer_Tick);
+            // 
+            // brickTimer
+            // 
+            this.brickTimer.Enabled = true;
+            this.brickTimer.Interval = 1000;
+            this.brickTimer.Tick += new System.EventHandler(this.brickTimer_Tick);
+            // 
             // MainForm
             // 
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(979, 564);
+=======
+            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.Controls.Add(this.gameBoard);
+>>>>>>> f921872181f76137f9217e93f1c1c38339a25b4c
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.gameBoard);
             this.MainMenuStrip = this.MainMenu;
@@ -263,6 +298,7 @@ namespace GameView
         {
 
         }
+<<<<<<< HEAD
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -357,5 +393,7 @@ namespace GameView
         {
 
         }
+=======
+>>>>>>> f921872181f76137f9217e93f1c1c38339a25b4c
     }
 }

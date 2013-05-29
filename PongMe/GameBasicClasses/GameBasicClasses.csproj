@@ -45,7 +45,8 @@
     <Compile Include="BasicClasses\Drawable.cs" />
     <Compile Include="BasicClasses\Movable.cs" />
     <Compile Include="BasicClasses\Vector.cs" />
-    <Compile Include="Obstacles\Bonus\BallTrajectoryBonus.cs" />
+    <Compile Include="Obstacles\Bonus\BallDiameterBonus.cs" />
+    <Compile Include="Obstacles\Bonus\BallTrajectoryMalus.cs" />
     <Compile Include="Gamer\AI.cs" />
     <Compile Include="BasicClasses\Ball.cs" />
     <Compile Include="BasicClasses\CurrentGame.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="BasicClasses\GameModel.cs" />
     <Compile Include="Gamer\Gamer.cs" />
     <Compile Include="Gamer\Human.cs" />
+    <Compile Include="Obstacles\Bonus\SpeedMalus.cs" />
     <Compile Include="Obstacles\Brick\BonusBrick.cs" />
     <Compile Include="Obstacles\Brick\Brick.cs" />
     <Compile Include="BasicClasses\GameModelConfig.cs" />
@@ -68,9 +70,9 @@
     <Compile Include="Options\OptionController.cs" />
     <Compile Include="Options\Option.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Obstacles\Bonus\ReverseCommandsBonus.cs" />
+    <Compile Include="Obstacles\Bonus\ReverseCommandsMalus.cs" />
     <Compile Include="Obstacles\Bonus\SpeedBonus.cs" />
-    <Compile Include="Obstacles\Bonus\WidthBonus.cs" />
+    <Compile Include="Obstacles\Bonus\HeightBonus.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,12 +84,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pokeball.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Raquette.png" />
@@ -99,7 +105,286 @@
     <None Include="Resources\bat.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\red-bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-bat.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\balle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flyingsaucer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flyingsaucer2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flyingsaucer3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flyingsaucer4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satellite1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satellite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satellite3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satellite4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spaceship1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spaceship2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spaceship3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spaceship4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watchit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watchit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watchit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watchit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ball_disco2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laser2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bokeh_paws___texture_by_happymoonwolf-d4h64ph.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disco_Balls_by_nightmares06.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart___star_bokeh_texture_1_by_yuripanda-d352a69.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_pattern_bokeh_texture_by_yuripanda-d35yx5r.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4359__noisecollector__pongblipf4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4360__noisecollector__ponblipg-5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4361__noisecollector__pongblipa-3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4362__noisecollector__pongblipa-4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4363__noisecollector__pongblipa3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4364__noisecollector__pongblipa4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4365__noisecollector__pongblipa5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4366__noisecollector__pongblipb3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4367__noisecollector__pongblipb4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4368__noisecollector__pongblipc-3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4369__noisecollector__pongblipc-4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4370__noisecollector__pongblipc-5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4371__noisecollector__pongblipc4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4372__noisecollector__pongblipc5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4373__noisecollector__pongblipf3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4374__noisecollector__pongblipf5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4375__noisecollector__pongblipg-3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4376__noisecollector__pongblipg-4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4377__noisecollector__pongblipg3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4378__noisecollector__pongblipg4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4379__noisecollector__pongblipg5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4380__noisecollector__pongblipd-3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4381__noisecollector__pongblipd-4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4382__noisecollector__pongblipd-5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4383__noisecollector__pongblipd3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4384__noisecollector__pongblipd4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4385__noisecollector__pongblipd5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4386__noisecollector__pongblipe3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4387__noisecollector__pongblipe4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4388__noisecollector__pongblipe5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4389__noisecollector__pongblipf-3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4390__noisecollector__pongblipf-4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4391__noisecollector__pongblipf-5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explosion.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gameMusic.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laserFire.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuMusic.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheatley_portal_2_icon_by_thebrokenegg-d3ftq20.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emotion_core_avatar_by_the_rebexorcist-d3h0qpp.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_boing__by_kinnisonarc-d55wg25.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all_the_cores_by_left4deadhunterfan-d41o4j2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\companion_cube_in_a_jar_by_shinobitokobot-d4ayx1u.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defective_turret_avatar_by_the_rebexorcist-d3h6odr.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frankenturret_avatar_by_the_rebexorcist-d3hmbaw.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free__aperture_icon__by_blueberryscarf-d42dwps.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free_avatar___portal_2_irony_by_jellosie-d498aes.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free_companion_cube_icon_by_ashunnoodles-d4w979m.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glowing_companion_cube_icon_by_pepperfox23-d319441.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oracle_turret_avatar_by_the_rebexorcist-d3h9ts8.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_2_jumping_cube_icon_by_thebrokenegg-d3fzgwo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_2_turret_defending_icon_by_thebrokenegg-d3fdjxe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_companion_cube_free_3_by_vanillascream-d3ijo9p.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_companion_cube_free_icon_by_firedragon47-d4np10j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_icon_by_rallick_nom.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_turret_icon_3_by_squeekbot-d3gwm7t.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\potados_by_sungoddessokami-d481k83.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soprano_turret_avatar_by_the_rebexorcist-d3h9k81.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheatley_gif_by_puddle_jumper3-d56a26w.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atlas_avatar_by_the_rebexorcist-d3i8r14.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avvy_commish_frankchamturret_by_the_rebexorcist-d3krkra.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

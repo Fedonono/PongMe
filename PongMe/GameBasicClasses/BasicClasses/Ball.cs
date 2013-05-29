@@ -6,13 +6,15 @@ using System.Drawing;
 using System.Windows.Forms;
 using GameBasicClasses.Obstacles.Paddle;
 using System.Windows;
+using GameBasicClasses.Obstacles.Bonus;
+using GameBasicClasses.Obstacles;
 
 namespace GameBasicClasses.BasicClasses
 {
     public class Ball : Movable
     {
         private int diameter;
-        private int initialDiameter;
+        public int InitialDiameter { get; protected set; }
         public int Diameter
         {
             get { return this.diameter; }
@@ -26,8 +28,7 @@ namespace GameBasicClasses.BasicClasses
                 {
                     this.diameter = MAX_DIAMETER;
                 }
-                this.bounds.Width = this.diameter;
-                this.bounds.Height = this.diameter;
+                this.Bounds = new Rectangle(this.Bounds.X, this.Bounds.Y, this.diameter, this.diameter);
             }
         }
         private readonly static int MAX_DIAMETER = 100;
@@ -36,17 +37,39 @@ namespace GameBasicClasses.BasicClasses
 
         public bool isOutLeft { get; set; }
         public bool isOutRight { get; set; }
-        
+        private float MAX_SPEED { get; set; }
+        public override float Speed
+        {
+            get { return this.speed; }
+            set
+            {
+                if (value > 0 && value < MAX_SPEED)
+                {
+                    this.speed = value;
+                }
+                else
+                {
+                    this.speed = MAX_SPEED;
+                }
+            }
+        }
+
         public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
+            this.MAX_SPEED = 1f;
             this.Speed = speed;
-            this.initialSpeed = this.Speed;
+            this.InitialSpeed = this.Speed;
             this.Diameter = diameter;
-            this.initialDiameter = this.Diameter;
+            this.InitialDiameter = this.Diameter;
             this.Color = color;
-            this.initialColor = this.Color;
+            this.InitialColor = this.Color;
             this.Image = image;
-            this.initialImage = this.Image;
+            this.InitialImage = this.Image;
+            this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
+            this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
+            this.InitialBounds = this.Bounds;
+            this.Direction = new Vector(10, 10);
+            this.InitialDirection = this.Direction;
             this.ClientWidth = clientWidth;
             this.ClientHeight = clientHeight;
             this.Initialize();
@@ -54,14 +77,13 @@ namespace GameBasicClasses.BasicClasses
 
         public void Initialize()
         {
-            this.Speed = this.initialSpeed;
-            this.Diameter = this.initialDiameter;
-            this.Color = this.initialColor;
-            this.Image = this.initialImage;
-            this.Direction = new Vector(10, 10);
-            this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
+            this.Speed = this.InitialSpeed;
+            this.Diameter = this.InitialDiameter;
+            this.Color = this.InitialColor;
+            this.Image = this.InitialImage;
+            this.Direction = this.InitialDirection;
             this.PreviousPosition = this.Position;
-            this.bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
+            this.Bounds = this.InitialBounds;
             this.isMoving = false;
             this.isOutLeft = false;
             this.isOutRight = false;
@@ -79,6 +101,8 @@ namespace GameBasicClasses.BasicClasses
             this.checkOut();
             CurrentGame cg = CurrentGame.GetInstance();
             this.checkObstaclesCollision(cg.GameModel.listePaddle());
+            this.checkObstaclesCollision(cg.GameModel.ListeBrick);
+            this.checkObstaclesCollision(cg.GameModel.ListeBonus);
             this.move();
         }
 
@@ -99,28 +123,47 @@ namespace GameBasicClasses.BasicClasses
                 || (this.Position.Y >= this.ClientHeight - this.Diameter && this.Direction.Y > 0))
             {
                 this.Direction = new Vector(Direction.X, -Direction.Y);
+                this.PreviousPosition = Position;
             }
         }
 
-        private void checkObstaclesCollision(List<Paddle> ob)
+        private void checkObstaclesCollision<T>(List<T> ob) where T : GameBasicClasses.Obstacles.Obstacle
         {
-            foreach (Paddle obstacle in ob)
+            foreach (GameBasicClasses.Obstacles.Obstacle obstacle in ob)
             {
                 if (obstacle.contains(this))
                 {
-                    if(obstacle.containsLeftOrRight(this))
+                    if (!(obstacle is Bonus))
                     {
-                        this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
-                        this.move();
-                        this.Speed += 0.05f;
-                        return;
+                        if(obstacle is Brick)
+                        {
+                            Brick b = obstacle as Brick;
+                            b.touched();
+                        }
+                        if (obstacle.containsLeftOrRight(this))
+                        {
+                            this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
+                            this.PreviousPosition = Position;
+                            this.move();
+                            this.Speed += 0.05f;
+                            return;
+                        }
+                        else if (obstacle.containsUpOrDown(this))
+                        {
+                            this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
+                        this.PreviousPosition = Position;
+                            this.move();
+                            this.Speed += 0.05f;
+                            return;
+                        }
                     }
-                    else if(obstacle.containsUpOrDown(this))
+                    else
                     {
-                        this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
-                        this.move();
-                        this.Speed += 0.05f;
-                        return;
+                        Bonus b = obstacle as Bonus;
+                        if (!b.Active)
+                        {
+                            b.startTimeOut(this);
+                        }
                     }
                 }
             }
@@ -128,7 +171,6 @@ namespace GameBasicClasses.BasicClasses
 
         private void move()
         {
-            this.PreviousPosition = this.Position;
             this.Position += this.Direction * this.Speed;
         }
 

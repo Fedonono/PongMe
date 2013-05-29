@@ -12,26 +12,28 @@ namespace GameBasicClasses.Obstacles
     {
         public bool contains(Ball b)
         {
-            List<Point> bounds = b.getBounds();
-            foreach (Point p in bounds)
-            {
-                if (this.bounds.Contains(p))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return !(Rectangle.Intersect(this.Bounds, b.Bounds) == Rectangle.Empty);
         }
 
         public bool containsLeftOrRight(Ball b)
         {
-            Rectangle left = new Rectangle((int)this.Position.X-b.Diameter*2, (int)this.Position.Y, b.Diameter*2, this.bounds.Height);
-            Rectangle right = new Rectangle((int)this.Position.X + this.bounds.Width, (int)this.Position.Y, b.Diameter*2, this.bounds.Height);
-            Point[] bounds = b.GetPath();
-            foreach (Point p in bounds)
+            Point[] path = b.GetPath();
+
+            foreach (Point p in path)
             {
-                if (left.Contains(p) || right.Contains(p))
+                bool isInHorizontalBounds =(p.Y >= this.Bounds.Top && p.Y <= this.Bounds.Bottom) ;
+
+                if ((p.X < this.Bounds.Left || p.X > this.Bounds.Right) && isInHorizontalBounds)
                 {
+                    if(p.X > this.Bounds.Right)
+                    {
+                        b.Position.X = this.Bounds.Right + 1000;
+                    }
+                    else if (p.X < this.Bounds.Left)
+                    {
+                        b.Position.X = this.Bounds.Left - b.Bounds.Width - 1;
+                    }
+
                     return true;
                 }
             }
@@ -40,13 +42,24 @@ namespace GameBasicClasses.Obstacles
 
         public bool containsUpOrDown(Ball b)
         {
-            Rectangle up = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.bounds.Width, b.Diameter*2);
-            Rectangle down = new Rectangle((int)this.Position.X, (int)this.Position.Y + this.bounds.Height-b.Diameter*2, this.bounds.Width, b.Diameter*2);
-            Point[] bounds = b.GetPath();
-            foreach (Point p in bounds)
+            Point[] path = b.GetPath();
+
+            foreach (Point p in path)
             {
-                if (up.Contains(p) || down.Contains(p))
+
+                bool isInVerticalBounds = (p.X >= this.Bounds.Left && p.X <= this.Bounds.Right);
+
+                if ((p.Y < this.Bounds.Top || p.Y > this.Bounds.Bottom) && isInVerticalBounds)
                 {
+
+                    if (p.Y < this.Bounds.Top)
+                    {
+                        b.Position.Y = this.Bounds.Top - b.Bounds.Height - 1;
+                    }
+                    else if (p.Y > this.Bounds.Bottom)
+                    {
+                        b.Position.Y = this.Bounds.Bottom + 1; 
+                    }
                     return true;
                 }
             }

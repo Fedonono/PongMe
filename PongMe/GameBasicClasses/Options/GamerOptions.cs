@@ -112,5 +112,12 @@ namespace GameBasicClasses.Options
             return String.Format("{0} to go up - {1} to go down - {2} to stop the game - {3} to pause the game", 
                 this.Up, this.Down, Stop, Pause);
         }
+
+        public void swapCommands()
+        {
+            Keys tmp = this.up;
+            this.up = this.down;
+            this.down = tmp;
+        }
     }
 }

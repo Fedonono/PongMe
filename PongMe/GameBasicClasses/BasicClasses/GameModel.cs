@@ -41,6 +41,11 @@ namespace GameBasicClasses.BasicClasses
             this.listeBonus.Add(b);
         }
 
+        public void addBonus(List<Bonus> b)
+        {
+            this.listeBonus.AddRange(b);
+        }
+
         public void addBrick(Brick b)
         {
             this.listeBrick.Add(b);

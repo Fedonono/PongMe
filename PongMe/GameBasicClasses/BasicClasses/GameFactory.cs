@@ -15,12 +15,12 @@ namespace GameBasicClasses.BasicClasses
         public static GameModel defaultGame()
         {
             GameModel gm = new GameModel();
-            gm.addBall(new Ball(0.5f, 20, Color.Empty, GameBasicClasses.Properties.Resources.balle, 1000, 600));
-            gm.addBall(new Ball(0.2f, 20, Color.Empty, GameBasicClasses.Properties.Resources.balle, 1000, 600));
-            Paddle p = new Paddle(true, Color.Empty, GameBasicClasses.Properties.Resources.bat, 500, 60, 10, 1000, 600);
-            Paddle p2 = new Paddle(false, Color.Empty, GameBasicClasses.Properties.Resources.bat, 14, 60, 10, 1000, 600);
+            gm.addBall(new Ball(0.5f, 30, Color.Empty, GameBasicClasses.Properties.Resources.emotion_core_avatar_by_the_rebexorcist_d3h0qpp, 1000, 600));
+            gm.addBall(new Ball(0.2f, 30, Color.Empty, GameBasicClasses.Properties.Resources.portal_2_jumping_cube_icon_by_thebrokenegg_d3fzgwo, 1000, 600));
+            Paddle p = new Paddle(true, Color.Empty, GameBasicClasses.Properties.Resources.batred, 14, 60, 10, 1000, 600);
+            Paddle p2 = new Paddle(false, Color.Empty, GameBasicClasses.Properties.Resources.batblue, 14, 60, 10, 1000, 600);
             gm.addGamer(new AI(Keys.Up, Keys.Down, p2));
-            gm.addGamer(new Human(Keys.Z, Keys.S, p));
+            gm.addGamer(new AI(Keys.Z, Keys.S, p));
             return gm;
         }
     }

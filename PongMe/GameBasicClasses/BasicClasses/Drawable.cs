@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class Drawable
+    public abstract class Drawable
     {
         private int clientWidth;
         public int ClientWidth
@@ -64,51 +64,104 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public Rectangle bounds;
+        private Rectangle bounds;
+        public Rectangle Bounds
+        {
+            get { return this.bounds; }
+            set
+            {
+                this.bounds = value;
+                this.box.Size = this.Bounds.Size;
+            }
+        }
+        public Rectangle InitialBounds { get; protected set; }
 
         public Vector Position
         {
             get { return new Vector(this.bounds.X, this.bounds.Y); }
-            set { this.bounds.X = (int)value.X; this.bounds.Y = (int)value.Y; }
+            set 
+            {
+                this.bounds.X = (int)value.X; this.bounds.Y = (int)value.Y;
+                if (this.box != null)
+                {
+                    this.box.Location = this.box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
+                }
+            }
         }
 
-        public Image Image { get; set; }
-        protected Image initialImage;
-
-        private PictureBox box;
-        public PictureBox Box
+        private Image image;
+        public Image Image
         {
-            get
+            get { return this.image; }
+            set
             {
+                this.image = value;
                 if (this.Image != null)
                 {
-                    box.Image = this.Image;
-                    box.SizeMode = PictureBoxSizeMode.StretchImage;
+                    this.box.Image = this.Image;
+                    this.box.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 else
                 {
-                    box.BackColor = this.Color;
+                    this.box.BackColor = this.Color;
                 }
-                box.Size = this.bounds.Size;
-                box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
-                return box;
             }
-            set { box = value; }
         }
+        public Image InitialImage { get; protected set; }
 
-        public Color Color { get; set; }
-        protected Color initialColor;
+        protected PictureBox box;
+        public virtual PictureBox Box
+        {
+            get
+            {
+                return this.box;
+            }
+            set
+            {
+                this.box = value;
+                if (this.Image != null)
+                {
+                    this.box.Image = this.Image;
+                    this.box.SizeMode = PictureBoxSizeMode.StretchImage;
+                    this.box.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    this.box.BackColor = this.Color;
+                }
+                this.box.Size = this.bounds.Size;
+                this.box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
+            }
+        }
+        public PictureBox InitialBox { get; protected set; }
+
+        private Color color;
+        public Color Color
+        {
+            get
+            {
+                return this.color;
+            }
+            set
+            {
+                this.color = value;
+                this.box.BackColor = this.Color;
+            }
+        }
+        public Color InitialColor { get; protected set; }
 
         public Drawable()
         {
             this.ClientSize = new Size(1000, 600);
-            this.bounds = new Rectangle();
+            this.Box = new PictureBox();
+            this.Bounds = new Rectangle();
+            this.InitialBounds = this.Bounds;
             this.Position = Vector.Zero();
             this.Image = null;
-            this.initialImage = this.Image;
-            this.Box = new PictureBox();
+            this.InitialImage = this.Image;
+            this.InitialBox = this.Box;
             this.Color = Color.Blue;
-            this.initialColor = this.Color;
+            this.InitialColor = this.Color;
         }
     }
 }
