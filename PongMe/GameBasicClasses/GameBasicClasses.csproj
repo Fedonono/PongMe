@@ -45,6 +45,7 @@
     <Compile Include="BasicClasses\Drawable.cs" />
     <Compile Include="BasicClasses\Movable.cs" />
     <Compile Include="BasicClasses\Vector.cs" />
+    <Compile Include="Obstacles\Bonus\BallDiameterBonus.cs" />
     <Compile Include="Obstacles\Bonus\BallTrajectoryMalus.cs" />
     <Compile Include="Gamer\AI.cs" />
     <Compile Include="BasicClasses\Ball.cs" />

@@ -6,12 +6,12 @@ using GameBasicClasses.BasicClasses;
 
 namespace GameBasicClasses.Obstacles.Bonus
 {
-    public class BallTrajectoryMalus : Bonus
+    public class BallDiameterBonus : Bonus
     {
-        public BallTrajectoryMalus(int clientWidth, int clientHeight, int timeout, Vector position)
+        public BallDiameterBonus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            this.Image = Properties.Resources.watchit1;
+            this.Image = Properties.Resources.satellite1;
             this.InitialImage = this.Image;
             this.Color = System.Drawing.Color.Transparent;
             this.InitialColor = this.Color;
@@ -19,13 +19,12 @@ namespace GameBasicClasses.Obstacles.Bonus
 
         protected override void stopBonus()
         {
-            this.ball.Direction = this.ball.InitialDirection;
+            this.ball.Diameter = this.ball.InitialDiameter;
         }
 
         protected override void runBonus()
         {
-            Random r = new Random();
-            this.ball.Direction = new Vector(r.Next(1,20),r.Next(1,20));
+            this.ball.Diameter *= 2;
         }
     }
 }

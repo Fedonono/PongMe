@@ -112,14 +112,11 @@ namespace GameView
             }
             this.removeOverBonuses(overBonuses);
 
-            List<Bonus> newBonuses = new List<Bonus>();
-            while(newBonuses.Count <= 4-this.currentGame.GameModel.ListeBonus.Count)
+            if(this.currentGame.GameModel.ListeBonus.Count <= 1)
             {
                 Bonus b = this.getRandomBonus();
-                newBonuses.Add(b);//juste pour tester
-                //il faudra ensuite ajouter périodiquement et aléatoirement les bonus
+                this.currentGame.GameModel.addBonus(b);
             }
-            this.currentGame.GameModel.addBonus(newBonuses);//en pas à pas la liste est bonne mais en lançant vraiment le programme ça ne fonctionne pas !
             this.gameBoard.Refresh();
         }
 
@@ -127,7 +124,7 @@ namespace GameView
         {
             Random r = new Random();
             Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height-50));
-            int i = r.Next(1,5);
+            int i = r.Next(1,6);
             switch (i)
             {
                 case 1:
@@ -140,6 +137,8 @@ namespace GameView
                     return new SpeedBonus(this.gameBoard.Width, this.gameBoard.Height, 3, v);
                 case 5:
                     return new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
+                case 6:
+                    return new BallDiameterBonus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
             }
             return new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
         }
