@@ -20,7 +20,7 @@ namespace GameBasicClasses.BasicClasses
             Paddle p = new Paddle(true, Color.Empty, GameBasicClasses.Properties.Resources.batred, 14, 60, 10, 1000, 600);
             Paddle p2 = new Paddle(false, Color.Empty, GameBasicClasses.Properties.Resources.batblue, 14, 60, 10, 1000, 600);
             gm.addGamer(new AI(Keys.Up, Keys.Down, p2));
-            gm.addGamer(new AI(Keys.Z, Keys.S, p));
+            gm.addGamer(new Human(Keys.Z, Keys.S, p));
             return gm;
         }
     }
