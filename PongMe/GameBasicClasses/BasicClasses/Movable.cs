@@ -17,9 +17,9 @@ namespace GameBasicClasses.BasicClasses
         private int NbWayPoints { get; set; }
         private Point[] Path { get; set; }
         public float InitialSpeed { get; set; }
-        private float speed;
+        protected float speed;
 
-        public float Speed
+        public virtual float Speed
         {
             get { return this.speed; }
             set

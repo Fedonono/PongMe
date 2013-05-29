@@ -85,8 +85,8 @@ namespace GameBasicClasses.BasicClasses
         public Image Image { get; set; }
         public Image InitialImage { get; protected set; }
 
-        private PictureBox box;
-        public PictureBox Box
+        protected PictureBox box;
+        public virtual PictureBox Box
         {
             get
             {

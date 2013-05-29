@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using GameBasicClasses.Obstacles.Paddle;
 using System.Windows;
 using GameBasicClasses.Obstacles.Bonus;
+using GameBasicClasses.Obstacles;
 
 namespace GameBasicClasses.BasicClasses
 {
@@ -37,10 +38,25 @@ namespace GameBasicClasses.BasicClasses
         public bool isOutLeft { get; set; }
         public bool isOutRight { get; set; }
         private float MAX_SPEED { get; set; }
+        public override float Speed
+        {
+            get { return this.speed; }
+            set
+            {
+                if (value > 0 && value < MAX_SPEED)
+                {
+                    this.speed = value;
+                }
+                else
+                {
+                    this.speed = MAX_SPEED;
+                }
+            }
+        }
 
         public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
-            this.MAX_SPEED = 1.5f;
+            this.MAX_SPEED = 1f;
             this.Speed = speed;
             this.InitialSpeed = this.Speed;
             this.Diameter = diameter;
@@ -119,10 +135,15 @@ namespace GameBasicClasses.BasicClasses
                 {
                     if (!(obstacle is Bonus))
                     {
+                        if(obstacle is Brick)
+                        {
+                            Brick b = obstacle as Brick;
+                            b.touched();
+                        }
                         if (obstacle.containsLeftOrRight(this))
                         {
                             this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
-                        this.PreviousPosition = Position;
+                            this.PreviousPosition = Position;
                             this.move();
                             this.Speed += 0.05f;
                             return;

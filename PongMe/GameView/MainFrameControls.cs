@@ -181,7 +181,7 @@ namespace GameView
             {
                 Random r = new Random();
                 Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height-50));
-                Brick b = new Brick(this.gameBoard.Width, this.gameBoard.Height, r.Next(1,5), v);
+                Brick b = new Brick(this.gameBoard.Width, this.gameBoard.Height, r.Next(3,10), v);
                 this.currentGame.GameModel.addBrick(b);
             }
             this.gameBoard.Refresh();

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using GameBasicClasses.BasicClasses;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace GameBasicClasses.Obstacles
 {
@@ -30,12 +31,29 @@ namespace GameBasicClasses.Obstacles
             }
         }
 
+        public override PictureBox Box
+        {
+            get
+            {
+                this.box.Image = this.Image;
+                this.box.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.box.BackColor = this.Color;
+                this.box.Size = this.Bounds.Size;
+                this.box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
+                return this.box;
+            }
+            set
+            {
+                this.box = value;
+            }
+        }
+
         public Brick(int clientWidth, int clientHeight, int health, Vector position)
         {
             this.ClientHeight = clientHeight;
             this.ClientWidth = clientWidth;
             this.Health = health;
-            this.Image = null;// Properties.Resources.brick;
+            this.Image = Properties.Resources.brick;
             this.InitialImage = this.Image;
             Random r = new Random();
             this.Color = System.Drawing.Color.FromArgb(r.Next(255),r.Next(255),r.Next(255));

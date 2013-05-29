@@ -8,6 +8,7 @@ using GameBasicClasses.Obstacles;
 using GameBasicClasses.BasicClasses;
 using GameBasicClasses.Obstacles.Paddle;
 using GameBasicClasses.Gamer;
+using System.Media;
 
 namespace GameView
 {
@@ -264,6 +265,7 @@ namespace GameView
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.MainMenu.ResumeLayout(false);
@@ -318,6 +320,15 @@ namespace GameView
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private SoundPlayer soundPlayer;
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            soundPlayer = new SoundPlayer(GameBasicClasses.Properties.Resources.gameMusic);
+            soundPlayer.Load();
+            soundPlayer.PlayLooping();
         }
 
         
