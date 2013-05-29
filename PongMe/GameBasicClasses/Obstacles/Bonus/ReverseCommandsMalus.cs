@@ -12,7 +12,7 @@ namespace GameBasicClasses.Obstacles.Bonus
         public ReverseCommandsMalus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            this.Image = Properties.Resources.flyingsaucer1;
+            this.Image = Properties.Resources.portal_2_turret_defending_icon_by_thebrokenegg_d3fdjxe;
             this.InitialImage = this.Image;
             this.Color = System.Drawing.Color.Transparent;
             this.InitialColor = this.Color;

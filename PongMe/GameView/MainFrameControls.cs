@@ -7,6 +7,8 @@ using GameBasicClasses.BasicClasses;
 using GameBasicClasses.Gamer;
 using GameBasicClasses.Obstacles.Bonus;
 using GameBasicClasses.Obstacles;
+using System.Drawing;
+using System.Media;
 
 namespace GameView
 {
@@ -35,13 +37,19 @@ namespace GameView
             foreach (Ball ball in listeBall)
             {
                 ball.ClientSize = this.gameBoard.Size;
-                this.gameBoard.Controls.Add(ball.Box);
+                if(!this.gameBoard.Controls.Contains(ball.Box))
+                {
+                    this.gameBoard.Controls.Add(ball.Box);
+                }
             }
             List<Gamer> listeGamer = this.currentGame.GameModel.ListeGamer;
             foreach (Gamer gamer in listeGamer)
             {
                 gamer.Paddle.ClientSize = this.gameBoard.Size;
-                this.gameBoard.Controls.Add(gamer.Paddle.Box);
+                if (!this.gameBoard.Controls.Contains(gamer.Paddle.Box))
+                {
+                    this.gameBoard.Controls.Add(gamer.Paddle.Box);
+                }
             }
             List<Bonus> listeBonus = this.currentGame.GameModel.ListeBonus;
             foreach (Bonus bonus in listeBonus)
@@ -49,11 +57,17 @@ namespace GameView
                 if (!bonus.Active)
                 {
                     bonus.ClientSize = this.gameBoard.Size;
-                    this.gameBoard.Controls.Add(bonus.Box);
+                    if (!this.gameBoard.Controls.Contains(bonus.Box))
+                    {
+                        this.gameBoard.Controls.Add(bonus.Box);
+                    }
                 }
                 else
                 {
-                    this.gameBoard.Controls.Remove(bonus.Box);
+                    if (this.gameBoard.Controls.Contains(bonus.Box))
+                    {
+                        this.gameBoard.Controls.Remove(bonus.Box);
+                    }
                 }
             }
             List<Brick> listeBrick = this.currentGame.GameModel.ListeBrick;
@@ -62,11 +76,17 @@ namespace GameView
                 if (b.Active)
                 {
                     b.ClientSize = this.gameBoard.Size;
-                    this.gameBoard.Controls.Add(b.Box);
+                    if (!this.gameBoard.Controls.Contains(b.Box))
+                    {
+                        this.gameBoard.Controls.Add(b.Box);
+                    }
                 }
                 else
                 {
-                    this.gameBoard.Controls.Remove(b.Box);
+                    if (this.gameBoard.Controls.Contains(b.Box))
+                    {
+                        this.gameBoard.Controls.Remove(b.Box);
+                    }
                 }
             }
             this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
@@ -112,6 +132,14 @@ namespace GameView
         private void animationTimer_Tick(object sender, EventArgs e)
         {
             //this.gameBoard.Refresh();
+        }
+
+        private SoundPlayer soundPlayer;
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            soundPlayer = new SoundPlayer(GameBasicClasses.Properties.Resources.gameMusic);
+            soundPlayer.Load();
+            soundPlayer.PlayLooping();
         }
 
         private void bonusTimer_Tick(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace GameBasicClasses.Obstacles.Bonus
         public HeightBonus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            this.Image = Properties.Resources.bug1;
+            this.Image = Properties.Resources.free_companion_cube_icon_by_ashunnoodles_d4w979m;
             this.InitialImage = this.Image;
             this.Color = System.Drawing.Color.Transparent;
             this.InitialColor = this.Color;

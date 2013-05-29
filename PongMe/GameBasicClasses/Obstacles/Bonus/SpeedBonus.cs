@@ -11,7 +11,7 @@ namespace GameBasicClasses.Obstacles.Bonus
         public SpeedBonus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            this.Image = Properties.Resources.spaceship1;
+            this.Image = Properties.Resources.avvy_commish_frankchamturret_by_the_rebexorcist_d3krkra;
             this.InitialImage = this.Image;
             this.Color = System.Drawing.Color.Transparent;
             this.InitialColor = this.Color;

@@ -317,6 +317,75 @@
   <ItemGroup>
     <None Include="Resources\menuMusic.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheatley_portal_2_icon_by_thebrokenegg-d3ftq20.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emotion_core_avatar_by_the_rebexorcist-d3h0qpp.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_boing__by_kinnisonarc-d55wg25.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all_the_cores_by_left4deadhunterfan-d41o4j2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\companion_cube_in_a_jar_by_shinobitokobot-d4ayx1u.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defective_turret_avatar_by_the_rebexorcist-d3h6odr.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frankenturret_avatar_by_the_rebexorcist-d3hmbaw.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free__aperture_icon__by_blueberryscarf-d42dwps.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free_avatar___portal_2_irony_by_jellosie-d498aes.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free_companion_cube_icon_by_ashunnoodles-d4w979m.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glowing_companion_cube_icon_by_pepperfox23-d319441.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oracle_turret_avatar_by_the_rebexorcist-d3h9ts8.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_2_jumping_cube_icon_by_thebrokenegg-d3fzgwo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_2_turret_defending_icon_by_thebrokenegg-d3fdjxe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_companion_cube_free_3_by_vanillascream-d3ijo9p.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_companion_cube_free_icon_by_firedragon47-d4np10j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_icon_by_rallick_nom.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal_turret_icon_3_by_squeekbot-d3gwm7t.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\potados_by_sungoddessokami-d481k83.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soprano_turret_avatar_by_the_rebexorcist-d3h9k81.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheatley_gif_by_puddle_jumper3-d56a26w.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atlas_avatar_by_the_rebexorcist-d3i8r14.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avvy_commish_frankchamturret_by_the_rebexorcist-d3krkra.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

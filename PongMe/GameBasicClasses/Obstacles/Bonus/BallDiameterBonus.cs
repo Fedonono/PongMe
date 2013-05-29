@@ -11,7 +11,7 @@ namespace GameBasicClasses.Obstacles.Bonus
         public BallDiameterBonus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            this.Image = Properties.Resources.satellite1;
+            this.Image = Properties.Resources.potados_by_sungoddessokami_d481k83;
             this.InitialImage = this.Image;
             this.Color = System.Drawing.Color.Transparent;
             this.InitialColor = this.Color;

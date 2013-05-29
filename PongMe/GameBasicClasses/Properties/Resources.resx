@@ -136,101 +136,17 @@
   <data name="batblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue-bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bug1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bug1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bug2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bug2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bug3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bug3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bug4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bug4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="flyingsaucer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flyingsaucer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="flyingsaucer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flyingsaucer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="flyingsaucer3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flyingsaucer3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="flyingsaucer4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flyingsaucer4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="satellite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\satellite1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="satellite2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\satellite2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="satellite3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\satellite3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="satellite4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\satellite4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="spaceship1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spaceship1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="spaceship2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spaceship2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="spaceship3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spaceship3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="spaceship4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spaceship4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="star1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="star2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="star3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="star4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="watchit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\watchit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="watchit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\watchit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="watchit3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\watchit3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="watchit4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\watchit4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ball_disco2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ball_disco2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bokeh_paws___texture_by_happymoonwolf_d4h64ph" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bokeh_paws___texture_by_happymoonwolf-d4h64ph.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="brick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Disco_Balls_by_nightmares06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Disco_Balls_by_nightmares06.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="explosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\explosion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="gameMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gameMusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="heart_pattern_bokeh_texture_by_yuripanda_d35yx5r" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heart_pattern_bokeh_texture_by_yuripanda-d35yx5r.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="heart___star_bokeh_texture_1_by_yuripanda_d352a69" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heart___star_bokeh_texture_1_by_yuripanda-d352a69.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="laser2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\laser2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -339,5 +255,71 @@
   </data>
   <data name="_4391__noisecollector__pongblipf_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4391__noisecollector__pongblipf-5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="all_the_cores_by_left4deadhunterfan_d41o4j2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\all_the_cores_by_left4deadhunterfan-d41o4j2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="atlas_avatar_by_the_rebexorcist_d3i8r14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\atlas_avatar_by_the_rebexorcist-d3i8r14.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avvy_commish_frankchamturret_by_the_rebexorcist_d3krkra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avvy_commish_frankchamturret_by_the_rebexorcist-d3krkra.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="companion_cube_in_a_jar_by_shinobitokobot_d4ayx1u" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\companion_cube_in_a_jar_by_shinobitokobot-d4ayx1u.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="defective_turret_avatar_by_the_rebexorcist_d3h6odr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\defective_turret_avatar_by_the_rebexorcist-d3h6odr.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emotion_core_avatar_by_the_rebexorcist_d3h0qpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emotion_core_avatar_by_the_rebexorcist-d3h0qpp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frankenturret_avatar_by_the_rebexorcist_d3hmbaw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frankenturret_avatar_by_the_rebexorcist-d3hmbaw.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free_avatar___portal_2_irony_by_jellosie_d498aes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free_avatar___portal_2_irony_by_jellosie-d498aes.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free_companion_cube_icon_by_ashunnoodles_d4w979m" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free_companion_cube_icon_by_ashunnoodles-d4w979m.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free__aperture_icon__by_blueberryscarf_d42dwps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free__aperture_icon__by_blueberryscarf-d42dwps.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="glowing_companion_cube_icon_by_pepperfox23_d319441" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glowing_companion_cube_icon_by_pepperfox23-d319441.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="oracle_turret_avatar_by_the_rebexorcist_d3h9ts8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\oracle_turret_avatar_by_the_rebexorcist-d3h9ts8.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="portal_2_jumping_cube_icon_by_thebrokenegg_d3fzgwo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\portal_2_jumping_cube_icon_by_thebrokenegg-d3fzgwo.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="portal_2_turret_defending_icon_by_thebrokenegg_d3fdjxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\portal_2_turret_defending_icon_by_thebrokenegg-d3fdjxe.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="portal_companion_cube_free_3_by_vanillascream_d3ijo9p" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\portal_companion_cube_free_3_by_vanillascream-d3ijo9p.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="portal_companion_cube_free_icon_by_firedragon47_d4np10j" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\portal_companion_cube_free_icon_by_firedragon47-d4np10j.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="portal_icon_by_rallick_nom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\portal_icon_by_rallick_nom.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="portal_turret_icon_3_by_squeekbot_d3gwm7t" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\portal_turret_icon_3_by_squeekbot-d3gwm7t.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="potados_by_sungoddessokami_d481k83" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\potados_by_sungoddessokami-d481k83.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soprano_turret_avatar_by_the_rebexorcist_d3h9k81" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soprano_turret_avatar_by_the_rebexorcist-d3h9k81.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wheatley_gif_by_puddle_jumper3_d56a26w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wheatley_gif_by_puddle_jumper3-d56a26w.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wheatley_portal_2_icon_by_thebrokenegg_d3ftq20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wheatley_portal_2_icon_by_thebrokenegg-d3ftq20.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

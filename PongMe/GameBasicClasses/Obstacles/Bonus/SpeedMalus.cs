@@ -11,7 +11,7 @@ namespace GameBasicClasses.Obstacles.Bonus
         public SpeedMalus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            this.Image = Properties.Resources.star1;
+            this.Image = Properties.Resources.atlas_avatar_by_the_rebexorcist_d3i8r14;
             this.InitialImage = this.Image;
             this.Color = System.Drawing.Color.Transparent;
             this.InitialColor = this.Color;

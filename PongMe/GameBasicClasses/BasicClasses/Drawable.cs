@@ -79,17 +79,23 @@ namespace GameBasicClasses.BasicClasses
         public Vector Position
         {
             get { return new Vector(this.bounds.X, this.bounds.Y); }
-            set { this.bounds.X = (int)value.X; this.bounds.Y = (int)value.Y; }
+            set 
+            {
+                this.bounds.X = (int)value.X; this.bounds.Y = (int)value.Y;
+                if (this.box != null)
+                {
+                    this.box.Location = this.box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
+                }
+            }
         }
 
-        public Image Image { get; set; }
-        public Image InitialImage { get; protected set; }
-
-        protected PictureBox box;
-        public virtual PictureBox Box
+        private Image image;
+        public Image Image
         {
-            get
+            get { return this.image; }
+            set
             {
+                this.image = value;
                 if (this.Image != null)
                 {
                     this.box.Image = this.Image;
@@ -99,18 +105,49 @@ namespace GameBasicClasses.BasicClasses
                 {
                     this.box.BackColor = this.Color;
                 }
-                this.box.Size = this.bounds.Size;
-                this.box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
+            }
+        }
+        public Image InitialImage { get; protected set; }
+
+        protected PictureBox box;
+        public virtual PictureBox Box
+        {
+            get
+            {
                 return this.box;
             }
             set
             {
                 this.box = value;
+                if (this.Image != null)
+                {
+                    this.box.Image = this.Image;
+                    this.box.SizeMode = PictureBoxSizeMode.StretchImage;
+                    this.box.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    this.box.BackColor = this.Color;
+                }
+                this.box.Size = this.bounds.Size;
+                this.box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
             }
         }
         public PictureBox InitialBox { get; protected set; }
 
-        public Color Color { get; set; }
+        private Color color;
+        public Color Color
+        {
+            get
+            {
+                return this.color;
+            }
+            set
+            {
+                this.color = value;
+                this.box.BackColor = this.Color;
+            }
+        }
         public Color InitialColor { get; protected set; }
 
         public Drawable()

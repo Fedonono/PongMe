@@ -258,6 +258,27 @@ namespace GameBasicClasses.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap all_the_cores_by_left4deadhunterfan_d41o4j2 {
+            get {
+                object obj = ResourceManager.GetObject("all_the_cores_by_left4deadhunterfan_d41o4j2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap atlas_avatar_by_the_rebexorcist_d3i8r14 {
+            get {
+                object obj = ResourceManager.GetObject("atlas_avatar_by_the_rebexorcist_d3i8r14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap avvy_commish_frankchamturret_by_the_rebexorcist_d3krkra {
+            get {
+                object obj = ResourceManager.GetObject("avvy_commish_frankchamturret_by_the_rebexorcist_d3krkra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap ball_disco2 {
             get {
                 object obj = ResourceManager.GetObject("ball_disco2", resourceCulture);
@@ -300,13 +321,6 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap bokeh_paws___texture_by_happymoonwolf_d4h64ph {
-            get {
-                object obj = ResourceManager.GetObject("bokeh_paws___texture_by_happymoonwolf_d4h64ph", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap brick {
             get {
                 object obj = ResourceManager.GetObject("brick", resourceCulture);
@@ -314,37 +328,23 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap bug1 {
+        public static System.Drawing.Bitmap companion_cube_in_a_jar_by_shinobitokobot_d4ayx1u {
             get {
-                object obj = ResourceManager.GetObject("bug1", resourceCulture);
+                object obj = ResourceManager.GetObject("companion_cube_in_a_jar_by_shinobitokobot_d4ayx1u", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap bug2 {
+        public static System.Drawing.Bitmap defective_turret_avatar_by_the_rebexorcist_d3h6odr {
             get {
-                object obj = ResourceManager.GetObject("bug2", resourceCulture);
+                object obj = ResourceManager.GetObject("defective_turret_avatar_by_the_rebexorcist_d3h6odr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap bug3 {
+        public static System.Drawing.Bitmap emotion_core_avatar_by_the_rebexorcist_d3h0qpp {
             get {
-                object obj = ResourceManager.GetObject("bug3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap bug4 {
-            get {
-                object obj = ResourceManager.GetObject("bug4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap Disco_Balls_by_nightmares06 {
-            get {
-                object obj = ResourceManager.GetObject("Disco_Balls_by_nightmares06", resourceCulture);
+                object obj = ResourceManager.GetObject("emotion_core_avatar_by_the_rebexorcist_d3h0qpp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -355,30 +355,30 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap flyingsaucer1 {
+        public static System.Drawing.Bitmap frankenturret_avatar_by_the_rebexorcist_d3hmbaw {
             get {
-                object obj = ResourceManager.GetObject("flyingsaucer1", resourceCulture);
+                object obj = ResourceManager.GetObject("frankenturret_avatar_by_the_rebexorcist_d3hmbaw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap flyingsaucer2 {
+        public static System.Drawing.Bitmap free__aperture_icon__by_blueberryscarf_d42dwps {
             get {
-                object obj = ResourceManager.GetObject("flyingsaucer2", resourceCulture);
+                object obj = ResourceManager.GetObject("free__aperture_icon__by_blueberryscarf_d42dwps", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap flyingsaucer3 {
+        public static System.Drawing.Bitmap free_avatar___portal_2_irony_by_jellosie_d498aes {
             get {
-                object obj = ResourceManager.GetObject("flyingsaucer3", resourceCulture);
+                object obj = ResourceManager.GetObject("free_avatar___portal_2_irony_by_jellosie_d498aes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap flyingsaucer4 {
+        public static System.Drawing.Bitmap free_companion_cube_icon_by_ashunnoodles_d4w979m {
             get {
-                object obj = ResourceManager.GetObject("flyingsaucer4", resourceCulture);
+                object obj = ResourceManager.GetObject("free_companion_cube_icon_by_ashunnoodles_d4w979m", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -389,16 +389,9 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap heart___star_bokeh_texture_1_by_yuripanda_d352a69 {
+        public static System.Drawing.Bitmap glowing_companion_cube_icon_by_pepperfox23_d319441 {
             get {
-                object obj = ResourceManager.GetObject("heart___star_bokeh_texture_1_by_yuripanda_d352a69", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap heart_pattern_bokeh_texture_by_yuripanda_d35yx5r {
-            get {
-                object obj = ResourceManager.GetObject("heart_pattern_bokeh_texture_by_yuripanda_d35yx5r", resourceCulture);
+                object obj = ResourceManager.GetObject("glowing_companion_cube_icon_by_pepperfox23_d319441", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -422,6 +415,13 @@ namespace GameBasicClasses.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap oracle_turret_avatar_by_the_rebexorcist_d3h9ts8 {
+            get {
+                object obj = ResourceManager.GetObject("oracle_turret_avatar_by_the_rebexorcist_d3h9ts8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap pokeball {
             get {
                 object obj = ResourceManager.GetObject("pokeball", resourceCulture);
@@ -429,114 +429,72 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap satellite1 {
+        public static System.Drawing.Bitmap portal_2_jumping_cube_icon_by_thebrokenegg_d3fzgwo {
             get {
-                object obj = ResourceManager.GetObject("satellite1", resourceCulture);
+                object obj = ResourceManager.GetObject("portal_2_jumping_cube_icon_by_thebrokenegg_d3fzgwo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap satellite2 {
+        public static System.Drawing.Bitmap portal_2_turret_defending_icon_by_thebrokenegg_d3fdjxe {
             get {
-                object obj = ResourceManager.GetObject("satellite2", resourceCulture);
+                object obj = ResourceManager.GetObject("portal_2_turret_defending_icon_by_thebrokenegg_d3fdjxe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap satellite3 {
+        public static System.Drawing.Bitmap portal_companion_cube_free_3_by_vanillascream_d3ijo9p {
             get {
-                object obj = ResourceManager.GetObject("satellite3", resourceCulture);
+                object obj = ResourceManager.GetObject("portal_companion_cube_free_3_by_vanillascream_d3ijo9p", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap satellite4 {
+        public static System.Drawing.Bitmap portal_companion_cube_free_icon_by_firedragon47_d4np10j {
             get {
-                object obj = ResourceManager.GetObject("satellite4", resourceCulture);
+                object obj = ResourceManager.GetObject("portal_companion_cube_free_icon_by_firedragon47_d4np10j", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap spaceship1 {
+        public static System.Drawing.Bitmap portal_icon_by_rallick_nom {
             get {
-                object obj = ResourceManager.GetObject("spaceship1", resourceCulture);
+                object obj = ResourceManager.GetObject("portal_icon_by_rallick_nom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap spaceship2 {
+        public static System.Drawing.Bitmap portal_turret_icon_3_by_squeekbot_d3gwm7t {
             get {
-                object obj = ResourceManager.GetObject("spaceship2", resourceCulture);
+                object obj = ResourceManager.GetObject("portal_turret_icon_3_by_squeekbot_d3gwm7t", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap spaceship3 {
+        public static System.Drawing.Bitmap potados_by_sungoddessokami_d481k83 {
             get {
-                object obj = ResourceManager.GetObject("spaceship3", resourceCulture);
+                object obj = ResourceManager.GetObject("potados_by_sungoddessokami_d481k83", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap spaceship4 {
+        public static System.Drawing.Bitmap soprano_turret_avatar_by_the_rebexorcist_d3h9k81 {
             get {
-                object obj = ResourceManager.GetObject("spaceship4", resourceCulture);
+                object obj = ResourceManager.GetObject("soprano_turret_avatar_by_the_rebexorcist_d3h9k81", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap star1 {
+        public static System.Drawing.Bitmap wheatley_gif_by_puddle_jumper3_d56a26w {
             get {
-                object obj = ResourceManager.GetObject("star1", resourceCulture);
+                object obj = ResourceManager.GetObject("wheatley_gif_by_puddle_jumper3_d56a26w", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        public static System.Drawing.Bitmap star2 {
+        public static System.Drawing.Bitmap wheatley_portal_2_icon_by_thebrokenegg_d3ftq20 {
             get {
-                object obj = ResourceManager.GetObject("star2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap star3 {
-            get {
-                object obj = ResourceManager.GetObject("star3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap star4 {
-            get {
-                object obj = ResourceManager.GetObject("star4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap watchit1 {
-            get {
-                object obj = ResourceManager.GetObject("watchit1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap watchit2 {
-            get {
-                object obj = ResourceManager.GetObject("watchit2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap watchit3 {
-            get {
-                object obj = ResourceManager.GetObject("watchit3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap watchit4 {
-            get {
-                object obj = ResourceManager.GetObject("watchit4", resourceCulture);
+                object obj = ResourceManager.GetObject("wheatley_portal_2_icon_by_thebrokenegg_d3ftq20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

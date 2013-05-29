@@ -11,7 +11,7 @@ namespace GameBasicClasses.Obstacles.Bonus
         public BallTrajectoryMalus(int clientWidth, int clientHeight, int timeout, Vector position)
             : base(clientWidth, clientHeight, timeout, position)
         {
-            this.Image = Properties.Resources.watchit1;
+            this.Image = Properties.Resources.oracle_turret_avatar_by_the_rebexorcist_d3h9ts8;
             this.InitialImage = this.Image;
             this.Color = System.Drawing.Color.Transparent;
             this.InitialColor = this.Color;

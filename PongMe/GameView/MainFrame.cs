@@ -198,9 +198,9 @@ namespace GameView
             // 
             // gameBoard
             // 
-            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gameBoard.Controls.Add(this.rightPointsLabel);
@@ -241,6 +241,7 @@ namespace GameView
             // animationTimer
             // 
             this.animationTimer.Enabled = true;
+            this.animationTimer.Interval = 4000;
             this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
             // 
             // bonusTimer
@@ -321,16 +322,5 @@ namespace GameView
         {
 
         }
-
-
-        private SoundPlayer soundPlayer;
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            soundPlayer = new SoundPlayer(GameBasicClasses.Properties.Resources.gameMusic);
-            soundPlayer.Load();
-            soundPlayer.PlayLooping();
-        }
-
-        
     }
 }
