@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using GameBasicClasses.BasicClasses;
 using GameBasicClasses.Gamer;
 using GameBasicClasses.Obstacles.Bonus;
+using GameBasicClasses.Obstacles;
 
 namespace GameView
 {
@@ -53,6 +54,19 @@ namespace GameView
                 else
                 {
                     this.gameBoard.Controls.Remove(bonus.Box);
+                }
+            }
+            List<Brick> listeBrick = this.currentGame.GameModel.ListeBrick;
+            foreach (Brick b in listeBrick)
+            {
+                if (b.Active)
+                {
+                    b.ClientSize = this.gameBoard.Size;
+                    this.gameBoard.Controls.Add(b.Box);
+                }
+                else
+                {
+                    this.gameBoard.Controls.Remove(b.Box);
                 }
             }
             this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
@@ -153,7 +167,32 @@ namespace GameView
 
         private void brickTimer_Tick(object sender, EventArgs e)
         {
-            //this.gameBoard.Refresh();
+            List<Brick> overBricks = new List<Brick>();
+            foreach (Brick b in this.currentGame.GameModel.ListeBrick)
+            {
+                if (!b.Active)
+                {
+                    overBricks.Add(b);
+                }
+            }
+            this.removeOverBricks(overBricks);
+
+            if (this.currentGame.GameModel.ListeBrick.Count <= 1)
+            {
+                Random r = new Random();
+                Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height-50));
+                Brick b = new Brick(this.gameBoard.Width, this.gameBoard.Height, r.Next(1,5), v);
+                this.currentGame.GameModel.addBrick(b);
+            }
+            this.gameBoard.Refresh();
+        }
+
+        private void removeOverBricks(List<Brick> overBricks)
+        {
+            foreach (Brick b in overBricks)
+            {
+                this.currentGame.GameModel.ListeBrick.Remove(b);
+            }
         }
     }
 }
