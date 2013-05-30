@@ -9,6 +9,7 @@ using GameBasicClasses.Obstacles.Bonus;
 using GameBasicClasses.Obstacles;
 using System.Drawing;
 using System.Media;
+using GameBasicClasses.Obstacles.Paddle;
 
 namespace GameView
 {
@@ -208,22 +209,67 @@ namespace GameView
         private Bonus getRandomBonus()
         {
             Random r = new Random();
-            Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height-50));
-            int i = r.Next(1,5);
-            switch (i)
+            Bonus b = null;
+            do
             {
-                case 1:
-                    return new HeightBonus(this.gameBoard.Width, this.gameBoard.Height, 10, v);
-                case 2:
-                    return new ReverseCommandsMalus(this.gameBoard.Width, this.gameBoard.Height, 20, v);
-                case 3:
-                    return new SpeedBonus(this.gameBoard.Width, this.gameBoard.Height, 3, v);
-                case 4:
-                    return new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
-                case 5:
-                    return new BallDiameterBonus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
+                Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height - 50));
+                int i = r.Next(1, 5);
+                switch (i)
+                {
+                    case 1:
+                        b = new HeightBonus(this.gameBoard.Width, this.gameBoard.Height, 10, v);
+                        break;
+                    case 2:
+                        b = new ReverseCommandsMalus(this.gameBoard.Width, this.gameBoard.Height, 20, v);
+                        break;
+                    case 3:
+                        b = new SpeedBonus(this.gameBoard.Width, this.gameBoard.Height, 3, v);
+                        break;
+                    case 4:
+                        b = new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
+                        break;
+                    case 5:
+                        b = new BallDiameterBonus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
+                        break;
+                }
+            } while (this.checkCollision(b));
+            return b;
+        }
+
+        private Brick getRandomBrick()
+        {
+            Random r = new Random();
+            Brick b = null;
+            do
+            {
+                Vector v = new Vector(r.Next(20, this.gameBoard.Width - Brick.Width - 20), r.Next(0, this.gameBoard.Height - Brick.Width));
+                int i = r.Next(1, 5);
+                b = new Brick(this.gameBoard.Width, this.gameBoard.Height, i, v);
+            } while (this.checkCollision(b));
+            return b;
+        }
+
+        private bool checkCollision(Obstacle b)
+        {
+            if(this.checkCollisionOb(this.currentGame.GameModel.listePaddle(false,0,null), b) || 
+                this.checkCollisionOb(this.currentGame.GameModel.ListeBrick, b) ||
+                this.checkCollisionOb(this.currentGame.GameModel.ListeBonus, b))
+            {
+                return true;
             }
-            return new BallDiameterBonus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
+            return false;
+        }
+
+        private bool checkCollisionOb<T>(List<T> liste, Obstacle ob) where T : Obstacle
+        {
+            foreach (Obstacle ib in liste)
+            {
+                if (Rectangle.Intersect(ib.Bounds, ob.Bounds) != Rectangle.Empty || ib.Bounds.Contains(ob.Bounds))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void removeOverBonuses(List<Bonus> overBonuses)
@@ -280,6 +326,10 @@ namespace GameView
                     }
                 }
                 previousNbOfBricks = nbOfBricks;
+            }
+            if (this.currentGame.GameModel.ListeBrick.Count < 10)
+            {
+                this.currentGame.GameModel.addBrick(this.getRandomBrick());
             }
             this.gameBoard.Refresh();
         }
