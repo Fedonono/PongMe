@@ -471,6 +471,13 @@ namespace GameBasicClasses.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap portalMalus {
+            get {
+                object obj = ResourceManager.GetObject("portalMalus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap potados_by_sungoddessokami_d481k83 {
             get {
                 object obj = ResourceManager.GetObject("potados_by_sungoddessokami_d481k83", resourceCulture);

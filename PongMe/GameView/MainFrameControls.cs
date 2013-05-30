@@ -213,23 +213,26 @@ namespace GameView
             do
             {
                 Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height - 50));
-                int i = r.Next(1, 5);
+                int i = r.Next(1, 7);
                 switch (i)
                 {
                     case 1:
-                        b = new HeightBonus(this.gameBoard.Width, this.gameBoard.Height, 10, v);
+                        b = new HeightBonus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
                         break;
                     case 2:
-                        b = new ReverseCommandsMalus(this.gameBoard.Width, this.gameBoard.Height, 20, v);
+                        b = new ReverseCommandsMalus(this.gameBoard.Width, this.gameBoard.Height, 10, v);
                         break;
                     case 3:
                         b = new SpeedBonus(this.gameBoard.Width, this.gameBoard.Height, 3, v);
                         break;
                     case 4:
-                        b = new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
+                        b = new SpeedMalus(this.gameBoard.Width, this.gameBoard.Height, 4, v);
                         break;
                     case 5:
-                        b = new BallDiameterBonus(this.gameBoard.Width, this.gameBoard.Height, 5, v);
+                        b = new BallDiameterBonus(this.gameBoard.Width, this.gameBoard.Height, 8, v);
+                        break;
+                    case 6:
+                        b = new PortalMalus(this.gameBoard.Width, this.gameBoard.Height, 1, v);
                         break;
                 }
             } while (this.checkCollision(b));

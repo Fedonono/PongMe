@@ -55,6 +55,7 @@
     <Compile Include="BasicClasses\GameModel.cs" />
     <Compile Include="Gamer\Gamer.cs" />
     <Compile Include="Gamer\Human.cs" />
+    <Compile Include="Obstacles\Bonus\PortalMalus.cs" />
     <Compile Include="Obstacles\Bonus\SpeedMalus.cs" />
     <Compile Include="Obstacles\Bonus\WheatleyBonus.cs" />
     <Compile Include="Obstacles\Brick\BonusBrick.cs" />
@@ -395,6 +396,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\outer_space_portal_desktop_1920x1080_hd-wallpaper-1043976.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portalMalus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
