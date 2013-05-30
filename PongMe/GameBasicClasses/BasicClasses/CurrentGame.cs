@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using GameBasicClasses.Options;
 
 namespace GameBasicClasses.BasicClasses
 {
@@ -31,21 +30,6 @@ namespace GameBasicClasses.BasicClasses
             this.stopped = true;
             this.gameModel = GameFactory.defaultGame();
             this.GameEngine = new GameEngine(this.GameModel);
-        }
-
-        public List<GamerOptions> GetGamerOptions()
-        {
-            return this.GameModel.GetGamerOptions();
-        }
-
-        public int GetPlayerCount()
-        {
-            if (instance != null)
-            {
-                return this.gameModel.GetPlayerCount();
-            }
-            
-            return 0;
         }
 
         public static CurrentGame GetInstance()

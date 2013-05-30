@@ -15,6 +15,9 @@ namespace GameView
     public partial class MainForm : Form
     {
         private MenuStrip MainMenu;
+        private ToolStripMenuItem jeuToolStripMenuItem;
+        private ToolStripMenuItem nouvellePartieToolStripMenuItem;
+        private ToolStripMenuItem quitterToolStripMenuItem;
         private ToolStripMenuItem jeuToolStripMenuItem1;
         private ToolStripMenuItem nombreDeJoueursToolStripMenuItem;
         private ToolStripMenuItem paramètresToolStripMenuItem;
@@ -45,6 +48,9 @@ namespace GameView
         {
             this.components = new System.ComponentModel.Container();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
+            this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nouvellePartieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jeuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nombreDeJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.joueurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,14 +75,36 @@ namespace GameView
             // MainMenu
             // 
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.jeuToolStripMenuItem,
             this.jeuToolStripMenuItem1,
             this.toolStripMenuItem1});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.MainMenu.Size = new System.Drawing.Size(979, 24);
+            this.MainMenu.Size = new System.Drawing.Size(984, 24);
             this.MainMenu.TabIndex = 0;
-            this.MainMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MainMenu_ItemClicked);
+            // 
+            // jeuToolStripMenuItem
+            // 
+            this.jeuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nouvellePartieToolStripMenuItem,
+            this.quitterToolStripMenuItem});
+            this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
+            this.jeuToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.jeuToolStripMenuItem.Text = "Fichier";
+            // 
+            // nouvellePartieToolStripMenuItem
+            // 
+            this.nouvellePartieToolStripMenuItem.Name = "nouvellePartieToolStripMenuItem";
+            this.nouvellePartieToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.nouvellePartieToolStripMenuItem.Text = "Nouvelle partie";
+            this.nouvellePartieToolStripMenuItem.Click += new System.EventHandler(this.nouvellePartieToolStripMenuItem_Click);
+            // 
+            // quitterToolStripMenuItem
+            // 
+            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // jeuToolStripMenuItem1
             // 
@@ -86,7 +114,6 @@ namespace GameView
             this.jeuToolStripMenuItem1.Name = "jeuToolStripMenuItem1";
             this.jeuToolStripMenuItem1.Size = new System.Drawing.Size(36, 20);
             this.jeuToolStripMenuItem1.Text = "Jeu";
-            this.jeuToolStripMenuItem1.Click += new System.EventHandler(this.jeuToolStripMenuItem1_Click);
             // 
             // nombreDeJoueursToolStripMenuItem
             // 
@@ -171,7 +198,10 @@ namespace GameView
             // 
             // gameBoard
             // 
-            this.gameBoard.BackColor = System.Drawing.Color.Transparent;
+            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gameBoard.Controls.Add(this.rightPointsLabel);
             this.gameBoard.Controls.Add(this.leftPointsLabel);
@@ -196,7 +226,7 @@ namespace GameView
             // 
             this.leftPointsLabel.AutoSize = true;
             this.leftPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.leftPointsLabel.Location = new System.Drawing.Point(132, 57);
+            this.leftPointsLabel.Location = new System.Drawing.Point(140, 57);
             this.leftPointsLabel.Name = "leftPointsLabel";
             this.leftPointsLabel.Size = new System.Drawing.Size(30, 31);
             this.leftPointsLabel.TabIndex = 0;
@@ -228,14 +258,9 @@ namespace GameView
             // 
             // MainForm
             // 
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(979, 564);
-=======
             this.ClientSize = new System.Drawing.Size(984, 562);
             this.Controls.Add(this.gameBoard);
->>>>>>> f921872181f76137f9217e93f1c1c38339a25b4c
             this.Controls.Add(this.MainMenu);
-            this.Controls.Add(this.gameBoard);
             this.MainMenuStrip = this.MainMenu;
             this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "MainForm";
@@ -265,8 +290,7 @@ namespace GameView
 
         private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Parameters param = new Parameters(currentGame);
-            param.Show();
+
         }
 
         private void joueurToolStripMenuItem_Click(object sender, EventArgs e)
@@ -298,102 +322,5 @@ namespace GameView
         {
 
         }
-<<<<<<< HEAD
-
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (keysPressed.Contains(e.KeyCode))
-            {
-                keysPressed.Remove(e.KeyCode);
-            }
-            keysPressed.Add(e.KeyCode);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            List<Ball> listeBall = this.currentGame.GameModel.ListeBall;
-            foreach (Ball ball in listeBall)
-            {
-                ball.ClientSize = this.gameBoard.Size;
-                this.gameBoard.Controls.Add(ball.Box);
-            }
-            List<Gamer> listeGamer = this.currentGame.GameModel.ListeGamer;
-            foreach (Gamer gamer in listeGamer)
-            {
-                gamer.Paddle.ClientSize = this.gameBoard.Size;
-                this.gameBoard.Controls.Add(gamer.Paddle.Box);
-            }
-            this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
-            this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();
-        }
-
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            foreach (Ball ball in this.currentGame.GameModel.ListeBall)
-            {
-                ball.nextPosition();
-                if (ball.isOutRight && ball.isMoving)
-                {
-                    ball.isMoving = false;
-                    this.currentGame.addPoint(false);
-                }
-                else if (ball.isOutLeft && ball.isMoving)
-                {
-                    ball.isMoving = false;
-                    this.currentGame.addPoint(true);
-                }
-            }
-
-            if (keysPressed.Count > 0)
-            {
-                foreach (Keys key in keysPressed)
-                {
-                    this.currentGame.keyEvent(key);
-                }
-            }
-            else
-            {
-                this.currentGame.keyEvent(Keys.A);//AI
-            }
-            
-            
-
-            if (this.currentGame.isGameOver())
-            {
-                this.currentGame.StopGame();
-            }
-            this.gameBoard.Refresh();
-        }
-
-        private void MainForm_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (keysPressed.Contains(e.KeyCode))
-            {
-                keysPressed.Remove(e.KeyCode);
-            }
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void jeuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void jeuToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-=======
->>>>>>> f921872181f76137f9217e93f1c1c38339a25b4c
     }
 }

@@ -59,11 +59,6 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public int GetPlayerCount()
-        {
-            return this.listeGamer.Count;
-        }
-
         public void keyEvent(Keys e, bool stop)
         {
             if (e == GamerOptions.Launch)
@@ -77,16 +72,6 @@ namespace GameBasicClasses.BasicClasses
             {
                 g.run(e);
             }
-        }
-
-        public List<GamerOptions> GetGamerOptions()
-        {
-            List<GamerOptions> options = new List<GamerOptions>();
-            foreach (GameBasicClasses.Gamer.Gamer g in this.ListeGamer)
-            {
-                options.Add(g.GetOptions());
-            }
-            return options;
         }
 
         public List<Paddle> listePaddle()

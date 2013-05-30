@@ -46,11 +46,6 @@ namespace GameBasicClasses.Gamer
             this.points = 0;
         }
 
-        public GamerOptions GetOptions()
-        {
-            return commands;
-        }
-
         /// <summary>
         /// Contient le code faisant bouger la raquette.
         /// Un évnement est envoyé depuis la MainFrame
