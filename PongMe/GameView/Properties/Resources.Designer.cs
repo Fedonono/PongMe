@@ -60,9 +60,23 @@ namespace GameView.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap logoPongMe {
+            get {
+                object obj = ResourceManager.GetObject("logoPongMe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap outer_space_portal_desktop_1920x1080_hd_wallpaper_1043976 {
             get {
                 object obj = ResourceManager.GetObject("outer_space_portal_desktop_1920x1080_hd-wallpaper-1043976", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap wheatleyv2 {
+            get {
+                object obj = ResourceManager.GetObject("wheatleyv2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
