@@ -14,6 +14,13 @@ namespace GameBasicClasses.Obstacles
     /// </summary>
     public class Brick : Obstacle
     {
+        private static int width = 60;
+        public static int Width
+        {
+            get { return width; }
+            private set { width = value; }
+        }
+
         private int health;
         public int Health
         {
@@ -31,7 +38,7 @@ namespace GameBasicClasses.Obstacles
             }
         }
 
-        public override PictureBox Box
+        /*public override PictureBox Box
         {
             get
             {
@@ -46,20 +53,20 @@ namespace GameBasicClasses.Obstacles
             {
                 this.box = value;
             }
-        }
+        }*/
 
         public Brick(int clientWidth, int clientHeight, int health, Vector position)
         {
             this.ClientHeight = clientHeight;
             this.ClientWidth = clientWidth;
             this.Health = health;
-            this.Image = Properties.Resources.brick;
+            this.Image = Properties.Resources.free_companion_cube_icon_by_ashunnoodles_d4w979m;
             this.InitialImage = this.Image;
             Random r = new Random();
-            this.Color = System.Drawing.Color.FromArgb(r.Next(255),r.Next(255),r.Next(255));
+            this.Color = Color.Empty;// System.Drawing.Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
             this.InitialColor = this.Color;
             this.Position = position;
-            this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, r.Next(50,100), r.Next(50,100));
+            this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, Brick.Width, Brick.Width);
             this.InitialBounds = this.Bounds;
             this.Active = true;
         }

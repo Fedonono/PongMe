@@ -485,6 +485,20 @@ namespace GameBasicClasses.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap space_core_avatar_by_the_rebexorcist_d3h0wyn {
+            get {
+                object obj = ResourceManager.GetObject("space_core_avatar_by_the_rebexorcist_d3h0wyn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap weighted_companion_cube_papercraft {
+            get {
+                object obj = ResourceManager.GetObject("weighted_companion_cube_papercraft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap wheatley_gif_by_puddle_jumper3_d56a26w {
             get {
                 object obj = ResourceManager.GetObject("wheatley_gif_by_puddle_jumper3_d56a26w", resourceCulture);

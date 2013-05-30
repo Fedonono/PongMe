@@ -46,6 +46,8 @@ namespace GameBasicClasses.BasicClasses
             if (this.gameEngine != null)
             {
                 this.stopped = false;
+                this.GameModel.ListeBonus.Clear();
+                this.GameModel.ListeBrick.Clear();
                 this.gameEngine.startGame();
             }
         }
@@ -64,7 +66,7 @@ namespace GameBasicClasses.BasicClasses
             if (this.gameEngine != null)
             {
                 this.stopped = !this.stopped;
-                this.gameEngine.ToogleGame(!this.stopped);
+                this.gameEngine.ToogleGame(this.stopped);
             }
         }
 
@@ -115,6 +117,11 @@ namespace GameBasicClasses.BasicClasses
                 this.stopped = false;
             }
             this.gameModel.keyEvent(e, this.stopped);
+        }
+
+        public void addWheatleyPoint()
+        {
+            this.GameModel.WeathleyPoint++;
         }
     }
 }

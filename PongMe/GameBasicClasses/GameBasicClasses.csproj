@@ -56,6 +56,7 @@
     <Compile Include="Gamer\Gamer.cs" />
     <Compile Include="Gamer\Human.cs" />
     <Compile Include="Obstacles\Bonus\SpeedMalus.cs" />
+    <Compile Include="Obstacles\Bonus\WheatleyBonus.cs" />
     <Compile Include="Obstacles\Brick\BonusBrick.cs" />
     <Compile Include="Obstacles\Brick\Brick.cs" />
     <Compile Include="BasicClasses\GameModelConfig.cs" />
@@ -385,6 +386,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avvy_commish_frankchamturret_by_the_rebexorcist-d3krkra.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weighted_companion_cube papercraft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\space_core_avatar_by_the_rebexorcist-d3h0wyn.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

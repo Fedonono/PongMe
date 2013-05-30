@@ -29,6 +29,7 @@ namespace GameBasicClasses.BasicClasses
             this.listeBonus = new List<Bonus>();
             this.listeBrick = new List<Brick>();
             this.listeGamer = new List<GameBasicClasses.Gamer.Gamer>();
+            this.WeathleyPoint = 0;
         }
 
         public void addBall(Ball b)
@@ -68,20 +69,37 @@ namespace GameBasicClasses.BasicClasses
                     ball.isMoving = !stop;
                 }
             }
+            else if (e == GamerOptions.Stop && CurrentGame.GetInstance().stopped == false)
+            {
+                CurrentGame.GetInstance().StopGame();
+            }
+            else if (e == GamerOptions.Stop && CurrentGame.GetInstance().stopped == true)
+            {
+                CurrentGame.GetInstance().StartGame();
+            }
+            else if (e == GamerOptions.Pause)
+            {
+                CurrentGame.GetInstance().ToggleGame();
+            }
             foreach (GameBasicClasses.Gamer.Gamer g in this.listeGamer)
             {
                 g.run(e);
             }
         }
 
-        public List<Paddle> listePaddle()
+        public List<Paddle> listePaddle(bool corresponding, int id, Paddle reference)
         {
             List<Paddle> liste = new List<Paddle>();
             foreach (GameBasicClasses.Gamer.Gamer g in this.ListeGamer)
             {
-                liste.Add(g.Paddle);
+                if (!corresponding || (corresponding && g.Paddle.Id == id && g.Paddle != reference))
+                {
+                    liste.Add(g.Paddle);
+                }
             }
             return liste;
         }
+
+        public int WeathleyPoint { get; set; }
     }
 }
