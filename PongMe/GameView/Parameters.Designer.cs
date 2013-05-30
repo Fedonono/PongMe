@@ -110,6 +110,7 @@
             this.down.TabIndex = 3;
             this.down.Text = "Q";
             this.down.UseVisualStyleBackColor = true;
+            this.down.Click += new System.EventHandler(this.click);
             // 
             // up
             // 
@@ -119,6 +120,7 @@
             this.up.TabIndex = 2;
             this.up.Text = "A";
             this.up.UseVisualStyleBackColor = false;
+            this.up.Click += new System.EventHandler(this.click);
             // 
             // label5
             // 
@@ -164,6 +166,7 @@
             this.stop.TabIndex = 4;
             this.stop.Text = "P";
             this.stop.UseVisualStyleBackColor = true;
+            this.stop.Click += new System.EventHandler(this.click);
             // 
             // label3
             // 
@@ -173,6 +176,7 @@
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Stop";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // launch
             // 
@@ -182,15 +186,17 @@
             this.launch.TabIndex = 2;
             this.launch.Text = "P";
             this.launch.UseVisualStyleBackColor = false;
+            this.launch.Click += new System.EventHandler(this.click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Stop";
+            this.label2.Text = "Launch";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // toogle
             // 
@@ -200,6 +206,7 @@
             this.toogle.TabIndex = 0;
             this.toogle.Text = "P";
             this.toogle.UseVisualStyleBackColor = true;
+            this.toogle.Click += new System.EventHandler(this.toogle_Click);
             // 
             // label1
             // 

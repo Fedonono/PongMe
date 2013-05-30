@@ -49,8 +49,6 @@ namespace GameView
             {
                 if (rb.Checked)
                 {
-                    
-
                     this.groupBox2.Text = rb.Text;
 
                     this.up.Text = this.options[i].Up.ToString();
@@ -77,6 +75,19 @@ namespace GameView
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             this.PlayerSetup(sender, 3);
+        }
+
+        private void click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            b.Text = "yo";
+        }
+
+        private void toogle_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            label2.Text = "yo";
+            
         }
     }
 }
