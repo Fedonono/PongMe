@@ -9,6 +9,8 @@ namespace GameBasicClasses.BasicClasses
     public class CurrentGame
     {
         private static CurrentGame instance = null;
+        public static readonly int width = 1460;
+        public static readonly int height = 911;
 
         private GameModel gameModel;
         public GameModel GameModel { 

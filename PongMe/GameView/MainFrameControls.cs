@@ -171,7 +171,7 @@ namespace GameView
                 previousNbOfWheatley = nbOfWheatley;
             }
 
-            if(this.currentGame.GameModel.ListeBonus.Count - this.getNbOfWeathley() <= 1)//on ne veut que 2 bonus sur la carte
+            if(this.currentGame.GameModel.ListeBonus.Count - this.getNbOfWeathley() <= 5)//on ne veut que 6 bonus sur la carte
             {
                 Bonus b = this.getRandomBonus();
                 this.currentGame.GameModel.addBonus(b);
@@ -327,7 +327,7 @@ namespace GameView
                 }
                 previousNbOfBricks = nbOfBricks;
             }
-            if (this.currentGame.GameModel.ListeBrick.Count < 10)
+            if (this.currentGame.GameModel.ListeBrick.Count < 15)
             {
                 this.currentGame.GameModel.addBrick(this.getRandomBrick());
             }

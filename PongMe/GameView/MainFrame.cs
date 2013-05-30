@@ -82,7 +82,7 @@ namespace GameView
             this.toolStripMenuItem1});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(984, 24);
+            this.MainMenu.Size = new System.Drawing.Size(1484, 24);
             this.MainMenu.TabIndex = 0;
             // 
             // jeuToolStripMenuItem
@@ -210,7 +210,7 @@ namespace GameView
             this.gameBoard.Controls.Add(this.leftPointsLabel);
             this.gameBoard.Location = new System.Drawing.Point(12, 39);
             this.gameBoard.Name = "gameBoard";
-            this.gameBoard.Size = new System.Drawing.Size(960, 511);
+            this.gameBoard.Size = new System.Drawing.Size(1460, 911);
             this.gameBoard.TabIndex = 1;
             this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -221,7 +221,7 @@ namespace GameView
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.wheatleyLabel.AutoSize = true;
             this.wheatleyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wheatleyLabel.Location = new System.Drawing.Point(464, 57);
+            this.wheatleyLabel.Location = new System.Drawing.Point(714, 57);
             this.wheatleyLabel.Name = "wheatleyLabel";
             this.wheatleyLabel.Size = new System.Drawing.Size(30, 31);
             this.wheatleyLabel.TabIndex = 2;
@@ -232,7 +232,7 @@ namespace GameView
             this.rightPointsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rightPointsLabel.AutoSize = true;
             this.rightPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rightPointsLabel.Location = new System.Drawing.Point(790, 57);
+            this.rightPointsLabel.Location = new System.Drawing.Point(1290, 57);
             this.rightPointsLabel.Name = "rightPointsLabel";
             this.rightPointsLabel.Size = new System.Drawing.Size(30, 31);
             this.rightPointsLabel.TabIndex = 1;
@@ -274,11 +274,11 @@ namespace GameView
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.ClientSize = new System.Drawing.Size(1484, 962);
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
-            this.MinimumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(CurrentGame.width, CurrentGame.height);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";

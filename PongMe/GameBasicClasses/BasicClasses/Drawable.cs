@@ -24,7 +24,7 @@ namespace GameBasicClasses.BasicClasses
                 }
                 else
                 {
-                    this.clientWidth = 1000;
+                    this.clientWidth = CurrentGame.width;
                 }
             }
         }
@@ -44,7 +44,7 @@ namespace GameBasicClasses.BasicClasses
                 }
                 else
                 {
-                    this.clientHeight = 600;
+                    this.clientHeight = CurrentGame.height;
                 }
             }
         }
@@ -152,7 +152,7 @@ namespace GameBasicClasses.BasicClasses
 
         public Drawable()
         {
-            this.ClientSize = new Size(1000, 600);
+            this.ClientSize = new Size(CurrentGame.width, CurrentGame.height);
             this.Box = new PictureBox();
             this.Bounds = new Rectangle();
             this.InitialBounds = this.Bounds;
