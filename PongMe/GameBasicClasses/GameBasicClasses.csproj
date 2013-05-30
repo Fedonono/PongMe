@@ -393,6 +393,9 @@
   <ItemGroup>
     <None Include="Resources\space_core_avatar_by_the_rebexorcist-d3h0wyn.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outer_space_portal_desktop_1920x1080_hd-wallpaper-1043976.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

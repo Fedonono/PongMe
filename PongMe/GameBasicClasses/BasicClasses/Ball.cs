@@ -56,7 +56,7 @@ namespace GameBasicClasses.BasicClasses
 
         public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
-            this.MAX_SPEED = 0.3f;
+            this.MAX_SPEED = 0.4f;
             this.Speed = speed;
             this.InitialSpeed = this.Speed;
             this.Diameter = diameter;
@@ -68,7 +68,7 @@ namespace GameBasicClasses.BasicClasses
             this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
             this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
             this.InitialBounds = this.Bounds;
-            this.Direction = new Vector(10, 10);
+            this.Direction = new Vector(10, 5);
             this.InitialDirection = this.Direction;
             this.ClientWidth = clientWidth;
             this.ClientHeight = clientHeight;

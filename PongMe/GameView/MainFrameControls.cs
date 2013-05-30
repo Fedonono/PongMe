@@ -321,7 +321,7 @@ namespace GameView
                         {
                             v = new Vector(this.gameBoard.Width / 2 + 50, this.gameBoard.ClientRectangle.Height -  Brick.Width * j);
                         }
-                        Brick b = new Brick(this.gameBoard.Width, this.gameBoard.Height, r.Next(4, 10), v);
+                        Brick b = new Brick(this.gameBoard.Width, this.gameBoard.Height, r.Next(4, 8), v);
                         this.currentGame.GameModel.addBrick(b);
                     }
                 }
