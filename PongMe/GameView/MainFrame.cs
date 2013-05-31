@@ -44,6 +44,7 @@ namespace GameView
         private MenuItem lbQuickGame;
         private Label labelHelp;
         private Panel CustomGamePanel;
+        private MenuItem lLBack;
         private Panel OptionPanel;
 
         public MainForm()
@@ -71,6 +72,7 @@ namespace GameView
             this.wheatleyLabel = new System.Windows.Forms.Label();
             this.rightPointsLabel = new System.Windows.Forms.Label();
             this.leftPointsLabel = new System.Windows.Forms.Label();
+            this.lLBack = new MenuItem();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.bonusTimer = new System.Windows.Forms.Timer(this.components);
@@ -84,6 +86,7 @@ namespace GameView
             this.lbQuickGame = new GameView.MenuItem();
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
+            this.CustomGamePanel.SuspendLayout();
             this.OptionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWheatley)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).BeginInit();
@@ -195,7 +198,6 @@ namespace GameView
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gameBoard.Controls.Add(this.CustomGamePanel);
             this.gameBoard.Controls.Add(this.wheatleyLabel);
             this.gameBoard.Controls.Add(this.rightPointsLabel);
             this.gameBoard.Controls.Add(this.leftPointsLabel);
@@ -237,6 +239,17 @@ namespace GameView
             this.leftPointsLabel.Size = new System.Drawing.Size(30, 31);
             this.leftPointsLabel.TabIndex = 0;
             this.leftPointsLabel.Text = "0";
+            // 
+            // lLBack
+            // 
+            this.lLBack.AutoSize = true;
+            this.lLBack.Location = new System.Drawing.Point(42, 624);
+            this.lLBack.Name = "lLBack";
+            this.lLBack.Size = new System.Drawing.Size(77, 13);
+            this.lLBack.TabIndex = 0;
+            this.lLBack.TabStop = true;
+            this.lLBack.Text = "Menu Principal";
+            this.lLBack.Click += new System.EventHandler(this.parameterToolStripMenuItem_Click);
             // 
             // gameTimer
             // 
@@ -342,6 +355,7 @@ namespace GameView
             // 
             this.ClientSize = new System.Drawing.Size(1484, 929);
             this.Controls.Add(this.OptionPanel);
+            this.Controls.Add(this.CustomGamePanel);
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
@@ -385,6 +399,8 @@ namespace GameView
             // CustomGamePanel
             // 
             this.CustomGamePanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
+            this.CustomGamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CustomGamePanel.Controls.Add(this.lLBack);
             this.CustomGamePanel.Location = new System.Drawing.Point(0, 0);
             this.CustomGamePanel.Name = "CustomGamePanel";
             this.CustomGamePanel.Size = this.Size;
@@ -400,6 +416,8 @@ namespace GameView
 
         private void parameterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.CustomGamePanel.Hide();
+            this.CustomGamePanel.Enabled = false;
             this.OptionPanel.Show();
             this.OptionPanel.Enabled = true;
         }
