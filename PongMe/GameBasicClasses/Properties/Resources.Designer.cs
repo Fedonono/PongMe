@@ -258,6 +258,13 @@ namespace GameBasicClasses.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap adventure_core_avatar_by_the_rebexorcist_d3gzj02 {
+            get {
+                object obj = ResourceManager.GetObject("adventure_core_avatar_by_the_rebexorcist_d3gzj02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap all_the_cores_by_left4deadhunterfan_d41o4j2 {
             get {
                 object obj = ResourceManager.GetObject("all_the_cores_by_left4deadhunterfan_d41o4j2", resourceCulture);
@@ -352,6 +359,13 @@ namespace GameBasicClasses.Properties {
         public static System.IO.UnmanagedMemoryStream explosion {
             get {
                 return ResourceManager.GetStream("explosion", resourceCulture);
+            }
+        }
+        
+        public static System.Drawing.Bitmap fact_core_avatar_by_the_rebexorcist_d3h18dn {
+            get {
+                object obj = ResourceManager.GetObject("fact_core_avatar_by_the_rebexorcist_d3h18dn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

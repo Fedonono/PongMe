@@ -12,7 +12,7 @@ namespace GameBasicClasses.Obstacles.Paddle
     public class Paddle : Obstacle
     {
         public bool Left { get; set; }
-
+        public bool PortalMode { get; set; }
         public int Id { get; set; }
 
         /// <summary>
@@ -36,8 +36,9 @@ namespace GameBasicClasses.Obstacles.Paddle
 
  
 
-        public Paddle(bool left, Color color, Image image, int id, int width, int height, int speed, int clientWidth, int clientHeight)
+        public Paddle(bool left, Color color, Image image, int id, int width, int height, int speed, bool portalMode, int clientWidth, int clientHeight)
         {
+            this.PortalMode = portalMode;
             this.ClientWidth = clientWidth;
             this.ClientHeight = clientHeight;
             if (width <= 0 || width >= this.ClientWidth)

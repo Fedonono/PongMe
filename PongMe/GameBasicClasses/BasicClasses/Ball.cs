@@ -149,19 +149,22 @@ namespace GameBasicClasses.BasicClasses
                             if (obstacle is Paddle)
                             {
                                 Paddle p1 = obstacle as Paddle;
-                                List<Paddle> liste = CurrentGame.GetInstance().GameModel.listePaddle(true, p1.Id,p1);
-                                if (liste.Count >= 1)
+                                if (p1.PortalMode)
                                 {
-                                    Paddle p2 = liste.ElementAt(0);
-                                    if (p2.Left)
+                                    List<Paddle> liste = CurrentGame.GetInstance().GameModel.listePaddle(true, p1.Id, p1);
+                                    if (liste.Count >= 1)
                                     {
-                                        this.Position = new Vector(p2.Position.X + p2.Bounds.Width + 1, p2.Position.Y + p2.Bounds.Height/2 - this.diameter/2);
+                                        Paddle p2 = liste.ElementAt(0);
+                                        if (p2.Left)
+                                        {
+                                            this.Position = new Vector(p2.Position.X + p2.Bounds.Width + 1, p2.Position.Y + p2.Bounds.Height / 2 - this.diameter / 2);
+                                        }
+                                        else
+                                        {
+                                            this.Position = new Vector(p2.Position.X - this.Diameter - 1, p2.Position.Y + p2.Bounds.Height / 2 - this.diameter / 2);
+                                        }
+                                        this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
                                     }
-                                    else
-                                    {
-                                        this.Position = new Vector(p2.Position.X - this.Diameter - 1, p2.Position.Y + p2.Bounds.Height / 2 - this.diameter / 2);
-                                    }
-                                    this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
                                 }
                             }
                             this.PreviousPosition = Position;

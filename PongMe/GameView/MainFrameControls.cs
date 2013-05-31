@@ -213,7 +213,7 @@ namespace GameView
             do
             {
                 Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height - 50));
-                int i = r.Next(1, 7);
+                int i = r.Next(1, 8);
                 switch (i)
                 {
                     case 1:
@@ -233,6 +233,9 @@ namespace GameView
                         break;
                     case 6:
                         b = new PortalMalus(this.gameBoard.Width, this.gameBoard.Height, 1, v);
+                        break;
+                    case 7:
+                        b = new NoPortalBonus(this.gameBoard.Width, this.gameBoard.Height, 10, v);
                         break;
                 }
             } while (this.checkCollision(b));
