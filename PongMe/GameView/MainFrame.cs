@@ -25,6 +25,7 @@ namespace GameView
         private ToolStripMenuItem onePlayerMenu;
         private ToolStripMenuItem twoPlayersMenu;
         private ToolStripMenuItem fourPlayerMenu;
+        private ToolStripMenuItem AIPlayerMenu;
         private Panel gameBoard;
         private Label leftPointsLabel;
         private Label rightPointsLabel;
@@ -60,6 +61,7 @@ namespace GameView
             this.onePlayerMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.twoPlayersMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.fourPlayerMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.AIPlayerMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,7 +127,8 @@ namespace GameView
             this.nombreDeJoueursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.onePlayerMenu,
             this.twoPlayersMenu,
-            this.fourPlayerMenu});
+            this.fourPlayerMenu,
+            this.AIPlayerMenu});
             this.nombreDeJoueursToolStripMenuItem.Name = "nombreDeJoueursToolStripMenuItem";
             this.nombreDeJoueursToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.nombreDeJoueursToolStripMenuItem.Text = "Nombre de joueurs";
@@ -152,6 +155,14 @@ namespace GameView
             this.fourPlayerMenu.Size = new System.Drawing.Size(122, 22);
             this.fourPlayerMenu.Text = "4 joueurs";
             this.fourPlayerMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem2_Click);
+            // 
+            // AIPlayerMenu
+            // 
+            this.AIPlayerMenu.CheckOnClick = true;
+            this.AIPlayerMenu.Name = "AIPlayerMenu";
+            this.AIPlayerMenu.Size = new System.Drawing.Size(122, 22);
+            this.AIPlayerMenu.Text = "AI";
+            this.AIPlayerMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem4_Click);
             // 
             // paramètresToolStripMenuItem
             // 
@@ -396,6 +407,13 @@ namespace GameView
             this.gameBoard.Controls.Clear();
             this.keysPressed.Clear();
             this.currentGame.GameModel = GameFactory.fourPlayerGame();
+        }
+
+        private void joueursToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            this.gameBoard.Controls.Clear();
+            this.keysPressed.Clear();
+            this.currentGame.GameModel = GameFactory.AIGame();
         }
 
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)

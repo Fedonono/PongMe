@@ -12,7 +12,7 @@ namespace GameBasicClasses.BasicClasses
 {
     public class GameFactory
     {
-        public static GameModel defaultGame()
+        public static GameModel AIGame()
         {
             GameModel gm = new GameModel();
             gm.addBall(new Ball(0.8f, 30, Color.Empty, GameBasicClasses.Properties.Resources.emotion_core_avatar_by_the_rebexorcist_d3h0qpp, 1460, 911));

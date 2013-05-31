@@ -32,7 +32,7 @@ namespace GameBasicClasses.BasicClasses
         private CurrentGame()
         {
             this.stopped = true;
-            this.gameModel = GameFactory.defaultGame();
+            this.gameModel = GameFactory.onePlayerGame();
             this.GameEngine = new GameEngine(this.GameModel);
         }
 
