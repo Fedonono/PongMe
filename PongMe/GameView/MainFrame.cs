@@ -36,6 +36,12 @@ namespace GameView
         private Timer brickTimer;
         private Label wheatleyLabel;
         private List<Keys> keysPressed = new List<Keys>();
+        private LinkLabel linkLabel3;
+        private LinkLabel linkLabel2;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
+        private LinkLabel linkLabel1;
+        private Panel OptionPanel;
 
         public MainForm()
         {
@@ -64,8 +70,17 @@ namespace GameView
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.bonusTimer = new System.Windows.Forms.Timer(this.components);
             this.brickTimer = new System.Windows.Forms.Timer(this.components);
+            this.OptionPanel = new System.Windows.Forms.Panel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
+            this.OptionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -90,7 +105,7 @@ namespace GameView
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -154,7 +169,7 @@ namespace GameView
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
             this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
             // 
@@ -231,9 +246,72 @@ namespace GameView
             this.brickTimer.Interval = 1000;
             this.brickTimer.Tick += new System.EventHandler(this.brickTimer_Tick);
             // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Font = new System.Drawing.Font("Akashi", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel3.LinkColor = System.Drawing.Color.White;
+            this.linkLabel3.Location = new System.Drawing.Point(42, 624);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(90, 41);
+            this.linkLabel3.TabIndex = 11;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Quit";
+            this.linkLabel3.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.linkLabel2.Font = new System.Drawing.Font("Akashi", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(42, 565);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(284, 41);
+            this.linkLabel2.TabIndex = 10;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Custom Game";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GameView.Properties.Resources.wheatleyv2;
+            this.pictureBox2.Location = new System.Drawing.Point(502, 389);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(232, 199);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GameView.Properties.Resources.logoPongMe;
+            this.pictureBox1.Location = new System.Drawing.Point(49, 324);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(329, 100);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Akashi", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(42, 513);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(244, 41);
+            this.linkLabel1.TabIndex = 7;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Quick Game";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(1484, 962);
+            this.Controls.Add(this.OptionPanel);
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
@@ -248,8 +326,27 @@ namespace GameView
             this.MainMenu.PerformLayout();
             this.gameBoard.ResumeLayout(false);
             this.gameBoard.PerformLayout();
+            this.OptionPanel.ResumeLayout(false);
+            this.OptionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            // 
+            // OptionPanel
+            // 
+            this.OptionPanel.BackColor = System.Drawing.Color.Black;
+            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.outer_space_portal_desktop_1920x1080_hd_wallpaper_1043976;
+            this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OptionPanel.Controls.Add(this.linkLabel3);
+            this.OptionPanel.Controls.Add(this.linkLabel2);
+            this.OptionPanel.Controls.Add(this.pictureBox2);
+            this.OptionPanel.Controls.Add(this.pictureBox1);
+            this.OptionPanel.Controls.Add(this.linkLabel1);
+            this.OptionPanel.Location = new System.Drawing.Point(0, 0);
+            this.OptionPanel.Name = "OptionPanel";
+            this.OptionPanel.Size = this.Size;
+            this.OptionPanel.TabIndex = 2;
 
         }
 
@@ -260,8 +357,7 @@ namespace GameView
 
         private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OptionTest ot = new OptionTest();
-            ot.Show();
+            this.OptionPanel.Show();
         }
 
         private void joueurToolStripMenuItem_Click(object sender, EventArgs e)
@@ -303,6 +399,11 @@ namespace GameView
         private void wheatleyLabel_SizeChanged(object sender, EventArgs e)
         {
             this.wheatleyLabel.Location = new Point(this.gameBoard.Width / 2 - this.wheatleyLabel.Size.Width / 2, this.wheatleyLabel.Location.Y);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.OptionPanel.Hide();
         }
     }
 }
