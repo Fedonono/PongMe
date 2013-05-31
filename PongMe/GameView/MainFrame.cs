@@ -16,18 +16,15 @@ namespace GameView
     {
         private MenuStrip MainMenu;
         private ToolStripMenuItem jeuToolStripMenuItem;
-        private ToolStripMenuItem nouvellePartieToolStripMenuItem;
         private ToolStripMenuItem quitterToolStripMenuItem;
         private ToolStripMenuItem jeuToolStripMenuItem1;
         private ToolStripMenuItem nombreDeJoueursToolStripMenuItem;
         private ToolStripMenuItem paramètresToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem aideToolStripMenuItem;
         private ToolStripMenuItem aProposToolStripMenuItem;
-        private ToolStripMenuItem joueurToolStripMenuItem;
-        private ToolStripMenuItem joueursToolStripMenuItem;
-        private ToolStripMenuItem joueursToolStripMenuItem1;
-        private ToolStripMenuItem joueursToolStripMenuItem2;
+        private ToolStripMenuItem onePlayerMenu;
+        private ToolStripMenuItem twoPlayersMenu;
+        private ToolStripMenuItem fourPlayerMenu;
         private Panel gameBoard;
         private Label leftPointsLabel;
         private Label rightPointsLabel;
@@ -50,17 +47,14 @@ namespace GameView
             this.components = new System.ComponentModel.Container();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nouvellePartieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jeuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nombreDeJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueursToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueursToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.onePlayerMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.twoPlayersMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.fourPlayerMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameBoard = new System.Windows.Forms.Panel();
             this.wheatleyLabel = new System.Windows.Forms.Label();
@@ -88,23 +82,15 @@ namespace GameView
             // jeuToolStripMenuItem
             // 
             this.jeuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nouvellePartieToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
             this.jeuToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.jeuToolStripMenuItem.Text = "Fichier";
             // 
-            // nouvellePartieToolStripMenuItem
-            // 
-            this.nouvellePartieToolStripMenuItem.Name = "nouvellePartieToolStripMenuItem";
-            this.nouvellePartieToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.nouvellePartieToolStripMenuItem.Text = "Nouvelle partie";
-            this.nouvellePartieToolStripMenuItem.Click += new System.EventHandler(this.nouvellePartieToolStripMenuItem_Click);
-            // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -120,53 +106,35 @@ namespace GameView
             // nombreDeJoueursToolStripMenuItem
             // 
             this.nombreDeJoueursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.joueurToolStripMenuItem,
-            this.joueursToolStripMenuItem,
-            this.joueursToolStripMenuItem1,
-            this.joueursToolStripMenuItem2});
+            this.onePlayerMenu,
+            this.twoPlayersMenu,
+            this.fourPlayerMenu});
             this.nombreDeJoueursToolStripMenuItem.Name = "nombreDeJoueursToolStripMenuItem";
             this.nombreDeJoueursToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.nombreDeJoueursToolStripMenuItem.Text = "Nombre de joueurs";
             // 
-            // joueurToolStripMenuItem
+            // onePlayerMenu
             // 
-            this.joueurToolStripMenuItem.Checked = true;
-            this.joueurToolStripMenuItem.CheckOnClick = true;
-            this.joueurToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.joueurToolStripMenuItem.Name = "joueurToolStripMenuItem";
-            this.joueurToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.joueurToolStripMenuItem.Text = "1 joueur";
-            this.joueurToolStripMenuItem.Click += new System.EventHandler(this.joueurToolStripMenuItem_Click);
+            this.onePlayerMenu.Name = "onePlayerMenu";
+            this.onePlayerMenu.Size = new System.Drawing.Size(122, 22);
+            this.onePlayerMenu.Text = "1 joueur";
+            this.onePlayerMenu.Click += new System.EventHandler(this.joueurToolStripMenuItem_Click);
             // 
-            // joueursToolStripMenuItem
+            // twoPlayersMenu
             // 
-            this.joueursToolStripMenuItem.Checked = true;
-            this.joueursToolStripMenuItem.CheckOnClick = true;
-            this.joueursToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
-            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.joueursToolStripMenuItem.Text = "2 joueurs";
-            this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
+            this.twoPlayersMenu.CheckOnClick = true;
+            this.twoPlayersMenu.Name = "twoPlayersMenu";
+            this.twoPlayersMenu.Size = new System.Drawing.Size(122, 22);
+            this.twoPlayersMenu.Text = "2 joueurs";
+            this.twoPlayersMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
             // 
-            // joueursToolStripMenuItem1
+            // fourPlayerMenu
             // 
-            this.joueursToolStripMenuItem1.Checked = true;
-            this.joueursToolStripMenuItem1.CheckOnClick = true;
-            this.joueursToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.joueursToolStripMenuItem1.Name = "joueursToolStripMenuItem1";
-            this.joueursToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
-            this.joueursToolStripMenuItem1.Text = "3 joueurs";
-            this.joueursToolStripMenuItem1.Click += new System.EventHandler(this.joueursToolStripMenuItem1_Click);
-            // 
-            // joueursToolStripMenuItem2
-            // 
-            this.joueursToolStripMenuItem2.Checked = true;
-            this.joueursToolStripMenuItem2.CheckOnClick = true;
-            this.joueursToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.joueursToolStripMenuItem2.Name = "joueursToolStripMenuItem2";
-            this.joueursToolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
-            this.joueursToolStripMenuItem2.Text = "4 joueurs";
-            this.joueursToolStripMenuItem2.Click += new System.EventHandler(this.joueursToolStripMenuItem2_Click);
+            this.fourPlayerMenu.CheckOnClick = true;
+            this.fourPlayerMenu.Name = "fourPlayerMenu";
+            this.fourPlayerMenu.Size = new System.Drawing.Size(122, 22);
+            this.fourPlayerMenu.Text = "4 joueurs";
+            this.fourPlayerMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem2_Click);
             // 
             // paramètresToolStripMenuItem
             // 
@@ -178,23 +146,15 @@ namespace GameView
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aideToolStripMenuItem,
             this.aProposToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
             this.toolStripMenuItem1.Text = "?";
             // 
-            // aideToolStripMenuItem
-            // 
-            this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.aideToolStripMenuItem.Text = "Aide";
-            this.aideToolStripMenuItem.Click += new System.EventHandler(this.aideToolStripMenuItem_Click);
-            // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
             this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
             // 
@@ -216,9 +176,7 @@ namespace GameView
             // 
             // wheatleyLabel
             // 
-            this.wheatleyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.wheatleyLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.wheatleyLabel.AutoSize = true;
             this.wheatleyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wheatleyLabel.Location = new System.Drawing.Point(714, 57);
@@ -226,6 +184,7 @@ namespace GameView
             this.wheatleyLabel.Size = new System.Drawing.Size(30, 31);
             this.wheatleyLabel.TabIndex = 2;
             this.wheatleyLabel.Text = "0";
+            this.wheatleyLabel.SizeChanged += new System.EventHandler(this.wheatleyLabel_SizeChanged);
             // 
             // rightPointsLabel
             // 
@@ -278,7 +237,7 @@ namespace GameView
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
-            this.MinimumSize = new System.Drawing.Size(CurrentGame.width, CurrentGame.height);
+            this.MinimumSize = new System.Drawing.Size(1460, 911);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";
@@ -294,29 +253,29 @@ namespace GameView
 
         }
 
-        private void nouvellePartieToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            OptionTest ot = new OptionTest();
+            ot.Show();
         }
 
         private void joueurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.gameBoard.Controls.Clear();
+            this.keysPressed.Clear();
+            this.currentGame.GameModel = GameFactory.onePlayerGame();
         }
 
         private void joueursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.gameBoard.Controls.Clear();
+            this.keysPressed.Clear();
+            this.currentGame.GameModel = GameFactory.twoPlayerGame();
         }
 
         private void joueursToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -326,17 +285,24 @@ namespace GameView
 
         private void joueursToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void aideToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            this.gameBoard.Controls.Clear();
+            this.keysPressed.Clear();
+            this.currentGame.GameModel = GameFactory.fourPlayerGame();
         }
 
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("PongMe" + Environment.NewLine + "Authors :" +
+                Environment.NewLine + "Adrien Ecrepont" +
+                Environment.NewLine + "Arnaud Babol" +
+                Environment.NewLine + "Maxence Prevost" +
+                Environment.NewLine + "Guillaume Simmoneau" +
+                Environment.NewLine + "Eric Allard");
+        }
 
+        private void wheatleyLabel_SizeChanged(object sender, EventArgs e)
+        {
+            this.wheatleyLabel.Location = new Point(this.gameBoard.Width / 2 - this.wheatleyLabel.Size.Width / 2, this.wheatleyLabel.Location.Y);
         }
     }
 }

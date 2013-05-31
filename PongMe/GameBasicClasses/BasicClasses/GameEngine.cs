@@ -15,10 +15,6 @@ namespace GameBasicClasses.BasicClasses
             this.Model = model;
         }
 
-        public void init()
-        {
-        }
-
         public void startGame()
         {
             foreach (Ball ball in this.Model.ListeBall)
@@ -39,6 +35,8 @@ namespace GameBasicClasses.BasicClasses
         {
             foreach (Ball ball in this.Model.ListeBall)
             {
+                this.Model.ListeBrick.Clear();
+                this.Model.ListeBonus.Clear();
                 ball.Initialize();
             }
         }

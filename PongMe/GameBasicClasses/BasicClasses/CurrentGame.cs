@@ -16,7 +16,9 @@ namespace GameBasicClasses.BasicClasses
         public GameModel GameModel { 
             get { return this.gameModel; } 
             set 
-            { 
+            {
+                this.stopped = true;
+                this.StopGame();
                 this.gameModel = value;
                 this.GameEngine = new GameEngine(this.GameModel);
             }
@@ -30,7 +32,7 @@ namespace GameBasicClasses.BasicClasses
         private CurrentGame()
         {
             this.stopped = true;
-            this.gameModel = GameFactory.defaultGame();
+            this.gameModel = GameFactory.fourPlayerGame();
             this.GameEngine = new GameEngine(this.GameModel);
         }
 
