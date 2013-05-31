@@ -27,14 +27,6 @@ namespace GameBasicClasses.Gamer
             {
                 this.paddle.Down();
             }
-            else if (e == GamerOptions.Stop)
-            {
-                CurrentGame.GetInstance().StopGame();
-            }
-            else if (e == GamerOptions.Pause)
-            {
-                CurrentGame.GetInstance().ToggleGame();
-            }
         }
     }
 }

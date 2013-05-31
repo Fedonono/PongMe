@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using GameBasicClasses.Options;
 
 namespace GameBasicClasses.BasicClasses
 {
     public class CurrentGame
     {
         private static CurrentGame instance = null;
+        public static readonly int width = 1460;
+        public static readonly int height = 911;
 
         private GameModel gameModel;
         public GameModel GameModel { 
@@ -33,21 +34,6 @@ namespace GameBasicClasses.BasicClasses
             this.GameEngine = new GameEngine(this.GameModel);
         }
 
-        public List<GamerOptions> GetGamerOptions()
-        {
-            return this.GameModel.GetGamerOptions();
-        }
-
-        public int GetPlayerCount()
-        {
-            if (instance != null)
-            {
-                return this.gameModel.GetPlayerCount();
-            }
-            
-            return 0;
-        }
-
         public static CurrentGame GetInstance()
         {
             if (instance == null)
@@ -62,6 +48,8 @@ namespace GameBasicClasses.BasicClasses
             if (this.gameEngine != null)
             {
                 this.stopped = false;
+                this.GameModel.ListeBonus.Clear();
+                this.GameModel.ListeBrick.Clear();
                 this.gameEngine.startGame();
             }
         }
@@ -80,7 +68,7 @@ namespace GameBasicClasses.BasicClasses
             if (this.gameEngine != null)
             {
                 this.stopped = !this.stopped;
-                this.gameEngine.ToogleGame(!this.stopped);
+                this.gameEngine.ToogleGame(this.stopped);
             }
         }
 
@@ -131,6 +119,11 @@ namespace GameBasicClasses.BasicClasses
                 this.stopped = false;
             }
             this.gameModel.keyEvent(e, this.stopped);
+        }
+
+        public void addWheatleyPoint()
+        {
+            this.GameModel.WeathleyPoint++;
         }
     }
 }

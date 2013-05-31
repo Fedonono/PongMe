@@ -56,7 +56,7 @@ namespace GameBasicClasses.BasicClasses
 
         public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
-            this.MAX_SPEED = 1f;
+            this.MAX_SPEED = 1.5f;
             this.Speed = speed;
             this.InitialSpeed = this.Speed;
             this.Diameter = diameter;
@@ -68,7 +68,8 @@ namespace GameBasicClasses.BasicClasses
             this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
             this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
             this.InitialBounds = this.Bounds;
-            this.Direction = new Vector(10, 10);
+            Random r = new Random();
+            this.Direction = new Vector(r.Next(5,10), r.Next(5,10));
             this.InitialDirection = this.Direction;
             this.ClientWidth = clientWidth;
             this.ClientHeight = clientHeight;
@@ -77,6 +78,8 @@ namespace GameBasicClasses.BasicClasses
 
         public void Initialize()
         {
+            this.Position = new Vector(this.ClientWidth / 2 - this.Diameter / 2, this.ClientHeight / 2 - this.Diameter / 2);
+            this.Bounds = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.diameter, this.diameter);
             this.Speed = this.InitialSpeed;
             this.Diameter = this.InitialDiameter;
             this.Color = this.InitialColor;
@@ -100,7 +103,7 @@ namespace GameBasicClasses.BasicClasses
             this.checkBoardCollision();
             this.checkOut();
             CurrentGame cg = CurrentGame.GetInstance();
-            this.checkObstaclesCollision(cg.GameModel.listePaddle());
+            this.checkObstaclesCollision(cg.GameModel.listePaddle(false,0,null));
             this.checkObstaclesCollision(cg.GameModel.ListeBrick);
             this.checkObstaclesCollision(cg.GameModel.ListeBonus);
             this.move();
@@ -143,6 +146,24 @@ namespace GameBasicClasses.BasicClasses
                         if (obstacle.containsLeftOrRight(this))
                         {
                             this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
+                            if (obstacle is Paddle)
+                            {
+                                Paddle p1 = obstacle as Paddle;
+                                List<Paddle> liste = CurrentGame.GetInstance().GameModel.listePaddle(true, p1.Id,p1);
+                                if (liste.Count >= 1)
+                                {
+                                    Paddle p2 = liste.ElementAt(0);
+                                    if (p2.Left)
+                                    {
+                                        this.Position = new Vector(p2.Position.X + p2.Bounds.Width + 1, p2.Position.Y + p2.Bounds.Height/2 - this.diameter/2);
+                                    }
+                                    else
+                                    {
+                                        this.Position = new Vector(p2.Position.X - this.Diameter - 1, p2.Position.Y + p2.Bounds.Height / 2 - this.diameter / 2);
+                                    }
+                                    this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
+                                }
+                            }
                             this.PreviousPosition = Position;
                             this.move();
                             this.Speed += 0.05f;
@@ -151,7 +172,7 @@ namespace GameBasicClasses.BasicClasses
                         else if (obstacle.containsUpOrDown(this))
                         {
                             this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
-                        this.PreviousPosition = Position;
+                            this.PreviousPosition = Position;
                             this.move();
                             this.Speed += 0.05f;
                             return;

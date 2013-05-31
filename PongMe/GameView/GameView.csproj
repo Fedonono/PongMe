@@ -49,25 +49,22 @@
     <Compile Include="MainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Parameters.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Parameters.Designer.cs">
-      <DependentUpon>Parameters.cs</DependentUpon>
-    </Compile>
-=======
     <Compile Include="MainFrameControls.cs">
       <SubType>Form</SubType>
     </Compile>
->>>>>>> f921872181f76137f9217e93f1c1c38339a25b4c
+    <Compile Include="OptionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionTest.Designer.cs">
+      <DependentUpon>OptionTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartingClass.cs" />
     <EmbeddedResource Include="MainFrame.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Parameters.resx">
-      <DependentUpon>Parameters.cs</DependentUpon>
+    <EmbeddedResource Include="OptionTest.resx">
+      <DependentUpon>OptionTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +91,15 @@
       <Project>{146C56FE-0307-4047-88FC-98E96AEC0D0C}</Project>
       <Name>GameBasicClasses</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outer_space_portal_desktop_1920x1080_hd-wallpaper-1043976.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPongMe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheatleyv2.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -471,6 +471,13 @@ namespace GameBasicClasses.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap portalMalus {
+            get {
+                object obj = ResourceManager.GetObject("portalMalus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap potados_by_sungoddessokami_d481k83 {
             get {
                 object obj = ResourceManager.GetObject("potados_by_sungoddessokami_d481k83", resourceCulture);
@@ -481,6 +488,20 @@ namespace GameBasicClasses.Properties {
         public static System.Drawing.Bitmap soprano_turret_avatar_by_the_rebexorcist_d3h9k81 {
             get {
                 object obj = ResourceManager.GetObject("soprano_turret_avatar_by_the_rebexorcist_d3h9k81", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap space_core_avatar_by_the_rebexorcist_d3h0wyn {
+            get {
+                object obj = ResourceManager.GetObject("space_core_avatar_by_the_rebexorcist_d3h0wyn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap weighted_companion_cube_papercraft {
+            get {
+                object obj = ResourceManager.GetObject("weighted_companion_cube_papercraft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
