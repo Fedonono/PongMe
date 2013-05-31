@@ -67,6 +67,12 @@ namespace GameView.Properties {
             }
         }
         
+        internal static System.IO.UnmanagedMemoryStream Nyan_Cat___Smooth_Jazz_Cover {
+            get {
+                return ResourceManager.GetStream("Nyan_Cat___Smooth_Jazz_Cover", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap outer_space_portal {
             get {
                 object obj = ResourceManager.GetObject("outer_space_portal", resourceCulture);

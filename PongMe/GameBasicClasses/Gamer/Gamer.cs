@@ -9,7 +9,7 @@ using GameBasicClasses.Options;
 
 namespace GameBasicClasses.Gamer
 {
-    public abstract class Gamer:Controller
+    public abstract class Gamer : Controller
     {
         /// <summary>
         /// Points du joueur durant une partie
@@ -35,15 +35,18 @@ namespace GameBasicClasses.Gamer
         {
             get { return this.commands; }
         }
+        protected GamerOptions initialCommands;
 
         protected Paddle paddle;
         public Paddle Paddle { get { return this.paddle; } }
 
         public Gamer(Keys up, Keys down, Paddle paddle)
         {
-            commands = new GamerOptions(up, down);
+            this.commands = new GamerOptions(up, down);
+            this.initialCommands = this.Commands.Clone();
             this.paddle = paddle;
             this.points = 0;
+            this.Initialize();
         }
 
         /// <summary>
@@ -51,5 +54,10 @@ namespace GameBasicClasses.Gamer
         /// Un évnement est envoyé depuis la MainFrame
         /// </summary>
         public abstract void run(Keys e);
+
+        public void Initialize()
+        {
+            this.commands = this.initialCommands;
+        }
     }
 }

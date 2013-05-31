@@ -153,7 +153,7 @@ namespace GameView
         private SoundPlayer soundPlayer;
         private void MainForm_Load(object sender, EventArgs e)
         {
-            soundPlayer = new SoundPlayer(GameBasicClasses.Properties.Resources.gameMusic);
+            soundPlayer = new SoundPlayer(Properties.Resources.Nyan_Cat___Smooth_Jazz_Cover);
             soundPlayer.Load();
             this.playGameMusic();
         }

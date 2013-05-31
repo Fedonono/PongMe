@@ -22,7 +22,7 @@ namespace GameBasicClasses.Obstacles.Bonus
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.gamers)
             {
-                g.Commands.swapCommands();
+                g.Commands.SwapCommands();
             }
         }
 
@@ -30,7 +30,7 @@ namespace GameBasicClasses.Obstacles.Bonus
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.gamers)
             {
-                g.Commands.swapCommands();
+                g.Commands.SwapCommands();
             }
         }
     }

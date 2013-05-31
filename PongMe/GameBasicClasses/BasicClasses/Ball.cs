@@ -56,7 +56,7 @@ namespace GameBasicClasses.BasicClasses
 
         public Ball(float speed, int diameter, Color color, Image image, int clientWidth, int clientHeight)
         {
-            this.MAX_SPEED = 4f;
+            this.MAX_SPEED = 2f;
             this.Speed = speed;
             this.InitialSpeed = this.Speed;
             this.Diameter = diameter;

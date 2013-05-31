@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GameBasicClasses.MVC;
+using GameBasicClasses.Obstacles.Paddle;
 
 namespace GameBasicClasses.BasicClasses
 {
@@ -35,9 +36,15 @@ namespace GameBasicClasses.BasicClasses
         {
             foreach (Ball ball in this.Model.ListeBall)
             {
-                this.Model.ListeBrick.Clear();
-                this.Model.ListeBonus.Clear();
                 ball.Initialize();
+            }
+            foreach (Paddle p in this.Model.listePaddle(false, 0, null))
+            {
+                p.Initialize();
+            }
+            foreach (Gamer.Gamer g in this.Model.ListeGamer)
+            {
+                g.Initialize();
             }
         }
 

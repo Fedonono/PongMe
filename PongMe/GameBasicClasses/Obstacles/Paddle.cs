@@ -53,11 +53,11 @@ namespace GameBasicClasses.Obstacles.Paddle
             Vector paddlePosition;
             if (left)
             {
-                paddlePosition = new Vector(2, 0);
+                paddlePosition = new Vector(2, this.ClientHeight/2-height/2);
             }
             else
             {
-                paddlePosition = new Vector(this.ClientWidth - width - 7, 0);
+                paddlePosition = new Vector(this.ClientWidth - width - 7, this.ClientHeight / 2 - height / 2);
             }
             this.Direction = new Vector(0, 10);
             this.Position = paddlePosition;
@@ -71,6 +71,16 @@ namespace GameBasicClasses.Obstacles.Paddle
             this.Image = image;
             this.InitialImage = this.Image;
             this.Left = left;
+            this.Initialize();
+        }
+
+        public void Initialize()
+        {
+            this.Direction = this.InitialDirection;
+            this.Bounds = this.InitialBounds;
+            this.Speed = this.InitialSpeed;
+            this.Color = this.InitialColor;
+            this.Image = this.InitialImage;
         }
 
         public void Down()

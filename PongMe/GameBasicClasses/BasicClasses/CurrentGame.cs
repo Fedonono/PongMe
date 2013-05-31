@@ -50,8 +50,6 @@ namespace GameBasicClasses.BasicClasses
             if (this.gameEngine != null)
             {
                 this.stopped = false;
-                this.GameModel.ListeBonus.Clear();
-                this.GameModel.ListeBrick.Clear();
                 this.gameEngine.startGame();
             }
         }
@@ -61,6 +59,8 @@ namespace GameBasicClasses.BasicClasses
             if (this.gameEngine != null)
             {
                 this.stopped = true;
+                this.GameModel.ListeBonus.Clear();
+                this.GameModel.ListeBrick.Clear();
                 this.gameEngine.stopGame();
             }
         }
