@@ -41,6 +41,7 @@ namespace GameView
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private LinkLabel linkLabel1;
+        private Label label1;
         private Panel OptionPanel;
 
         public MainForm()
@@ -76,6 +77,7 @@ namespace GameView
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
             this.OptionPanel.SuspendLayout();
@@ -249,12 +251,12 @@ namespace GameView
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Akashi", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel3.LinkColor = System.Drawing.Color.White;
             this.linkLabel3.Location = new System.Drawing.Point(42, 624);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(90, 41);
+            this.linkLabel3.Size = new System.Drawing.Size(86, 42);
             this.linkLabel3.TabIndex = 11;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Quit";
@@ -265,13 +267,13 @@ namespace GameView
             this.linkLabel2.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.linkLabel2.Font = new System.Drawing.Font("Akashi", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel2.LinkColor = System.Drawing.Color.White;
             this.linkLabel2.Location = new System.Drawing.Point(42, 565);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(284, 41);
+            this.linkLabel2.Size = new System.Drawing.Size(257, 42);
             this.linkLabel2.TabIndex = 10;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Custom Game";
@@ -284,6 +286,7 @@ namespace GameView
             this.pictureBox2.Size = new System.Drawing.Size(232, 199);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // pictureBox1
             // 
@@ -297,16 +300,28 @@ namespace GameView
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Akashi", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(42, 513);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(244, 41);
+            this.linkLabel1.Size = new System.Drawing.Size(225, 42);
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Quick Game";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(502, 667);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(822, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Aidez Wheatley à récupérer ses cubes." + Environment.NewLine + "Utilisez les portails pour le faire bouger" + 
+                Environment.NewLine + "mais attention aux objets volant dans l\'espace !";
             // 
             // MainForm
             // 
@@ -320,6 +335,7 @@ namespace GameView
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.MainMenu.ResumeLayout(false);
@@ -338,6 +354,7 @@ namespace GameView
             this.OptionPanel.BackColor = System.Drawing.Color.Black;
             this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.outer_space_portal_desktop_1920x1080_hd_wallpaper_1043976;
             this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OptionPanel.Controls.Add(this.label1);
             this.OptionPanel.Controls.Add(this.linkLabel3);
             this.OptionPanel.Controls.Add(this.linkLabel2);
             this.OptionPanel.Controls.Add(this.pictureBox2);
@@ -347,7 +364,6 @@ namespace GameView
             this.OptionPanel.Name = "OptionPanel";
             this.OptionPanel.Size = this.Size;
             this.OptionPanel.TabIndex = 2;
-
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -358,6 +374,7 @@ namespace GameView
         private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.OptionPanel.Show();
+            this.OptionPanel.Enabled = true;
         }
 
         private void joueurToolStripMenuItem_Click(object sender, EventArgs e)
@@ -374,11 +391,6 @@ namespace GameView
             this.currentGame.GameModel = GameFactory.twoPlayerGame();
         }
 
-        private void joueursToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void joueursToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             this.gameBoard.Controls.Clear();
@@ -392,7 +404,7 @@ namespace GameView
                 Environment.NewLine + "Adrien Ecrepont" +
                 Environment.NewLine + "Arnaud Babol" +
                 Environment.NewLine + "Maxence Prevost" +
-                Environment.NewLine + "Guillaume Simmoneau" +
+                Environment.NewLine + "Guillaume Simonneau" +
                 Environment.NewLine + "Eric Allard");
         }
 
@@ -404,6 +416,12 @@ namespace GameView
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.OptionPanel.Hide();
+            this.OptionPanel.Enabled = false;
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            this.OptionPanel.Size = this.Size;
         }
     }
 }
