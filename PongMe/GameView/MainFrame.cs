@@ -43,6 +43,7 @@ namespace GameView
         private PictureBox pBLogo;
         private MenuItem lbQuickGame;
         private Label labelHelp;
+        private Panel CustomGamePanel;
         private Panel OptionPanel;
 
         public MainForm()
@@ -66,6 +67,7 @@ namespace GameView
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameBoard = new System.Windows.Forms.Panel();
+            this.CustomGamePanel = new System.Windows.Forms.Panel();
             this.wheatleyLabel = new System.Windows.Forms.Label();
             this.rightPointsLabel = new System.Windows.Forms.Label();
             this.leftPointsLabel = new System.Windows.Forms.Label();
@@ -188,11 +190,12 @@ namespace GameView
             // 
             // gameBoard
             // 
-            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gameBoard.Controls.Add(this.CustomGamePanel);
             this.gameBoard.Controls.Add(this.wheatleyLabel);
             this.gameBoard.Controls.Add(this.rightPointsLabel);
             this.gameBoard.Controls.Add(this.leftPointsLabel);
@@ -269,7 +272,7 @@ namespace GameView
             this.labelHelp.Size = new System.Drawing.Size(635, 108);
             this.labelHelp.TabIndex = 12;
             this.labelHelp.Text = "Aidez Wheatley à récupérer ses cubes.\r\nUtilisez les portails pour le faire bouger" +
-    "\r\nmais attention aux objets volant dans l\'espace !";
+                "\r\nmais attention aux objets volant dans l\'espace !";
             // 
             // lbQuit
             // 
@@ -299,6 +302,7 @@ namespace GameView
             this.lbCustomGame.TabIndex = 10;
             this.lbCustomGame.TabStop = true;
             this.lbCustomGame.Text = "Custom Game";
+            this.lbCustomGame.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbCustomGame_LinkClicked);
             // 
             // pbWheatley
             // 
@@ -355,6 +359,8 @@ namespace GameView
             this.gameBoard.PerformLayout();
             this.OptionPanel.ResumeLayout(false);
             this.OptionPanel.PerformLayout();
+            this.CustomGamePanel.ResumeLayout(false);
+            this.CustomGamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWheatley)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).EndInit();
             this.ResumeLayout(false);
@@ -363,7 +369,7 @@ namespace GameView
             // OptionPanel
             // 
             this.OptionPanel.BackColor = System.Drawing.Color.Black;
-            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.outer_space_portal;
+            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
             this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.OptionPanel.Controls.Add(this.labelHelp);
             this.OptionPanel.Controls.Add(this.lbQuit);
@@ -375,6 +381,16 @@ namespace GameView
             this.OptionPanel.Name = "OptionPanel";
             this.OptionPanel.Size = this.Size;
             this.OptionPanel.TabIndex = 2;
+            // 
+            // CustomGamePanel
+            // 
+            this.CustomGamePanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
+            this.CustomGamePanel.Location = new System.Drawing.Point(0, 0);
+            this.CustomGamePanel.Name = "CustomGamePanel";
+            this.CustomGamePanel.Size = this.Size;
+            this.CustomGamePanel.TabIndex = 3;
+            this.CustomGamePanel.Enabled = false;
+            this.CustomGamePanel.Hide();
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -454,6 +470,14 @@ namespace GameView
             this.gameBoard.Controls.Add(this.wheatleyLabel);
             this.gameBoard.Controls.Add(this.rightPointsLabel);
             this.gameBoard.Controls.Add(this.leftPointsLabel);
+        }
+
+        private void lbCustomGame_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.OptionPanel.Hide();
+            this.OptionPanel.Enabled = false;
+            this.CustomGamePanel.Show();
+            this.CustomGamePanel.Enabled = true;
         }
     }
 }
