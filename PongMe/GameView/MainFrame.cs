@@ -36,11 +36,11 @@ namespace GameView
         private Timer brickTimer;
         private Label wheatleyLabel;
         private List<Keys> keysPressed = new List<Keys>();
-        private LinkLabel linkLabel3;
-        private LinkLabel linkLabel2;
+        private MenuItem linkLabel3;
+        private MenuItem linkLabel2;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private LinkLabel linkLabel1;
+        private MenuItem linkLabel1;
         private Label label1;
         private Panel OptionPanel;
 
@@ -72,12 +72,12 @@ namespace GameView
             this.bonusTimer = new System.Windows.Forms.Timer(this.components);
             this.brickTimer = new System.Windows.Forms.Timer(this.components);
             this.OptionPanel = new System.Windows.Forms.Panel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel3 = new MenuItem();
+            this.linkLabel2 = new MenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new MenuItem();
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
             this.OptionPanel.SuspendLayout();
@@ -248,12 +248,20 @@ namespace GameView
             this.brickTimer.Interval = 1000;
             this.brickTimer.Tick += new System.EventHandler(this.brickTimer_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(502, 667);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(635, 108);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Aidez Wheatley à récupérer ses cubes.\r\nUtilisez les portails pour le faire bouger" +
+                "\r\nmais attention aux objets volant dans l\'espace !";
+            // 
             // linkLabel3
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel3.LinkColor = System.Drawing.Color.White;
             this.linkLabel3.Location = new System.Drawing.Point(42, 624);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(86, 42);
@@ -264,13 +272,6 @@ namespace GameView
             // 
             // linkLabel2
             // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.White;
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
             this.linkLabel2.Location = new System.Drawing.Point(42, 565);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(257, 42);
@@ -299,29 +300,12 @@ namespace GameView
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(42, 513);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(225, 42);
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Quick Game";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(502, 667);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(822, 17);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Aidez Wheatley à récupérer ses cubes." + Environment.NewLine + "Utilisez les portails pour le faire bouger" + 
-                Environment.NewLine + "mais attention aux objets volant dans l\'espace !";
             // 
             // MainForm
             // 
