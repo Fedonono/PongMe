@@ -188,9 +188,9 @@ namespace GameView
             // 
             // gameBoard
             // 
-            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gameBoard.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gameBoard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gameBoard.Controls.Add(this.wheatleyLabel);
@@ -198,7 +198,7 @@ namespace GameView
             this.gameBoard.Controls.Add(this.leftPointsLabel);
             this.gameBoard.Location = new System.Drawing.Point(12, 39);
             this.gameBoard.Name = "gameBoard";
-            this.gameBoard.Size = new System.Drawing.Size(1460, 911);
+            this.gameBoard.Size = new System.Drawing.Size(1460, 878);
             this.gameBoard.TabIndex = 1;
             this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -238,7 +238,7 @@ namespace GameView
             // gameTimer
             // 
             this.gameTimer.Enabled = true;
-            this.gameTimer.Interval = 10;
+            this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // animationTimer
@@ -269,7 +269,7 @@ namespace GameView
             this.labelHelp.Size = new System.Drawing.Size(635, 108);
             this.labelHelp.TabIndex = 12;
             this.labelHelp.Text = "Aidez Wheatley à récupérer ses cubes.\r\nUtilisez les portails pour le faire bouger" +
-                "\r\nmais attention aux objets volant dans l\'espace !";
+    "\r\nmais attention aux objets volant dans l\'espace !";
             // 
             // lbQuit
             // 
@@ -336,12 +336,12 @@ namespace GameView
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(1484, 962);
+            this.ClientSize = new System.Drawing.Size(1484, 929);
             this.Controls.Add(this.OptionPanel);
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
-            this.MinimumSize = new System.Drawing.Size(1460, 911);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";
@@ -363,7 +363,7 @@ namespace GameView
             // OptionPanel
             // 
             this.OptionPanel.BackColor = System.Drawing.Color.Black;
-            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.outer_space_portal_desktop_1920x1080_hd_wallpaper_1043976;
+            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.outer_space_portal;
             this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.OptionPanel.Controls.Add(this.labelHelp);
             this.OptionPanel.Controls.Add(this.lbQuit);
@@ -390,29 +390,25 @@ namespace GameView
 
         private void joueurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.gameBoard.Controls.Clear();
-            this.keysPressed.Clear();
+            this.clearGameBoard(true);
             this.currentGame.GameModel = GameFactory.onePlayerGame();
         }
 
         private void joueursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.gameBoard.Controls.Clear();
-            this.keysPressed.Clear();
+            this.clearGameBoard(true);
             this.currentGame.GameModel = GameFactory.twoPlayerGame();
         }
 
         private void joueursToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            this.gameBoard.Controls.Clear();
-            this.keysPressed.Clear();
+            this.clearGameBoard(true);
             this.currentGame.GameModel = GameFactory.fourPlayerGame();
         }
 
         private void joueursToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            this.gameBoard.Controls.Clear();
-            this.keysPressed.Clear();
+            this.clearGameBoard(true);
             this.currentGame.GameModel = GameFactory.AIGame();
         }
 
@@ -439,7 +435,25 @@ namespace GameView
 
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
+            CurrentGame.width = this.gameBoard.Width;
+            CurrentGame.height = this.gameBoard.Height;
             this.OptionPanel.Size = this.Size;
+            this.clearGameBoard(false);
+        }
+
+        private void clearGameBoard(bool points)
+        {
+            this.gameBoard.Controls.Clear();
+            this.keysPressed.Clear();
+            if (points)
+            {
+                this.wheatleyLabel.Text = "0";
+                this.rightPointsLabel.Text = "0";
+                this.leftPointsLabel.Text = "0";
+            }
+            this.gameBoard.Controls.Add(this.wheatleyLabel);
+            this.gameBoard.Controls.Add(this.rightPointsLabel);
+            this.gameBoard.Controls.Add(this.leftPointsLabel);
         }
     }
 }

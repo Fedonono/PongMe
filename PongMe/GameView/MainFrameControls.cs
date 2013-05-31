@@ -90,8 +90,8 @@ namespace GameView
                     }
                 }
             }
-            this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
-            this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();
+            this.leftPointsLabel.Text = this.currentGame.getPoints(false).ToString();
+            this.rightPointsLabel.Text = this.currentGame.getPoints(true).ToString();
             this.wheatleyLabel.Text = this.currentGame.GameModel.WeathleyPoint.ToString();
         }
 
@@ -127,6 +127,15 @@ namespace GameView
             if (this.currentGame.isGameOver())
             {
                 this.currentGame.StopGame();
+                SoundPlayer soundPlayerEnd;
+                soundPlayerEnd = new SoundPlayer(Properties.Resources.Portal2_Buzzer);
+                soundPlayerEnd.Load();
+                soundPlayerEnd.Play();
+
+                this.clearGameBoard(false);
+                System.Threading.Thread.Sleep(2000);
+                soundPlayerEnd.Dispose();
+                this.playGameMusic();
             }
             this.gameBoard.Refresh();
         }
@@ -136,12 +145,17 @@ namespace GameView
             //this.gameBoard.Refresh();
         }
 
+        private void playGameMusic()
+        {
+            soundPlayer.PlayLooping();
+        }
+
         private SoundPlayer soundPlayer;
         private void MainForm_Load(object sender, EventArgs e)
         {
             soundPlayer = new SoundPlayer(GameBasicClasses.Properties.Resources.gameMusic);
             soundPlayer.Load();
-            soundPlayer.PlayLooping();
+            this.playGameMusic();
         }
 
         private int nbOfWheatley;

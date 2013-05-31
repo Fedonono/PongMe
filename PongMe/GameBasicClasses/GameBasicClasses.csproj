@@ -61,7 +61,6 @@
     <Compile Include="Obstacles\Bonus\WheatleyBonus.cs" />
     <Compile Include="Obstacles\Brick\BonusBrick.cs" />
     <Compile Include="Obstacles\Brick\Brick.cs" />
-    <Compile Include="BasicClasses\GameModelConfig.cs" />
     <Compile Include="Obstacles\Bonus\Bonus.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />
     <Compile Include="Obstacles\Paddle.cs" />

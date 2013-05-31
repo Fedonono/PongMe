@@ -22,7 +22,8 @@ namespace GameBasicClasses.Obstacles.Bonus
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.gamers)
             {
-                g.Paddle.Bounds = g.Paddle.InitialBounds;
+                Rectangle bounds = new Rectangle(g.Paddle.InitialBounds.X, g.Paddle.Bounds.Y, g.Paddle.InitialBounds.Width, g.Paddle.InitialBounds.Height);
+                g.Paddle.Bounds = bounds;
             }
         }
 

@@ -34,7 +34,7 @@ namespace GameBasicClasses.BasicClasses
                 }
             }
         }
-        private readonly static int MAX_SPEED = 10;
+        private readonly static int MAX_SPEED = 40;
 
         public Movable()
         {

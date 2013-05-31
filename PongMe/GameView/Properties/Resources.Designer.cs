@@ -67,10 +67,16 @@ namespace GameView.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap outer_space_portal_desktop_1920x1080_hd_wallpaper_1043976 {
+        internal static System.Drawing.Bitmap outer_space_portal {
             get {
-                object obj = ResourceManager.GetObject("outer_space_portal_desktop_1920x1080_hd-wallpaper-1043976", resourceCulture);
+                object obj = ResourceManager.GetObject("outer_space_portal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream Portal2_Buzzer {
+            get {
+                return ResourceManager.GetStream("Portal2_Buzzer", resourceCulture);
             }
         }
         

@@ -118,41 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="balle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\balle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pokeball" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pokeball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="barre" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="batred" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red-bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="batblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue-bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ball_disco2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ball_disco2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="brick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="explosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\explosion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="gameMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gameMusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="laser2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\laser2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="laserFire" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\laserFire.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menuMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuMusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -180,84 +153,6 @@
   </data>
   <data name="_4366__noisecollector__pongblipb3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4366__noisecollector__pongblipb3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4367__noisecollector__pongblipb4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4367__noisecollector__pongblipb4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4368__noisecollector__pongblipc_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4368__noisecollector__pongblipc-3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4369__noisecollector__pongblipc_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4369__noisecollector__pongblipc-4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4370__noisecollector__pongblipc_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4370__noisecollector__pongblipc-5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4371__noisecollector__pongblipc4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4371__noisecollector__pongblipc4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4372__noisecollector__pongblipc5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4372__noisecollector__pongblipc5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4373__noisecollector__pongblipf3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4373__noisecollector__pongblipf3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4374__noisecollector__pongblipf5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4374__noisecollector__pongblipf5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4375__noisecollector__pongblipg_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4375__noisecollector__pongblipg-3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4376__noisecollector__pongblipg_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4376__noisecollector__pongblipg-4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4377__noisecollector__pongblipg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4377__noisecollector__pongblipg3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4378__noisecollector__pongblipg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4378__noisecollector__pongblipg4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4379__noisecollector__pongblipg5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4379__noisecollector__pongblipg5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4380__noisecollector__pongblipd_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4380__noisecollector__pongblipd-3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4381__noisecollector__pongblipd_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4381__noisecollector__pongblipd-4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4382__noisecollector__pongblipd_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4382__noisecollector__pongblipd-5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4383__noisecollector__pongblipd3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4383__noisecollector__pongblipd3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4384__noisecollector__pongblipd4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4384__noisecollector__pongblipd4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4385__noisecollector__pongblipd5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4385__noisecollector__pongblipd5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4386__noisecollector__pongblipe3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4386__noisecollector__pongblipe3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4387__noisecollector__pongblipe4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4387__noisecollector__pongblipe4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4388__noisecollector__pongblipe5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4388__noisecollector__pongblipe5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4389__noisecollector__pongblipf_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4389__noisecollector__pongblipf-3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4390__noisecollector__pongblipf_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4390__noisecollector__pongblipf-4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4391__noisecollector__pongblipf_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4391__noisecollector__pongblipf-5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="all_the_cores_by_left4deadhunterfan_d41o4j2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_the_cores_by_left4deadhunterfan-d41o4j2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="atlas_avatar_by_the_rebexorcist_d3i8r14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atlas_avatar_by_the_rebexorcist-d3i8r14.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,9 +199,6 @@
   <data name="portal_companion_cube_free_icon_by_firedragon47_d4np10j" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\portal_companion_cube_free_icon_by_firedragon47-d4np10j.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="portal_icon_by_rallick_nom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\portal_icon_by_rallick_nom.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="portal_turret_icon_3_by_squeekbot_d3gwm7t" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\portal_turret_icon_3_by_squeekbot-d3gwm7t.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -315,15 +207,6 @@
   </data>
   <data name="soprano_turret_avatar_by_the_rebexorcist_d3h9k81" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\soprano_turret_avatar_by_the_rebexorcist-d3h9k81.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wheatley_gif_by_puddle_jumper3_d56a26w" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wheatley_gif_by_puddle_jumper3-d56a26w.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wheatley_portal_2_icon_by_thebrokenegg_d3ftq20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wheatley_portal_2_icon_by_thebrokenegg-d3ftq20.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="weighted_companion_cube_papercraft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\weighted_companion_cube papercraft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="space_core_avatar_by_the_rebexorcist_d3h0wyn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\space_core_avatar_by_the_rebexorcist-d3h0wyn.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
