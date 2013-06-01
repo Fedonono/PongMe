@@ -12,7 +12,7 @@ namespace GameBasicClasses.Obstacles.Paddle
     public class Paddle : Obstacle
     {
         public bool Left { get; set; }
-
+        public bool PortalMode { get; set; }
         public int Id { get; set; }
 
         /// <summary>
@@ -36,8 +36,9 @@ namespace GameBasicClasses.Obstacles.Paddle
 
  
 
-        public Paddle(bool left, Color color, Image image, int id, int width, int height, int speed, int clientWidth, int clientHeight)
+        public Paddle(bool left, Color color, Image image, int id, int width, int height, int speed, bool portalMode, int clientWidth, int clientHeight)
         {
+            this.PortalMode = portalMode;
             this.ClientWidth = clientWidth;
             this.ClientHeight = clientHeight;
             if (width <= 0 || width >= this.ClientWidth)
@@ -52,11 +53,11 @@ namespace GameBasicClasses.Obstacles.Paddle
             Vector paddlePosition;
             if (left)
             {
-                paddlePosition = new Vector(2, 0);
+                paddlePosition = new Vector(2, this.ClientHeight/2-height/2);
             }
             else
             {
-                paddlePosition = new Vector(this.ClientWidth - width - 7, 0);
+                paddlePosition = new Vector(this.ClientWidth - width - 7, this.ClientHeight / 2 - height / 2);
             }
             this.Direction = new Vector(0, 10);
             this.Position = paddlePosition;
@@ -70,6 +71,16 @@ namespace GameBasicClasses.Obstacles.Paddle
             this.Image = image;
             this.InitialImage = this.Image;
             this.Left = left;
+            this.Initialize();
+        }
+
+        public void Initialize()
+        {
+            this.Direction = this.InitialDirection;
+            this.Bounds = this.InitialBounds;
+            this.Speed = this.InitialSpeed;
+            this.Color = this.InitialColor;
+            this.Image = this.InitialImage;
         }
 
         public void Down()

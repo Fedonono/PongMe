@@ -90,8 +90,8 @@ namespace GameView
                     }
                 }
             }
-            this.leftPointsLabel.Text = this.currentGame.getPoints(true).ToString();
-            this.rightPointsLabel.Text = this.currentGame.getPoints(false).ToString();
+            this.leftPointsLabel.Text = this.currentGame.getPoints(false).ToString();
+            this.rightPointsLabel.Text = this.currentGame.getPoints(true).ToString();
             this.wheatleyLabel.Text = this.currentGame.GameModel.WeathleyPoint.ToString();
         }
 
@@ -127,6 +127,15 @@ namespace GameView
             if (this.currentGame.isGameOver())
             {
                 this.currentGame.StopGame();
+                SoundPlayer soundPlayerEnd;
+                soundPlayerEnd = new SoundPlayer(Properties.Resources.Portal2_Buzzer);
+                soundPlayerEnd.Load();
+                soundPlayerEnd.Play();
+
+                this.clearGameBoard(false);
+                System.Threading.Thread.Sleep(2000);
+                soundPlayerEnd.Dispose();
+                this.playGameMusic();
             }
             this.gameBoard.Refresh();
         }
@@ -136,12 +145,17 @@ namespace GameView
             //this.gameBoard.Refresh();
         }
 
+        private void playGameMusic()
+        {
+            soundPlayer.PlayLooping();
+        }
+
         private SoundPlayer soundPlayer;
         private void MainForm_Load(object sender, EventArgs e)
         {
-            soundPlayer = new SoundPlayer(GameBasicClasses.Properties.Resources.gameMusic);
+            soundPlayer = new SoundPlayer(Properties.Resources.Nyan_Cat___Smooth_Jazz_Cover);
             soundPlayer.Load();
-            soundPlayer.PlayLooping();
+            this.playGameMusic();
         }
 
         private int nbOfWheatley;
@@ -213,7 +227,7 @@ namespace GameView
             do
             {
                 Vector v = new Vector(r.Next(20, this.gameBoard.Width - 70), r.Next(0, this.gameBoard.Height - 50));
-                int i = r.Next(1, 7);
+                int i = r.Next(1, 8);
                 switch (i)
                 {
                     case 1:
@@ -233,6 +247,9 @@ namespace GameView
                         break;
                     case 6:
                         b = new PortalMalus(this.gameBoard.Width, this.gameBoard.Height, 1, v);
+                        break;
+                    case 7:
+                        b = new NoPortalBonus(this.gameBoard.Width, this.gameBoard.Height, 10, v);
                         break;
                 }
             } while (this.checkCollision(b));

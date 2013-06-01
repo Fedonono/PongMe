@@ -16,18 +16,16 @@ namespace GameView
     {
         private MenuStrip MainMenu;
         private ToolStripMenuItem jeuToolStripMenuItem;
-        private ToolStripMenuItem nouvellePartieToolStripMenuItem;
         private ToolStripMenuItem quitterToolStripMenuItem;
         private ToolStripMenuItem jeuToolStripMenuItem1;
         private ToolStripMenuItem nombreDeJoueursToolStripMenuItem;
-        private ToolStripMenuItem paramètresToolStripMenuItem;
+        private ToolStripMenuItem parameterToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem aideToolStripMenuItem;
         private ToolStripMenuItem aProposToolStripMenuItem;
-        private ToolStripMenuItem joueurToolStripMenuItem;
-        private ToolStripMenuItem joueursToolStripMenuItem;
-        private ToolStripMenuItem joueursToolStripMenuItem1;
-        private ToolStripMenuItem joueursToolStripMenuItem2;
+        private ToolStripMenuItem onePlayerMenu;
+        private ToolStripMenuItem twoPlayersMenu;
+        private ToolStripMenuItem fourPlayerMenu;
+        private ToolStripMenuItem AIPlayerMenu;
         private Panel gameBoard;
         private Label leftPointsLabel;
         private Label rightPointsLabel;
@@ -39,6 +37,15 @@ namespace GameView
         private Timer brickTimer;
         private Label wheatleyLabel;
         private List<Keys> keysPressed = new List<Keys>();
+        private MenuItem lbQuit;
+        private MenuItem lbCustomGame;
+        private PictureBox pbWheatley;
+        private PictureBox pBLogo;
+        private MenuItem lbQuickGame;
+        private Label labelHelp;
+        private Panel CustomGamePanel;
+        private MenuItem lLBack;
+        private Panel OptionPanel;
 
         public MainForm()
         {
@@ -50,28 +57,39 @@ namespace GameView
             this.components = new System.ComponentModel.Container();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nouvellePartieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jeuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nombreDeJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueursToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueursToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onePlayerMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.twoPlayersMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.fourPlayerMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.AIPlayerMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.parameterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameBoard = new System.Windows.Forms.Panel();
+            this.CustomGamePanel = new System.Windows.Forms.Panel();
             this.wheatleyLabel = new System.Windows.Forms.Label();
             this.rightPointsLabel = new System.Windows.Forms.Label();
             this.leftPointsLabel = new System.Windows.Forms.Label();
+            this.lLBack = new MenuItem();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.bonusTimer = new System.Windows.Forms.Timer(this.components);
             this.brickTimer = new System.Windows.Forms.Timer(this.components);
+            this.OptionPanel = new System.Windows.Forms.Panel();
+            this.labelHelp = new System.Windows.Forms.Label();
+            this.lbQuit = new GameView.MenuItem();
+            this.lbCustomGame = new GameView.MenuItem();
+            this.pbWheatley = new System.Windows.Forms.PictureBox();
+            this.pBLogo = new System.Windows.Forms.PictureBox();
+            this.lbQuickGame = new GameView.MenuItem();
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
+            this.CustomGamePanel.SuspendLayout();
+            this.OptionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWheatley)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -88,23 +106,15 @@ namespace GameView
             // jeuToolStripMenuItem
             // 
             this.jeuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nouvellePartieToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
             this.jeuToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.jeuToolStripMenuItem.Text = "Fichier";
             // 
-            // nouvellePartieToolStripMenuItem
-            // 
-            this.nouvellePartieToolStripMenuItem.Name = "nouvellePartieToolStripMenuItem";
-            this.nouvellePartieToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.nouvellePartieToolStripMenuItem.Text = "Nouvelle partie";
-            this.nouvellePartieToolStripMenuItem.Click += new System.EventHandler(this.nouvellePartieToolStripMenuItem_Click);
-            // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -112,7 +122,7 @@ namespace GameView
             // 
             this.jeuToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nombreDeJoueursToolStripMenuItem,
-            this.paramètresToolStripMenuItem});
+            this.parameterToolStripMenuItem});
             this.jeuToolStripMenuItem1.Name = "jeuToolStripMenuItem1";
             this.jeuToolStripMenuItem1.Size = new System.Drawing.Size(36, 20);
             this.jeuToolStripMenuItem1.Text = "Jeu";
@@ -120,76 +130,59 @@ namespace GameView
             // nombreDeJoueursToolStripMenuItem
             // 
             this.nombreDeJoueursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.joueurToolStripMenuItem,
-            this.joueursToolStripMenuItem,
-            this.joueursToolStripMenuItem1,
-            this.joueursToolStripMenuItem2});
+            this.onePlayerMenu,
+            this.twoPlayersMenu,
+            this.fourPlayerMenu,
+            this.AIPlayerMenu});
             this.nombreDeJoueursToolStripMenuItem.Name = "nombreDeJoueursToolStripMenuItem";
             this.nombreDeJoueursToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.nombreDeJoueursToolStripMenuItem.Text = "Nombre de joueurs";
             // 
-            // joueurToolStripMenuItem
+            // onePlayerMenu
             // 
-            this.joueurToolStripMenuItem.Checked = true;
-            this.joueurToolStripMenuItem.CheckOnClick = true;
-            this.joueurToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.joueurToolStripMenuItem.Name = "joueurToolStripMenuItem";
-            this.joueurToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.joueurToolStripMenuItem.Text = "1 joueur";
-            this.joueurToolStripMenuItem.Click += new System.EventHandler(this.joueurToolStripMenuItem_Click);
+            this.onePlayerMenu.Name = "onePlayerMenu";
+            this.onePlayerMenu.Size = new System.Drawing.Size(122, 22);
+            this.onePlayerMenu.Text = "1 joueur";
+            this.onePlayerMenu.Click += new System.EventHandler(this.joueurToolStripMenuItem_Click);
             // 
-            // joueursToolStripMenuItem
+            // twoPlayersMenu
             // 
-            this.joueursToolStripMenuItem.Checked = true;
-            this.joueursToolStripMenuItem.CheckOnClick = true;
-            this.joueursToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
-            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.joueursToolStripMenuItem.Text = "2 joueurs";
-            this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
+            this.twoPlayersMenu.CheckOnClick = true;
+            this.twoPlayersMenu.Name = "twoPlayersMenu";
+            this.twoPlayersMenu.Size = new System.Drawing.Size(122, 22);
+            this.twoPlayersMenu.Text = "2 joueurs";
+            this.twoPlayersMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
             // 
-            // joueursToolStripMenuItem1
+            // fourPlayerMenu
             // 
-            this.joueursToolStripMenuItem1.Checked = true;
-            this.joueursToolStripMenuItem1.CheckOnClick = true;
-            this.joueursToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.joueursToolStripMenuItem1.Name = "joueursToolStripMenuItem1";
-            this.joueursToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
-            this.joueursToolStripMenuItem1.Text = "3 joueurs";
-            this.joueursToolStripMenuItem1.Click += new System.EventHandler(this.joueursToolStripMenuItem1_Click);
+            this.fourPlayerMenu.CheckOnClick = true;
+            this.fourPlayerMenu.Name = "fourPlayerMenu";
+            this.fourPlayerMenu.Size = new System.Drawing.Size(122, 22);
+            this.fourPlayerMenu.Text = "4 joueurs";
+            this.fourPlayerMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem2_Click);
             // 
-            // joueursToolStripMenuItem2
+            // AIPlayerMenu
             // 
-            this.joueursToolStripMenuItem2.Checked = true;
-            this.joueursToolStripMenuItem2.CheckOnClick = true;
-            this.joueursToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.joueursToolStripMenuItem2.Name = "joueursToolStripMenuItem2";
-            this.joueursToolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
-            this.joueursToolStripMenuItem2.Text = "4 joueurs";
-            this.joueursToolStripMenuItem2.Click += new System.EventHandler(this.joueursToolStripMenuItem2_Click);
+            this.AIPlayerMenu.CheckOnClick = true;
+            this.AIPlayerMenu.Name = "AIPlayerMenu";
+            this.AIPlayerMenu.Size = new System.Drawing.Size(122, 22);
+            this.AIPlayerMenu.Text = "AI";
+            this.AIPlayerMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem4_Click);
             // 
-            // paramètresToolStripMenuItem
+            // parameterToolStripMenuItem
             // 
-            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.paramètresToolStripMenuItem.Text = "Paramètres";
-            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
+            this.parameterToolStripMenuItem.Name = "parameterToolStripMenuItem";
+            this.parameterToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.parameterToolStripMenuItem.Text = "Paramètres";
+            this.parameterToolStripMenuItem.Click += new System.EventHandler(this.parameterToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aideToolStripMenuItem,
             this.aProposToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
             this.toolStripMenuItem1.Text = "?";
-            // 
-            // aideToolStripMenuItem
-            // 
-            this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.aideToolStripMenuItem.Text = "Aide";
-            this.aideToolStripMenuItem.Click += new System.EventHandler(this.aideToolStripMenuItem_Click);
             // 
             // aProposToolStripMenuItem
             // 
@@ -210,15 +203,13 @@ namespace GameView
             this.gameBoard.Controls.Add(this.leftPointsLabel);
             this.gameBoard.Location = new System.Drawing.Point(12, 39);
             this.gameBoard.Name = "gameBoard";
-            this.gameBoard.Size = new System.Drawing.Size(1460, 911);
+            this.gameBoard.Size = new System.Drawing.Size(1460, 878);
             this.gameBoard.TabIndex = 1;
             this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // wheatleyLabel
             // 
-            this.wheatleyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.wheatleyLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.wheatleyLabel.AutoSize = true;
             this.wheatleyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wheatleyLabel.Location = new System.Drawing.Point(714, 57);
@@ -226,6 +217,7 @@ namespace GameView
             this.wheatleyLabel.Size = new System.Drawing.Size(30, 31);
             this.wheatleyLabel.TabIndex = 2;
             this.wheatleyLabel.Text = "0";
+            this.wheatleyLabel.SizeChanged += new System.EventHandler(this.wheatleyLabel_SizeChanged);
             // 
             // rightPointsLabel
             // 
@@ -248,10 +240,21 @@ namespace GameView
             this.leftPointsLabel.TabIndex = 0;
             this.leftPointsLabel.Text = "0";
             // 
+            // lLBack
+            // 
+            this.lLBack.AutoSize = true;
+            this.lLBack.Location = new System.Drawing.Point(42, 624);
+            this.lLBack.Name = "lLBack";
+            this.lLBack.Size = new System.Drawing.Size(77, 13);
+            this.lLBack.TabIndex = 0;
+            this.lLBack.TabStop = true;
+            this.lLBack.Text = "Menu Principal";
+            this.lLBack.Click += new System.EventHandler(this.parameterToolStripMenuItem_Click);
+            // 
             // gameTimer
             // 
             this.gameTimer.Enabled = true;
-            this.gameTimer.Interval = 10;
+            this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // animationTimer
@@ -272,71 +275,227 @@ namespace GameView
             this.brickTimer.Interval = 1000;
             this.brickTimer.Tick += new System.EventHandler(this.brickTimer_Tick);
             // 
+            // labelHelp
+            // 
+            this.labelHelp.AutoSize = true;
+            this.labelHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHelp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelHelp.Location = new System.Drawing.Point(502, 667);
+            this.labelHelp.Name = "labelHelp";
+            this.labelHelp.Size = new System.Drawing.Size(635, 108);
+            this.labelHelp.TabIndex = 12;
+            this.labelHelp.Text = "Aidez Wheatley à récupérer ses cubes.\r\nUtilisez les portails pour le faire bouger" +
+                "\r\nmais attention aux objets volant dans l\'espace !";
+            // 
+            // lbQuit
+            // 
+            this.lbQuit.ActiveLinkColor = System.Drawing.Color.White;
+            this.lbQuit.AutoSize = true;
+            this.lbQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lbQuit.LinkColor = System.Drawing.Color.White;
+            this.lbQuit.Location = new System.Drawing.Point(42, 624);
+            this.lbQuit.Name = "lbQuit";
+            this.lbQuit.Size = new System.Drawing.Size(86, 42);
+            this.lbQuit.TabIndex = 11;
+            this.lbQuit.TabStop = true;
+            this.lbQuit.Text = "Quit";
+            this.lbQuit.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
+            // lbCustomGame
+            // 
+            this.lbCustomGame.ActiveLinkColor = System.Drawing.Color.White;
+            this.lbCustomGame.AutoSize = true;
+            this.lbCustomGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCustomGame.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lbCustomGame.LinkColor = System.Drawing.Color.White;
+            this.lbCustomGame.Location = new System.Drawing.Point(42, 565);
+            this.lbCustomGame.Name = "lbCustomGame";
+            this.lbCustomGame.Size = new System.Drawing.Size(257, 42);
+            this.lbCustomGame.TabIndex = 10;
+            this.lbCustomGame.TabStop = true;
+            this.lbCustomGame.Text = "Custom Game";
+            this.lbCustomGame.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbCustomGame_LinkClicked);
+            // 
+            // pbWheatley
+            // 
+            this.pbWheatley.Image = global::GameView.Properties.Resources.wheatleyv2;
+            this.pbWheatley.Location = new System.Drawing.Point(502, 389);
+            this.pbWheatley.Name = "pbWheatley";
+            this.pbWheatley.Size = new System.Drawing.Size(232, 199);
+            this.pbWheatley.TabIndex = 9;
+            this.pbWheatley.TabStop = false;
+            this.pbWheatley.Visible = false;
+            // 
+            // pBLogo
+            // 
+            this.pBLogo.Image = global::GameView.Properties.Resources.logoPongMe;
+            this.pBLogo.Location = new System.Drawing.Point(49, 324);
+            this.pBLogo.Name = "pBLogo";
+            this.pBLogo.Size = new System.Drawing.Size(329, 100);
+            this.pBLogo.TabIndex = 8;
+            this.pBLogo.TabStop = false;
+            // 
+            // lbQuickGame
+            // 
+            this.lbQuickGame.ActiveLinkColor = System.Drawing.Color.White;
+            this.lbQuickGame.AutoSize = true;
+            this.lbQuickGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuickGame.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lbQuickGame.LinkColor = System.Drawing.Color.White;
+            this.lbQuickGame.Location = new System.Drawing.Point(42, 513);
+            this.lbQuickGame.Name = "lbQuickGame";
+            this.lbQuickGame.Size = new System.Drawing.Size(225, 42);
+            this.lbQuickGame.TabIndex = 7;
+            this.lbQuickGame.TabStop = true;
+            this.lbQuickGame.Text = "Quick Game";
+            this.lbQuickGame.Click += new System.EventHandler(this.linkLabel1_LinkClicked);
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(1484, 962);
+            this.ClientSize = new System.Drawing.Size(1484, 929);
+            this.Controls.Add(this.OptionPanel);
+            this.Controls.Add(this.CustomGamePanel);
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
-            this.MinimumSize = new System.Drawing.Size(CurrentGame.width, CurrentGame.height);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongMe";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.gameBoard.ResumeLayout(false);
             this.gameBoard.PerformLayout();
+            this.OptionPanel.ResumeLayout(false);
+            this.OptionPanel.PerformLayout();
+            this.CustomGamePanel.ResumeLayout(false);
+            this.CustomGamePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWheatley)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-        }
-
-        private void nouvellePartieToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            // 
+            // OptionPanel
+            // 
+            this.OptionPanel.BackColor = System.Drawing.Color.Black;
+            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
+            this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OptionPanel.Controls.Add(this.labelHelp);
+            this.OptionPanel.Controls.Add(this.lbQuit);
+            this.OptionPanel.Controls.Add(this.lbCustomGame);
+            this.OptionPanel.Controls.Add(this.pbWheatley);
+            this.OptionPanel.Controls.Add(this.pBLogo);
+            this.OptionPanel.Controls.Add(this.lbQuickGame);
+            this.OptionPanel.Location = new System.Drawing.Point(0, 0);
+            this.OptionPanel.Name = "OptionPanel";
+            this.OptionPanel.Size = this.Size;
+            this.OptionPanel.TabIndex = 2;
+            // 
+            // CustomGamePanel
+            // 
+            this.CustomGamePanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
+            this.CustomGamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CustomGamePanel.Controls.Add(this.lLBack);
+            this.CustomGamePanel.Location = new System.Drawing.Point(0, 0);
+            this.CustomGamePanel.Name = "CustomGamePanel";
+            this.CustomGamePanel.Size = this.Size;
+            this.CustomGamePanel.TabIndex = 3;
+            this.CustomGamePanel.Enabled = false;
+            this.CustomGamePanel.Hide();
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void parameterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.CustomGamePanel.Hide();
+            this.CustomGamePanel.Enabled = false;
+            this.OptionPanel.Show();
+            this.OptionPanel.Enabled = true;
         }
 
         private void joueurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.clearGameBoard(true);
+            this.currentGame.GameModel = GameFactory.onePlayerGame();
         }
 
         private void joueursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void joueursToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
+            this.clearGameBoard(true);
+            this.currentGame.GameModel = GameFactory.twoPlayerGame();
         }
 
         private void joueursToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-
+            this.clearGameBoard(true);
+            this.currentGame.GameModel = GameFactory.fourPlayerGame();
         }
 
-        private void aideToolStripMenuItem_Click(object sender, EventArgs e)
+        private void joueursToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-
+            this.clearGameBoard(true);
+            this.currentGame.GameModel = GameFactory.AIGame();
         }
 
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("PongMe" + Environment.NewLine + "Authors :" +
+                Environment.NewLine + "Adrien Ecrepont" +
+                Environment.NewLine + "Arnaud Babol" +
+                Environment.NewLine + "Maxence Prevost" +
+                Environment.NewLine + "Guillaume Simonneau" +
+                Environment.NewLine + "Eric Allard");
+        }
 
+        private void wheatleyLabel_SizeChanged(object sender, EventArgs e)
+        {
+            this.wheatleyLabel.Location = new Point(this.gameBoard.Width / 2 - this.wheatleyLabel.Size.Width / 2, this.wheatleyLabel.Location.Y);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, EventArgs e)
+        {
+            this.OptionPanel.Hide();
+            this.OptionPanel.Enabled = false;
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            CurrentGame.width = this.gameBoard.Width;
+            CurrentGame.height = this.gameBoard.Height;
+            this.OptionPanel.Size = this.Size;
+            this.clearGameBoard(false);
+        }
+
+        private void clearGameBoard(bool points)
+        {
+            this.gameBoard.Controls.Clear();
+            this.keysPressed.Clear();
+            if (points)
+            {
+                this.wheatleyLabel.Text = "0";
+                this.rightPointsLabel.Text = "0";
+                this.leftPointsLabel.Text = "0";
+            }
+            this.gameBoard.Controls.Add(this.wheatleyLabel);
+            this.gameBoard.Controls.Add(this.rightPointsLabel);
+            this.gameBoard.Controls.Add(this.leftPointsLabel);
+        }
+
+        private void lbCustomGame_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.OptionPanel.Hide();
+            this.OptionPanel.Enabled = false;
+            this.CustomGamePanel.Show();
+            this.CustomGamePanel.Enabled = true;
         }
     }
 }

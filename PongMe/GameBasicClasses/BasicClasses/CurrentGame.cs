@@ -9,14 +9,16 @@ namespace GameBasicClasses.BasicClasses
     public class CurrentGame
     {
         private static CurrentGame instance = null;
-        public static readonly int width = 1460;
-        public static readonly int height = 911;
+        public static int width = 1460;
+        public static int height = 878;
 
         private GameModel gameModel;
         public GameModel GameModel { 
             get { return this.gameModel; } 
             set 
-            { 
+            {
+                this.stopped = true;
+                this.StopGame();
                 this.gameModel = value;
                 this.GameEngine = new GameEngine(this.GameModel);
             }
@@ -30,7 +32,7 @@ namespace GameBasicClasses.BasicClasses
         private CurrentGame()
         {
             this.stopped = true;
-            this.gameModel = GameFactory.defaultGame();
+            this.gameModel = GameFactory.onePlayerGame();
             this.GameEngine = new GameEngine(this.GameModel);
         }
 
@@ -48,8 +50,6 @@ namespace GameBasicClasses.BasicClasses
             if (this.gameEngine != null)
             {
                 this.stopped = false;
-                this.GameModel.ListeBonus.Clear();
-                this.GameModel.ListeBrick.Clear();
                 this.gameEngine.startGame();
             }
         }
@@ -59,6 +59,8 @@ namespace GameBasicClasses.BasicClasses
             if (this.gameEngine != null)
             {
                 this.stopped = true;
+                this.GameModel.ListeBonus.Clear();
+                this.GameModel.ListeBrick.Clear();
                 this.gameEngine.stopGame();
             }
         }

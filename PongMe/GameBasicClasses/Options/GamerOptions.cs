@@ -27,11 +27,11 @@ namespace GameBasicClasses.Options
         {
             set
             {
-                if (taken.Find(value) == null)
-                {
+                //if (taken.Find(value) == null)
+                //{
                     this.up = value;
-                    taken.AddLast(value);
-                }
+                    //taken.AddLast(value);
+                //}
             }
 
             get
@@ -44,11 +44,11 @@ namespace GameBasicClasses.Options
         {
             set
             {
-                if (taken.Find(value) == null)
-                {
+                //if (taken.Find(value) == null)
+                //{
                     this.down = value;
-                    taken.AddLast(value);
-                }
+                  //  taken.AddLast(value);
+                //}
             }
 
             get
@@ -113,11 +113,16 @@ namespace GameBasicClasses.Options
                 this.Up, this.Down, Stop, Pause);
         }
 
-        public void swapCommands()
+        public void SwapCommands()
         {
             Keys tmp = this.up;
             this.up = this.down;
             this.down = tmp;
+        }
+
+        public GamerOptions Clone()
+        {
+            return new GamerOptions(this.Up, this.Down);
         }
     }
 }

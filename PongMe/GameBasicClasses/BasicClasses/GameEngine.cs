@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GameBasicClasses.MVC;
+using GameBasicClasses.Obstacles.Paddle;
 
 namespace GameBasicClasses.BasicClasses
 {
@@ -13,10 +14,6 @@ namespace GameBasicClasses.BasicClasses
         public GameEngine(GameModel model)
         {
             this.Model = model;
-        }
-
-        public void init()
-        {
         }
 
         public void startGame()
@@ -40,6 +37,14 @@ namespace GameBasicClasses.BasicClasses
             foreach (Ball ball in this.Model.ListeBall)
             {
                 ball.Initialize();
+            }
+            foreach (Paddle p in this.Model.listePaddle(false, 0, null))
+            {
+                p.Initialize();
+            }
+            foreach (Gamer.Gamer g in this.Model.ListeGamer)
+            {
+                g.Initialize();
             }
         }
 

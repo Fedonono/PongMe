@@ -108,159 +108,9 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.IO.UnmanagedMemoryStream _4367__noisecollector__pongblipb4 {
+        public static System.Drawing.Bitmap adventure_core_avatar_by_the_rebexorcist_d3gzj02 {
             get {
-                return ResourceManager.GetStream("_4367__noisecollector__pongblipb4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4368__noisecollector__pongblipc_3 {
-            get {
-                return ResourceManager.GetStream("_4368__noisecollector__pongblipc_3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4369__noisecollector__pongblipc_4 {
-            get {
-                return ResourceManager.GetStream("_4369__noisecollector__pongblipc_4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4370__noisecollector__pongblipc_5 {
-            get {
-                return ResourceManager.GetStream("_4370__noisecollector__pongblipc_5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4371__noisecollector__pongblipc4 {
-            get {
-                return ResourceManager.GetStream("_4371__noisecollector__pongblipc4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4372__noisecollector__pongblipc5 {
-            get {
-                return ResourceManager.GetStream("_4372__noisecollector__pongblipc5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4373__noisecollector__pongblipf3 {
-            get {
-                return ResourceManager.GetStream("_4373__noisecollector__pongblipf3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4374__noisecollector__pongblipf5 {
-            get {
-                return ResourceManager.GetStream("_4374__noisecollector__pongblipf5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4375__noisecollector__pongblipg_3 {
-            get {
-                return ResourceManager.GetStream("_4375__noisecollector__pongblipg_3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4376__noisecollector__pongblipg_4 {
-            get {
-                return ResourceManager.GetStream("_4376__noisecollector__pongblipg_4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4377__noisecollector__pongblipg3 {
-            get {
-                return ResourceManager.GetStream("_4377__noisecollector__pongblipg3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4378__noisecollector__pongblipg4 {
-            get {
-                return ResourceManager.GetStream("_4378__noisecollector__pongblipg4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4379__noisecollector__pongblipg5 {
-            get {
-                return ResourceManager.GetStream("_4379__noisecollector__pongblipg5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4380__noisecollector__pongblipd_3 {
-            get {
-                return ResourceManager.GetStream("_4380__noisecollector__pongblipd_3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4381__noisecollector__pongblipd_4 {
-            get {
-                return ResourceManager.GetStream("_4381__noisecollector__pongblipd_4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4382__noisecollector__pongblipd_5 {
-            get {
-                return ResourceManager.GetStream("_4382__noisecollector__pongblipd_5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4383__noisecollector__pongblipd3 {
-            get {
-                return ResourceManager.GetStream("_4383__noisecollector__pongblipd3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4384__noisecollector__pongblipd4 {
-            get {
-                return ResourceManager.GetStream("_4384__noisecollector__pongblipd4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4385__noisecollector__pongblipd5 {
-            get {
-                return ResourceManager.GetStream("_4385__noisecollector__pongblipd5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4386__noisecollector__pongblipe3 {
-            get {
-                return ResourceManager.GetStream("_4386__noisecollector__pongblipe3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4387__noisecollector__pongblipe4 {
-            get {
-                return ResourceManager.GetStream("_4387__noisecollector__pongblipe4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4388__noisecollector__pongblipe5 {
-            get {
-                return ResourceManager.GetStream("_4388__noisecollector__pongblipe5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4389__noisecollector__pongblipf_3 {
-            get {
-                return ResourceManager.GetStream("_4389__noisecollector__pongblipf_3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4390__noisecollector__pongblipf_4 {
-            get {
-                return ResourceManager.GetStream("_4390__noisecollector__pongblipf_4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4391__noisecollector__pongblipf_5 {
-            get {
-                return ResourceManager.GetStream("_4391__noisecollector__pongblipf_5", resourceCulture);
-            }
-        }
-        
-        public static System.Drawing.Bitmap all_the_cores_by_left4deadhunterfan_d41o4j2 {
-            get {
-                object obj = ResourceManager.GetObject("all_the_cores_by_left4deadhunterfan_d41o4j2", resourceCulture);
+                object obj = ResourceManager.GetObject("adventure_core_avatar_by_the_rebexorcist_d3gzj02", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -279,34 +129,6 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap ball_disco2 {
-            get {
-                object obj = ResourceManager.GetObject("ball_disco2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap balle {
-            get {
-                object obj = ResourceManager.GetObject("balle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap barre {
-            get {
-                object obj = ResourceManager.GetObject("barre", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap bat {
-            get {
-                object obj = ResourceManager.GetObject("bat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         public static System.Drawing.Bitmap batblue {
             get {
                 object obj = ResourceManager.GetObject("batblue", resourceCulture);
@@ -317,13 +139,6 @@ namespace GameBasicClasses.Properties {
         public static System.Drawing.Bitmap batred {
             get {
                 object obj = ResourceManager.GetObject("batred", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap brick {
-            get {
-                object obj = ResourceManager.GetObject("brick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -349,9 +164,10 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.IO.UnmanagedMemoryStream explosion {
+        public static System.Drawing.Bitmap fact_core_avatar_by_the_rebexorcist_d3h18dn {
             get {
-                return ResourceManager.GetStream("explosion", resourceCulture);
+                object obj = ResourceManager.GetObject("fact_core_avatar_by_the_rebexorcist_d3h18dn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -396,19 +212,6 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.Drawing.Bitmap laser2 {
-            get {
-                object obj = ResourceManager.GetObject("laser2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream laserFire {
-            get {
-                return ResourceManager.GetStream("laserFire", resourceCulture);
-            }
-        }
-        
         public static System.IO.UnmanagedMemoryStream menuMusic {
             get {
                 return ResourceManager.GetStream("menuMusic", resourceCulture);
@@ -418,13 +221,6 @@ namespace GameBasicClasses.Properties {
         public static System.Drawing.Bitmap oracle_turret_avatar_by_the_rebexorcist_d3h9ts8 {
             get {
                 object obj = ResourceManager.GetObject("oracle_turret_avatar_by_the_rebexorcist_d3h9ts8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap pokeball {
-            get {
-                object obj = ResourceManager.GetObject("pokeball", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,13 +249,6 @@ namespace GameBasicClasses.Properties {
         public static System.Drawing.Bitmap portal_companion_cube_free_icon_by_firedragon47_d4np10j {
             get {
                 object obj = ResourceManager.GetObject("portal_companion_cube_free_icon_by_firedragon47_d4np10j", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap portal_icon_by_rallick_nom {
-            get {
-                object obj = ResourceManager.GetObject("portal_icon_by_rallick_nom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -495,27 +284,6 @@ namespace GameBasicClasses.Properties {
         public static System.Drawing.Bitmap space_core_avatar_by_the_rebexorcist_d3h0wyn {
             get {
                 object obj = ResourceManager.GetObject("space_core_avatar_by_the_rebexorcist_d3h0wyn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap weighted_companion_cube_papercraft {
-            get {
-                object obj = ResourceManager.GetObject("weighted_companion_cube_papercraft", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap wheatley_gif_by_puddle_jumper3_d56a26w {
-            get {
-                object obj = ResourceManager.GetObject("wheatley_gif_by_puddle_jumper3_d56a26w", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.Drawing.Bitmap wheatley_portal_2_icon_by_thebrokenegg_d3ftq20 {
-            get {
-                object obj = ResourceManager.GetObject("wheatley_portal_2_icon_by_thebrokenegg_d3ftq20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

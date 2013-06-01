@@ -67,9 +67,21 @@ namespace GameView.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap outer_space_portal_desktop_1920x1080_hd_wallpaper_1043976 {
+        internal static System.IO.UnmanagedMemoryStream Nyan_Cat___Smooth_Jazz_Cover {
             get {
-                object obj = ResourceManager.GetObject("outer_space_portal_desktop_1920x1080_hd-wallpaper-1043976", resourceCulture);
+                return ResourceManager.GetStream("Nyan_Cat___Smooth_Jazz_Cover", resourceCulture);
+            }
+        }
+        
+        internal static System.IO.UnmanagedMemoryStream Portal2_Buzzer {
+            get {
+                return ResourceManager.GetStream("Portal2_Buzzer", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

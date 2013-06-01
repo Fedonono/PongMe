@@ -52,19 +52,13 @@
     <Compile Include="MainFrameControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptionTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OptionTest.Designer.cs">
-      <DependentUpon>OptionTest.cs</DependentUpon>
+    <Compile Include="MenuItem.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartingClass.cs" />
     <EmbeddedResource Include="MainFrame.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OptionTest.resx">
-      <DependentUpon>OptionTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,6 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wheatleyv2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Portal2_Buzzer.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nyan_Cat_-_Smooth_Jazz_Cover.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
