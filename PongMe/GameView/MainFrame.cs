@@ -399,7 +399,6 @@ namespace GameView
             // CustomGamePanel
             // 
             this.CustomGamePanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
-            this.CustomGamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CustomGamePanel.Controls.Add(this.lLBack);
             this.CustomGamePanel.Location = new System.Drawing.Point(0, 0);
             this.CustomGamePanel.Name = "CustomGamePanel";
@@ -407,6 +406,9 @@ namespace GameView
             this.CustomGamePanel.TabIndex = 3;
             this.CustomGamePanel.Enabled = false;
             this.CustomGamePanel.Hide();
+            /*this.OptionPanel.Enabled = false;
+            this.OptionPanel.Hide();
+            this.CustomGamePanel.Size = new System.Drawing.Size(1484, 878);*/
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
