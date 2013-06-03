@@ -73,6 +73,7 @@
             this.Controls.Add(this.GBPlr);
             this.Name = "ControlCommands";
             this.Size = new System.Drawing.Size(145, 251);
+            this.Load += new System.EventHandler(this.ControlCommands_Load);
             this.GBPlr.ResumeLayout(false);
             this.GBPlr.PerformLayout();
             this.ResumeLayout(false);

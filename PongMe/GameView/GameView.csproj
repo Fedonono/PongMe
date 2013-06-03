@@ -67,6 +67,7 @@
     <Compile Include="Commands\ControlCommands.Designer.cs">
       <DependentUpon>ControlCommands.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartingClass.cs" />
     <Compile Include="MainFrame.cs">
       <SubType>Form</SubType>
     </Compile>

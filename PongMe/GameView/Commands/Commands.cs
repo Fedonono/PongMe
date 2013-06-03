@@ -23,9 +23,10 @@ namespace GameView.Resources
 
         private void playerCommandSet(List<GamerOptions> lg)
         {
+            int i = 0;
             foreach (GamerOptions g in lg)
             {
-                ControlCommands c = new ControlCommands(g);
+                ControlCommands c = new ControlCommands(i++, g);
                 controls.Add(c);
                 this.Controls.Add(c);
             }
