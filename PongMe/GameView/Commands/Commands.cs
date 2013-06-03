@@ -25,7 +25,7 @@ namespace GameView.Resources
         {
             foreach (GamerOptions g in lg)
             {
-                ControlCommands c = new ControlCommands(g.Up.ToString(), g.Down.ToString());
+                ControlCommands c = new ControlCommands(g);
                 controls.Add(c);
                 this.Controls.Add(c);
             }
