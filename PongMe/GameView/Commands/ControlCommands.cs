@@ -79,10 +79,5 @@ namespace GameView
             this.locked = false;
             this.KeyUp -= new KeyEventHandler(ReceiveCommand);
         }
-
-        private void ControlCommands_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

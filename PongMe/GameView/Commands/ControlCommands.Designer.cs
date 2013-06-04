@@ -44,6 +44,7 @@
             this.GBPlr.TabIndex = 0;
             this.GBPlr.TabStop = false;
             this.GBPlr.Text = "Player ";
+            this.GBPlr.Enter += new System.EventHandler(this.GBPlr_Enter);
             // 
             // Ldown
             // 
@@ -72,7 +73,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.GBPlr);
             this.Name = "ControlCommands";
-            this.Size = new System.Drawing.Size(145, 251);
+            this.Size = new System.Drawing.Size(138, 182);
             this.Load += new System.EventHandler(this.ControlCommands_Load);
             this.GBPlr.ResumeLayout(false);
             this.GBPlr.PerformLayout();

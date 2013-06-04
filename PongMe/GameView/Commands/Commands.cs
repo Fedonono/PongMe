@@ -14,11 +14,19 @@ namespace GameView.Resources
     public partial class Commands : UserControl
     {
         private List<ControlCommands> controls;
+        private bool locked;
+        private bool upLock;
 
         public Commands(GameModel gm)
         {
             InitializeComponent();
             this.playerCommandSet(gm.GetCommands());
+
+            this.LLaunch.Text = GamerOptions.Launch.ToString();
+            this.LPause.Text = GamerOptions.Pause.ToString();
+
+            this.LLaunch.Click += new EventHandler(this.Lup_Click);
+            this.LPause.Click += new EventHandler(this.Lup_Click);
         }
 
         private void playerCommandSet(List<GamerOptions> lg)
@@ -32,9 +40,52 @@ namespace GameView.Resources
             }
         }
 
-        private void Commands_Load(object sender, EventArgs e)
+        private void Lup_Click(object sender, EventArgs e)
         {
+            Label l = sender as Label;
+            if (l == null)
+            {
+                return;
+            }
 
+            if (this.locked)
+            {
+                if (l == this.LLaunch)
+                {
+                    this.upLock = true;
+                }
+                else
+                {
+                    this.upLock = false;
+                }
+
+                this.KeyUp += new KeyEventHandler(ReceiveCommand);
+            }
+
+
+        }
+
+        private void ReceiveCommand(object sender, KeyEventArgs e)
+        {
+            if (!this.locked)
+            {
+                return;
+            }
+
+            Keys c = e.KeyCode;
+            if (this.upLock)
+            {
+                GamerOptions.Launch = c;
+                this.LLaunch.Text = c.ToString();
+            }
+            else
+            {
+                GamerOptions.Down = c;
+                this.LPause.Text = c.ToString();
+            }
+
+            this.locked = false;
+            this.KeyUp -= new KeyEventHandler(ReceiveCommand);
         }
     }
 }
