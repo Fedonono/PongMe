@@ -16,6 +16,7 @@ namespace GameView.Resources
         private List<ControlCommands> controls;
         private bool locked;
         private bool upLock;
+        private KeyEventHandler keyEvent;
 
         public Commands(GameModel gm)
         {
@@ -27,6 +28,8 @@ namespace GameView.Resources
 
             this.LLaunch.Click += new EventHandler(this.Lup_Click);
             this.LPause.Click += new EventHandler(this.Lup_Click);
+
+            this.keyEvent = new KeyEventHandler(ReceiveCommand);
         }
 
         private void playerCommandSet(List<GamerOptions> lg)
@@ -36,7 +39,7 @@ namespace GameView.Resources
             {
                 ControlCommands c = new ControlCommands(i++, g);
                 controls.Add(c);
-                this.Controls.Add(c);
+                this.FLPlrs.Controls.Add(c);
             }
         }
 
@@ -59,7 +62,7 @@ namespace GameView.Resources
                     this.upLock = false;
                 }
 
-                this.KeyUp += new KeyEventHandler(ReceiveCommand);
+                this.KeyUp += this.keyEvent;
             }
 
 
@@ -80,12 +83,12 @@ namespace GameView.Resources
             }
             else
             {
-                GamerOptions.Down = c;
+                GamerOptions.Pause = c;
                 this.LPause.Text = c.ToString();
             }
 
             this.locked = false;
-            this.KeyUp -= new KeyEventHandler(ReceiveCommand);
+            this.KeyUp -= this.keyEvent;
         }
     }
 }
