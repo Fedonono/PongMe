@@ -27,11 +27,11 @@ namespace GameBasicClasses.Options
         {
             set
             {
-                //if (taken.Find(value) == null)
-                //{
+                if (taken.Find(value) == null)
+                {
                     this.up = value;
-                    //taken.AddLast(value);
-                //}
+                    taken.AddLast(value);
+                }
             }
 
             get
@@ -44,11 +44,11 @@ namespace GameBasicClasses.Options
         {
             set
             {
-                //if (taken.Find(value) == null)
-                //{
+                if (taken.Find(value) == null)
+                {
                     this.down = value;
-                  //  taken.AddLast(value);
-                //}
+                    taken.AddLast(value);
+                }
             }
 
             get

@@ -31,6 +31,18 @@ namespace GameBasicClasses.BasicClasses
             this.WeathleyPoint = 0;
         }
 
+        public List<GamerOptions> GetCommands()
+        {
+            List<GamerOptions> options = new List<GamerOptions>();
+
+            foreach (GameBasicClasses.Gamer.Gamer g in this.listeGamer)
+            {
+                options.Add(g.Commands);
+            }
+
+            return options;
+        }
+
         public void addBall(Ball b)
         {
             this.listeBall.Add(b);
@@ -50,6 +62,7 @@ namespace GameBasicClasses.BasicClasses
         {
             this.listeBrick.Add(b);
         }
+
 
         public void addGamer(GameBasicClasses.Gamer.Gamer g)
         {

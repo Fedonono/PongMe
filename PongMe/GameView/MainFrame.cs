@@ -9,6 +9,7 @@ using GameBasicClasses.BasicClasses;
 using GameBasicClasses.Obstacles.Paddle;
 using GameBasicClasses.Gamer;
 using System.Media;
+using GameView.Resources;
 
 namespace GameView
 {
@@ -45,6 +46,7 @@ namespace GameView
         private Label labelHelp;
         private Panel CustomGamePanel;
         private MenuItem lLBack;
+        private MenuItem mICmd;
         private Panel OptionPanel;
 
         public MainForm()
@@ -68,15 +70,10 @@ namespace GameView
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameBoard = new System.Windows.Forms.Panel();
-            this.CustomGamePanel = new System.Windows.Forms.Panel();
             this.wheatleyLabel = new System.Windows.Forms.Label();
             this.rightPointsLabel = new System.Windows.Forms.Label();
             this.leftPointsLabel = new System.Windows.Forms.Label();
-            this.lLBack = new MenuItem();
-            this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.animationTimer = new System.Windows.Forms.Timer(this.components);
-            this.bonusTimer = new System.Windows.Forms.Timer(this.components);
-            this.brickTimer = new System.Windows.Forms.Timer(this.components);
+            this.CustomGamePanel = new System.Windows.Forms.Panel();
             this.OptionPanel = new System.Windows.Forms.Panel();
             this.labelHelp = new System.Windows.Forms.Label();
             this.lbQuit = new GameView.MenuItem();
@@ -84,6 +81,12 @@ namespace GameView
             this.pbWheatley = new System.Windows.Forms.PictureBox();
             this.pBLogo = new System.Windows.Forms.PictureBox();
             this.lbQuickGame = new GameView.MenuItem();
+            this.mICmd = new GameView.MenuItem();
+            this.lLBack = new GameView.MenuItem();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
+            this.bonusTimer = new System.Windows.Forms.Timer(this.components);
+            this.brickTimer = new System.Windows.Forms.Timer(this.components);
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
             this.CustomGamePanel.SuspendLayout();
@@ -240,40 +243,34 @@ namespace GameView
             this.leftPointsLabel.TabIndex = 0;
             this.leftPointsLabel.Text = "0";
             // 
-            // lLBack
+            // CustomGamePanel
             // 
-            this.lLBack.AutoSize = true;
-            this.lLBack.Location = new System.Drawing.Point(42, 624);
-            this.lLBack.Name = "lLBack";
-            this.lLBack.Size = new System.Drawing.Size(77, 13);
-            this.lLBack.TabIndex = 0;
-            this.lLBack.TabStop = true;
-            this.lLBack.Text = "Menu Principal";
-            this.lLBack.Click += new System.EventHandler(this.parameterToolStripMenuItem_Click);
+            this.CustomGamePanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
+            this.CustomGamePanel.Controls.Add(this.OptionPanel);
+            this.CustomGamePanel.Controls.Add(this.mICmd);
+            this.CustomGamePanel.Controls.Add(this.lLBack);
+            this.CustomGamePanel.Enabled = false;
+            this.CustomGamePanel.Location = new System.Drawing.Point(0, 0);
+            this.CustomGamePanel.Name = "CustomGamePanel";
+            this.CustomGamePanel.Size = this.Size;
+            this.CustomGamePanel.TabIndex = 3;
             // 
-            // gameTimer
+            // OptionPanel
             // 
-            this.gameTimer.Enabled = true;
-            this.gameTimer.Interval = 20;
-            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
-            // 
-            // animationTimer
-            // 
-            this.animationTimer.Enabled = true;
-            this.animationTimer.Interval = 4000;
-            this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
-            // 
-            // bonusTimer
-            // 
-            this.bonusTimer.Enabled = true;
-            this.bonusTimer.Interval = 1000;
-            this.bonusTimer.Tick += new System.EventHandler(this.bonusTimer_Tick);
-            // 
-            // brickTimer
-            // 
-            this.brickTimer.Enabled = true;
-            this.brickTimer.Interval = 1000;
-            this.brickTimer.Tick += new System.EventHandler(this.brickTimer_Tick);
+            this.OptionPanel.BackColor = System.Drawing.Color.Black;
+            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
+            this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OptionPanel.Controls.Add(this.labelHelp);
+            this.OptionPanel.Controls.Add(this.lbQuit);
+            this.OptionPanel.Controls.Add(this.lbCustomGame);
+            this.OptionPanel.Controls.Add(this.pbWheatley);
+            this.OptionPanel.Controls.Add(this.pBLogo);
+            this.OptionPanel.Controls.Add(this.lbQuickGame);
+            this.OptionPanel.Location = new System.Drawing.Point(160, 83);
+            this.OptionPanel.Name = "OptionPanel";
+            this.OptionPanel.Size = this.Size;
+            this.OptionPanel.TabIndex = 2;
+            this.OptionPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OptionPanel_Paint);
             // 
             // labelHelp
             // 
@@ -282,9 +279,10 @@ namespace GameView
             this.labelHelp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelHelp.Location = new System.Drawing.Point(502, 667);
             this.labelHelp.Name = "labelHelp";
-            this.labelHelp.Size = new System.Drawing.Size(635, 108);
+            this.labelHelp.Size = new System.Drawing.Size(710, 108);
             this.labelHelp.TabIndex = 12;
-            this.labelHelp.Text = "Help Wheatley to bring back his cubes. \r\nUse portals to make them move. \r\nRemember to keep an eye on items floating in space.";
+            this.labelHelp.Text = "Help Wheatley to bring back his cubes. \r\nUse portals to make them move. \r\nRemembe" +
+                "r to keep an eye on items floating in space.";
             // 
             // lbQuit
             // 
@@ -348,12 +346,64 @@ namespace GameView
             this.lbQuickGame.TabIndex = 7;
             this.lbQuickGame.TabStop = true;
             this.lbQuickGame.Text = "Quick Game";
-            this.lbQuickGame.Click += new System.EventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // mICmd
+            // 
+            this.mICmd.ActiveLinkColor = System.Drawing.Color.White;
+            this.mICmd.AutoSize = true;
+            this.mICmd.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mICmd.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.mICmd.LinkColor = System.Drawing.Color.White;
+            this.mICmd.Location = new System.Drawing.Point(42, 554);
+            this.mICmd.Name = "mICmd";
+            this.mICmd.Size = new System.Drawing.Size(208, 42);
+            this.mICmd.TabIndex = 3;
+            this.mICmd.TabStop = true;
+            this.mICmd.Text = "Commands";
+            this.mICmd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mICmd_LinkClicked);
+            // 
+            // lLBack
+            // 
+            this.lLBack.ActiveLinkColor = System.Drawing.Color.White;
+            this.lLBack.AutoSize = true;
+            this.lLBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lLBack.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lLBack.LinkColor = System.Drawing.Color.White;
+            this.lLBack.Location = new System.Drawing.Point(42, 624);
+            this.lLBack.Name = "lLBack";
+            this.lLBack.Size = new System.Drawing.Size(265, 42);
+            this.lLBack.TabIndex = 0;
+            this.lLBack.TabStop = true;
+            this.lLBack.Text = "Menu Principal";
+            this.lLBack.Click += new System.EventHandler(this.parameterToolStripMenuItem_Click);
+            // 
+            // gameTimer
+            // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 20;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
+            // animationTimer
+            // 
+            this.animationTimer.Enabled = true;
+            this.animationTimer.Interval = 4000;
+            this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
+            // 
+            // bonusTimer
+            // 
+            this.bonusTimer.Enabled = true;
+            this.bonusTimer.Interval = 1000;
+            this.bonusTimer.Tick += new System.EventHandler(this.bonusTimer_Tick);
+            // 
+            // brickTimer
+            // 
+            this.brickTimer.Enabled = true;
+            this.brickTimer.Interval = 1000;
+            this.brickTimer.Tick += new System.EventHandler(this.brickTimer_Tick);
             // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(1484, 929);
-            this.Controls.Add(this.OptionPanel);
             this.Controls.Add(this.CustomGamePanel);
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
@@ -370,44 +420,15 @@ namespace GameView
             this.MainMenu.PerformLayout();
             this.gameBoard.ResumeLayout(false);
             this.gameBoard.PerformLayout();
-            this.OptionPanel.ResumeLayout(false);
-            this.OptionPanel.PerformLayout();
             this.CustomGamePanel.ResumeLayout(false);
             this.CustomGamePanel.PerformLayout();
+            this.OptionPanel.ResumeLayout(false);
+            this.OptionPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWheatley)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            // 
-            // OptionPanel
-            // 
-            this.OptionPanel.BackColor = System.Drawing.Color.Black;
-            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
-            this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.OptionPanel.Controls.Add(this.labelHelp);
-            this.OptionPanel.Controls.Add(this.lbQuit);
-            this.OptionPanel.Controls.Add(this.lbCustomGame);
-            this.OptionPanel.Controls.Add(this.pbWheatley);
-            this.OptionPanel.Controls.Add(this.pBLogo);
-            this.OptionPanel.Controls.Add(this.lbQuickGame);
-            this.OptionPanel.Location = new System.Drawing.Point(0, 0);
-            this.OptionPanel.Name = "OptionPanel";
-            this.OptionPanel.Size = this.Size;
-            this.OptionPanel.TabIndex = 2;
-            // 
-            // CustomGamePanel
-            // 
-            this.CustomGamePanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
-            this.CustomGamePanel.Controls.Add(this.lLBack);
-            this.CustomGamePanel.Location = new System.Drawing.Point(0, 0);
-            this.CustomGamePanel.Name = "CustomGamePanel";
-            this.CustomGamePanel.Size = this.Size;
-            this.CustomGamePanel.TabIndex = 3;
-            this.CustomGamePanel.Enabled = false;
-            this.CustomGamePanel.Hide();
-            /*this.OptionPanel.Enabled = false;
-            this.OptionPanel.Hide();
-            this.CustomGamePanel.Size = new System.Drawing.Size(1484, 878);*/
+
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -462,12 +483,6 @@ namespace GameView
             this.wheatleyLabel.Location = new Point(this.gameBoard.Width / 2 - this.wheatleyLabel.Size.Width / 2, this.wheatleyLabel.Location.Y);
         }
 
-        private void linkLabel1_LinkClicked(object sender, EventArgs e)
-        {
-            this.OptionPanel.Hide();
-            this.OptionPanel.Enabled = false;
-        }
-
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             CurrentGame.width = this.gameBoard.Width;
@@ -497,6 +512,25 @@ namespace GameView
             this.OptionPanel.Enabled = false;
             this.CustomGamePanel.Show();
             this.CustomGamePanel.Enabled = true;
+        }
+
+
+        private void developpingMode()
+        {
+            this.OptionPanel.Hide();
+            this.OptionPanel.Enabled = false;
+            this.CustomGamePanel.Hide();
+            this.CustomGamePanel.Enabled = false;
+        }
+
+        private void OptionPanel_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void mICmd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Controls.Add(new Commands(this.currentGame.GameModel));
         }
     }
 }
