@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GameBasicClasses.MVC;
 using GameBasicClasses.Obstacles;
 using System.Windows.Forms;
 using GameBasicClasses.Gamer;
@@ -12,7 +11,7 @@ using GameBasicClasses.Options;
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class GameModel : Model
+    public class GameModel
     {
         private List<Ball> listeBall;
         public List<Ball> ListeBall { get { return this.listeBall; } }

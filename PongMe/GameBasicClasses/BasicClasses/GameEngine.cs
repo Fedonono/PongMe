@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GameBasicClasses.MVC;
 using GameBasicClasses.Obstacles.Paddle;
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class GameEngine : Controller
+    public class GameEngine
     {
         public GameModel Model { get; set; }
 
