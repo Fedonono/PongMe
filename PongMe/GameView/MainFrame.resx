@@ -123,13 +123,17 @@
   <metadata name="gameTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>127, 17</value>
   </metadata>
-  <metadata name="animationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>240, 17</value>
-  </metadata>
   <metadata name="bonusTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>392, 20</value>
   </metadata>
   <metadata name="brickTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>508, 20</value>
   </metadata>
+  <data name="labelHelp.Text" xml:space="preserve">
+    <value>Help Wheatley to bring back his jumping cubes.
+Use portals to make him move.
+It's a cooperation game, help you each other.
+Remember to keep an eye open on items floating in space !
+They can bring you a lot of troubles !</value>
+  </data>
 </root>
