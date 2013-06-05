@@ -284,7 +284,7 @@ namespace GameView
             this.labelHelp.Name = "labelHelp";
             this.labelHelp.Size = new System.Drawing.Size(635, 108);
             this.labelHelp.TabIndex = 12;
-            this.labelHelp.Text = "Help Wheatley to bring back his cubes.\r\nUse portals to make them move" +
+            this.labelHelp.Text = "Help Wheatley to bring back his cubes.\r\nUse portals to make them move." +
                 "\r\nRemember to keep an eye on items floating in space!";
             // 
             // lbQuit
