@@ -383,7 +383,7 @@ namespace GameView
             // 
             this.OptionPanel.BackColor = System.Drawing.Color.Black;
             this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
-            this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.OptionPanel.Controls.Add(this.labelHelp);
             this.OptionPanel.Controls.Add(this.lbQuit);
             this.OptionPanel.Controls.Add(this.pbWheatley);
