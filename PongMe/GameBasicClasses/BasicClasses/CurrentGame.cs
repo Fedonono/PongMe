@@ -127,5 +127,10 @@ namespace GameBasicClasses.BasicClasses
         {
             this.GameModel.WeathleyPoint++;
         }
+
+        public void resetWeathleyPoint()
+        {
+            this.GameModel.WeathleyPoint = 0;
+        }
     }
 }

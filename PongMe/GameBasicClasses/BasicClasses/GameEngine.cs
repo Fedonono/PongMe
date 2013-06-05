@@ -45,6 +45,7 @@ namespace GameBasicClasses.BasicClasses
             {
                 g.Initialize();
             }
+            Model.WeathleyPoint = 0;
         }
 
     }
