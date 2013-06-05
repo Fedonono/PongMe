@@ -280,22 +280,6 @@ namespace GameView
             this.brickTimer.Interval = 1000;
             this.brickTimer.Tick += new System.EventHandler(this.BrickTimer_Tick);
             // 
-            // OptionPanel
-            // 
-            this.OptionPanel.BackColor = System.Drawing.Color.Black;
-            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
-            this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OptionPanel.Controls.Add(this.labelHelp);
-            this.OptionPanel.Controls.Add(this.lbQuit);
-            this.OptionPanel.Controls.Add(this.pbWheatley);
-            this.OptionPanel.Controls.Add(this.pBLogo);
-            this.OptionPanel.Controls.Add(this.lbQuickGame);
-            this.OptionPanel.Controls.Add(this.bMute);
-            this.OptionPanel.Location = new System.Drawing.Point(0, 0);
-            this.OptionPanel.Name = "OptionPanel";
-            this.OptionPanel.Size = this.Size;
-            this.OptionPanel.TabIndex = 2;
-            // 
             // labelHelp
             // 
             this.labelHelp.AutoSize = true;
@@ -394,7 +378,22 @@ namespace GameView
             ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            // 
+            // OptionPanel
+            // 
+            this.OptionPanel.BackColor = System.Drawing.Color.Black;
+            this.OptionPanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
+            this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OptionPanel.Controls.Add(this.labelHelp);
+            this.OptionPanel.Controls.Add(this.lbQuit);
+            this.OptionPanel.Controls.Add(this.pbWheatley);
+            this.OptionPanel.Controls.Add(this.pBLogo);
+            this.OptionPanel.Controls.Add(this.lbQuickGame);
+            this.OptionPanel.Controls.Add(this.bMute);
+            this.OptionPanel.Location = new System.Drawing.Point(0, 0);
+            this.OptionPanel.Name = "OptionPanel";
+            this.OptionPanel.Size = this.Size;
+            this.OptionPanel.TabIndex = 2;
         }
 
         private void QuitterToolStripMenuItem_Click(object sender, EventArgs e)
