@@ -22,6 +22,7 @@ namespace GameView
         private ToolStripMenuItem parameterToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem aProposToolStripMenuItem;
+        private ToolStripMenuItem commandsToolStripMenuItem;
         private ToolStripMenuItem onePlayerMenu;
         private ToolStripMenuItem twoPlayersMenu;
         private ToolStripMenuItem fourPlayerMenu;
@@ -67,6 +68,7 @@ namespace GameView
             this.parameterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameBoard = new Panel();
             this.wheatleyLabel = new System.Windows.Forms.Label();
             this.rightPointsLabel = new System.Windows.Forms.Label();
@@ -177,7 +179,7 @@ namespace GameView
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aProposToolStripMenuItem});
+            this.aProposToolStripMenuItem, this.commandsToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
             this.toolStripMenuItem1.Text = "?";
@@ -188,6 +190,16 @@ namespace GameView
             this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aProposToolStripMenuItem.Text = "About";
             this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
+            
+            //
+            // commandsToolStripMenuItem
+            //
+            this.commandsToolStripMenuItem.Name = "commandsToolStripMenuItem";
+            this.commandsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.commandsToolStripMenuItem.Text = "Commands";
+            this.commandsToolStripMenuItem.Click += new System.EventHandler(this.commandsToolStripMenuItem_Click);
+            
+            
             // 
             // gameBoard
             // 
@@ -434,6 +446,15 @@ namespace GameView
                 Environment.NewLine + "Maxence Prevost" +
                 Environment.NewLine + "Guillaume Simonneau" +
                 Environment.NewLine + "Eric Allard");
+        }
+
+        private void commandsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Commands" + Environment.NewLine + Environment.NewLine
+                + "Player1:" + Environment.NewLine + "up : z" + Environment.NewLine + "down : s" + Environment.NewLine + Environment.NewLine
+                + "Player2:" + Environment.NewLine + "up : arrow top" + Environment.NewLine + "down : arrow down" + Environment.NewLine + Environment.NewLine
+                + "Player3:" + Environment.NewLine + "up : t" + Environment.NewLine + "down : g" + Environment.NewLine + Environment.NewLine
+                + "Player4:" + Environment.NewLine + "up : i" + Environment.NewLine + "down : k");
         }
 
         private void wheatleyLabel_SizeChanged(object sender, EventArgs e)
