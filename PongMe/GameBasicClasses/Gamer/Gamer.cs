@@ -48,10 +48,8 @@ namespace GameBasicClasses.Gamer
             this.Initialize();
         }
 
-        /// <summary>
-        /// Contient le code faisant bouger la raquette.
-        /// Un évnement est envoyé depuis la MainFrame
-        /// </summary>
+        // Contient le code faisant bouger la raquette.
+        // Un évnement est envoyé depuis la MainFrame
         public abstract void Run(Keys e);
 
         public void Initialize()

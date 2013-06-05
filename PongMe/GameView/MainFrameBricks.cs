@@ -9,6 +9,7 @@ namespace GameView
 {
     public partial class MainForm
     {
+        //Obtient une brique placée aléatoirement
         private Brick GetRandomBrick()
         {
             Random r = new Random();
@@ -63,7 +64,7 @@ namespace GameView
                         {
                             v = new Vector(this.gameBoard.Width / 2 + 50, this.gameBoard.ClientRectangle.Height - Brick.Width * j);
                         }
-                        Brick b = new Brick(this.gameBoard.Width, this.gameBoard.Height, r.Next(4, 8), v);
+                        Brick b = new Brick(this.gameBoard.Width, this.gameBoard.Height, r.Next(3, 6), v);
                         this.currentGame.GameModel.AddBrick(b);
                     }
                 }
@@ -76,12 +77,13 @@ namespace GameView
             this.gameBoard.Refresh();
         }
 
+        //supprime les briques de la liste de briques
         private void RemoveOverBricks(List<Brick> overBricks)
         {
             foreach (Brick b in overBricks)
             {
                 this.currentGame.GameModel.ListeBrick.Remove(b);
             }
-        }//supprime les briques de la liste de briques
+        }
     }
 }

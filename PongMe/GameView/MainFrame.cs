@@ -461,6 +461,7 @@ namespace GameView
             this.OptionPanel.Enabled = false;
         }
 
+        //Redimensionnement de la fenetre par l'utilisateur, le gameBoard est redéssinné
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             CurrentGame.width = this.gameBoard.Width;
@@ -469,6 +470,7 @@ namespace GameView
             this.ClearGameBoard(false);
         }
 
+        //Nettoie le gameBoard et remet les scores à 0
         private void ClearGameBoard(bool points)
         {
             this.gameBoard.Controls.Clear();

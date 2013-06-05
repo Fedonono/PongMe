@@ -100,10 +100,10 @@ namespace GameBasicClasses.BasicClasses
         public void NextPosition()
         {
             if (!this.IsMoving) { return; }
-            this.CheckBoardCollision();
-            this.CheckOut();
+            this.CheckBoardCollision();//collision avec le bord du gameBoard
+            this.CheckOut();//la balle est en dehors du gameBoard
             CurrentGame cg = CurrentGame.GetInstance();
-            this.CheckObstaclesCollision(cg.GameModel.ListePaddle(false,0,null));
+            this.CheckObstaclesCollision(cg.GameModel.ListePaddle(false,0,null));//collision avec les élements du jeu
             this.CheckObstaclesCollision(cg.GameModel.ListeBrick);
             this.CheckObstaclesCollision(cg.GameModel.ListeBonus);
             this.Move();

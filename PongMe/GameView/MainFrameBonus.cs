@@ -44,6 +44,7 @@ namespace GameView
             this.gameBoard.Refresh();
         }
 
+        //Nombre de cubes à récupérer
         private int getNbOfWeathley()
         {
             int i = 0;
@@ -57,6 +58,7 @@ namespace GameView
             return i;
         }
 
+        //Supprime les cubes venant d'être récupérés
         private List<Bonus> RemoveOverWheatley()
         {
             List<Bonus> liste = new List<Bonus>(); ;
@@ -69,8 +71,9 @@ namespace GameView
             }
             this.RemoveOverObstacles(liste);
             return liste;
-        }//supprime tous les cubes
+        }
 
+        //Obtient un bonus aléatoirement
         private Bonus GetRandomBonus()
         {
             Random r = new Random();
@@ -107,12 +110,13 @@ namespace GameView
             return b;
         }
 
+        //supprime les bonus de la liste de bonus
         private void RemoveOverBonuses(List<Bonus> overBonuses)
         {
             foreach (Bonus b in overBonuses)
             {
                 this.currentGame.GameModel.ListeBonus.Remove(b);
             }
-        }//supprime les bonus de la liste de bonus
+        }
     }
 }

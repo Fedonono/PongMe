@@ -8,10 +8,8 @@ using System.Windows.Forms;
 
 namespace GameBasicClasses.Obstacles
 {
-    /// <summary>
-    /// Brique apparaissant dans la zone de jeu.
-    /// Peut être détruite.
-    /// </summary>
+    // Brique apparaissant dans la zone de jeu.
+    // Peut être détruite au bout de this.health collisions.
     public class Brick : Obstacle
     {
         private static int width = 60;

@@ -40,11 +40,8 @@ namespace GameBasicClasses.Obstacles.Bonus
             this.InitialBounds = this.Bounds;
         }
 
-        /// <summary>
-        /// Decremente le timeout, lance la fin du bonus s'il est à 0.
-        /// Retourne true si le bonus est terminé.
-        /// </summary>
-        /// <returns></returns>
+        // Decremente le timeout et lance la fin du bonus s'il est à 0.
+        // Retourne true si le bonus est terminé.
         public bool CheckTimeOut()
         {
             this.timeout--;

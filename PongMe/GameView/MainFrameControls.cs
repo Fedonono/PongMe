@@ -97,6 +97,7 @@ namespace GameView
 
         private void GameTimer_Tick(object sender, EventArgs e)
         {
+            //Calcul les positions des balles
             foreach (Ball ball in this.currentGame.GameModel.ListeBall)
             {
                 ball.NextPosition();
@@ -133,7 +134,7 @@ namespace GameView
                 soundPlayerEnd.Play();
 
                 this.ClearGameBoard(false);
-                System.Threading.Thread.Sleep(2000);
+                System.Threading.Thread.Sleep(2000);//le temps du buzzer pour ne pas reprendre la musique et le jeu trop vite
                 soundPlayerEnd.Dispose();
                 this.PlayGameMusic();
             }
@@ -163,7 +164,8 @@ namespace GameView
             return false;
         }
 
-        private void RemoveOverObstacles<T>(List<T> liste) where T : Obstacle//supprime les obstacles de la fenetre
+        //supprime les obstacles de la fenetre
+        private void RemoveOverObstacles<T>(List<T> liste) where T : Obstacle
         {
             foreach (Obstacle ob in liste)
             {

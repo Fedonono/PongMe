@@ -11,7 +11,7 @@ using GameBasicClasses.Options;
 
 namespace GameBasicClasses.BasicClasses
 {
-    public class GameModel 
+    public class GameModel //Contient tous les élements du jeu
     {
         private List<Ball> listeBall;
         public List<Ball> ListeBall { get { return this.listeBall; } }

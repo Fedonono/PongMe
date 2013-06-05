@@ -14,9 +14,7 @@ namespace GameBasicClasses.Obstacles.Paddle
         public bool PortalMode { get; set; }
         public int Id { get; set; }
 
-        /// <summary>
-        /// Lorsque la taille de la fenetre change, il faut déplacer la raquette de droite
-        /// </summary>
+        // Lorsque la taille de la fenetre change, il faut déplacer la raquette de droite
         public override Size ClientSize
         {
             get
