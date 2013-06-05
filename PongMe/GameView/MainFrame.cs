@@ -38,14 +38,14 @@ namespace GameView
         private Label wheatleyLabel;
         private List<Keys> keysPressed = new List<Keys>();
         private MenuItem lbQuit;
-        private MenuItem lbCustomGame;
         private PictureBox pbWheatley;
         private PictureBox pBLogo;
         private MenuItem lbQuickGame;
         private Label labelHelp;
-        private Panel CustomGamePanel;
         private MenuItem lLBack;
         private Panel OptionPanel;
+        private bool EnableSound = true;
+        private Button bMute;
 
         public MainForm()
         {
@@ -67,8 +67,7 @@ namespace GameView
             this.parameterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gameBoard = new System.Windows.Forms.Panel();
-            this.CustomGamePanel = new System.Windows.Forms.Panel();
+            this.gameBoard = new Panel();
             this.wheatleyLabel = new System.Windows.Forms.Label();
             this.rightPointsLabel = new System.Windows.Forms.Label();
             this.leftPointsLabel = new System.Windows.Forms.Label();
@@ -77,17 +76,16 @@ namespace GameView
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.bonusTimer = new System.Windows.Forms.Timer(this.components);
             this.brickTimer = new System.Windows.Forms.Timer(this.components);
-            this.OptionPanel = new System.Windows.Forms.Panel();
+            this.OptionPanel = new Panel();
             this.labelHelp = new System.Windows.Forms.Label();
             this.lbQuit = new GameView.MenuItem();
-            this.lbCustomGame = new GameView.MenuItem();
             this.pbWheatley = new System.Windows.Forms.PictureBox();
             this.pBLogo = new System.Windows.Forms.PictureBox();
             this.lbQuickGame = new GameView.MenuItem();
             this.MainMenu.SuspendLayout();
             this.gameBoard.SuspendLayout();
-            this.CustomGamePanel.SuspendLayout();
             this.OptionPanel.SuspendLayout();
+            this.bMute = new Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbWheatley)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).BeginInit();
             this.SuspendLayout();
@@ -302,21 +300,6 @@ namespace GameView
             this.lbQuit.Text = "Quit";
             this.lbQuit.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
-            // lbCustomGame
-            // 
-            this.lbCustomGame.ActiveLinkColor = System.Drawing.Color.White;
-            this.lbCustomGame.AutoSize = true;
-            this.lbCustomGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCustomGame.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lbCustomGame.LinkColor = System.Drawing.Color.White;
-            this.lbCustomGame.Location = new System.Drawing.Point(42, 565);
-            this.lbCustomGame.Name = "lbCustomGame";
-            this.lbCustomGame.Size = new System.Drawing.Size(257, 42);
-            this.lbCustomGame.TabIndex = 10;
-            this.lbCustomGame.TabStop = true;
-            this.lbCustomGame.Text = "Custom Game";
-            this.lbCustomGame.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbCustomGame_LinkClicked);
-            // 
             // pbWheatley
             // 
             this.pbWheatley.Image = global::GameView.Properties.Resources.wheatleyv2;
@@ -348,14 +331,13 @@ namespace GameView
             this.lbQuickGame.Size = new System.Drawing.Size(225, 42);
             this.lbQuickGame.TabIndex = 7;
             this.lbQuickGame.TabStop = true;
-            this.lbQuickGame.Text = "Quick Game";
+            this.lbQuickGame.Text = "Play";
             this.lbQuickGame.Click += new System.EventHandler(this.linkLabel1_LinkClicked);
             // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(1484, 929);
             this.Controls.Add(this.OptionPanel);
-            this.Controls.Add(this.CustomGamePanel);
             this.Controls.Add(this.gameBoard);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
@@ -373,12 +355,24 @@ namespace GameView
             this.gameBoard.PerformLayout();
             this.OptionPanel.ResumeLayout(false);
             this.OptionPanel.PerformLayout();
-            this.CustomGamePanel.ResumeLayout(false);
-            this.CustomGamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWheatley)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            //
+            // bMute
+            //
+            this.bMute.Name = "buttonMute";
+            this.bMute.Text = "";
+            this.bMute.UseVisualStyleBackColor = true;
+            this.bMute.Location = new System.Drawing.Point(10, 10);
+            this.bMute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bMute.Image = global::GameView.Properties.Resources.Mute;
+            this.bMute.UseVisualStyleBackColor = true;
+            this.bMute.Cursor = System.Windows.Forms.Cursors.No;
+            this.bMute.BackColor = System.Drawing.Color.Black;
+            this.bMute.Click += new System.EventHandler(this.ToggleSound);
+            this.bMute.Size = new Size(50, 40);
             // 
             // OptionPanel
             // 
@@ -387,26 +381,14 @@ namespace GameView
             this.OptionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.OptionPanel.Controls.Add(this.labelHelp);
             this.OptionPanel.Controls.Add(this.lbQuit);
-            this.OptionPanel.Controls.Add(this.lbCustomGame);
             this.OptionPanel.Controls.Add(this.pbWheatley);
             this.OptionPanel.Controls.Add(this.pBLogo);
             this.OptionPanel.Controls.Add(this.lbQuickGame);
+            this.OptionPanel.Controls.Add(this.bMute);
             this.OptionPanel.Location = new System.Drawing.Point(0, 0);
             this.OptionPanel.Name = "OptionPanel";
             this.OptionPanel.Size = this.Size;
             this.OptionPanel.TabIndex = 2;
-            // 
-            // CustomGamePanel
-            // 
-            this.CustomGamePanel.BackgroundImage = global::GameView.Properties.Resources.wallpaper;
-            this.CustomGamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CustomGamePanel.Controls.Add(this.lLBack);
-            this.CustomGamePanel.Location = new System.Drawing.Point(0, 0);
-            this.CustomGamePanel.Name = "CustomGamePanel";
-            this.CustomGamePanel.Size = this.Size;
-            this.CustomGamePanel.TabIndex = 3;
-            this.CustomGamePanel.Enabled = false;
-            this.CustomGamePanel.Hide();
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -416,8 +398,6 @@ namespace GameView
 
         private void parameterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CustomGamePanel.Hide();
-            this.CustomGamePanel.Enabled = false;
             this.OptionPanel.Show();
             this.OptionPanel.Enabled = true;
         }
@@ -490,12 +470,22 @@ namespace GameView
             this.gameBoard.Controls.Add(this.leftPointsLabel);
         }
 
-        private void lbCustomGame_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ToggleSound(object sender, EventArgs e)
         {
-            this.OptionPanel.Hide();
-            this.OptionPanel.Enabled = false;
-            this.CustomGamePanel.Show();
-            this.CustomGamePanel.Enabled = true;
+            if (this.EnableSound)
+            {
+                this.bMute.Image = global::GameView.Properties.Resources.Play;
+                this.bMute.Cursor = System.Windows.Forms.Cursors.Hand;
+                this.EnableSound = false;
+                this.stopGameMusic();
+            }
+            else
+            {
+                this.bMute.Image = global::GameView.Properties.Resources.Mute;
+                this.bMute.Cursor = System.Windows.Forms.Cursors.No;
+                this.EnableSound = true;
+                this.playGameMusic();
+            }
         }
     }
 }

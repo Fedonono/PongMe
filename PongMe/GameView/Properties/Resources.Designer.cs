@@ -67,9 +67,23 @@ namespace GameView.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Mute {
+            get {
+                object obj = ResourceManager.GetObject("Mute", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.IO.UnmanagedMemoryStream Nyan_Cat___Smooth_Jazz_Cover {
             get {
                 return ResourceManager.GetStream("Nyan_Cat___Smooth_Jazz_Cover", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Play {
+            get {
+                object obj = ResourceManager.GetObject("Play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

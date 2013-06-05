@@ -372,5 +372,10 @@ namespace GameView
                 }
             }
         }
+
+        private void stopGameMusic()
+        {
+            this.soundPlayer.Stop();
+        }
     }
 }
