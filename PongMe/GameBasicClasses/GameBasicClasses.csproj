@@ -64,13 +64,7 @@
     <Compile Include="Obstacles\Bonus\Bonus.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />
     <Compile Include="Obstacles\Paddle.cs" />
-    <Compile Include="MVC\Controller.cs" />
-    <Compile Include="MVC\Event.cs" />
-    <Compile Include="MVC\IView.cs" />
-    <Compile Include="MVC\Model.cs" />
-    <Compile Include="Options\GamerOptions.cs" />
-    <Compile Include="Options\OptionController.cs" />
-    <Compile Include="Options\Option.cs" />
+    <Compile Include="Gamer\GamerOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Obstacles\Bonus\ReverseCommandsMalus.cs" />
     <Compile Include="Obstacles\Bonus\SpeedBonus.cs" />
