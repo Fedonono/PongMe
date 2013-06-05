@@ -110,13 +110,13 @@ namespace GameView
             this.quitterToolStripMenuItem});
             this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
             this.jeuToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.jeuToolStripMenuItem.Text = "Fichier";
+            this.jeuToolStripMenuItem.Text = "File";
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Text = "Quit";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // jeuToolStripMenuItem1
@@ -125,7 +125,7 @@ namespace GameView
             this.nombreDeJoueursToolStripMenuItem});
             this.jeuToolStripMenuItem1.Name = "jeuToolStripMenuItem1";
             this.jeuToolStripMenuItem1.Size = new System.Drawing.Size(36, 20);
-            this.jeuToolStripMenuItem1.Text = "Jeu";
+            this.jeuToolStripMenuItem1.Text = "Game";
             // 
             // nombreDeJoueursToolStripMenuItem
             // 
