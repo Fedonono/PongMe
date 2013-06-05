@@ -60,54 +60,6 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.IO.UnmanagedMemoryStream _4359__noisecollector__pongblipf4 {
-            get {
-                return ResourceManager.GetStream("_4359__noisecollector__pongblipf4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4360__noisecollector__ponblipg_5 {
-            get {
-                return ResourceManager.GetStream("_4360__noisecollector__ponblipg_5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4361__noisecollector__pongblipa_3 {
-            get {
-                return ResourceManager.GetStream("_4361__noisecollector__pongblipa_3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4362__noisecollector__pongblipa_4 {
-            get {
-                return ResourceManager.GetStream("_4362__noisecollector__pongblipa_4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4363__noisecollector__pongblipa3 {
-            get {
-                return ResourceManager.GetStream("_4363__noisecollector__pongblipa3", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4364__noisecollector__pongblipa4 {
-            get {
-                return ResourceManager.GetStream("_4364__noisecollector__pongblipa4", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4365__noisecollector__pongblipa5 {
-            get {
-                return ResourceManager.GetStream("_4365__noisecollector__pongblipa5", resourceCulture);
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream _4366__noisecollector__pongblipb3 {
-            get {
-                return ResourceManager.GetStream("_4366__noisecollector__pongblipb3", resourceCulture);
-            }
-        }
-        
         public static System.Drawing.Bitmap adventure_core_avatar_by_the_rebexorcist_d3gzj02 {
             get {
                 object obj = ResourceManager.GetObject("adventure_core_avatar_by_the_rebexorcist_d3gzj02", resourceCulture);
@@ -199,22 +151,10 @@ namespace GameBasicClasses.Properties {
             }
         }
         
-        public static System.IO.UnmanagedMemoryStream gameMusic {
-            get {
-                return ResourceManager.GetStream("gameMusic", resourceCulture);
-            }
-        }
-        
         public static System.Drawing.Bitmap glowing_companion_cube_icon_by_pepperfox23_d319441 {
             get {
                 object obj = ResourceManager.GetObject("glowing_companion_cube_icon_by_pepperfox23_d319441", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        public static System.IO.UnmanagedMemoryStream menuMusic {
-            get {
-                return ResourceManager.GetStream("menuMusic", resourceCulture);
             }
         }
         

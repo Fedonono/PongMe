@@ -124,36 +124,6 @@
   <data name="batblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue-bat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gameMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gameMusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="menuMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menuMusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4359__noisecollector__pongblipf4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4359__noisecollector__pongblipf4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4360__noisecollector__ponblipg_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4360__noisecollector__ponblipg-5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4361__noisecollector__pongblipa_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4361__noisecollector__pongblipa-3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4362__noisecollector__pongblipa_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4362__noisecollector__pongblipa-4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4363__noisecollector__pongblipa3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4363__noisecollector__pongblipa3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4364__noisecollector__pongblipa4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4364__noisecollector__pongblipa4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4365__noisecollector__pongblipa5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4365__noisecollector__pongblipa5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_4366__noisecollector__pongblipb3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4366__noisecollector__pongblipb3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="atlas_avatar_by_the_rebexorcist_d3i8r14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atlas_avatar_by_the_rebexorcist-d3i8r14.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
