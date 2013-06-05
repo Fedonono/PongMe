@@ -290,12 +290,14 @@ namespace GameView
             this.labelHelp.AutoSize = true;
             this.labelHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHelp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelHelp.Location = new System.Drawing.Point(502, 667);
+            this.labelHelp.Location = new System.Drawing.Point(502, 500);
             this.labelHelp.Name = "labelHelp";
             this.labelHelp.Size = new System.Drawing.Size(635, 108);
             this.labelHelp.TabIndex = 12;
-            this.labelHelp.Text = "Help Wheatley to bring back his cubes.\r\nUse portals to make them move." +
-                "\r\nRemember to keep an eye open on items floating in space!";
+            this.labelHelp.Text = "Help Wheatley to bring back his jumping cubes.\r\nUse portals to make him move."
+                + "\r\nIt's a cooperation game, help you each other." +
+                "\r\nRemember to keep an eye open on items floating in space !" +
+                "\r\nThey can bring you a lot of troubles !";
             // 
             // lbQuit
             // 
