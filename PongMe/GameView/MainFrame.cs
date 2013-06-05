@@ -104,26 +104,26 @@ namespace GameView
             // jeuToolStripMenuItem
             // 
             this.jeuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parameterToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
             this.jeuToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.jeuToolStripMenuItem.Text = "Fichier";
+            this.jeuToolStripMenuItem.Text = "File";
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Text = "Quit";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // jeuToolStripMenuItem1
             // 
             this.jeuToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nombreDeJoueursToolStripMenuItem,
-            this.parameterToolStripMenuItem});
+            this.nombreDeJoueursToolStripMenuItem});
             this.jeuToolStripMenuItem1.Name = "jeuToolStripMenuItem1";
             this.jeuToolStripMenuItem1.Size = new System.Drawing.Size(36, 20);
-            this.jeuToolStripMenuItem1.Text = "Jeu";
+            this.jeuToolStripMenuItem1.Text = "Game";
             // 
             // nombreDeJoueursToolStripMenuItem
             // 
@@ -134,13 +134,13 @@ namespace GameView
             this.AIPlayerMenu});
             this.nombreDeJoueursToolStripMenuItem.Name = "nombreDeJoueursToolStripMenuItem";
             this.nombreDeJoueursToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.nombreDeJoueursToolStripMenuItem.Text = "Nombre de joueurs";
+            this.nombreDeJoueursToolStripMenuItem.Text = "Number of players";
             // 
             // onePlayerMenu
             // 
             this.onePlayerMenu.Name = "onePlayerMenu";
             this.onePlayerMenu.Size = new System.Drawing.Size(122, 22);
-            this.onePlayerMenu.Text = "1 joueur";
+            this.onePlayerMenu.Text = "1 player";
             this.onePlayerMenu.Click += new System.EventHandler(this.joueurToolStripMenuItem_Click);
             // 
             // twoPlayersMenu
@@ -148,7 +148,7 @@ namespace GameView
             this.twoPlayersMenu.CheckOnClick = true;
             this.twoPlayersMenu.Name = "twoPlayersMenu";
             this.twoPlayersMenu.Size = new System.Drawing.Size(122, 22);
-            this.twoPlayersMenu.Text = "2 joueurs";
+            this.twoPlayersMenu.Text = "2 players";
             this.twoPlayersMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
             // 
             // fourPlayerMenu
@@ -156,7 +156,7 @@ namespace GameView
             this.fourPlayerMenu.CheckOnClick = true;
             this.fourPlayerMenu.Name = "fourPlayerMenu";
             this.fourPlayerMenu.Size = new System.Drawing.Size(122, 22);
-            this.fourPlayerMenu.Text = "4 joueurs";
+            this.fourPlayerMenu.Text = "4 players";
             this.fourPlayerMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem2_Click);
             // 
             // AIPlayerMenu
@@ -171,7 +171,7 @@ namespace GameView
             // 
             this.parameterToolStripMenuItem.Name = "parameterToolStripMenuItem";
             this.parameterToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.parameterToolStripMenuItem.Text = "Paramètres";
+            this.parameterToolStripMenuItem.Text = "Main menu";
             this.parameterToolStripMenuItem.Click += new System.EventHandler(this.parameterToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
@@ -186,7 +186,7 @@ namespace GameView
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
             this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.aProposToolStripMenuItem.Text = "A propos";
+            this.aProposToolStripMenuItem.Text = "About";
             this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
             // 
             // gameBoard
