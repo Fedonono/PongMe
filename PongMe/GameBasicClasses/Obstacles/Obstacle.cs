@@ -9,12 +9,12 @@ namespace GameBasicClasses.Obstacles
 {
     public abstract class Obstacle : Movable
     {
-        public bool contains(Ball b)
+        public bool Contains(Ball b)
         {
             return !(Rectangle.Intersect(this.Bounds, b.Bounds) == Rectangle.Empty);
         }
 
-        public bool containsLeftOrRight(Ball b)
+        public bool ContainsLeftOrRight(Ball b)
         {
             Point[] path = b.GetPath();
 
@@ -39,7 +39,7 @@ namespace GameBasicClasses.Obstacles
             return false;
         }
 
-        public bool containsUpOrDown(Ball b)
+        public bool ContainsUpOrDown(Ball b)
         {
             Point[] path = b.GetPath();
 

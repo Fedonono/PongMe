@@ -117,7 +117,7 @@ namespace GameView
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.quitterToolStripMenuItem.Text = "Quit";
-            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.QuitterToolStripMenuItem_Click);
             // 
             // jeuToolStripMenuItem1
             // 
@@ -143,7 +143,7 @@ namespace GameView
             this.onePlayerMenu.Name = "onePlayerMenu";
             this.onePlayerMenu.Size = new System.Drawing.Size(122, 22);
             this.onePlayerMenu.Text = "1 player";
-            this.onePlayerMenu.Click += new System.EventHandler(this.joueurToolStripMenuItem_Click);
+            this.onePlayerMenu.Click += new System.EventHandler(this.JoueurToolStripMenuItem_Click);
             // 
             // twoPlayersMenu
             // 
@@ -151,7 +151,7 @@ namespace GameView
             this.twoPlayersMenu.Name = "twoPlayersMenu";
             this.twoPlayersMenu.Size = new System.Drawing.Size(122, 22);
             this.twoPlayersMenu.Text = "2 players";
-            this.twoPlayersMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
+            this.twoPlayersMenu.Click += new System.EventHandler(this.JoueursToolStripMenuItem_Click);
             // 
             // fourPlayerMenu
             // 
@@ -159,7 +159,7 @@ namespace GameView
             this.fourPlayerMenu.Name = "fourPlayerMenu";
             this.fourPlayerMenu.Size = new System.Drawing.Size(122, 22);
             this.fourPlayerMenu.Text = "4 players";
-            this.fourPlayerMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem2_Click);
+            this.fourPlayerMenu.Click += new System.EventHandler(this.JoueursToolStripMenuItem2_Click);
             // 
             // AIPlayerMenu
             // 
@@ -167,14 +167,14 @@ namespace GameView
             this.AIPlayerMenu.Name = "AIPlayerMenu";
             this.AIPlayerMenu.Size = new System.Drawing.Size(122, 22);
             this.AIPlayerMenu.Text = "AI";
-            this.AIPlayerMenu.Click += new System.EventHandler(this.joueursToolStripMenuItem4_Click);
+            this.AIPlayerMenu.Click += new System.EventHandler(this.JoueursToolStripMenuItem4_Click);
             // 
             // parameterToolStripMenuItem
             // 
             this.parameterToolStripMenuItem.Name = "parameterToolStripMenuItem";
             this.parameterToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.parameterToolStripMenuItem.Text = "Main menu";
-            this.parameterToolStripMenuItem.Click += new System.EventHandler(this.parameterToolStripMenuItem_Click);
+            this.parameterToolStripMenuItem.Click += new System.EventHandler(this.ParameterToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -189,7 +189,7 @@ namespace GameView
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
             this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aProposToolStripMenuItem.Text = "About";
-            this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
+            this.aProposToolStripMenuItem.Click += new System.EventHandler(this.AProposToolStripMenuItem_Click);
             
             //
             // commandsToolStripMenuItem
@@ -197,7 +197,7 @@ namespace GameView
             this.commandsToolStripMenuItem.Name = "commandsToolStripMenuItem";
             this.commandsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.commandsToolStripMenuItem.Text = "Commands";
-            this.commandsToolStripMenuItem.Click += new System.EventHandler(this.commandsToolStripMenuItem_Click);
+            this.commandsToolStripMenuItem.Click += new System.EventHandler(this.CommandsToolStripMenuItem_Click);
             
             
             // 
@@ -215,7 +215,7 @@ namespace GameView
             this.gameBoard.Name = "gameBoard";
             this.gameBoard.Size = new System.Drawing.Size(1460, 878);
             this.gameBoard.TabIndex = 1;
-            this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.gameBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // wheatleyLabel
             // 
@@ -227,7 +227,7 @@ namespace GameView
             this.wheatleyLabel.Size = new System.Drawing.Size(30, 31);
             this.wheatleyLabel.TabIndex = 2;
             this.wheatleyLabel.Text = "0";
-            this.wheatleyLabel.SizeChanged += new System.EventHandler(this.wheatleyLabel_SizeChanged);
+            this.wheatleyLabel.SizeChanged += new System.EventHandler(this.WheatleyLabel_SizeChanged);
             // 
             // rightPointsLabel
             // 
@@ -259,31 +259,31 @@ namespace GameView
             this.lLBack.TabIndex = 0;
             this.lLBack.TabStop = true;
             this.lLBack.Text = "Menu Principal";
-            this.lLBack.Click += new System.EventHandler(this.parameterToolStripMenuItem_Click);
+            this.lLBack.Click += new System.EventHandler(this.ParameterToolStripMenuItem_Click);
             // 
             // gameTimer
             // 
             this.gameTimer.Enabled = true;
             this.gameTimer.Interval = 20;
-            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            this.gameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
             // animationTimer
             // 
             this.animationTimer.Enabled = true;
             this.animationTimer.Interval = 4000;
-            this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
+            this.animationTimer.Tick += new System.EventHandler(this.AnimationTimer_Tick);
             // 
             // bonusTimer
             // 
             this.bonusTimer.Enabled = true;
             this.bonusTimer.Interval = 1000;
-            this.bonusTimer.Tick += new System.EventHandler(this.bonusTimer_Tick);
+            this.bonusTimer.Tick += new System.EventHandler(this.BonusTimer_Tick);
             // 
             // brickTimer
             // 
             this.brickTimer.Enabled = true;
             this.brickTimer.Interval = 1000;
-            this.brickTimer.Tick += new System.EventHandler(this.brickTimer_Tick);
+            this.brickTimer.Tick += new System.EventHandler(this.BrickTimer_Tick);
             // 
             // labelHelp
             // 
@@ -310,7 +310,7 @@ namespace GameView
             this.lbQuit.TabIndex = 11;
             this.lbQuit.TabStop = true;
             this.lbQuit.Text = "Quit";
-            this.lbQuit.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            this.lbQuit.Click += new System.EventHandler(this.QuitterToolStripMenuItem_Click);
             // 
             // pbWheatley
             // 
@@ -344,7 +344,7 @@ namespace GameView
             this.lbQuickGame.TabIndex = 7;
             this.lbQuickGame.TabStop = true;
             this.lbQuickGame.Text = "Play";
-            this.lbQuickGame.Click += new System.EventHandler(this.linkLabel1_LinkClicked);
+            this.lbQuickGame.Click += new System.EventHandler(this.LinkLabel1_LinkClicked);
             // 
             // MainForm
             // 
@@ -403,42 +403,42 @@ namespace GameView
             this.OptionPanel.TabIndex = 2;
         }
 
-        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void QuitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void parameterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ParameterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.OptionPanel.Show();
             this.OptionPanel.Enabled = true;
         }
 
-        private void joueurToolStripMenuItem_Click(object sender, EventArgs e)
+        private void JoueurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.clearGameBoard(true);
-            this.currentGame.GameModel = GameFactory.onePlayerGame();
+            this.ClearGameBoard(true);
+            this.currentGame.GameModel = GameFactory.OnePlayerGame();
         }
 
-        private void joueursToolStripMenuItem_Click(object sender, EventArgs e)
+        private void JoueursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.clearGameBoard(true);
-            this.currentGame.GameModel = GameFactory.twoPlayerGame();
+            this.ClearGameBoard(true);
+            this.currentGame.GameModel = GameFactory.TwoPlayerGame();
         }
 
-        private void joueursToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void JoueursToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            this.clearGameBoard(true);
-            this.currentGame.GameModel = GameFactory.fourPlayerGame();
+            this.ClearGameBoard(true);
+            this.currentGame.GameModel = GameFactory.FourPlayerGame();
         }
 
-        private void joueursToolStripMenuItem4_Click(object sender, EventArgs e)
+        private void JoueursToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            this.clearGameBoard(true);
+            this.ClearGameBoard(true);
             this.currentGame.GameModel = GameFactory.AIGame();
         }
 
-        private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("PongMe" + Environment.NewLine + "Authors :" +
                 Environment.NewLine + "Adrien Ecrepont" +
@@ -448,7 +448,7 @@ namespace GameView
                 Environment.NewLine + "Eric Allard");
         }
 
-        private void commandsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Commands" + Environment.NewLine + Environment.NewLine
                 + "Player1:" + Environment.NewLine + "up : z" + Environment.NewLine + "down : s" + Environment.NewLine + Environment.NewLine
@@ -457,12 +457,12 @@ namespace GameView
                 + "Player4:" + Environment.NewLine + "up : i" + Environment.NewLine + "down : k");
         }
 
-        private void wheatleyLabel_SizeChanged(object sender, EventArgs e)
+        private void WheatleyLabel_SizeChanged(object sender, EventArgs e)
         {
             this.wheatleyLabel.Location = new Point(this.gameBoard.Width / 2 - this.wheatleyLabel.Size.Width / 2, this.wheatleyLabel.Location.Y);
         }
 
-        private void linkLabel1_LinkClicked(object sender, EventArgs e)
+        private void LinkLabel1_LinkClicked(object sender, EventArgs e)
         {
             this.OptionPanel.Hide();
             this.OptionPanel.Enabled = false;
@@ -473,10 +473,10 @@ namespace GameView
             CurrentGame.width = this.gameBoard.Width;
             CurrentGame.height = this.gameBoard.Height;
             this.OptionPanel.Size = this.Size;
-            this.clearGameBoard(false);
+            this.ClearGameBoard(false);
         }
 
-        private void clearGameBoard(bool points)
+        private void ClearGameBoard(bool points)
         {
             this.gameBoard.Controls.Clear();
             this.keysPressed.Clear();
@@ -498,14 +498,14 @@ namespace GameView
                 this.bMute.Image = global::GameView.Properties.Resources.Play;
                 this.bMute.Cursor = System.Windows.Forms.Cursors.Hand;
                 this.EnableSound = false;
-                this.stopGameMusic();
+                this.StopGameMusic();
             }
             else
             {
                 this.bMute.Image = global::GameView.Properties.Resources.Mute;
                 this.bMute.Cursor = System.Windows.Forms.Cursors.No;
                 this.EnableSound = true;
-                this.playGameMusic();
+                this.PlayGameMusic();
             }
         }
     }

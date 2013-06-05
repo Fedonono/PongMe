@@ -38,22 +38,7 @@ namespace GameBasicClasses.Obstacles
             }
         }
 
-        /*public override PictureBox Box
-        {
-            get
-            {
-                this.box.Image = this.Image;
-                this.box.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.box.BackColor = this.Color;
-                this.box.Size = this.Bounds.Size;
-                this.box.Location = new Point((int)this.Position.X, (int)this.Position.Y);
-                return this.box;
-            }
-            set
-            {
-                this.box = value;
-            }
-        }*/
+        public bool Active { get; set; }
 
         public Brick(int clientWidth, int clientHeight, int health, Vector position)
         {
@@ -71,7 +56,7 @@ namespace GameBasicClasses.Obstacles
             this.Active = true;
         }
 
-        public void touched()
+        public void Touched()
         {
             this.health--;
             if (this.Health == 0)
@@ -79,7 +64,5 @@ namespace GameBasicClasses.Obstacles
                 this.Active = false;
             }
         }
-
-        public bool Active { get; set; }
     }
 }

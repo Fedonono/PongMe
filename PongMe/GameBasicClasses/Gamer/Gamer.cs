@@ -19,12 +19,12 @@ namespace GameBasicClasses.Gamer
             get { return points; }
         }
 
-        public void resetPoints()
+        public void ResetPoints()
         {
             this.points = 0;
         }
 
-        public void incPoints()
+        public void IncPoints()
         {
             this.points++;
         }
@@ -52,7 +52,7 @@ namespace GameBasicClasses.Gamer
         /// Contient le code faisant bouger la raquette.
         /// Un évnement est envoyé depuis la MainFrame
         /// </summary>
-        public abstract void run(Keys e);
+        public abstract void Run(Keys e);
 
         public void Initialize()
         {

@@ -33,8 +33,6 @@ namespace GameBasicClasses.Obstacles.Paddle
             }
         }
 
- 
-
         public Paddle(bool left, Color color, Image image, int id, int width, int height, int speed, bool portalMode, int clientWidth, int clientHeight)
         {
             this.PortalMode = portalMode;
@@ -105,7 +103,5 @@ namespace GameBasicClasses.Obstacles.Paddle
                 this.Position = new Vector(this.Position.X, 0);
             }
         }
-
-        
     }
 }

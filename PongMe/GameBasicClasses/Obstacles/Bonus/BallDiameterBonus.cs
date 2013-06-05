@@ -17,12 +17,12 @@ namespace GameBasicClasses.Obstacles.Bonus
             this.InitialColor = this.Color;
         }
 
-        protected override void stopBonus()
+        protected override void StopBonus()
         {
             this.ball.Diameter = this.ball.InitialDiameter;
         }
 
-        protected override void runBonus()
+        protected override void RunBonus()
         {
             this.ball.Diameter *= 2;
         }

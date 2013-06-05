@@ -18,7 +18,7 @@ namespace GameBasicClasses.Obstacles.Bonus
             this.InitialColor = this.Color;
         }
 
-        protected override void stopBonus()
+        protected override void StopBonus()
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.gamers)
             {
@@ -27,7 +27,7 @@ namespace GameBasicClasses.Obstacles.Bonus
             }
         }
 
-        protected override void runBonus()
+        protected override void RunBonus()
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.gamers)
             {

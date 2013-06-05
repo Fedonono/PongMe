@@ -15,7 +15,7 @@ namespace GameBasicClasses.BasicClasses
             this.Model = model;
         }
 
-        public void startGame()
+        public void StartGame()
         {
             foreach (Ball ball in this.Model.ListeBall)
             {
@@ -31,13 +31,13 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public void stopGame()
+        public void StopGame()
         {
             foreach (Ball ball in this.Model.ListeBall)
             {
                 ball.Initialize();
             }
-            foreach (Paddle p in this.Model.listePaddle(false, 0, null))
+            foreach (Paddle p in this.Model.ListePaddle(false, 0, null))
             {
                 p.Initialize();
             }

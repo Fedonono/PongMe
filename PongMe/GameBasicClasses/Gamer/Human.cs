@@ -17,7 +17,7 @@ namespace GameBasicClasses.Gamer
 
         }
 
-        public override void run(Keys e)
+        public override void Run(Keys e)
         {
             if (e == this.commands.Up)
             {

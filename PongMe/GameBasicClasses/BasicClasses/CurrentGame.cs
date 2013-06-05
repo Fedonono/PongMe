@@ -17,7 +17,7 @@ namespace GameBasicClasses.BasicClasses
             get { return this.gameModel; } 
             set 
             {
-                this.stopped = true;
+                this.Stopped = true;
                 this.StopGame();
                 this.gameModel = value;
                 this.GameEngine = new GameEngine(this.GameModel);
@@ -27,12 +27,12 @@ namespace GameBasicClasses.BasicClasses
         private GameEngine gameEngine;
         public GameEngine GameEngine { get { return this.gameEngine; } set { this.gameEngine = value;} }
 
-        public bool stopped { get; set; }
+        public bool Stopped { get; set; }
 
         private CurrentGame()
         {
-            this.stopped = true;
-            this.gameModel = GameFactory.onePlayerGame();
+            this.Stopped = true;
+            this.gameModel = GameFactory.OnePlayerGame();
             this.GameEngine = new GameEngine(this.GameModel);
         }
 
@@ -49,8 +49,8 @@ namespace GameBasicClasses.BasicClasses
         {
             if (this.gameEngine != null)
             {
-                this.stopped = false;
-                this.gameEngine.startGame();
+                this.Stopped = false;
+                this.gameEngine.StartGame();
             }
         }
 
@@ -58,10 +58,10 @@ namespace GameBasicClasses.BasicClasses
         {
             if (this.gameEngine != null)
             {
-                this.stopped = true;
+                this.Stopped = true;
                 this.GameModel.ListeBonus.Clear();
                 this.GameModel.ListeBrick.Clear();
-                this.gameEngine.stopGame();
+                this.gameEngine.StopGame();
             }
         }
 
@@ -69,23 +69,23 @@ namespace GameBasicClasses.BasicClasses
         {
             if (this.gameEngine != null)
             {
-                this.stopped = !this.stopped;
-                this.gameEngine.ToogleGame(this.stopped);
+                this.Stopped = !this.Stopped;
+                this.gameEngine.ToogleGame(this.Stopped);
             }
         }
 
-        public void addPoint(bool left)
+        public void AddPoint(bool left)
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.GameModel.ListeGamer)
             {
                 if (g.Paddle.Left == left)
                 {
-                    g.incPoints();
+                    g.IncPoints();
                 }
             }
 	    }
 
-        public int getPoints(bool left)
+        public int GetPoints(bool left)
         {
             foreach (GameBasicClasses.Gamer.Gamer g in this.GameModel.ListeGamer)
             {
@@ -97,12 +97,12 @@ namespace GameBasicClasses.BasicClasses
             return 0;
         }
 
-        public bool isGameOver()
+        public bool IsGameOver()
         {
             int nbOfBallsOut = 0;
             foreach (Ball ball in this.GameModel.ListeBall)
             {
-                if (ball.isOutRight || ball.isOutLeft)
+                if (ball.IsOutRight || ball.IsOutLeft)
                 {
                     nbOfBallsOut++;
                 }
@@ -114,21 +114,21 @@ namespace GameBasicClasses.BasicClasses
             return false;
         }
 
-        public void keyEvent(Keys e)
+        public void KeyEvent(Keys e)
         {
-            if (this.stopped && e == Keys.Space)
+            if (this.Stopped && e == Keys.Space)
             {
-                this.stopped = false;
+                this.Stopped = false;
             }
-            this.gameModel.keyEvent(e, this.stopped);
+            this.gameModel.KeyEvent(e, this.Stopped);
         }
 
-        public void addWheatleyPoint()
+        public void AddWheatleyPoint()
         {
             this.GameModel.WeathleyPoint++;
         }
 
-        public void resetWeathleyPoint()
+        public void ResetWeathleyPoint()
         {
             this.GameModel.WeathleyPoint = 0;
         }

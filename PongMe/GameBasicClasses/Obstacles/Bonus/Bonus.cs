@@ -45,28 +45,28 @@ namespace GameBasicClasses.Obstacles.Bonus
         /// Retourne true si le bonus est terminé.
         /// </summary>
         /// <returns></returns>
-        public bool checkTimeOut()
+        public bool CheckTimeOut()
         {
             this.timeout--;
             if (this.timeout == 0)
             {
                 this.Active = false;
-                this.stopBonus();
+                this.StopBonus();
                 return true;
             }
             return false;
         }
 
-        public void startTimeOut(Ball ball)
+        public void StartTimeOut(Ball ball)
         {
             this.ball = ball;
             this.gamers = CurrentGame.GetInstance().GameModel.ListeGamer;
             this.Active = true;
-            this.runBonus();
+            this.RunBonus();
         }
 
-        protected abstract void stopBonus();
+        protected abstract void StopBonus();
 
-        protected abstract void runBonus();
+        protected abstract void RunBonus();
     }
 }

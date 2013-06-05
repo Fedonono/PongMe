@@ -17,14 +17,14 @@ namespace GameBasicClasses.Obstacles.Bonus
             this.InitialColor = this.Color;
         }
 
-        protected override void stopBonus()
+        protected override void StopBonus()
         {
             
         }
 
-        protected override void runBonus()
+        protected override void RunBonus()
         {
-            CurrentGame.GetInstance().addWheatleyPoint();
+            CurrentGame.GetInstance().AddWheatleyPoint();
         }
     }
 }

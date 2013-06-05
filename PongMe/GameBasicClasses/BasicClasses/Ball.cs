@@ -33,10 +33,10 @@ namespace GameBasicClasses.BasicClasses
         }
         private readonly static int MAX_DIAMETER = 100;
 
-        public bool isMoving { get; set; }
+        public bool IsMoving { get; set; }
 
-        public bool isOutLeft { get; set; }
-        public bool isOutRight { get; set; }
+        public bool IsOutLeft { get; set; }
+        public bool IsOutRight { get; set; }
         private float MAX_SPEED { get; set; }
         public override float Speed
         {
@@ -87,40 +87,40 @@ namespace GameBasicClasses.BasicClasses
             this.Direction = this.InitialDirection;
             this.PreviousPosition = this.Position;
             this.Bounds = this.InitialBounds;
-            this.isMoving = false;
-            this.isOutLeft = false;
-            this.isOutRight = false;
+            this.IsMoving = false;
+            this.IsOutLeft = false;
+            this.IsOutRight = false;
         }
 
         public void ToogleMovement(bool movement)
         {
-            this.isMoving = movement;
+            this.IsMoving = movement;
         }
 
-        public void nextPosition()//très incomplet
+        public void NextPosition()
         {
-            if (!this.isMoving) { return; }
-            this.checkBoardCollision();
-            this.checkOut();
+            if (!this.IsMoving) { return; }
+            this.CheckBoardCollision();
+            this.CheckOut();
             CurrentGame cg = CurrentGame.GetInstance();
-            this.checkObstaclesCollision(cg.GameModel.listePaddle(false,0,null));
-            this.checkObstaclesCollision(cg.GameModel.ListeBrick);
-            this.checkObstaclesCollision(cg.GameModel.ListeBonus);
-            this.move();
+            this.CheckObstaclesCollision(cg.GameModel.ListePaddle(false,0,null));
+            this.CheckObstaclesCollision(cg.GameModel.ListeBrick);
+            this.CheckObstaclesCollision(cg.GameModel.ListeBonus);
+            this.Move();
         }
 
-        private void checkOut()
+        private void CheckOut()
         {
             if (this.ClientWidth < this.Position.X)
             {
-                this.isOutRight = true;
+                this.IsOutRight = true;
             } else if (this.Position.X + this.Diameter < 0)
             {
-                this.isOutLeft = true;
+                this.IsOutLeft = true;
             }
         }
 
-        private void checkBoardCollision()
+        private void CheckBoardCollision()
         {
             if ((this.Position.Y <= 0 && this.Direction.Y < 0)
                 || (this.Position.Y >= this.ClientHeight - this.Diameter && this.Direction.Y > 0))
@@ -130,20 +130,20 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        private void checkObstaclesCollision<T>(List<T> ob) where T : GameBasicClasses.Obstacles.Obstacle
+        private void CheckObstaclesCollision<T>(List<T> ob) where T : GameBasicClasses.Obstacles.Obstacle
         {
             foreach (GameBasicClasses.Obstacles.Obstacle obstacle in ob)
             {
-                if (obstacle.contains(this))
+                if (obstacle.Contains(this))
                 {
                     if (!(obstacle is Bonus))
                     {
                         if(obstacle is Brick)
                         {
                             Brick b = obstacle as Brick;
-                            b.touched();
+                            b.Touched();
                         }
-                        if (obstacle.containsLeftOrRight(this))
+                        if (obstacle.ContainsLeftOrRight(this))
                         {
                             this.Direction = new Vector(-this.Direction.X, this.Direction.Y);
                             if (obstacle is Paddle)
@@ -151,7 +151,7 @@ namespace GameBasicClasses.BasicClasses
                                 Paddle p1 = obstacle as Paddle;
                                 if (p1.PortalMode)
                                 {
-                                    List<Paddle> liste = CurrentGame.GetInstance().GameModel.listePaddle(true, p1.Id, p1);
+                                    List<Paddle> liste = CurrentGame.GetInstance().GameModel.ListePaddle(true, p1.Id, p1);
                                     if (liste.Count >= 1)
                                     {
                                         Paddle p2 = liste.ElementAt(0);
@@ -168,15 +168,15 @@ namespace GameBasicClasses.BasicClasses
                                 }
                             }
                             this.PreviousPosition = Position;
-                            this.move();
+                            this.Move();
                             this.Speed += 0.05f;
                             return;
                         }
-                        else if (obstacle.containsUpOrDown(this))
+                        else if (obstacle.ContainsUpOrDown(this))
                         {
                             this.Direction = new Vector(this.Direction.X, -this.Direction.Y);
                             this.PreviousPosition = Position;
-                            this.move();
+                            this.Move();
                             this.Speed += 0.05f;
                             return;
                         }
@@ -186,19 +186,19 @@ namespace GameBasicClasses.BasicClasses
                         Bonus b = obstacle as Bonus;
                         if (!b.Active)
                         {
-                            b.startTimeOut(this);
+                            b.StartTimeOut(this);
                         }
                     }
                 }
             }
         }
 
-        private void move()
+        private void Move()
         {
             this.Position += this.Direction * this.Speed;
         }
 
-        public List<Point> getBounds()
+        public List<Point> GetBounds()
         {
             List<Point> bounds = new List<Point>();
             int nbOfPoints = 100;

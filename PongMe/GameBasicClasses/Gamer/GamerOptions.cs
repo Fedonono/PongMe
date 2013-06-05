@@ -27,11 +27,7 @@ namespace GameBasicClasses.Options
         {
             set
             {
-                //if (taken.Find(value) == null)
-                //{
-                    this.up = value;
-                    //taken.AddLast(value);
-                //}
+                this.up = value;
             }
 
             get
@@ -44,11 +40,7 @@ namespace GameBasicClasses.Options
         {
             set
             {
-                //if (taken.Find(value) == null)
-                //{
-                    this.down = value;
-                  //  taken.AddLast(value);
-                //}
+                this.down = value;
             }
 
             get
@@ -60,11 +52,7 @@ namespace GameBasicClasses.Options
         public static Keys Stop {
             set
             {
-                if (taken.Find(value) == null)
-                {
-                    stop = value;
-                    taken.AddLast(value);
-                }
+                stop = value;
             }
 
             get
@@ -77,11 +65,7 @@ namespace GameBasicClasses.Options
         {
             set
             {
-                if (taken.Find(value) == null)
-                {
-                    pause = value;
-                    taken.AddLast(value);
-                }
+                pause = value;
             }
 
             get
@@ -94,11 +78,7 @@ namespace GameBasicClasses.Options
         {
             set
             {
-                if (taken.Find(value) == null)
-                {
-                    pause = value;
-                    taken.AddLast(value);
-                }
+                launch = value;
             }
 
             get

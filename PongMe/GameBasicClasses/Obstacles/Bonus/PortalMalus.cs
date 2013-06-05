@@ -17,11 +17,11 @@ namespace GameBasicClasses.Obstacles.Bonus
             this.InitialColor = this.Color;
         }
 
-        protected override void stopBonus()
+        protected override void StopBonus()
         {
         }
 
-        protected override void runBonus()
+        protected override void RunBonus()
         {
             List<GameBasicClasses.Obstacles.Paddle.Paddle> liste = new List<Paddle.Paddle>();
             foreach (Gamer.Gamer g in this.gamers)

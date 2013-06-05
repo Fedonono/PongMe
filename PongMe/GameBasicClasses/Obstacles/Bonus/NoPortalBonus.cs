@@ -17,17 +17,17 @@ namespace GameBasicClasses.Obstacles.Bonus
             this.InitialColor = this.Color;
         }
 
-        protected override void stopBonus()
+        protected override void StopBonus()
         {
-            this.setPortalMode(true);
+            this.SetPortalMode(true);
         }
 
-        protected override void runBonus()
+        protected override void RunBonus()
         {
-            this.setPortalMode(false);
+            this.SetPortalMode(false);
         }
 
-        private void setPortalMode(bool b)
+        private void SetPortalMode(bool b)
         {
             List<GameBasicClasses.Obstacles.Paddle.Paddle> liste = new List<Paddle.Paddle>();
             foreach (Gamer.Gamer g in this.gamers)

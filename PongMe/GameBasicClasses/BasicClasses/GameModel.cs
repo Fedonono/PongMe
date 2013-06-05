@@ -31,27 +31,27 @@ namespace GameBasicClasses.BasicClasses
             this.WeathleyPoint = 0;
         }
 
-        public void addBall(Ball b)
+        public void AddBall(Ball b)
         {
             this.listeBall.Add(b);
         }
 
-        public void addBonus(Bonus b)
+        public void AddBonus(Bonus b)
         {
             this.listeBonus.Add(b);
         }
 
-        public void addBonus(List<Bonus> b)
+        public void AddBonus(List<Bonus> b)
         {
             this.listeBonus.AddRange(b);
         }
 
-        public void addBrick(Brick b)
+        public void AddBrick(Brick b)
         {
             this.listeBrick.Add(b);
         }
 
-        public void addGamer(GameBasicClasses.Gamer.Gamer g)
+        public void AddGamer(GameBasicClasses.Gamer.Gamer g)
         {
             if (this.listeGamer.Count < 4)
             {
@@ -59,20 +59,20 @@ namespace GameBasicClasses.BasicClasses
             }
         }
 
-        public void keyEvent(Keys e, bool stop)
+        public void KeyEvent(Keys e, bool stop)
         {
             if (e == GamerOptions.Launch)
             {
                 foreach (Ball ball in this.ListeBall)
                 {
-                    ball.isMoving = !stop;
+                    ball.IsMoving = !stop;
                 }
             }
-            else if (e == GamerOptions.Stop && CurrentGame.GetInstance().stopped == false)
+            else if (e == GamerOptions.Stop && CurrentGame.GetInstance().Stopped == false)
             {
                 CurrentGame.GetInstance().StopGame();
             }
-            else if (e == GamerOptions.Stop && CurrentGame.GetInstance().stopped == true)
+            else if (e == GamerOptions.Stop && CurrentGame.GetInstance().Stopped == true)
             {
                 CurrentGame.GetInstance().StartGame();
             }
@@ -82,11 +82,11 @@ namespace GameBasicClasses.BasicClasses
             }
             foreach (GameBasicClasses.Gamer.Gamer g in this.listeGamer)
             {
-                g.run(e);
+                g.Run(e);
             }
         }
 
-        public List<Paddle> listePaddle(bool corresponding, int id, Paddle reference)
+        public List<Paddle> ListePaddle(bool corresponding, int id, Paddle reference)
         {
             List<Paddle> liste = new List<Paddle>();
             foreach (GameBasicClasses.Gamer.Gamer g in this.ListeGamer)

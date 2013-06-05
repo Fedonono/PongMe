@@ -32,7 +32,7 @@ namespace GameView
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
         {
             List<Ball> listeBall = this.currentGame.GameModel.ListeBall;
             foreach (Ball ball in listeBall)
@@ -90,25 +90,25 @@ namespace GameView
                     }
                 }
             }
-            this.leftPointsLabel.Text = this.currentGame.getPoints(false).ToString();
-            this.rightPointsLabel.Text = this.currentGame.getPoints(true).ToString();
+            this.leftPointsLabel.Text = this.currentGame.GetPoints(false).ToString();
+            this.rightPointsLabel.Text = this.currentGame.GetPoints(true).ToString();
             this.wheatleyLabel.Text = this.currentGame.GameModel.WeathleyPoint.ToString();
         }
 
-        private void gameTimer_Tick(object sender, EventArgs e)
+        private void GameTimer_Tick(object sender, EventArgs e)
         {
             foreach (Ball ball in this.currentGame.GameModel.ListeBall)
             {
-                ball.nextPosition();
-                if (ball.isOutRight && ball.isMoving)
+                ball.NextPosition();
+                if (ball.IsOutRight && ball.IsMoving)
                 {
-                    ball.isMoving = false;
-                    this.currentGame.addPoint(false);
+                    ball.IsMoving = false;
+                    this.currentGame.AddPoint(false);
                 }
-                else if (ball.isOutLeft && ball.isMoving)
+                else if (ball.IsOutLeft && ball.IsMoving)
                 {
-                    ball.isMoving = false;
-                    this.currentGame.addPoint(true);
+                    ball.IsMoving = false;
+                    this.currentGame.AddPoint(true);
                 }
             }
 
@@ -116,15 +116,15 @@ namespace GameView
             {
                 foreach (Keys key in keysPressed)
                 {
-                    this.currentGame.keyEvent(key);
+                    this.currentGame.KeyEvent(key);
                 }
             }
             else
             {
-                this.currentGame.keyEvent(Keys.A);//AI
+                this.currentGame.KeyEvent(Keys.A);//AI
             }
 
-            if (this.currentGame.isGameOver())
+            if (this.currentGame.IsGameOver())
             {
                 this.currentGame.StopGame();
                 SoundPlayer soundPlayerEnd;
@@ -132,20 +132,20 @@ namespace GameView
                 soundPlayerEnd.Load();
                 soundPlayerEnd.Play();
 
-                this.clearGameBoard(false);
+                this.ClearGameBoard(false);
                 System.Threading.Thread.Sleep(2000);
                 soundPlayerEnd.Dispose();
-                this.playGameMusic();
+                this.PlayGameMusic();
             }
             this.gameBoard.Refresh();
         }
 
-        private void animationTimer_Tick(object sender, EventArgs e)
+        private void AnimationTimer_Tick(object sender, EventArgs e)
         {
             //this.gameBoard.Refresh();
         }
 
-        private void playGameMusic()
+        private void PlayGameMusic()
         {
             soundPlayer.PlayLooping();
         }
@@ -155,40 +155,40 @@ namespace GameView
         {
             soundPlayer = new SoundPlayer(Properties.Resources.Nyan_Cat___Smooth_Jazz_Cover);
             soundPlayer.Load();
-            this.playGameMusic();
+            this.PlayGameMusic();
         }
 
         private int nbOfWheatley;
         private int previousNbOfWheatley = -1;
-        private void bonusTimer_Tick(object sender, EventArgs e)
+        private void BonusTimer_Tick(object sender, EventArgs e)
         {
             List<Bonus> overBonuses = new List<Bonus>();
             foreach (Bonus b in this.currentGame.GameModel.ListeBonus)
             {
-                if (b.Active && b.checkTimeOut())//on vérifie sur des bonus sont terminés et on les supprime
+                if (b.Active && b.CheckTimeOut())//on vérifie sur des bonus sont terminés et on les supprime
                 {
                     overBonuses.Add(b);
                 }
             }
-            this.removeOverBonuses(overBonuses);
+            this.RemoveOverBonuses(overBonuses);
 
             nbOfWheatley = this.gameBoard.Height / 80;//calcul du nombre de cube à récupérer
             if (previousNbOfWheatley != nbOfWheatley || this.currentGame.GameModel.ListeBonus.Count == 0 || this.getNbOfWeathley() == 0)//si la fenetre s'agradit ou qu'il n'y a plus
                 //de cube, on en ajoute
             {
-                this.removeOverBonuses(this.removeOverWheatley());//on supprime les cubes encore restant
+                this.RemoveOverBonuses(this.RemoveOverWheatley());//on supprime les cubes encore restant
                 for (int i = 0; i < nbOfWheatley; i++)
 			    {
                      Bonus b = new WheatleyBonus(this.gameBoard.Width, this.gameBoard.Height, 1, new Vector(this.gameBoard.Width/2-25,i*80));//80 est la distance entre les cubes
-                     this.currentGame.GameModel.addBonus(b);//on ajoute les cubes
+                     this.currentGame.GameModel.AddBonus(b);//on ajoute les cubes
 			    }
                 previousNbOfWheatley = nbOfWheatley;
             }
 
             if(this.currentGame.GameModel.ListeBonus.Count - this.getNbOfWeathley() <= 5)//on ne veut que 6 bonus sur la carte
             {
-                Bonus b = this.getRandomBonus();
-                this.currentGame.GameModel.addBonus(b);
+                Bonus b = this.GetRandomBonus();
+                this.currentGame.GameModel.AddBonus(b);
             }
             this.gameBoard.Refresh();
         }
@@ -206,7 +206,7 @@ namespace GameView
             return i;
         }
 
-        private List<Bonus> removeOverWheatley()
+        private List<Bonus> RemoveOverWheatley()
         {
             List<Bonus> liste = new List<Bonus>(); ;
             foreach (Bonus b in this.currentGame.GameModel.ListeBonus)
@@ -216,11 +216,11 @@ namespace GameView
                     liste.Add(b);
                 }
             }
-            this.removeOverObstacles(liste);
+            this.RemoveOverObstacles(liste);
             return liste;
         }//supprime tous les cubes
 
-        private Bonus getRandomBonus()
+        private Bonus GetRandomBonus()
         {
             Random r = new Random();
             Bonus b = null;
@@ -252,11 +252,11 @@ namespace GameView
                         b = new NoPortalBonus(this.gameBoard.Width, this.gameBoard.Height, 10, v);
                         break;
                 }
-            } while (this.checkCollision(b));
+            } while (this.CheckCollision(b));
             return b;
         }
 
-        private Brick getRandomBrick()
+        private Brick GetRandomBrick()
         {
             Random r = new Random();
             Brick b = null;
@@ -265,22 +265,22 @@ namespace GameView
                 Vector v = new Vector(r.Next(20, this.gameBoard.Width - Brick.Width - 20), r.Next(0, this.gameBoard.Height - Brick.Width));
                 int i = r.Next(1, 5);
                 b = new Brick(this.gameBoard.Width, this.gameBoard.Height, i, v);
-            } while (this.checkCollision(b));
+            } while (this.CheckCollision(b));
             return b;
         }
 
-        private bool checkCollision(Obstacle b)
+        private bool CheckCollision(Obstacle b)
         {
-            if(this.checkCollisionOb(this.currentGame.GameModel.listePaddle(false,0,null), b) || 
-                this.checkCollisionOb(this.currentGame.GameModel.ListeBrick, b) ||
-                this.checkCollisionOb(this.currentGame.GameModel.ListeBonus, b))
+            if(this.CheckCollisionOb(this.currentGame.GameModel.ListePaddle(false,0,null), b) || 
+                this.CheckCollisionOb(this.currentGame.GameModel.ListeBrick, b) ||
+                this.CheckCollisionOb(this.currentGame.GameModel.ListeBonus, b))
             {
                 return true;
             }
             return false;
         }
 
-        private bool checkCollisionOb<T>(List<T> liste, Obstacle ob) where T : Obstacle
+        private bool CheckCollisionOb<T>(List<T> liste, Obstacle ob) where T : Obstacle
         {
             foreach (Obstacle ib in liste)
             {
@@ -292,7 +292,7 @@ namespace GameView
             return false;
         }
 
-        private void removeOverBonuses(List<Bonus> overBonuses)
+        private void RemoveOverBonuses(List<Bonus> overBonuses)
         {
             foreach (Bonus b in overBonuses)
             {
@@ -302,7 +302,7 @@ namespace GameView
 
         private int nbOfBricks;
         private int previousNbOfBricks = -1;
-        private void brickTimer_Tick(object sender, EventArgs e)
+        private void BrickTimer_Tick(object sender, EventArgs e)
         {
             List<Brick> overBricks = new List<Brick>();
             foreach (Brick b in this.currentGame.GameModel.ListeBrick)
@@ -312,12 +312,12 @@ namespace GameView
                     overBricks.Add(b);
                 }
             }
-            this.removeOverBricks(overBricks);
+            this.RemoveOverBricks(overBricks);
 
             nbOfBricks = (this.gameBoard.Height / 2 - 10) / Brick.Width;//nombre de briques à placer
             if (this.currentGame.GameModel.ListeBrick.Count == 0 || nbOfBricks != previousNbOfBricks)//s'il n'y a plus de briques ou si le fenetre est redimensionnée
             {
-                this.removeOverObstacles(this.currentGame.GameModel.ListeBrick);//supprime les briques encore restantes
+                this.RemoveOverObstacles(this.currentGame.GameModel.ListeBrick);//supprime les briques encore restantes
                 this.currentGame.GameModel.ListeBrick.Clear();
                 Random r = new Random();
                 for (int i = 0; i < 4; i++)//place les briques
@@ -342,19 +342,19 @@ namespace GameView
                             v = new Vector(this.gameBoard.Width / 2 + 50, this.gameBoard.ClientRectangle.Height -  Brick.Width * j);
                         }
                         Brick b = new Brick(this.gameBoard.Width, this.gameBoard.Height, r.Next(4, 8), v);
-                        this.currentGame.GameModel.addBrick(b);
+                        this.currentGame.GameModel.AddBrick(b);
                     }
                 }
                 previousNbOfBricks = nbOfBricks;
             }
             if (this.currentGame.GameModel.ListeBrick.Count < 15)
             {
-                this.currentGame.GameModel.addBrick(this.getRandomBrick());
+                this.currentGame.GameModel.AddBrick(this.GetRandomBrick());
             }
             this.gameBoard.Refresh();
         }
 
-        private void removeOverBricks(List<Brick> overBricks)
+        private void RemoveOverBricks(List<Brick> overBricks)
         {
             foreach (Brick b in overBricks)
             {
@@ -362,7 +362,7 @@ namespace GameView
             }
         }//supprime les briques de la liste de briques
 
-        private void removeOverObstacles<T>(List<T> liste) where T : Obstacle//supprime les obstacles de la fenetre
+        private void RemoveOverObstacles<T>(List<T> liste) where T : Obstacle//supprime les obstacles de la fenetre
         {
             foreach (Obstacle ob in liste)
             {
@@ -373,7 +373,7 @@ namespace GameView
             }
         }
 
-        private void stopGameMusic()
+        private void StopGameMusic()
         {
             this.soundPlayer.Stop();
         }
