@@ -8,11 +8,9 @@ Release
 
 * [Windows Zip (.exe/.dll)]
 
-Liens de sauvetage si dl.babol.me lâche
+Divers
 -------
-* [PDF]
-* [Sources]
+* [Rapport]
 
 [Windows Zip (.exe/.dll)]: http://dl.babol.me/pongme/Release-PongMe.zip
-[Sources]: http://dl.free.fr/t8yaskQ5J
-[PDF]: http://dl.free.fr/u56HRk7GH
+[Rapport]: http://dl.babol.me/pongme/Sharpentier-pongMe.pdf
